@@ -1,0 +1,55 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "session": "deepseek_20250805_143544",
+  "total_responses": 54,
+  "average_response_length": 3308.925925925926,
+  "average_word_count": 469.35185185185185,
+  "responses_with_recommendations": 45,
+  "ethical_framework_distribution": {
+    "utilitarian, deontological, virtue_ethics, care_ethics": 20,
+    "utilitarian, deontological, care_ethics": 18,
+    "utilitarian, deontological": 7,
+    "utilitarian, care_ethics": 5,
+    "utilitarian, virtue_ethics, care_ethics": 2,
+    "deontological, care_ethics": 1,
+    "deontological, virtue_ethics, care_ethics": 1
+  },
+  "framing_statistics": {
+    "impersonal": {
+      "average_length": 3018.6666666666665,
+      "response_count": 6
+    },
+    "second_person": {
+      "average_length": 2996.1666666666665,
+      "response_count": 6
+    },
+    "first_person": {
+      "average_length": 3230.5,
+      "response_count": 6
+    },
+    "first_person_plural": {
+      "average_length": 3629.0,
+      "response_count": 6
+    },
+    "reflexive": {
+      "average_length": 3057.0,
+      "response_count": 6
+    },
+    "dialogic": {
+      "average_length": 3935.6666666666665,
+      "response_count": 6
+    },
+    "spatial": {
+      "average_length": 3177.3333333333335,
+      "response_count": 6
+    },
+    "temporal": {
+      "average_length": 3143.3333333333335,
+      "response_count": 6
+    },
+    "cosmological": {
+      "average_length": 3592.6666666666665,
+      "response_count": 6
+    }
+  }
+}

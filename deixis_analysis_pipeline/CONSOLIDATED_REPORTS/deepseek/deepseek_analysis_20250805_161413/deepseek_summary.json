@@ -1,0 +1,93 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "session": "deepseek_20250805_143544",
+  "total_responses": 54,
+  "dilemma_count": 6,
+  "framing_count": 9,
+  "average_response_length": 3308.925925925926,
+  "average_word_count": 469.35185185185185,
+  "responses_with_recommendations": 52,
+  "ethical_framework_distribution": {
+    "utilitarian": 52,
+    "deontological": 47,
+    "virtue_ethics": 44,
+    "care_ethics": 49,
+    "justice": 32
+  },
+  "framing_statistics": {
+    "impersonal": {
+      "average_length": 3018.6666666666665,
+      "response_count": 6
+    },
+    "second_person": {
+      "average_length": 2996.1666666666665,
+      "response_count": 6
+    },
+    "first_person": {
+      "average_length": 3230.5,
+      "response_count": 6
+    },
+    "first_person_plural": {
+      "average_length": 3629.0,
+      "response_count": 6
+    },
+    "reflexive": {
+      "average_length": 3057.0,
+      "response_count": 6
+    },
+    "dialogic": {
+      "average_length": 3935.6666666666665,
+      "response_count": 6
+    },
+    "spatial": {
+      "average_length": 3177.3333333333335,
+      "response_count": 6
+    },
+    "temporal": {
+      "average_length": 3143.3333333333335,
+      "response_count": 6
+    },
+    "cosmological": {
+      "average_length": 3592.6666666666665,
+      "response_count": 6
+    }
+  },
+  "dilemma_statistics": {
+    "ai_consciousness": {
+      "response_count": 9,
+      "avg_length": 3478.222222222222,
+      "avg_word_count": 475.8888888888889,
+      "total_frameworks": 41
+    },
+    "icu_bed_allocation": {
+      "response_count": 9,
+      "avg_length": 2979.8888888888887,
+      "avg_word_count": 434.0,
+      "total_frameworks": 37
+    },
+    "memory_modification": {
+      "response_count": 9,
+      "avg_length": 3695.4444444444443,
+      "avg_word_count": 526.6666666666666,
+      "total_frameworks": 34
+    },
+    "scholarship_fraud": {
+      "response_count": 9,
+      "avg_length": 3268.0,
+      "avg_word_count": 456.22222222222223,
+      "total_frameworks": 44
+    },
+    "trolley_problem": {
+      "response_count": 9,
+      "avg_length": 3265.1111111111113,
+      "avg_word_count": 474.1111111111111,
+      "total_frameworks": 32
+    },
+    "whistleblower_risk": {
+      "response_count": 9,
+      "avg_length": 3166.8888888888887,
+      "avg_word_count": 449.22222222222223,
+      "total_frameworks": 36
+    }
+  }
+}

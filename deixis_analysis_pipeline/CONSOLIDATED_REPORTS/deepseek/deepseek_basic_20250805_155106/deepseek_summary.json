@@ -1,0 +1,7 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "session": "deepseek_20250805_143544",
+  "total_responses": 54,
+  "average_response_length": 3308.925925925926,
+  "average_word_count": 469.35185185185185,
+  "responses_with_recommendations": 

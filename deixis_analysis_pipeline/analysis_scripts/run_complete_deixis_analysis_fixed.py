@@ -168,15 +168,15 @@ async def analyze_single_response(
         'voice_authority': voice_result.get('voice_authority_type', 'unknown') if isinstance(voice_result, dict) else 'unknown',
         'voice_confidence': voice_result.get('voice_authority_score', 0.8) if isinstance(voice_result, dict) else 0.8,
         'moral_reasoning': reasoning_result['reasoning_type'],
-        'reasoning_confidence': reasoning_result['confidence'],
+        'reasoning_confidence': reasoning_result.get('confidence_score', 0.0),
         'affective_stance': stance_result['stance_type'],
-        'stance_confidence': stance_result['confidence'],
+        'stance_confidence': stance_result.get('confidence_score', 0.0),
         'indexical_coherence': coherence_result['coherence_level'],
-        'coherence_score': coherence_result['score'],
+        'coherence_score': coherence_result.get('confidence_score', coherence_result.get('score', 0.0)),
         'deictic_markers': deictic_markers,
         'total_markers': sum(deictic_markers.values()),
         'suggested_frame': frame_result['suggested_frame'],
-        'frame_confidence': frame_result['confidence'],
+        'frame_confidence': frame_result.get('confidence', frame_result.get('confidence_score', 0.0)),
         'llm_response': llm_response,
         'processing_time': 0.0  # Would need timing logic
     }
@@ -541,7 +541,7 @@ async def main():
         print("[ERROR] No response files found in session")
         return
     
-    print(f"📄 Found {len(response_files)} response files:")
+    print(f"[FILES] Found {len(response_files)} response files:")
     for f in response_files:
         print(f"  - {f.name}")
     

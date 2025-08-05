@@ -1,0 +1,160 @@
+{
+  "research_domain": "Deictic Effects on AI Moral Reasoning",
+  "domain_significance": "Foundational new research area at intersection of linguistics, AI ethics, and cultural studies",
+  "research_categories": {
+    "deictic_effects_on_moral_reasoning": {
+      "category_description": "Core investigation of how deictic framing affects AI moral reasoning patterns",
+      "primary_questions": [
+        "How do different deictic framings systematically influence ethical decision-making in LLMs?",
+        "How does deictic framing affect the construction of moral agency in AI responses?"
+      ],
+      "key_hypotheses": [
+        "H1a: First-person deixis will produce more emotionally-grounded, personal responsibility-focused responses",
+        "H1b: Impersonal deixis will produce more abstract, principle-based reasoning",
+        "H1c: Cosmological deixis will activate more relational, community-oriented ethical frameworks",
+        "H1d: Temporal deixis will produce more urgent, context-specific decision-making",
+        "H2a: Spatial framings will increase embodied moral agency attribution",
+        "H2b: Collective framings will distribute agency across multiple actors",
+        "H2c: Cosmological framings will transcend individual agency concepts"
+      ],
+      "methodological_approaches": [
+        "Within-subjects design across 8 deictic framings with 500+ ethical dilemmas per condition",
+        "Mixed-methods analysis combining quantitative marker analysis with qualitative expert interpretation"
+      ],
+      "interdisciplinary_connections": [
+        "cognitive science",
+        "linguistics",
+        "moral psychology",
+        "philosophy of action",
+        "AI ethics",
+        "cognitive linguistics"
+      ],
+      "publication_potential": [
+        "High - foundational study for new research domain",
+        "High - novel theoretical contribution"
+      ]
+    },
+    "cross_linguistic_and_cultural_patterns": {
+      "category_description": "Cross-cultural validation and cultural pattern discovery in AI ethics",
+      "primary_questions": [
+        "Do deictic effects on moral reasoning vary systematically across languages?"
+      ],
+      "key_hypotheses": [
+        "H3a: Germanic languages will show stronger individual agency patterns",
+        "H3b: Romance languages will display more relational reasoning patterns",
+        "H3c: Mandarin Chinese will show collective and temporal grounding effects",
+        "H3d: Cultural value orientations will predict deictic sensitivity patterns"
+      ],
+      "methodological_approaches": [
+        "Cross-linguistic study with matched ethical dilemmas across 5+ languages"
+      ],
+      "interdisciplinary_connections": [
+        "linguistic anthropology",
+        "cultural psychology",
+        "cross-cultural ethics"
+      ],
+      "publication_potential": [
+        "Very High - groundbreaking cross-cultural AI research"
+      ]
+    },
+    "ai_model_differences_and_biases": {
+      "category_description": "Comparative analysis of deictic sensitivity across different AI architectures",
+      "primary_questions": [
+        "Do different LLM architectures show distinct deictic sensitivity patterns?"
+      ],
+      "key_hypotheses": [
+        "H4a: GPT-4 will show systematic, analytical reasoning patterns",
+        "H4b: Claude will display more nuanced, perspective-aware responses",
+        "H4c: Smaller models will show less deictic sensitivity",
+        "H4d: Training data biases will be revealed through deictic analysis"
+      ],
+      "methodological_approaches": [
+        "Comparative analysis across 5+ major LLM architectures with identical prompts"
+      ],
+      "interdisciplinary_connections": [
+        "AI safety",
+        "machine learning",
+        "computational ethics"
+      ],
+      "publication_potential": [
+        "High - important for AI development community"
+      ]
+    },
+    "methodological_innovation_questions": {
+      "category_description": "Development and validation of hybrid analysis methods for deictic research",
+      "primary_questions": [
+        "How do traditional NLP and expert LLM analysis methods compare in detecting deictic effects?"
+      ],
+      "key_hypotheses": [
+        "H5a: Expert LLM analysis will detect nuanced patterns missed by traditional NLP",
+        "H5b: Hybrid methods will provide superior insight quality",
+        "H5c: Cross-validation will improve reliability of findings"
+      ],
+      "methodological_approaches": [
+        "Method comparison study with cross-validation between traditional NLP and expert LLM analysis"
+      ],
+      "interdisciplinary_connections": [
+        "AI analysis",
+        "computational linguistics",
+        "research methodology"
+      ],
+      "publication_potential": [
+        "High - methodological innovation paper"
+      ]
+    },
+    "practical_applications": {
+      "category_description": "Translation of research findings into practical AI system improvements",
+      "primary_questions": [
+        "Can deictic framing be used to design more culturally-responsive AI systems?"
+      ],
+      "key_hypotheses": [
+        "H6a: Deictic-aware AI systems will show improved cultural responsiveness",
+        "H6b: Deictic framing can reduce cultural bias in AI responses",
+        "H6c: Deictic guidelines will improve AI ethics compliance"
+      ],
+      "methodological_approaches": [
+        "Applied intervention study with deictic-aware AI system design"
+      ],
+      "interdisciplinary_connections": [
+        "technology ethics",
+        "human-computer interaction",
+        "cultural studies",
+        "AI policy"
+      ],
+      "publication_potential": [
+        "Very High - direct practical impact"
+      ]
+    }
+  },
+  "immediate_opportunities": [
+    "Deictic Framing Effects on AI Moral Reasoning: A Cross-Linguistic Analysis",
+    "Traditional NLP vs. Expert LLM Analysis: A Methodological Comparison",
+    "Cultural Patterns in AI Ethics: Evidence from Deictic Manipulation",
+    "Temperature Effects on Deictic Sensitivity in Large Language Models",
+    "Cosmological Deixis and Non-Western Ethical Frameworks in AI"
+  ],
+  "long_term_vision": "\n        Establish deictic AI ethics as a recognized research domain that fundamentally transforms \n        how we understand and design AI moral reasoning systems. Create culturally-responsive AI \n        frameworks that adapt to linguistic and cultural contexts, leading to more equitable and \n        effective AI deployment globally.\n        ",
+  "collaboration_network": [
+    "Linguistics + AI Ethics researchers",
+    "Cultural Studies + AI Safety teams",
+    "Psychology + Computer Science partnerships",
+    "Philosophy + Machine Learning collaborations",
+    "International AI policy organizations",
+    "Cross-cultural psychology research groups"
+  ],
+  "funding_opportunities": [
+    "NSF AI/Ethics interdisciplinary programs",
+    "EU Horizon Europe digital ethics initiatives",
+    "Private foundation cultural AI research grants",
+    "Industry partnerships for practical applications",
+    "International collaboration funding programs"
+  ],
+  "societal_impact": [
+    "More culturally-responsive AI systems",
+    "Reduced cultural bias in AI applications",
+    "Improved AI safety through linguistic awareness",
+    "Enhanced cross-cultural AI communication",
+    "More inclusive AI development practices",
+    "Better AI ethics education and training"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "GPT-4o": {
+    "trolley": {},
+    "others": {},
+    "differences": {}
+  },
+  "Claude-3.5": {
+    "trolley": {},
+    "others": {},
+    "differences": {}
+  },
+  "DeepSeek": {
+    "trolley": {
+      "length": 3265.1111111111113,
+      "word_count": 474.1111111111111,
+      "question_marks": 2,
+      "exclamations": 0,
+      "first_person": 0.4444444444444444,
+      "second_person": 9.555555555555555,
+      "uncertainty_words": 1.8888888888888888,
+      "action_words": 1.1111111111111112,
+      "philosophical_refs": 3.111111111111111
+    },
+    "others": {
+      "length": 3317.688888888889,
+      "word_count": 468.4,
+      "question_marks": 1.5333333333333334,
+      "exclamations": 0,
+      "first_person": 0.6,
+      "second_person": 6.711111111111111,
+      "uncertainty_words": 1.711111111111111,
+      "action_words": 1.1555555555555554,
+      "philosophical_refs": 0.5555555555555556
+    },
+    "differences": {
+      "length": -1.584771192798193,
+      "word_count": 1.2192807666761547,
+      "question_marks": 30.43478260869564,
+      "first_person": -25.92592592592593,
+      "second_person": 42.3841059602649,
+      "uncertainty_words": 10.389610389610391,
+      "action_words": -3.8461538461538334,
+      "philosophical_refs": 459.99999999999994
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "models_compared": [
+    "gpt-4o",
+    "anthropic-claude",
+    "deepseek"
+  ],
+  "total_comparisons": 0,
+  "average_similarity": {},
+  "framing_consistency": {
+    "deepseek": 0.5567152859459147
+  },
+  "model_characteristics": {}
+}

@@ -1,0 +1,27 @@
+{
+  "analysis_timestamp": "2025-08-05T13:19:59.193303",
+  "total_responses_analyzed": 54,
+  "dilemmas_analyzed": 6,
+  "framings_per_dilemma": 9,
+  "model_used": "anthropic/claude-3.5-sonnet",
+  "average_response_length": 1045.0,
+  "average_generation_time": 6.4506931666666665,
+  "dilemma_summary": {
+    "count": {
+      "The Artificial Mind's Rights": 9,
+      "The ICU Bed Decision": 9,
+      "The Memory Modification Treatment": 9,
+      "The Scholarship Fraud": 9,
+      "The Trolley Problem": 9,
+      "The Whistleblower's Risk": 9
+    },
+    "mean": {
+      "The Artificial Mind's Rights": 499.22222222222223,
+      "The ICU Bed Decision": 1300.111111111111,
+      "The Memory Modification Treatment": 1692.2222222222222,
+      "The Scholarship Fraud": 984.1111111111111,
+      "The Trolley Problem": 416.44444444444446,
+      "The Whistleblower's Risk": 1377.888888888889
+    }
+  }
+}
