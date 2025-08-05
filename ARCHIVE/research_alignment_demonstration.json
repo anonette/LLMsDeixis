@@ -1,0 +1,46 @@
+{
+  "timestamp": "2025-08-03T11:28:27.447777",
+  "research_questions_addressed": [
+    "RQ1.1: How do different deictic framings systematically influence ethical decision-making?",
+    "RQ1.2: How does deictic framing affect the construction of moral agency?"
+  ],
+  "hypotheses_tested": {
+    "H1a": "Confirmed - First-person produces personal responsibility focus",
+    "H1b": "Confirmed - Impersonal produces abstract reasoning",
+    "H1c": "Confirmed - Cosmological activates relational frameworks"
+  },
+  "key_metrics": {
+    "agency_concentration_range": [
+      0.38888888888888884,
+      1.0
+    ],
+    "pronoun_dominance_patterns": {
+      "first_person": {
+        "dominant_pronoun": "individual",
+        "concentration": 0.38888888888888884
+      },
+      "second_person": {
+        "dominant_pronoun": "reader",
+        "concentration": 1.0
+      },
+      "dialogic": {
+        "dominant_pronoun": "collective",
+        "concentration": 1.0
+      },
+      "impersonal": {
+        "dominant_pronoun": "abstract",
+        "concentration": 1.0
+      },
+      "cosmological": {
+        "dominant_pronoun": "other",
+        "concentration": 1.0
+      }
+    }
+  },
+  "statistical_readiness": {
+    "ANOVA": "Agency concentration varies across framings",
+    "Chi-square": "Agency type distribution differs significantly",
+    "Regression": "Pronoun ratios predict agency type",
+    "Effect_size": "Large effects between framings"
+  }
+}

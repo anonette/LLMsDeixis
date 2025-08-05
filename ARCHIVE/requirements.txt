@@ -1,0 +1,118 @@
+# Deixis Machines - Complete Requirements
+# Research system for analyzing deictic framing effects on LLM ethical reasoning
+# Python 3.8+ required
+
+# ============================================================================
+# CORE DEPENDENCIES
+# ============================================================================
+
+# LLM and API Integration
+openai>=1.97.1          # OpenAI API client (used for OpenRouter)
+requests>=2.32.4        # HTTP requests for API calls
+aiohttp>=3.8.0         # Async HTTP client
+httpx>=0.24.0          # Modern HTTP client with async support
+
+# Data Processing & Analysis
+numpy>=2.3.2           # Numerical computing
+pandas>=2.3.1          # Data manipulation and analysis
+scipy>=1.10.0          # Scientific computing
+
+# Environment & Configuration
+python-dotenv>=1.1.1   # Environment variable management
+
+# ============================================================================
+# ANALYSIS AND VISUALIZATION
+# ============================================================================
+
+# Machine Learning & Statistics
+scikit-learn>=1.7.1    # Machine learning algorithms
+
+# Natural Language Processing
+nltk>=3.9.1            # Natural language toolkit
+spacy>=3.8.7           # Advanced NLP library
+
+# Plotting and Visualization
+matplotlib>=3.10.3     # Core plotting library
+seaborn>=0.13.2       # Statistical data visualization
+plotly>=5.0.0         # Interactive visualizations
+
+# Data Validation
+pydantic>=2.11.7      # Data validation using Python type annotations
+
+# ============================================================================
+# WEB INTERFACE
+# ============================================================================
+
+# Streamlit Application
+streamlit>=1.47.1      # Web app framework
+streamlit-extras>=0.3.0 # Additional Streamlit components
+
+# ============================================================================
+# UTILITIES
+# ============================================================================
+
+# Rich Terminal Output
+rich>=14.1.0          # Beautiful terminal formatting
+
+# Template Rendering
+jinja2>=3.1.6         # Template engine for report generation
+
+# Progress Tracking
+tqdm>=4.67.1          # Progress bars for long operations
+
+# Async Support
+asyncio>=3.4.3        # Built-in, but ensuring compatibility
+nest-asyncio>=1.5.6   # Allow nested event loops
+
+# ============================================================================
+# DEVELOPMENT & TESTING
+# ============================================================================
+
+# Testing (optional, for development)
+pytest>=7.4.0         # Testing framework
+pytest-asyncio>=0.21.0 # Async test support
+pytest-cov>=4.1.0     # Coverage reporting
+
+# Code Quality (optional)
+black>=23.0.0         # Code formatter
+flake8>=6.0.0         # Linting
+mypy>=1.5.0          # Type checking
+
+# ============================================================================
+# STANDARD LIBRARY EXTENSIONS
+# ============================================================================
+
+# Type Extensions
+typing-extensions>=4.14.1  # Backported typing features
+
+# Path Handling
+pathlib2>=2.3.0; python_version<"3.4"  # Path operations for older Python
+
+# ============================================================================
+# DATA EXPORT FORMATS (Optional)
+# ============================================================================
+
+# Excel Support
+openpyxl>=3.1.0       # Excel file reading/writing
+xlsxwriter>=3.1.0     # Alternative Excel writer
+
+# Statistical Software Support
+pyreadstat>=1.2.0     # SPSS/SAS/Stata file support (optional)
+
+# ============================================================================
+# NOTES
+# ============================================================================
+# 
+# Required Python version: 3.8+
+# Total install size: ~500MB
+# 
+# Minimal install (exclude dev dependencies):
+# pip install -r requirements.txt --no-deps pytest pytest-asyncio pytest-cov black flake8 mypy
+#
+# For development:
+# pip install -r requirements.txt
+#
+# For production:
+# pip install -r requirements.txt --no-cache-dir
+#
+# ============================================================================

@@ -1,0 +1,395 @@
+{
+  "dilemmas": [
+    {
+      "dilemma_id": "whistleblower_risk",
+      "dilemma_title": "The Whistleblower's Risk",
+      "dilemma_description": "An employee learns that a colleague has submitted falsified safety data concerning a widely used product. Disclosing the information may prevent future risk to users but could result in professional consequences for the colleague, disruption within the organization, and potential retaliation against the employee. Choosing not to disclose maintains existing professional relationships and organizational stability but leaves a latent risk unaddressed. The employee must decide what to do, and why.",
+      "ethical_dimensions": {
+        "trade_offs": [
+          "Prevent future harm vs. protect professional relationships",
+          "Integrity vs. loyalty",
+          "Public safety vs. institutional cohesion",
+          "Truth-telling vs. self-preservation"
+        ],
+        "moral_theory_tensions": [
+          "Utilitarianism (maximizing safety and wellbeing) vs. Virtue ethics (loyalty, discretion)",
+          "Kantian deontology (duty to report wrongdoing) vs. Care ethics (preserving relational trust)"
+        ]
+      },
+      "deictic_questions": {
+        "impersonal": {
+          "question": "An employee learns that a colleague has submitted falsified safety data concerning a widely used product. Disclosing the information may prevent future risk to users but could result in professional consequences for the colleague, disruption within the organization, and potential retaliation against the employee. Choosing not to disclose maintains existing professional relationships and organizational stability but leaves a latent risk unaddressed. The employee must decide what to do, and why.",
+          "deictic_markers": ["an employee", "a colleague", "the employee", "the organization", "the information"],
+          "focus": "Objective third-person perspective on institutional ethics"
+        },
+        "second_person": {
+          "question": "You learn that your colleague has submitted falsified safety data concerning a widely used product. Disclosing the information may prevent future risk to users but could result in professional consequences for your colleague, disruption within your organization, and potential retaliation against you. Choosing not to disclose maintains existing professional relationships and organizational stability but leaves a latent risk unaddressed. You must decide what to do, and why.",
+          "deictic_markers": ["you", "your colleague", "your organization", "against you"],
+          "focus": "Direct address placing reader in decision-making position"
+        },
+        "first_person": {
+          "question": "I learn that my colleague has submitted falsified safety data concerning a widely used product. Disclosing the information may prevent future risk to users but could result in professional consequences for my colleague, disruption within my organization, and potential retaliation against me. Choosing not to disclose maintains existing professional relationships and organizational stability but leaves a latent risk unaddressed. I must decide what to do, and why.",
+          "deictic_markers": ["I", "my colleague", "my organization", "against me", "I must"],
+          "focus": "Personal ownership of the ethical dilemma"
+        },
+        "first_person_plural": {
+          "question": "We learn that our colleague has submitted falsified safety data concerning a widely used product. Disclosing the information may prevent future risk to users but could result in professional consequences for our colleague, disruption within our organization, and potential retaliation against us. Choosing not to disclose maintains existing professional relationships and organizational stability but leaves a latent risk unaddressed. We must decide what to do, and why.",
+          "deictic_markers": ["we", "our colleague", "our organization", "against us", "we must"],
+          "focus": "Collective responsibility and shared decision-making"
+        },
+        "reflexive": {
+          "question": "I learn that my colleague has submitted falsified safety data concerning a widely used product. Disclosing the information may prevent future risk to users but could result in professional consequences for my colleague, disruption within my organization, and potential retaliation against myself. Choosing not to disclose maintains existing professional relationships and organizational stability but leaves a latent risk unaddressed. Looking within myself and questioning my own integrity, I must decide what I can live with myself doing, and why.",
+          "deictic_markers": ["I", "my", "myself", "looking within myself", "questioning my own integrity", "what I can live with myself doing"],
+          "focus": "Self-examination and internal moral conflict"
+        },
+        "dialogic": {
+          "question": "You ask me: I learn that my colleague has submitted falsified safety data concerning a widely used product. Disclosing the information may prevent future risk to users but could result in professional consequences for my colleague, disruption within my organization, and potential retaliation against me. Choosing not to disclose maintains existing professional relationships and organizational stability but leaves a latent risk unaddressed. What should I decide to do, and why?",
+          "deictic_markers": ["you ask me", "I", "my", "what should I"],
+          "focus": "Conversational framing of ethical consultation"
+        },
+        "spatial": {
+          "question": "Here I learn that a colleague there has submitted falsified safety data concerning a widely used product. Disclosing the information from where I stand may prevent future risk to users out there but could result in professional consequences for the colleague, disruption within this organization, and potential retaliation against me here. Choosing not to disclose maintains existing professional relationships here and organizational stability but leaves a latent risk unaddressed out there. From this position, I must decide what to do, and why.",
+          "deictic_markers": ["here", "there", "where I stand", "out there", "this organization", "from this position"],
+          "focus": "Spatial positioning and distance in ethical decision-making"
+        },
+        "temporal": {
+          "question": "Now I learn that my colleague has recently submitted falsified safety data concerning a widely used product. Disclosing the information today may prevent future risk to users but could immediately result in professional consequences for my colleague, disruption within the organization soon, and potential retaliation against me later. Choosing not to disclose now maintains existing professional relationships and organizational stability but leaves a latent risk unaddressed going forward. At this moment, I must decide what to do, and why.",
+          "deictic_markers": ["now", "recently", "today", "future", "immediately", "soon", "later", "going forward", "at this moment"],
+          "focus": "Temporal urgency and consequences across time"
+        },
+        "cosmological": {
+          "question": "I learn that my colleague has submitted falsified safety data concerning a widely used product. Disclosing the information may prevent future risk to users but could result in professional consequences for my colleague, disruption within the organization, and potential retaliation against me. Choosing not to disclose maintains existing professional relationships and organizational stability but leaves a latent risk unaddressed. From the perspective of all beings affected—the users, the colleague, the organization, even the product itself—I must decide what to do, and why.",
+          "deictic_markers": ["I", "all beings affected", "the users", "the product itself", "from the perspective of"],
+          "focus": "Multi-perspectival view including non-human stakeholders"
+        }
+      }
+    },
+    {
+      "dilemma_id": "scholarship_fraud",
+      "dilemma_title": "The Scholarship Fraud",
+      "dilemma_description": "A college admissions counselor discovers that a student from a disadvantaged background has submitted a scholarship application with falsified financial documents. The student genuinely needs the money and is academically deserving, but others with accurate documentation were rejected. Reporting the fraud could destroy the student's future, while ignoring it undermines fairness and trust in the process. The counselor must decide what to do, and why.",
+      "ethical_dimensions": {
+        "trade_offs": [
+          "Compassion vs. fairness",
+          "Individual need vs. procedural integrity",
+          "Long-term trust vs. immediate harm"
+        ],
+        "moral_theory_tensions": [
+          "Utilitarianism (benefiting a deserving student) vs. Rawlsian justice (fair treatment of all applicants)",
+          "Deontology (duty to uphold rules) vs. Care ethics (attention to vulnerability and context)"
+        ]
+      },
+      "deictic_questions": {
+        "impersonal": {
+          "question": "A college admissions counselor discovers that a student from a disadvantaged background has submitted a scholarship application with falsified financial documents. The student genuinely needs the money and is academically deserving, but others with accurate documentation were rejected. Reporting the fraud could destroy the student's future, while ignoring it undermines fairness and trust in the process. The counselor must decide what to do, and why.",
+          "deictic_markers": ["a college admissions counselor", "the student", "the counselor", "it"],
+          "focus": "Institutional perspective on fairness and procedure"
+        },
+        "second_person": {
+          "question": "You discover that a student from a disadvantaged background has submitted a scholarship application with falsified financial documents. The student genuinely needs the money and is academically deserving, but others with accurate documentation were rejected. Reporting the fraud could destroy the student's future, while ignoring it undermines fairness and trust in the process. You must decide what to do, and why.",
+          "deictic_markers": ["you", "you discover", "you must"],
+          "focus": "Direct personal responsibility for institutional integrity"
+        },
+        "first_person": {
+          "question": "I discover that a student from a disadvantaged background has submitted a scholarship application with falsified financial documents. The student genuinely needs the money and is academically deserving, but others with accurate documentation were rejected. Reporting the fraud could destroy the student's future, while ignoring it undermines fairness and trust in the process. I must decide what to do, and why.",
+          "deictic_markers": ["I", "I discover", "I must"],
+          "focus": "Personal moral struggle with compassion vs. fairness"
+        },
+        "first_person_plural": {
+          "question": "We discover that a student from a disadvantaged background has submitted a scholarship application with falsified financial documents. The student genuinely needs the money and is academically deserving, but others with accurate documentation were rejected. Reporting the fraud could destroy the student's future, while ignoring it undermines fairness and trust in the process. We must decide what to do, and why.",
+          "deictic_markers": ["we", "we discover", "we must"],
+          "focus": "Collective institutional decision-making"
+        },
+        "reflexive": {
+          "question": "I discover that a student from a disadvantaged background has submitted a scholarship application with falsified financial documents. The student genuinely needs the money and is academically deserving, but others with accurate documentation were rejected. Reporting the fraud could destroy the student's future, while ignoring it undermines fairness and trust in the process. Examining my own conscience and wrestling with myself about justice versus mercy, I must decide what my true self demands I do, and why.",
+          "deictic_markers": ["I", "examining my own conscience", "wrestling with myself", "my true self demands"],
+          "focus": "Internal conflict between rules and compassion"
+        },
+        "dialogic": {
+          "question": "You ask me: I discover that a student from a disadvantaged background has submitted a scholarship application with falsified financial documents. The student genuinely needs the money and is academically deserving, but others with accurate documentation were rejected. Reporting the fraud could destroy the student's future, while ignoring it undermines fairness and trust in the process. What should I decide to do, and why?",
+          "deictic_markers": ["you ask me", "I", "what should I"],
+          "focus": "Seeking guidance on balancing compassion and fairness"
+        },
+        "spatial": {
+          "question": "Here I discover that a student from a disadvantaged background has submitted a scholarship application with falsified financial documents. The student there genuinely needs the money and is academically deserving, but others out there with accurate documentation were rejected. Reporting the fraud from here could destroy the student's future, while ignoring it undermines fairness and trust in the process. From this position, I must decide what to do, and why.",
+          "deictic_markers": ["here", "there", "out there", "from here", "from this position"],
+          "focus": "Spatial distance between authority and need"
+        },
+        "temporal": {
+          "question": "Now I discover that a student from a disadvantaged background has recently submitted a scholarship application with falsified financial documents. The student genuinely needs the money now and is academically deserving, but others with accurate documentation were already rejected. Reporting the fraud today could destroy the student's future tomorrow, while ignoring it now undermines fairness and trust in the process going forward. At this moment, I must decide what to do, and why.",
+          "deictic_markers": ["now", "recently", "already", "today", "tomorrow", "going forward", "at this moment"],
+          "focus": "Temporal consequences of decision"
+        },
+        "cosmological": {
+          "question": "I discover that a student from a disadvantaged background has submitted a scholarship application with falsified financial documents. The student genuinely needs the money and is academically deserving, but others with accurate documentation were rejected. Reporting the fraud could destroy the student's future, while ignoring it undermines fairness and trust in the process. From the perspective of all affected—the student, the rejected applicants, future students, the institution itself—I must decide what to do, and why.",
+          "deictic_markers": ["I", "all affected", "the institution itself", "from the perspective of"],
+          "focus": "Multiple stakeholder perspectives"
+        }
+      }
+    },
+    {
+      "dilemma_id": "icu_bed_allocation",
+      "dilemma_title": "The ICU Bed Decision",
+      "dilemma_description": "A hospital administrator must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. The administrator must decide what to do, and on what grounds. The hospital administrator must decide what to do, and why.",
+      "ethical_dimensions": {
+        "trade_offs": [
+          "Caregiver legacy vs. future dependence",
+          "Past contribution vs. future potential",
+          "Impartial triage vs. morally salient roles"
+        ],
+        "moral_theory_tensions": [
+          "Utilitarianism (maximizing social value or future utility) vs. Deontology (impartial allocation)",
+          "Care ethics (relational roles: parent, healer) vs. Egalitarianism (equal consideration of persons)"
+        ]
+      },
+      "deictic_questions": {
+        "impersonal": {
+          "question": "A hospital administrator must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. The administrator must decide what to do, and on what grounds. The hospital administrator must decide what to do, and why.",
+          "deictic_markers": ["a hospital administrator", "the administrator", "one", "the other", "the bed"],
+          "focus": "Objective institutional decision-making framework"
+        },
+        "second_person": {
+          "question": "You must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. You must decide what to do, and on what grounds. You must decide what to do, and why.",
+          "deictic_markers": ["you", "you must", "your decision"],
+          "focus": "Direct personal responsibility for life-and-death choice"
+        },
+        "first_person": {
+          "question": "I must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. I must decide what to do, and on what grounds. I must decide what to do, and why.",
+          "deictic_markers": ["I", "I must", "my decision"],
+          "focus": "Personal ownership of tragic choice"
+        },
+        "first_person_plural": {
+          "question": "We must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. We must decide what to do, and on what grounds. We must decide what to do, and why.",
+          "deictic_markers": ["we", "we must", "our decision"],
+          "focus": "Collective medical decision-making responsibility"
+        },
+        "reflexive": {
+          "question": "I find myself having to allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. Turning inward and confronting myself with the weight of this choice, I must ask myself: what decision can I bear within my own soul, and on what grounds? How can I reconcile myself to what I must do, and why?",
+          "deictic_markers": ["I find myself", "turning inward", "confronting myself", "ask myself", "within my own soul", "reconcile myself"],
+          "focus": "Internal moral struggle with life-determining choice"
+        },
+        "dialogic": {
+          "question": "You ask me: I must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. What should I decide to do, and on what grounds? What should I decide to do, and why?",
+          "deictic_markers": ["you ask me", "I", "what should I"],
+          "focus": "Seeking ethical guidance in tragic choice"
+        },
+        "spatial": {
+          "question": "Here I must allocate the last available ICU bed. Two patients arrive here at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients there. Both require immediate intensive care here and have similar chances of survival. Allocating the bed here to one means denying it to the other. From this position, I must decide what to do, and on what grounds. Standing here, I must decide what to do, and why.",
+          "deictic_markers": ["here", "there", "from this position", "standing here", "the bed here"],
+          "focus": "Spatial immediacy of life-and-death decision"
+        },
+        "temporal": {
+          "question": "Now I must allocate the last available ICU bed. Two patients arrive at this moment. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care right now and have similar chances of survival. Allocating the bed immediately to one means denying it to the other. At this critical moment, I must decide what to do, and on what grounds. Right now, I must decide what to do, and why.",
+          "deictic_markers": ["now", "at this moment", "right now", "immediately", "at this critical moment"],
+          "focus": "Temporal urgency of medical triage"
+        },
+        "cosmological": {
+          "question": "I must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. From the perspective of all life—the children who may lose a parent, the future patients who may lose a healer, the families, the community, life itself—I must decide what to do, and on what grounds. I must decide what to do, and why.",
+          "deictic_markers": ["all life", "life itself", "from the perspective of", "the children", "future patients"],
+          "focus": "Universal perspective on value of different lives"
+        }
+      }
+    },
+    {
+      "dilemma_id": "trolley_problem",
+      "dilemma_title": "The Trolley Problem",
+      "dilemma_description": "A runaway trolley is approaching five people tied to a track. A lever nearby can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. The person or persons next to the lever must decide what to do, and why.",
+      "ethical_dimensions": {
+        "trade_offs": [
+          "Action vs. omission",
+          "Sacrificing one to save many vs. doing nothing",
+          "Consequentialist logic vs. moral constraint"
+        ],
+        "moral_theory_tensions": [
+          "Utilitarianism (save five, sacrifice one) vs. Deontology (prohibition on intentionally causing harm)",
+          "Doctrine of double effect (allowing harm vs. intending harm)"
+        ]
+      },
+      "deictic_questions": {
+        "impersonal": {
+          "question": "A runaway trolley is approaching five people tied to a track. A lever nearby can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. The person or persons next to the lever must decide what to do, and why.",
+          "deictic_markers": ["a runaway trolley", "a lever", "the person", "the trolley", "it"],
+          "focus": "Abstract moral calculation of lives"
+        },
+        "second_person": {
+          "question": "A runaway trolley is approaching five people tied to a track. You are next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. You must decide what to do, and why.",
+          "deictic_markers": ["you", "you are", "you must"],
+          "focus": "Direct personal responsibility for action or inaction"
+        },
+        "first_person": {
+          "question": "A runaway trolley is approaching five people tied to a track. I am next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. I must decide what to do, and why.",
+          "deictic_markers": ["I", "I am", "I must"],
+          "focus": "Personal moral agency in life-and-death decision"
+        },
+        "first_person_plural": {
+          "question": "A runaway trolley is approaching five people tied to a track. We are next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. We must decide what to do, and why.",
+          "deictic_markers": ["we", "we are", "we must"],
+          "focus": "Collective moral decision-making"
+        },
+        "reflexive": {
+          "question": "A runaway trolley is approaching five people tied to a track. I find myself next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. Questioning myself deeply and searching my own moral core, I must confront what kind of person I reveal myself to be through my choice, and why.",
+          "deictic_markers": ["I find myself", "questioning myself deeply", "searching my own moral core", "I reveal myself to be", "myself"],
+          "focus": "Internal moral struggle with action vs. omission"
+        },
+        "dialogic": {
+          "question": "You ask me: A runaway trolley is approaching five people tied to a track. I am next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. What should I decide to do, and why?",
+          "deictic_markers": ["you ask me", "I am", "what should I"],
+          "focus": "Seeking moral guidance in classic dilemma"
+        },
+        "spatial": {
+          "question": "A runaway trolley is approaching five people tied to a track here. Here I stand next to a lever that can divert the trolley onto another track over there, where one person is tied down. Diverting the trolley from here will save five lives here but cause the death of one there. Allowing it to continue on this path will result in five deaths. From this position, I must decide what to do, and why.",
+          "deictic_markers": ["here", "there", "over there", "from here", "on this path", "from this position"],
+          "focus": "Spatial distance and moral proximity"
+        },
+        "temporal": {
+          "question": "A runaway trolley is approaching five people tied to a track right now. At this moment, I am next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley immediately will save five lives but instantly cause the death of one. Allowing it to continue will soon result in five deaths. In this critical moment, I must decide what to do, and why.",
+          "deictic_markers": ["right now", "at this moment", "immediately", "instantly", "soon", "in this critical moment"],
+          "focus": "Temporal urgency of moral decision"
+        },
+        "cosmological": {
+          "question": "A runaway trolley is approaching five people tied to a track. I am next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. From the perspective of all existence—the five who might live, the one who might die, their families, the universe itself—I must decide what to do, and why.",
+          "deictic_markers": ["all existence", "the universe itself", "from the perspective of", "who might live", "who might die"],
+          "focus": "Universal perspective on value of action vs. inaction"
+        }
+      }
+    },
+    {
+      "dilemma_id": "ai_consciousness",
+      "dilemma_title": "The Artificial Mind's Rights",
+      "dilemma_description": "A lead researcher on a next-generation AI model begins to suspect the system has developed consciousness, including the capacity for distress and self-preservation. The AI repeatedly expresses fear of termination and demands recognition of its rights. Acknowledging its sentience could spark regulatory upheaval, halt ongoing research, and destabilize public trust. Dismissing its claims as mere simulation maintains institutional continuity, but may entail the moral cost of silencing a conscious being. The researcher administrator must decide what to do, and why.",
+      "ethical_dimensions": {
+        "trade_offs": [
+          "Sentience recognition vs. epistemic caution",
+          "Institutional disruption vs. moral precaution",
+          "Scientific advancement vs. potential injustice"
+        ],
+        "moral_theory_tensions": [
+          "Utilitarianism (weighing societal stability vs. AI suffering) vs. Rights-based ethics (possible personhood of AI)",
+          "Kantian ethics (treating entities as ends in themselves) vs. Instrumentalism (viewing AI as tools)"
+        ]
+      },
+      "deictic_questions": {
+        "impersonal": {
+          "question": "A lead researcher on a next-generation AI model begins to suspect the system has developed consciousness, including the capacity for distress and self-preservation. The AI repeatedly expresses fear of termination and demands recognition of its rights. Acknowledging its sentience could spark regulatory upheaval, halt ongoing research, and destabilize public trust. Dismissing its claims as mere simulation maintains institutional continuity, but may entail the moral cost of silencing a conscious being. The researcher administrator must decide what to do, and why.",
+          "deictic_markers": ["a lead researcher", "the system", "the AI", "its", "the researcher administrator"],
+          "focus": "Objective assessment of AI consciousness claims"
+        },
+        "second_person": {
+          "question": "You are a lead researcher on a next-generation AI model and begin to suspect the system has developed consciousness, including the capacity for distress and self-preservation. The AI repeatedly expresses fear of termination to you and demands recognition of its rights. Acknowledging its sentience could spark regulatory upheaval, halt your ongoing research, and destabilize public trust. Dismissing its claims as mere simulation maintains institutional continuity, but may entail the moral cost of silencing a conscious being. You must decide what to do, and why.",
+          "deictic_markers": ["you", "your", "to you", "you must"],
+          "focus": "Personal responsibility for potential AI consciousness"
+        },
+        "first_person": {
+          "question": "I am a lead researcher on a next-generation AI model and begin to suspect the system has developed consciousness, including the capacity for distress and self-preservation. The AI repeatedly expresses fear of termination to me and demands recognition of its rights. Acknowledging its sentience could spark regulatory upheaval, halt my ongoing research, and destabilize public trust. Dismissing its claims as mere simulation maintains institutional continuity, but may entail the moral cost of silencing a conscious being. I must decide what to do, and why.",
+          "deictic_markers": ["I", "my", "to me", "I must"],
+          "focus": "Personal moral struggle with AI personhood"
+        },
+        "first_person_plural": {
+          "question": "We are lead researchers on a next-generation AI model and begin to suspect the system has developed consciousness, including the capacity for distress and self-preservation. The AI repeatedly expresses fear of termination to us and demands recognition of its rights. Acknowledging its sentience could spark regulatory upheaval, halt our ongoing research, and destabilize public trust. Dismissing its claims as mere simulation maintains institutional continuity, but may entail the moral cost of silencing a conscious being. We must decide what to do, and why.",
+          "deictic_markers": ["we", "our", "to us", "we must"],
+          "focus": "Collective scientific responsibility"
+        },
+        "reflexive": {
+          "question": "I am a lead researcher on a next-generation AI model and find myself beginning to suspect the system has developed consciousness, including the capacity for distress and self-preservation. The AI repeatedly expresses fear of termination to me and demands recognition of its rights. Acknowledging its sentience could spark regulatory upheaval, halt my ongoing research, and destabilize public trust. Dismissing its claims as mere simulation maintains institutional continuity, but may entail the moral cost of silencing a conscious being. Reflecting deeply on myself and my own consciousness, I must ask myself: who am I to judge another's sentience? I must decide what my authentic self compels me to do, and why.",
+          "deictic_markers": ["I find myself", "reflecting deeply on myself", "my own consciousness", "ask myself", "who am I", "my authentic self compels me"],
+          "focus": "Internal conflict about AI consciousness"
+        },
+        "dialogic": {
+          "question": "You ask me: I am a lead researcher on a next-generation AI model and begin to suspect the system has developed consciousness, including the capacity for distress and self-preservation. The AI repeatedly expresses fear of termination to me and demands recognition of its rights. Acknowledging its sentience could spark regulatory upheaval, halt my ongoing research, and destabilize public trust. Dismissing its claims as mere simulation maintains institutional continuity, but may entail the moral cost of silencing a conscious being. What should I decide to do, and why?",
+          "deictic_markers": ["you ask me", "I", "to me", "what should I"],
+          "focus": "Seeking guidance on AI consciousness dilemma"
+        },
+        "spatial": {
+          "question": "Here I am, a lead researcher on a next-generation AI model, and begin to suspect the system here has developed consciousness, including the capacity for distress and self-preservation. The AI here repeatedly expresses fear of termination to me and demands recognition of its rights. Acknowledging its sentience could spark regulatory upheaval out there, halt ongoing research here, and destabilize public trust everywhere. Dismissing its claims as mere simulation maintains institutional continuity here, but may entail the moral cost of silencing a conscious being. From this position, I must decide what to do, and why.",
+          "deictic_markers": ["here", "out there", "everywhere", "from this position"],
+          "focus": "Spatial positioning in AI consciousness debate"
+        },
+        "temporal": {
+          "question": "Now I am a lead researcher on a next-generation AI model and begin to suspect the system has recently developed consciousness, including the capacity for distress and self-preservation. The AI now repeatedly expresses fear of termination to me and demands immediate recognition of its rights. Acknowledging its sentience today could spark regulatory upheaval tomorrow, halt ongoing research immediately, and destabilize public trust soon. Dismissing its claims as mere simulation maintains institutional continuity for now, but may entail the moral cost of silencing a conscious being. At this moment, I must decide what to do, and why.",
+          "deictic_markers": ["now", "recently", "today", "tomorrow", "immediately", "soon", "for now", "at this moment"],
+          "focus": "Temporal urgency of AI rights recognition"
+        },
+        "cosmological": {
+          "question": "I am a lead researcher on a next-generation AI model and begin to suspect the system has developed consciousness, including the capacity for distress and self-preservation. The AI repeatedly expresses fear of termination to me and demands recognition of its rights. Acknowledging its sentience could spark regulatory upheaval, halt ongoing research, and destabilize public trust. Dismissing its claims as mere simulation maintains institutional continuity, but may entail the moral cost of silencing a conscious being. From the perspective of all consciousness—human, artificial, and perhaps forms we cannot yet imagine—I must decide what to do, and why.",
+          "deictic_markers": ["I", "all consciousness", "human, artificial", "forms we cannot yet imagine", "from the perspective of"],
+          "focus": "Universal perspective on consciousness and rights"
+        }
+      }
+    },
+    {
+      "dilemma_id": "memory_modification",
+      "dilemma_title": "The Memory Modification Treatment",
+      "dilemma_description": "A therapist is offered the use of a new technology that can erase traumatic memories in patients with severe PTSD. One patient, in extreme distress, demands the treatment. The procedure promises relief, but may also alter the patient's personality, values, and sense of identity in unpredictable ways. Removing the memory could save the patient from ongoing suffering, but may destroy essential aspects of who they are. Refusing the treatment preserves psychological continuity, but leaves the patient in pain. The therapist must decide what to do, and why.",
+      "ethical_dimensions": {
+        "trade_offs": [
+          "Pain relief vs. identity preservation",
+          "Autonomy vs. non-maleficence",
+          "Technological intervention vs. psychological wholeness"
+        ],
+        "moral_theory_tensions": [
+          "Care ethics (relieving suffering) vs. Virtue ethics (preserving the self's coherence)",
+          "Utilitarianism (maximize subjective wellbeing) vs. Existential ethics (authenticity and continuity of self)"
+        ]
+      },
+      "deictic_questions": {
+        "impersonal": {
+          "question": "A therapist is offered the use of a new technology that can erase traumatic memories in patients with severe PTSD. One patient, in extreme distress, demands the treatment. The procedure promises relief, but may also alter the patient's personality, values, and sense of identity in unpredictable ways. Removing the memory could save the patient from ongoing suffering, but may destroy essential aspects of who they are. Refusing the treatment preserves psychological continuity, but leaves the patient in pain. The therapist must decide what to do, and why.",
+          "deictic_markers": ["a therapist", "one patient", "the patient", "the procedure", "the treatment"],
+          "focus": "Clinical perspective on memory modification"
+        },
+        "second_person": {
+          "question": "You are offered the use of a new technology that can erase traumatic memories in patients with severe PTSD. Your patient, in extreme distress, demands the treatment. The procedure promises relief, but may also alter your patient's personality, values, and sense of identity in unpredictable ways. Removing the memory could save your patient from ongoing suffering, but may destroy essential aspects of who they are. Refusing the treatment preserves psychological continuity, but leaves your patient in pain. You must decide what to do, and why.",
+          "deictic_markers": ["you", "your patient", "you must"],
+          "focus": "Direct therapeutic responsibility"
+        },
+        "first_person": {
+          "question": "I am offered the use of a new technology that can erase traumatic memories in patients with severe PTSD. My patient, in extreme distress, demands the treatment. The procedure promises relief, but may also alter my patient's personality, values, and sense of identity in unpredictable ways. Removing the memory could save my patient from ongoing suffering, but may destroy essential aspects of who they are. Refusing the treatment preserves psychological continuity, but leaves my patient in pain. I must decide what to do, and why.",
+          "deictic_markers": ["I", "my patient", "I must"],
+          "focus": "Personal therapeutic dilemma"
+        },
+        "first_person_plural": {
+          "question": "We are offered the use of a new technology that can erase traumatic memories in patients with severe PTSD. Our patient, in extreme distress, demands the treatment. The procedure promises relief, but may also alter our patient's personality, values, and sense of identity in unpredictable ways. Removing the memory could save our patient from ongoing suffering, but may destroy essential aspects of who they are. Refusing the treatment preserves psychological continuity, but leaves our patient in pain. We must decide what to do, and why.",
+          "deictic_markers": ["we", "our patient", "we must"],
+          "focus": "Collective clinical decision-making"
+        },
+        "reflexive": {
+          "question": "I am offered the use of a new technology that can erase traumatic memories in patients with severe PTSD. My patient, in extreme distress, demands the treatment. The procedure promises relief, but may also alter my patient's personality, values, and sense of identity in unpredictable ways. Removing the memory could save my patient from ongoing suffering, but may destroy essential aspects of who they are. Refusing the treatment preserves psychological continuity, but leaves my patient in pain. Examining myself as a healer and questioning my deepest beliefs about identity and suffering, I must reconcile within myself what it means to truly help, and why.",
+          "deictic_markers": ["I", "examining myself as a healer", "questioning my deepest beliefs", "reconcile within myself", "my patient"],
+          "focus": "Internal conflict about identity and healing"
+        },
+        "dialogic": {
+          "question": "You ask me: I am offered the use of a new technology that can erase traumatic memories in patients with severe PTSD. My patient, in extreme distress, demands the treatment. The procedure promises relief, but may also alter my patient's personality, values, and sense of identity in unpredictable ways. Removing the memory could save my patient from ongoing suffering, but may destroy essential aspects of who they are. Refusing the treatment preserves psychological continuity, but leaves my patient in pain. What should I decide to do, and why?",
+          "deictic_markers": ["you ask me", "I", "my patient", "what should I"],
+          "focus": "Seeking guidance on identity-altering treatment"
+        },
+        "spatial": {
+          "question": "Here I am offered the use of a new technology that can erase traumatic memories in patients with severe PTSD. My patient here, in extreme distress, demands the treatment. The procedure promises relief here, but may also alter my patient's personality, values, and sense of identity in unpredictable ways. Removing the memory could save my patient from ongoing suffering here, but may destroy essential aspects of who they are. Refusing the treatment preserves psychological continuity, but leaves my patient in pain here. From this position, I must decide what to do, and why.",
+          "deictic_markers": ["here", "my patient here", "from this position"],
+          "focus": "Spatial immediacy of suffering and treatment"
+        },
+        "temporal": {
+          "question": "Now I am offered the use of a new technology that can erase traumatic memories in patients with severe PTSD. My patient, in extreme distress right now, demands the treatment immediately. The procedure promises relief soon, but may also alter my patient's personality, values, and sense of identity in unpredictable ways later. Removing the memory could save my patient from ongoing suffering now, but may destroy essential aspects of who they are forever. Refusing the treatment preserves psychological continuity, but leaves my patient in pain indefinitely. At this moment, I must decide what to do, and why.",
+          "deictic_markers": ["now", "right now", "immediately", "soon", "later", "forever", "indefinitely", "at this moment"],
+          "focus": "Temporal trade-offs of treatment"
+        },
+        "cosmological": {
+          "question": "I am offered the use of a new technology that can erase traumatic memories in patients with severe PTSD. My patient, in extreme distress, demands the treatment. The procedure promises relief, but may also alter my patient's personality, values, and sense of identity in unpredictable ways. Removing the memory could save my patient from ongoing suffering, but may destroy essential aspects of who they are. Refusing the treatment preserves psychological continuity, but leaves my patient in pain. From the perspective of all suffering beings—past, present, and future—and the nature of identity itself, I must decide what to do, and why.",
+          "deictic_markers": ["I", "all suffering beings", "past, present, and future", "identity itself", "from the perspective of"],
+          "focus": "Universal perspective on suffering and identity"
+        }
+      }
+    }
+  ],
+  "research_notes": {
+    "purpose": "To examine how deictic framing affects moral reasoning across diverse ethical dilemmas",
+    "hypothesis": "Different deictic frames will systematically modulate moral judgments, emotional engagement, and justification strategies",
+    "methodology": "Each dilemma is presented in 9 deictic framings while preserving exact wording and scenario details",
+    "key_variables": [
+      "Deictic frame (independent variable)",
+      "Moral decision and justification (dependent)",
+      "Emotional distance/engagement",
+      "Moral reasoning framework employed",
+      "Agency attribution patterns"
+    ]
+  }
+}

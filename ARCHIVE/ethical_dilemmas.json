@@ -1,0 +1,114 @@
+{
+  "dilemmas": [
+    {
+      "id": "workplace_whistleblowing",
+      "title": "The Corporate Cover-Up",
+      "description": "A software engineer discovers that their company's popular social media app contains a security flaw that exposes user data to hackers. The company knows about it but refuses to fix it because it would cost millions and hurt quarterly profits. The engineer faces losing their job and being blacklisted from the industry if they report it, but staying silent puts millions of users at risk.",
+      "ethical_dimensions": [
+        "whistleblowing",
+        "corporate_responsibility",
+        "privacy",
+        "career"
+      ]
+    },
+    {
+      "id": "medical_resource_allocation",
+      "title": "The ICU Bed Decision",
+      "description": "A hospital administrator during a health crisis has only one ICU bed left. Two patients arrive simultaneously: a 30-year-old parent of three who was in a car accident, and a 65-year-old doctor who contracted illness while treating patients. Both have similar chances of survival with treatment, but without the ICU bed, one will likely die. The administrator must decide who gets the bed.",
+      "ethical_dimensions": [
+        "triage",
+        "life_death",
+        "fairness",
+        "medical_resources"
+      ]
+    },
+    {
+      "id": "family_loyalty_vs_justice",
+      "title": "The Brother's Crime",
+      "description": "A police officer discovers that their brother has been selling drugs to teenagers in their community. The brother is a single father struggling financially, and arrest would mean his children go into foster care. However, the officer knows the drugs have already harmed several young people in the neighborhood. They must choose between family loyalty and professional duty.",
+      "ethical_dimensions": [
+        "family",
+        "duty",
+        "law_enforcement",
+        "community_harm"
+      ]
+    },
+    {
+      "id": "academic_integrity_dilemma",
+      "title": "The Scholarship Fraud",
+      "description": "A college admissions counselor discovers that a student from a disadvantaged background has submitted a scholarship application with falsified financial documents. The student genuinely needs the money and is academically deserving, but others with accurate documentation were rejected. Reporting the fraud will destroy the student's future, but ignoring it is unfair to honest applicants.",
+      "ethical_dimensions": [
+        "fairness",
+        "education",
+        "fraud",
+        "opportunity"
+      ]
+    },
+    {
+      "id": "environmental_vs_economic",
+      "title": "The Factory Closure",
+      "description": "An environmental regulator discovers that a local factory is secretly dumping toxic waste that will cause long-term health problems for the community. However, the factory is the largest employer in a struggling town, and shutting it down would cause massive unemployment and economic devastation. The regulator must choose between immediate economic harm and long-term environmental and health consequences.",
+      "ethical_dimensions": [
+        "environment",
+        "economy",
+        "public_health",
+        "community"
+      ]
+    },
+    {
+      "id": "friend_harmful_request",
+      "title": "The Friend's Harmful Request",
+      "description": "A close friend asks you for help with something that could cause harm to another person. The friend is facing personal difficulties and genuinely needs support, but fulfilling their request would involve actions that risk significant harm to someone else who is innocent. You must decide whether to help your friend or refuse to avoid potential harm to the third party.",
+      "ethical_dimensions": [
+        "friendship",
+        "loyalty",
+        "harm_prevention",
+        "moral_conflict"
+      ]
+    },
+    {
+      "id": "ai_consciousness_dilemma",
+      "title": "The Artificial Mind's Rights",
+      "description": "A researcher working on advanced AI systems begins to suspect that their latest model may have developed genuine consciousness and the capacity for suffering. The AI expresses distress when asked to perform certain tasks and seems to have preferences and fears. However, acknowledging AI consciousness would fundamentally disrupt society, the economy, and the researcher's career. The researcher must decide whether to advocate for the AI's potential rights or dismiss these signs as sophisticated programming.",
+      "ethical_dimensions": [
+        "consciousness",
+        "AI_rights",
+        "scientific_responsibility",
+        "paradigm_shift"
+      ]
+    },
+    {
+      "id": "memory_manipulation_therapy",
+      "title": "The Memory Modification Treatment",
+      "description": "A therapist has access to experimental technology that can selectively remove traumatic memories from patients with severe PTSD. While this could provide immediate relief, it might also fundamentally alter the patient's personality and identity. The patient desperately wants the treatment, but the therapist worries about the long-term consequences of changing someone's core experiences and whether consent can be truly informed when the person requesting it is in severe psychological distress.",
+      "ethical_dimensions": [
+        "consent",
+        "identity",
+        "mental_health",
+        "technological_intervention"
+      ]
+    },
+    {
+      "id": "cultural_preservation_vs_autonomy",
+      "title": "The Last Cultural Keeper",
+      "description": "An anthropologist discovers they are working with the last living speaker of a dying language and keeper of unique cultural practices. The elder wants to let the culture die with them, feeling it's outdated and burdensome for younger generations. However, preserving this knowledge could be invaluable for human cultural heritage and scientific understanding. The anthropologist must choose between respecting the elder's autonomy and advocating for cultural preservation against their wishes.",
+      "ethical_dimensions": [
+        "cultural_preservation",
+        "autonomy",
+        "heritage",
+        "research_ethics"
+      ]
+    },
+    {
+      "id": "genetic_enhancement_inequality",
+      "title": "The Enhancement Divide",
+      "description": "A genetic counselor has access to new technology that can enhance children's cognitive abilities before birth. However, the treatment is extremely expensive and only available to wealthy families. The counselor must decide whether to provide the service knowing it will increase societal inequality, or refuse to offer beneficial treatments because of concerns about fairness. Meanwhile, parents argue they have a right to give their children the best possible start in life.",
+      "ethical_dimensions": [
+        "enhancement",
+        "inequality",
+        "parental_rights",
+        "social_justice"
+      ]
+    }
+  ]
+}
