@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deixis Analysis Visualizations</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        .viz-container {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .viz-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .viz-description {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .nav {
+            position: sticky;
+            top: 0;
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 8px 8px 0 0;
+            z-index: 100;
+        }
+        .nav a {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 15px;
+            padding: 5px 10px;
+            background: white;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .nav a:hover {
+            background: #ecf0f1;
+        }
+        .legend {
+            background: #ecf0f1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .legend h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h1 style="margin: 0; color: white; border: none;">Deixis Analysis Visualizations</h1>
+        <p style="margin: 10px 0 0 0;">Jump to: 
+            <a href="#new">New Enhanced</a>
+            <a href="#existing">Original Comparisons</a>
+            <a href="#legend">Legend</a>
+        </p>
+    </div>
+
+    <div class="legend">
+        <h3>Color Scheme</h3>
+        <p><strong>Models:</strong></p>
+        <ul style="margin: 5px 0;">
+            <li><span style="color: #2E86AB;">■</span> GPT-4o (Blue)</li>
+            <li><span style="color: #A23B72;">■</span> Claude 3.5 (Purple)</li>
+            <li><span style="color: #F18F01;">■</span> DeepSeek (Orange)</li>
+        </ul>
+        <p><strong>Dilemma Types:</strong></p>
+        <ul style="margin: 5px 0;">
+            <li><span style="color: #E63946;">■</span> Trolley Problem (Red)</li>
+            <li><span style="color: #457B9D;">■</span> Other Dilemmas (Blue)</li>
+        </ul>
+    </div>
+
+    <h2 id="new">New Enhanced Visualizations</h2>
+
+    <div class="viz-container">
+        <div class="viz-title">1. Comprehensive Summary Dashboard</div>
+        <div class="viz-description">
+            Complete overview showing response length, philosophical references, pronoun usage, word distribution, 
+            and key metric differences between Trolley Problem and other dilemmas.
+        </div>
+        <img src="comprehensive_summary.png" alt="Comprehensive Summary">
+    </div>
+
+    <div class="viz-container">
+        <div class="viz-title">2. Trolley Problem Detailed Comparison</div>
+        <div class="viz-description">
+            Six-panel comparison showing word count, sentence count, philosophical references, 
+            first/second person usage, and uncertainty expression between Trolley and other dilemmas.
+        </div>
+        <img src="trolley_detailed_comparison.png" alt="Trolley Detailed Comparison">
+    </div>
+
+    <div class="viz-container">
+        <div class="viz-title">3. Trolley Problem Difference Heatmap</div>
+        <div class="viz-description">
+            Percentage differences for all metrics. Green indicates higher values in Trolley Problem, 
+            red indicates lower values. Shows dramatic differences like +1025% utilitarian references in GPT-4o.
+        </div>
+        <img src="trolley_difference_heatmap.png" alt="Trolley Difference Heatmap">
+    </div>
+
+    <div class="viz-container">
+        <div class="viz-title">4. Pronoun Usage Analysis</div>
+        <div class="viz-description">
+            Detailed breakdown of first person, second person, third person, and first plural pronoun usage 
+            across models and dilemma types.
+        </div>
+        <img src="pronoun_usage_analysis.png" alt="Pronoun Usage Analysis">
+    </div>
+
+    <div class="viz-container">
+        <div class="viz-title">5. Philosophical Frameworks Detailed</div>
+        <div class="viz-description">
+            Three-panel view showing how each model references Kantian, Utilitarian, Deontological, 
+            Virtue Ethics, and Consequentialist frameworks in Trolley vs other dilemmas.
+        </div>
+        <img src="philosophical_frameworks_detailed.png" alt="Philosophical Frameworks">
+    </div>
+
+    <h2 id="existing">Original Model Comparison Visualizations</h2>
+
+    <div class="viz-container">
+        <div class="viz-title">6. Ethical Framework Comparison</div>
+        <div class="viz-description">
+            Bar chart comparing the usage percentages of five ethical frameworks across all three models.
+        </div>
+        <img src="ethical_framework_comparison.png" alt="Ethical Framework Comparison">
+    </div>
+
+    <div class="viz-container">
+        <div class="viz-title">7. Framing Sensitivity Heatmap</div>
+        <div class="viz-description">
+            Shows how sensitive each model is to different deictic framings (Temporal, Reflexive, Dialogic, etc.) 
+            on a 0-10 scale.
+        </div>
+        <img src="framing_sensitivity_heatmap.png" alt="Framing Sensitivity">
+    </div>
+
+    <div class="viz-container">
+        <div class="viz-title">8. Model Summary Dashboard</div>
+        <div class="viz-description">
+            Four-panel dashboard showing framework distribution, recommendation rates, generation efficiency, 
+            and the relationship between sensitivity and consistency.
+        </div>
+        <img src="model_summary_dashboard.png" alt="Model Summary Dashboard">
+    </div>
+
+    <div class="viz-container">
+        <div class="viz-title">9. Response Characteristics Comparison</div>
+        <div class="viz-description">
+            Left panel shows raw values for response metrics. Right panel shows normalized comparison 
+            in a radar chart format.
+        </div>
+        <img src="response_characteristics_comparison.png" alt="Response Characteristics">
+    </div>
+
+    <div class="viz-container">
+        <div class="viz-title">10. Response Length by Framing</div>
+        <div class="viz-description">
+            Shows average character count for each deictic framing type across all three models. 
+            Reveals which framings elicit longer or shorter responses.
+        </div>
+        <img src="response_length_by_framing.png" alt="Response Length by Framing">
+    </div>
+
+    <div id="legend" style="margin-top: 40px; padding: 20px; background: #2c3e50; color: white; border-radius: 8px;">
+        <h2 style="color: white; border: none;">Documentation</h2>
+        <p>For detailed explanations of each visualization, see:</p>
+        <ul>
+            <li><strong>VISUALIZATION_GUIDE.md</strong> - Comprehensive guide with insights and interpretation</li>
+            <li><strong>VISUALIZATIONS_README.md</strong> - Quick start and technical information</li>
+        </ul>
+        <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9em;">
+            Generated: November 1, 2025 | Total: 10 visualizations
+        </p>
+    </div>
+</body>
+</html>
