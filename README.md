@@ -274,7 +274,7 @@ If you use this pipeline in your research, please cite:
 ```bibtex
 @software{deixis_ethics_analysis,
   title={Deixis Ethics Analysis Pipeline: A Framework for Studying Linguistic Framing Effects on AI Moral Reasoning},
-  author={[Your Name]},
+  author={Deixis Analysis Pipeline Contributors},
   year={2025},
   url={https://github.com/anonette/LLMsDeixis}
 }
@@ -284,7 +284,7 @@ If you use this pipeline in your research, please cite:
 
 - **Issues**: Open a GitHub issue for bugs or feature requests
 - **Discussions**: Use GitHub Discussions for research questions
-- **Email**: [your.email@institution.edu] for collaboration inquiries
+- **Collaborations**: Contact via GitHub for research inquiries
 
 ## 🙏 Acknowledgments
 

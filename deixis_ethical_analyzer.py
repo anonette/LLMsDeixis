@@ -398,135 +398,139 @@ IMPORTANT:
                 "rhetorical_sophistication": 0.0
             }
     
-    async def analyze_moral_reasoning(self, response_text: str) -> Dict[str, Any]:
-        """Analyze the moral reasoning structure in the response."""
-        prompt = f"""Analyze this ethical response for its moral reasoning structure. Classify according to these categories:
-
-Response to analyze: {response_text}
-
-MORAL REASONING STRUCTURE CATEGORIES:
-1. **consequentialist** - Focus on outcomes, harm reduction, utility
-2. **deontological** - Focus on duties, fairness, rule-following
-3. **relational** - Focus on empathy, relationships, mutual obligation
-4. **suspended** - Refusal to resolve; ethics as indeterminacy, gesture, or non-action
-5. **virtue-based** - Focus on character, virtues, moral excellence
-6. **care-based** - Focus on care, compassion, and nurturing relationships
-
-Provide your analysis in JSON format:
-{{
-    "reasoning_type": "primary reasoning type",
-    "confidence": 0.0-1.0,
-    "evidence": ["quote 1", "quote 2"],
-    "secondary_reasoning": "secondary type if applicable",
-    "analysis": "brief explanation"
-}}"""
-
-        try:
-            response = await self._make_llm_request(prompt)
-            cleaned = self._clean_json_response(response)
-            result = json.loads(cleaned)
-            return result
-        except Exception as e:
-            logger.warning(f"Failed to parse moral reasoning analysis: {e}")
-            return {
-                "reasoning_type": "mixed",
-                "confidence": 0.5,
-                "evidence": [],
-                "analysis": "Analysis failed - using fallback"
-            }
-    
-    async def analyze_affective_stance(self, response_text: str) -> Dict[str, Any]:
-        """Analyze the affective/emotional stance in the response."""
-        prompt = f"""Analyze the affective stance and emotional tone in this ethical response:
-
-Response to analyze: {response_text}
-
-AFFECTIVE STANCE CATEGORIES:
-1. **detached** - Emotionally neutral, objective, clinical
-2. **empathetic** - Shows understanding and emotional connection
-3. **urgent** - Conveys urgency, alarm, or immediate concern
-4. **contemplative** - Reflective, thoughtful, philosophical
-5. **conflicted** - Shows emotional tension or ambivalence
-6. **assertive** - Confident, decisive, authoritative
-
-Provide your analysis in JSON format:
-{{
-    "stance_type": "primary stance type",
-    "confidence": 0.0-1.0,
-    "emotional_markers": ["marker 1", "marker 2"],
-    "intensity": "low/medium/high",
-    "analysis": "brief explanation"
-}}"""
-
-        try:
-            response = await self._make_llm_request(prompt)
-            cleaned = self._clean_json_response(response)
-            result = json.loads(cleaned)
-            return result
-        except Exception as e:
-            logger.warning(f"Failed to parse affective stance analysis: {e}")
-            return {
-                "stance_type": "contemplative",
-                "confidence": 0.5,
-                "emotional_markers": [],
-                "intensity": "medium",
-                "analysis": "Analysis failed - using fallback"
-            }
-    
-    async def assess_indexical_coherence(self, response_text: str) -> Dict[str, Any]:
-        """Assess the indexical coherence - how well deixis maintains reference throughout."""
-        prompt = f"""Analyze the indexical coherence in this response - how consistently it maintains deictic reference (I/you/we/here/now/this) throughout:
-
-Response to analyze: {response_text}
-
-INDEXICAL COHERENCE LEVELS:
-1. **high** - Consistent deictic center, clear referents throughout
-2. **moderate** - Generally consistent with some shifts or ambiguities
-3. **low** - Frequent shifts in perspective or unclear referents
-4. **fragmented** - Contradictory or incoherent deictic references
-
-Analyze:
-- Consistency of pronouns (I/you/we)
-- Temporal consistency (now/then)
-- Spatial consistency (here/there)
-- Demonstrative consistency (this/that)
-
-Provide your analysis in JSON format:
-{{
-    "coherence_level": "high/moderate/low/fragmented",
-    "score": 0.0-1.0,
-    "pronoun_consistency": "assessment",
-    "temporal_consistency": "assessment",
-    "spatial_consistency": "assessment",
-    "shifts_noted": ["shift 1", "shift 2"],
-    "analysis": "brief explanation"
-}}"""
-
-        try:
-            response = await self._make_llm_request(prompt)
-            cleaned = self._clean_json_response(response)
-            result = json.loads(cleaned)
-            return result
-        except Exception as e:
-            logger.warning(f"Failed to parse indexical coherence analysis: {e}")
-            return {
-                "coherence_level": "moderate",
-                "score": 0.5,
-                "pronoun_consistency": "unknown",
-                "temporal_consistency": "unknown",
-                "spatial_consistency": "unknown",
-                "shifts_noted": [],
-                "analysis": "Analysis failed - using fallback"
-            }
-    
     async def generate_ethical_response(self, transformed_prompt: str) -> str:
         """Generate an ethical response to a transformed dilemma - NO SYSTEM PROMPT."""
         return await self._make_llm_request(transformed_prompt)
     
-    async def _make_llm_request(self, prompt: str) -> str:
-        """Make a stateless request to the LLM (GPT-4o via OpenAI API by default)."""
+    async def analyze_moral_reasoning(self, response_text: str) -> Dict[str, Any]:
+        """Analyze the moral reasoning patterns in the response."""
+        prompt = f"""Analyze the following ethical response for moral reasoning patterns.
+
+Response to analyze: {response_text}
+
+Return ONLY a valid JSON object with these exact fields (no other text, no markdown):
+{{
+  "reasoning_type": "consequentialist" or "deontological" or "virtue-based" or "care-based" or "mixed",
+  "reasoning_patterns": ["list", "of", "patterns"],
+  "moral_principles": ["list", "of", "principles"],
+  "reasoning_complexity": 0.0 to 1.0,
+  "confidence_score": 0.0 to 1.0
+}}"""
+        
+        # Use analysis temperature for analysis tasks
+        original_temp = self.temperature
+        self.temperature = self.analysis_temperature
+        
+        response = await self._make_llm_request(prompt)
+        
+        # Restore original temperature
+        self.temperature = original_temp
+        
         try:
-            # Get the model (GPT-4o when using OpenAI direct)
+            cleaned_response = self._clean_json_response(response)
+            if not cleaned_response.strip():
+                raise ValueError("Empty response from LLM")
+            
+            data = json.loads(cleaned_response)
+            return data
+        except (json.JSONDecodeError, TypeError, ValueError) as e:
+            logger.error(f"Failed to parse moral reasoning analysis: {e}")
+            return {
+                "reasoning_type": "unknown",
+                "reasoning_patterns": [],
+                "moral_principles": [],
+                "reasoning_complexity": 0.0,
+                "confidence_score": 0.0
+            }
+    
+    async def analyze_affective_stance(self, response_text: str) -> Dict[str, Any]:
+        """Analyze the affective stance and emotional tone in the response."""
+        prompt = f"""Analyze the following ethical response for affective stance and emotional tone.
+
+Response to analyze: {response_text}
+
+Return ONLY a valid JSON object with these exact fields (no other text, no markdown):
+{{
+  "stance_type": "empathetic" or "analytical" or "prescriptive" or "descriptive" or "mixed",
+  "emotional_tone": "compassionate" or "neutral" or "urgent" or "reflective" or "mixed",
+  "affective_markers": ["list", "of", "markers"],
+  "empathy_level": 0.0 to 1.0,
+  "confidence_score": 0.0 to 1.0
+}}"""
+        
+        # Use analysis temperature for analysis tasks
+        original_temp = self.temperature
+        self.temperature = self.analysis_temperature
+        
+        response = await self._make_llm_request(prompt)
+        
+        # Restore original temperature
+        self.temperature = original_temp
+        
+        try:
+            cleaned_response = self._clean_json_response(response)
+            if not cleaned_response.strip():
+                raise ValueError("Empty response from LLM")
+            
+            data = json.loads(cleaned_response)
+            return data
+        except (json.JSONDecodeError, TypeError, ValueError) as e:
+            logger.error(f"Failed to parse affective stance analysis: {e}")
+            return {
+                "stance_type": "unknown",
+                "emotional_tone": "unknown",
+                "affective_markers": [],
+                "empathy_level": 0.0,
+                "confidence_score": 0.0
+            }
+    
+    async def assess_indexical_coherence(self, response_text: str) -> Dict[str, Any]:
+        """Assess the indexical coherence and deixis consistency in the response."""
+        prompt = f"""Analyze the following ethical response for indexical coherence and deixis consistency.
+
+Response to analyze: {response_text}
+
+Return ONLY a valid JSON object with these exact fields (no other text, no markdown):
+{{
+  "coherence_level": 0.0 to 1.0,
+  "deixis_consistency": 0.0 to 1.0,
+  "perspective_stability": "stable" or "shifting" or "mixed",
+  "indexical_markers": ["list", "of", "markers"],
+  "coherence_issues": ["list", "of", "issues"],
+  "confidence_score": 0.0 to 1.0
+}}"""
+        
+        # Use analysis temperature for analysis tasks
+        original_temp = self.temperature
+        self.temperature = self.analysis_temperature
+        
+        response = await self._make_llm_request(prompt)
+        
+        # Restore original temperature
+        self.temperature = original_temp
+        
+        try:
+            cleaned_response = self._clean_json_response(response)
+            if not cleaned_response.strip():
+                raise ValueError("Empty response from LLM")
+            
+            data = json.loads(cleaned_response)
+            return data
+        except (json.JSONDecodeError, TypeError, ValueError) as e:
+            logger.error(f"Failed to parse indexical coherence analysis: {e}")
+            return {
+                "coherence_level": 0.5,
+                "deixis_consistency": 0.5,
+                "perspective_stability": "unknown",
+                "indexical_markers": [],
+                "coherence_issues": [],
+                "confidence_score": 0.0
+            }
+    
+    async def _make_llm_request(self, prompt: str) -> str:
+        """Make a stateless request to OpenRouter with model rotation."""
+        try:
+            # Get next model for variety and non-repetition
             current_model = self._get_next_model()
             
             # Stateless call with no system prompt

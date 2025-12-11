@@ -89,6 +89,22 @@ deixis_analysis_pipeline/generation_logs/
 !docs/images/
 !README_images/
 
+# Temporary fix documentation and setup scripts
+*FIX*.md
+*UNICODE*.md
+*ERROR*.md
+GITHUB_PUSH_INSTRUCTIONS.md
+GITHUB_SETUP_INSTRUCTIONS.md
+GITHUB_READY.txt
+prepare_for_github.py
+setup_github.sh
+setup_todo.md
+README_OLD.md
+
+# Zip archives
+*.zip
+!sample_data.zip
+
 # API keys and sensitive data
 api_keys.txt
 keys/
