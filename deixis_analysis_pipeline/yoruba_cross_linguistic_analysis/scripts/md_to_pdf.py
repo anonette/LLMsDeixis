@@ -29,6 +29,7 @@ DEFAULT_DOCS = [
     "Open_NATLaS_vs_Cloud_Summary.md",
     "Dilemmas_Framings_and_Prompt_Differences_English_vs_Yoruba.md",
     "Deixis_Decision_Effects_Summary.md",
+    "Chapter_Mo_Emi_Moral_Stance.md",
 ]
 
 CSS = f"""
