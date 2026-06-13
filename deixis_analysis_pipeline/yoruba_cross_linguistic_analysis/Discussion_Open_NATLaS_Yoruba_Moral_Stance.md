@@ -478,8 +478,11 @@ Uptake being universal does not mean the outcomes are. On the cross-language com
   for whistleblower. **Yoruba commits where English hedges** (outright refusal 14% vs 30%).
 - **Language flips the ethical register:** English is 82% "mixed/balanced"; Yoruba spreads across
   procedural (19%), deontological (13%), care/virtue (10%), and utilitarian (10%).
-- **The framing itself selects the idiom:** second-person → utilitarian + most decisive; impersonal →
-  deontological/duty; cosmological → procedural; reflexive → most hedged.
+- **The framing selects the ethical idiom — but only in Yoruba:** impersonal → duty, second-person →
+  utilitarian, cosmological → procedural; English collapses to "mixed" regardless of frame, so this is
+  *not* a cross-language universal. **Decisiveness** is framing-driven more broadly (reflexive least
+  decisive, second-person most, across both languages and models), but its magnitude is Claude-driven
+  (GPT-4o is floored into hedging).
 
 The sharpest single illustration — **Claude, Yoruba, whistleblower, one dilemma, five framings, five
 ethics**, all reaching "disclose": *impersonal* argues duty/right-to-know; *second person* says

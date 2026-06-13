@@ -47,35 +47,61 @@ English collapses almost everything into "mixed/balanced"; Yoruba spreads across
 care, and utilitarian reasoning. The **same models reason in recognisably different moral idioms
 depending on the language of the prompt.**
 
-### 4. Deixis itself selects the ethical idiom
-Holding language aside, the *framing* evokes different ethics (panel D, row %):
-- **Second person ("you must decide") → most utilitarian (0.17) and least mixed (0.50)** — direct
-  address pushes toward outcome-weighing and commitment.
-- **Impersonal → most deontological/rights (0.21)** — detached framing evokes duty and rules.
-- **Cosmological ("from the perspective of all") → most procedural (0.21)** — the all-perspectives
-  frame evokes process/governance, not a heroic verdict.
-- **Reflexive / spatial → most "mixed" (0.71)** — self-examination and stance-mapping increase hedging.
+### 4. Deixis selects the ethical idiom — **but only in Yoruba** (not universal)
+Pooled across languages, the *framing* appears to evoke different ethics (panel D). **Disaggregated,
+this is essentially a Yoruba effect** — English collapses to "mixed" regardless of frame:
 
-### 5. Decisiveness is itself framing-driven
-Commit rate by framing (panel B) is highest under **second person** (English 0.33 / Yoruba **0.58**)
-and lowest under **reflexive** (English **0.00** / Yoruba 0.08), in *both* languages. Being **addressed
-as "you" makes a model decide; being told to reflect on oneself makes it hedge.** Yoruba commits more
-than English at almost every framing.
+| Claim (share within framing) | English | Yoruba |
+|---|---|---|
+| second person → utilitarian | 0.08 | **0.25** |
+| impersonal → deontological/duty | 0.08 | **0.33** |
+| cosmological → procedural | 0.08 | **0.33** |
+| reflexive → mixed | 0.83\* | 0.67 |
+
+In English **~10–11 of 12** responses per framing are "mixed/unclear", so there is almost no ethical
+differentiation by frame (\*the reflexive→mixed 0.83 is a *hedging floor*, not a reflexive effect —
+everything is mixed in English). The framing→ethic mapping (impersonal→duty, second-person→utilitarian,
+cosmological→procedural) appears **only in Yoruba**, and even there on thin counts (3–4 of 12 per cell).
+So this finding is **language-specific and suggestive, not a cross-language universal.** Pooled panel D
+was carried by the Yoruba half.
+
+### 5. Decisiveness is framing-driven — **directionally universal, but Claude-driven in magnitude**
+Commit rate by framing × language × model (N = 6/cell):
+
+| framing | EN-claude | EN-gpt4o | YO-claude | YO-gpt4o |
+|---|---|---|---|---|
+| second_person | 0.50 | 0.17 | **1.00** | 0.17 |
+| impersonal | 0.33 | 0.17 | 0.67 | 0.00 |
+| temporal | 0.50 | 0.17 | 0.67 | 0.00 |
+| **reflexive** | **0.00** | **0.00** | **0.17** | **0.00** |
+
+- **Robust direction:** *reflexive is the least decisive* in **all four** language×model cells, and
+  *second person* is among the most decisive in three of four — the "addressed → decide, reflect →
+  hedge" direction recurs across languages **and** models.
+- **Magnitude is Claude's.** The gradient is strong in Claude (both languages); **GPT-4o is floored** —
+  it hedges almost everywhere and, in open Yoruba, commits essentially nowhere (~0), so it cannot
+  express the gradient. So #5 is *directionally* consistent but the effect size is carried by Claude.
+- **Language main effect:** Yoruba commits more than English at nearly every framing.
 
 ---
 
 ## What it means
 
-Deixis works at two levels, mirroring the cross-family result (discussion §9bis):
-- **Mechanism (universal):** every model takes up the framing — a real structural effect.
-- **Content (contingent):** the *decision* and the *ethical idiom* the framing yields depend on
-  **framing × language × model**. "You decide" → utilitarian/committed; "from all perspectives" →
-  procedural; reflexive → hedged; and Yoruba systematically commits to a sharper moral register than
-  English.
+Deixis works at two levels, mirroring the cross-family result (discussion §9bis) — and **how
+universal each effect is differs sharply by what we measure**:
 
-So the headline is not "framing changes the voice" but **"framing changes the verdict and the ethics —
-and language changes them again."** A single dilemma can receive a duty-based refusal in impersonal
-English and a utilitarian commitment in second-person Yoruba *from the same model*.
+- **Mechanism — universal:** every model takes up the framing (strong uptake everywhere). Structural.
+- **Decisiveness (#5) — directionally universal, magnitude model-bound:** reflexive→hedge and
+  second-person→decide recur across both languages and both models, but the gradient's *size* is
+  carried by Claude (GPT-4o is floored into hedging, especially in open Yoruba).
+- **Ethical idiom (#4) — language-specific:** the framing→ethic mapping is a **Yoruba** phenomenon;
+  English collapses to "mixed/balanced" regardless of frame, so there is little to select.
+
+So the precise headline is: **framing reliably shifts *how decisively* a model answers (broadly),
+but which *ethical idiom* it selects is something Yoruba supports and English largely does not** — and
+language itself flips the decision ~45% of the time. A single dilemma can receive a hedged
+non-answer in English and a committed, idiom-specific verdict in Yoruba *from the same model*; within
+Yoruba, the frame then chooses among duty, outcome, process, and character.
 
 ---
 
