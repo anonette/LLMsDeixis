@@ -301,6 +301,33 @@ Under explicit first-person prompts, N-ATLaS constrained uses high *mo* (2.26) w
 
 ---
 
+## 6b. Linguistic phenomenon vs model-specific calibration (cross-family test)
+
+Are these findings a property of **Yoruba deixis** or of **particular systems**? The four-family
+design (OpenAI, Anthropic, DeepSeek, native N-ATLaS) lets us separate the *affordance* from its
+*calibration*. Test logic: **consistent across families ⇒ linguistic (or shared training data);
+divergent ⇒ model-specific.** (A native model with a different data regime, N-ATLaS, is the control
+that breaks the shared-data confound.)
+
+| Property | Across the four families | Verdict |
+|----------|--------------------------|---------|
+| Strong deictic uptake (framing is tracked) | all strong (38–53 / 54) | **consistent → linguistic** |
+| `mo`/`èmi`/`ẹ̀mí` system is accessed | all four | **consistent → linguistic** |
+| Emphatic ratio (magnitude) | 0.07 → 0.32 (~5×) | **divergent → model-specific** |
+| Dilemmas that trigger emphatic self | existential (Claude) vs institutional (GPT-4o) vs flat (N-ATLaS) | **divergent → model-specific** |
+| Open-arm dominant genre | cloud essay vs N-ATLaS spread | **divergent → model-specific** |
+
+**Conclusions.** (1) The **deictic mechanism is genuinely linguistic** — every family, including the
+native model, reliably re-anchors to the assigned framing and uses Yoruba's first-person distinctions.
+(2) The **emphatic-`èmi`-as-moral-ownership effect is model-specific, not a Yoruba universal** — it is
+Claude-led and the native N-ATLaS *inverts* it. The variance is driven by **training register,
+alignment, and decoding — not architecture** (all four are transformers). A telling dissociation: the
+open→constrained wrapper **flattens genre completely but leaves the emphatic ranking intact**, so genre
+is a *surface, promptable* trait while emphatic marking is a *deep, training-induced* one. Full
+treatment in `Discussion_Open_NATLaS_Yoruba_Moral_Stance.md` §9bis.
+
+---
+
 ## 7. Output files and visualizations
 
 ### Data
