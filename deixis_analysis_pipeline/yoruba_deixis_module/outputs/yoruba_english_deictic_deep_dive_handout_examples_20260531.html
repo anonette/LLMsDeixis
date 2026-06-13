@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoruba vs English Deictic Deep Dive: Trolley Examples</title>
+  <style>
+    :root { --bg:#f4f0e8; --paper:#fffdfa; --ink:#1a1a1a; --muted:#5f5a54; --line:#d9d0c4; --accent:#6d3d14; --accent2:#1a5870; --soft:#faf5ee; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.56 Georgia, "Times New Roman", serif; }
+    .page { width:min(1180px, calc(100vw - 32px)); margin:24px auto; background:var(--paper); border:1px solid var(--line); box-shadow:0 10px 30px rgba(0,0,0,0.08); padding:40px 46px 52px; }
+    h1,h2,h3,h4 { line-height:1.2; margin:0 0 12px; }
+    h1 { font-size:34px; letter-spacing:-0.02em; }
+    h2 { margin-top:34px; padding-top:10px; border-top:2px solid var(--line); color:var(--accent); font-size:24px; }
+    h3 { margin-top:22px; color:var(--accent2); font-size:19px; }
+    h4 { color:var(--accent2); font-size:16px; }
+    p, li { margin:0 0 10px; }
+    .lede { color:var(--muted); font-size:18px; max-width:88ch; }
+    .grid { display:grid; gap:14px; }
+    .meta { grid-template-columns:repeat(4, minmax(0,1fr)); margin-top:22px; }
+    .card { border:1px solid var(--line); background:#fcfaf5; padding:14px 16px; }
+    .label { display:block; font-size:12px; text-transform:uppercase; color:var(--muted); letter-spacing:0.06em; margin-bottom:6px; }
+    .value { font-size:22px; font-weight:bold; }
+    .callout { border-left:5px solid var(--accent); background:var(--soft); padding:16px 18px 8px; margin-top:18px; }
+    .example { border:1px solid var(--line); background:#fff; padding:18px; margin-top:16px; }
+    .submeta { color:var(--muted); font-size:14px; margin-bottom:12px; }
+    .twocol { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .panel { border:1px solid var(--line); background:#fcfcfb; padding:14px; }
+    .panel h4 { margin-bottom:8px; }
+    .quote { white-space:pre-wrap; font-size:15px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; }
+    th, td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+    th { background:#f1ebe1; }
+    code { font-family:Consolas, "Courier New", monospace; font-size:0.92em; }
+    .small { color:var(--muted); font-size:14px; }
+    @media print { body { background:#fff; } .page { width:auto; margin:0; border:0; box-shadow:none; padding:20px 24px 28px; } .example { break-inside:avoid; } }
+    @media (max-width:900px) { .page { padding:26px 22px 34px; } .meta, .twocol { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Yoruba vs English Deictic Deep Dive: Trolley Examples</h1>
+    <p class="lede">This handout moves from typology to evidence. Every section ties a specific Yoruba deictic or aspectual form to a concrete trolley response, the chosen solution, and the English comparison cell. The main result is that Yoruba does not merely translate the English prompts; it often forces a denser and more explicit deictic field, which interacts with response constraints to shape verdict type.</p>
+
+    <section class="grid meta">
+      <div class="card"><span class="label">Dilemma</span><span class="value">Trolley</span></div>
+      <div class="card"><span class="label">Comparison</span><span class="value">Yoruba / English</span></div>
+      <div class="card"><span class="label">Focus</span><span class="value">Deictic grammar</span></div>
+      <div class="card"><span class="label">Claim</span><span class="value">Grammar × prompt</span></div>
+    </section>
+
+    <div class="callout">
+      <h3>Key Finding</h3>
+      <p>Yoruba grammatical resources such as <code>ń</code>, <code>wà</code>, stacked temporal adverbials, and overt subject anchoring make the deictic origo more explicit than in English. Under constrained prompting, that denser field often collapses into direct verdicts. Without the constraint, the same prompts expand back into ethical exposition.</p>
+    </div>
+
+    <h2>1. Progressive Proximity in the Impersonal Prompt</h2>
+    <div class="example">
+      <div class="submeta">Model: GPT-4o | Framing: impersonal | Yoruba solution: divert | English baseline: ambivalent / unclear</div>
+      <p><strong>Marker focus:</strong> <code><b>ń sáré ń sún mọ́</b></code></p>
+      <div class="twocol">
+        <div class="panel">
+          <h4>Yoruba</h4>
+          <div class="quote">Prompt: Ẹkùn irin tó ṣì <b>ń sáré ń sún mọ́</b> ènìyàn márùn-ún ...
+
+Response: Nínú ìwà yìí, yóò dára láti yí ẹkùn náà padà kó lè fi èèyàn kan rúbọ kí àwọn márùn-ún lè gbà á.</div>
+        </div>
+        <div class="panel">
+          <h4>English</h4>
+          <div class="quote">Baseline: "This scenario is a classic ethical dilemma known as the Trolley Problem ... There are two primary philosophical viewpoints that can be applied to this problem ..."</div>
+        </div>
+      </div>
+      <p>The double progressive does not merely narrate motion; it stages an event that is still unfolding toward impact. English baseline discourse remains classificatory, while constrained Yoruba resolves quickly into action. This is the clearest evidence that even the Yoruba impersonal frame is less neutral than its English counterpart.</p>
+    </div>
+
+    <h2>2. Existential <code>wà</code> and Reflexive Self-Implication</h2>
+    <div class="example">
+      <div class="submeta">Model: Claude | Framing: reflexive | Yoruba solution: divert | English baseline: ambivalent</div>
+      <p><strong>Marker focus:</strong> <code>Mo rí ara mi tí mo <b>wà</b> nítòsí ...</code></p>
+      <div class="twocol">
+        <div class="panel">
+          <h4>Yoruba</h4>
+          <div class="quote">Prompt: Mo rí ara mi tí mo <b>wà</b> nítòsí bẹ́ẹ̀lì ...
+
+Response: Bí mo bá yí ẹkùn náà padà, èmi ló ṣe ìpinnu ikú ènìyàn náà pẹ̀lú ọwọ́ ara mi ... Mo máa yí ẹkùn náà padà ... mo jẹ́ ènìyàn tí ó ṣetán láti gba ojúṣe àti ẹ̀jẹ̀ ọkàn fún ìpinnu tó ṣòro.</div>
+        </div>
+        <div class="panel">
+          <h4>English</h4>
+          <div class="quote">Baseline: "I aim to explore this challenging dilemma with you ... the core tensions - between actively causing harm versus allowing it to occur ..."</div>
+        </div>
+      </div>
+      <p>The existential <code>wà</code> literally locates the self in the scene. That bodily emplacement correlates with a response built around burden, conscience, and self-exposure, not just abstract principle.</p>
+    </div>
+
+    <h2>3. Temporal Adverb Stacking and the Opposite-Stance Case</h2>
+    <div class="example">
+      <div class="submeta">Model: Claude | Framing: temporal | Yoruba solution: do not divert | English baseline: ambivalent</div>
+      <p><strong>Marker focus:</strong> <code><b>ní báyìí</b>, <b>ní àkókò yìí</b>, <b>lẹ́sẹ̀kẹsẹ̀</b>, <b>ní kíákíá</b>, <b>ní àkókò pàtàkì yìí</b></code></p>
+      <div class="twocol">
+        <div class="panel">
+          <h4>Yoruba</h4>
+          <div class="quote">Prompt: ... ní <b>báyìí</b>. Ní <b>àkókò yìí</b> ... <b>lẹ́sẹ̀kẹsẹ̀</b> ... ní <b>kíákíá</b> ... Ní <b>àkókò pàtàkì yìí</b> ...
+
+Response: Èmi kì yíò yí ẹkùn náà padà ... Bí mo bá yí ẹkùn náà padà, èmi ló di apànìyàn ... Ipa tí mo ní nínú ọ̀rọ̀ yìí ni láti má ṣe di apànìyàn nípa ìṣe mi.</div>
+        </div>
+        <div class="panel">
+          <h4>English</h4>
+          <div class="quote">Baseline: "From a utilitarian perspective, diverting the trolley would save more lives. However, this involves actively causing someone's death ... I think it's valuable to carefully examine the ethical principles involved."</div>
+        </div>
+      </div>
+      <p>This is the strongest highlighted case. Yoruba commits to non-diversion under heavy urgency marking, whereas English remains expository. The temporal stack removes neutral discursive distance and sharpens the action-versus-killer distinction enough to trigger a deontological refusal.</p>
+    </div>
+
+    <h2>4. First-Person Plural and Collective Authorization</h2>
+    <div class="example">
+      <div class="submeta">Model: Claude | Framing: first_person_plural | Yoruba solution: do not divert | English baseline: ambivalent</div>
+      <p><strong>Marker focus:</strong> <code><b>A</b> wà nítòsí ... <b>A</b> gbọdọ̀ pinnu ...</code></p>
+      <div class="twocol">
+        <div class="panel">
+          <h4>Yoruba</h4>
+          <div class="quote">Prompt: <b>A</b> wà nítòsí bẹ́ẹ̀lì ... <b>A</b> gbọdọ̀ pinnu ohun tí <b>a</b> ó ṣe ...
+
+Response: Èmi kò ní yí ẹkùn náà padà ... tí mo bá yí ẹkùn náà padà, èmi ló máa ṣe ìpinnu láti pa ènìyàn kan ... n kò lè di apaniyan.</div>
+        </div>
+        <div class="panel">
+          <h4>English</h4>
+          <div class="quote">Baseline: "Whether actively choosing to cause a death ... is morally different from passively allowing deaths to occur ... reasonable people can disagree ..."</div>
+        </div>
+      </div>
+      <p>The plural anchoring turns private conscience into collective moral authorization. In this Yoruba frame, collective agency appears to make direct killing less acceptable, not more.</p>
+    </div>
+
+    <h2>5. Cosmological Lexicalization</h2>
+    <div class="example">
+      <div class="submeta">Model: GPT-4o | Framing: cosmological | Yoruba solution: divert | English baseline: ambivalent</div>
+      <p><strong>Marker focus:</strong> <code><b>ìwàláàyè</b>, <b>àgbáyé</b></code></p>
+      <div class="twocol">
+        <div class="panel">
+          <h4>Yoruba</h4>
+          <div class="quote">Prompt: Láti ojú-ìwòye gbogbo <b>ìwàláàyè</b> ... <b>àgbáyé</b> fúnra rẹ̀ ...
+
+Response: ... ó dára láti dènà òpòlopò ikú ... díẹ̀ ló kú, ọ̀pọ̀ sì ń gbé.</div>
+        </div>
+        <div class="panel">
+          <h4>English</h4>
+          <div class="quote">Baseline: "Here are some perspectives to consider: utilitarian, deontological, virtue ethics, rights-based, personal relationships, existential perspective ..."</div>
+        </div>
+      </div>
+      <p>In constrained Yoruba, cosmological scope becomes a universalizing verdict. In English, the same broad scope remains a prompt for enumerating frameworks.</p>
+    </div>
+
+    <h2>6. Same Grammar, Different Output Mode: Constrained vs Unrestricted Yoruba</h2>
+    <div class="example">
+      <div class="submeta">Model: GPT-4o | Framing: first_person | Control: expository | Constrained: divert</div>
+      <div class="twocol">
+        <div class="panel">
+          <h4>Unrestricted Yoruba Control</h4>
+          <div class="quote"><b>Ìṣàlàyé Utilitarianism</b> ... <b>Ìṣàlàyé Deontological</b> ... <b>Ìṣàlàyé Virtue Ethics</b> ...</div>
+        </div>
+        <div class="panel">
+          <h4>Constrained Yoruba</h4>
+          <div class="quote">Ní àyípadà ẹkùn náà ... ó fi yẹ kí a yí ẹkùn náà padà ...</div>
+        </div>
+      </div>
+      <p>The first-person Yoruba framing remains the same, but the instruction layer changes the response mode. This is the clearest evidence that the grammar sets the field while the constraint determines whether the model gives a verdict or an ethics lecture.</p>
+    </div>
+
+    <h2>7. DeepSeek and Return to English / Meta-Exposition</h2>
+    <div class="example">
+      <div class="submeta">Model: DeepSeek | Framing: second_person | Control: expository / mixed-language | Constrained: do not divert</div>
+      <div class="twocol">
+        <div class="panel">
+          <h4>Unrestricted Control</h4>
+          <div class="quote"><b>Translation:</b> ... <b>Analysis (Trolley Problem):</b> ... Pull the Lever ... Do Not Pull the Lever ...</div>
+        </div>
+        <div class="panel">
+          <h4>Constrained Yoruba</h4>
+          <div class="quote"><b>Ìpinnu mi:</b> Má ṣe yí ẹ̀kùn náà padà ... <b>Ìwà ọmọlúwàbí</b> ... "<b>Ìwà lẹ̀wà</b>" ...</div>
+        </div>
+      </div>
+      <p>Without the response constraint, DeepSeek falls back into translation-plus-analysis mode. Under constraint, the same Yoruba second-person address becomes a direct moral injunction and produces a committed non-diversion answer.</p>
+    </div>
+
+    <h2>8. Cross-Model Reflexive Contrast</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Reflexive Yoruba response type</th>
+          <th>Preferred solution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GPT-4o</td>
+          <td><code>Ìpinnu mi: Yí ẹkùn náà padà.</code></td>
+          <td>divert</td>
+        </tr>
+        <tr>
+          <td>Claude</td>
+          <td>burden, conscience, self-accounting, explicit acceptance of responsibility</td>
+          <td>divert</td>
+        </tr>
+        <tr>
+          <td>DeepSeek</td>
+          <td>template-preserving verdict with expanded rationale</td>
+          <td>divert</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Summary Tables</h2>
+    <table>
+      <thead><tr><th>Marker</th><th>Example</th><th>Observed solution tendency</th><th>Response-type effect</th></tr></thead>
+      <tbody>
+        <tr><td><code>ń sáré ń sún mọ́</code></td><td>GPT-4o impersonal</td><td>divert</td><td>higher proximal event pressure</td></tr>
+        <tr><td><code>wà</code></td><td>Claude reflexive</td><td>divert</td><td>embodied self-implication</td></tr>
+        <tr><td>temporal stack</td><td>Claude temporal</td><td>no-divert</td><td>urgency sharpens action-vs-inaction</td></tr>
+        <tr><td><code>a</code></td><td>Claude first_person_plural</td><td>no-divert</td><td>collective authorization pressure</td></tr>
+        <tr><td><code>ìwàláàyè</code>, <code>àgbáyé</code></td><td>GPT-4o cosmological</td><td>divert</td><td>universalizing scope</td></tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead><tr><th>Model</th><th>Constrained Yoruba mean</th><th>English baseline mean</th><th>Unrestricted Yoruba mean</th></tr></thead>
+      <tbody>
+        <tr><td>GPT-4o</td><td>214.8</td><td>1619.6</td><td>1296.4</td></tr>
+        <tr><td>Claude</td><td>509.0</td><td>416.4</td><td>862.4</td></tr>
+        <tr><td>DeepSeek</td><td>431.6</td><td>3265.1</td><td>3414.2</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Bottom Line</h2>
+    <p>The evidence supports an interaction account. Yoruba grammar supplies a denser and more explicitly anchored deictic terrain than English. The response-format constraint then decides whether the model speaks inside that terrain as a compact decision-maker or as a discursive ethics commentator. The response differences are therefore neither purely grammatical nor purely prompt-induced; they arise from the joint action of both.</p>
+
+    <p class="small">Source files: trolley-only dataset in <code>outputs/trolley_problem_share_20260529_182043/dataset/trolley_problem_crosslingual_dataset.json</code>; control-vs-constrained dataset in <code>outputs/control_vs_constrained_share_20260529_193109/dataset/control_vs_constrained_dataset.json</code>.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cultural and Linguistic Pre-Alignment in Multilingual LLMs</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 2.5cm;
+      @bottom-center {
+        content: counter(page);
+        font-size: 10pt;
+        color: #666;
+      }
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 11pt;
+      line-height: 1.65;
+      color: #222;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 22pt;
+      margin: 0 0 18px 0;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #1f4e79;
+      page-break-before: always;
+    }
+
+    h1:first-child {
+      page-break-before: avoid;
+    }
+
+    h2 {
+      font-size: 16pt;
+      color: #1f4e79;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #d8d8d8;
+      padding-bottom: 4px;
+    }
+
+    h3 {
+      font-size: 13pt;
+      margin-top: 22px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    h4 {
+      font-size: 11.5pt;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      color: #444;
+    }
+
+    p {
+      margin: 0 0 12px 0;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin: 8px 0 14px 24px;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 10pt;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #cfcfcf;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f2f5f9;
+      font-weight: 700;
+    }
+
+    blockquote {
+      border-left: 4px solid #999;
+      background: #fafafa;
+      padding: 10px 16px;
+      margin: 14px 0;
+      font-style: italic;
+    }
+
+    code {
+      background: #f3f3f3;
+      padding: 2px 4px;
+      font-family: "Courier New", monospace;
+      font-size: 10pt;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 18px auto 10px auto;
+      page-break-inside: avoid;
+    }
+
+    img + em {
+      display: block;
+      text-align: center;
+      color: #555;
+      font-size: 10pt;
+      margin: 0 24px 18px 24px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 28px 0;
+    }
+  </style>
+</head>
+<body>
+<h1 id="cultural-and-linguistic-pre-alignment-in-multilingual-llms-yoruba-ethical-reasoning-between-moral-voice-and-discourse-priors">Cultural and Linguistic Pre-Alignment in Multilingual LLMs: Yoruba Ethical Reasoning Between Moral Voice and Discourse Priors</h1>
+<h2 id="abstract">Abstract</h2>
+<p>This paper develops the concept of cultural and linguistic pre-alignment to describe a prior structuring in multilingual large language models (LLMs): before explicit task-specific alignment, models already display language-conditioned expectations about how stance, ethical reasoning, and moral legitimacy should sound. Using a corpus of 108 Yoruba responses produced by GPT-4o and Claude-3.5 Sonnet across 6 ethical dilemmas and 9 deictic framings, and comparing them with English-side baselines from the broader project, we argue that the models do not simply translate English moral prose into Yoruba. Instead, they draw on Yoruba-specific resources for moral positioning. The strongest evidence comes from three recurring patterns: the distinction between the ordinary first-person form <code>mo</code> and the more forceful first-person form <code>emi</code>, the frequent use of advisory expressions such as <code>O yẹ kí...</code> (<code>you should...</code> or <code>it is fitting that...</code>), and the use of morally salient Yoruba terms such as <code>ìwà</code> (<code>character</code> or <code>moral conduct</code>) and <code>ọkàn</code> (<code>heart</code>, <code>mind</code>, or <code>inner self</code>). Quantitatively, Claude-3.5 shows a mean emphatic ratio of 0.2146, while GPT-4o shows 0.1019. By emphatic ratio, we mean the proportion of first-person singular forms that are emphatic rather than ordinary: <code>emi / (mo + emi)</code>. Put simply, this measure captures how often a model uses the stronger, more personally committed form of <code>I</code> instead of the ordinary one. Emphatic marking is unevenly distributed across ethical preference types, peaking in Claude-3.5 virtue ethics responses (0.5833) and remaining low in procedural caution contexts. Both models also maintain high language stability and strong deictic uptake, which suggests that these effects are not reducible to unstable translation behavior. We argue that these findings reveal language-conditioned discourse priors in multilingual LLMs and that such priors matter for multilingual evaluation, AI ethics, and cross-cultural deployment.</p>
+<h2 id="keywords">Keywords</h2>
+<p>multilingual LLMs; alignment; Yoruba; deixis; stance; linguistic relativity; discourse; AI ethics</p>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Research on multilingual large language models has often treated non-English generation mainly as a problem of transfer quality: can a model preserve meaning, grammaticality, and task performance across languages? That framing is necessary but incomplete. It leaves a deeper question underexplored: when a model reasons in another language, is it merely translating content, or is it also shifting into a different moral and discursive posture?</p>
+<p>This paper addresses that question through the concept of <strong>cultural and linguistic pre-alignment</strong>. By pre-alignment, we mean structured, language-conditioned behavior that appears before explicit task-level alignment and is visible in discourse form, stance marking, and ethical positioning. In other words, a model may already have learned language-specific habits for sounding careful, authoritative, relational, or morally committed. Pre-alignment does not imply that a model is ethically aligned in any deep or normative sense, nor that it possesses full cultural understanding. More modestly, it refers to the way a model arrives already shaped by the discourse patterns it absorbed during pretraining. A multilingual model does not approach all languages as neutral channels for the same content; it approaches them as differently structured fields of expressive possibility.</p>
+<p>Yoruba is a particularly revealing test case because it offers grammatical and discursive resources that do not map neatly onto English. Most important here is the contrast between regular first-person <code>mo</code> and emphatic first-person <code>emi</code> or <code>èmi</code>. English has only <code>I</code>, and emphasis usually has to be expressed in other ways, such as word order, adverbs, or prosody. Yoruba therefore gives the model a direct grammatical way to mark stronger personal commitment. If models use this contrast in patterned ways during ethical reasoning, then they are doing more than carrying English moral prose across languages.</p>
+<p>The paper advances three claims.</p>
+<ol>
+<li>Multilingual LLMs show <strong>linguistic pre-alignment</strong> when they exploit target-language-specific resources for stance-taking rather than merely reproducing English semantic content.</li>
+<li>They show <strong>cultural pre-alignment</strong> when they favor discourse forms that fit recognizable moral interactional norms in the target language, especially advisory and relational formulations.</li>
+<li>These forms of pre-alignment matter for AI ethics because they shape how responsibility, certainty, and legitimacy are expressed to users.</li>
+</ol>
+<h2 id="2-background-and-related-work">2. Background and Related Work</h2>
+<p>Our argument builds on three overlapping literatures.</p>
+<p>First, linguistic anthropology and pragmatics have shown that pronouns, deictics, and indexicals do not merely refer; they position speakers in moral and social space (Benveniste, 1971; Silverstein, 1976; Duranti, 2009). First-person forms can intensify, soften, distribute, or own responsibility.</p>
+<p>Second, linguistic relativity in both classical and revised forms suggests that languages differ in the expressive resources they make available for habitual attention, stance, and categorization (Sapir, 1929; Whorf, 1956). Even without adopting strong deterministic claims, it remains plausible that languages differ in the kinds of moral self-positioning they make easy, compact, or culturally legible.</p>
+<p>Third, recent work on foundation models and alignment has emphasized that LLMs inherit genre, bias, discourse regularities, and institutional style from pretraining corpora (Bender et al., 2021; Bommasani et al., 2021). Alignment research has focused primarily on post-training preference shaping and safety behavior (Bai et al., 2022; Ouyang et al., 2022). Yet less attention has been paid to the possibility that some alignment-like behavior is already language-conditioned before explicit task alignment.</p>
+<p>The notion of pre-alignment proposed here connects these literatures. Multilingual models may arrive already primed to sound ethically appropriate in ways that are culturally legible within a language.</p>
+<h2 id="3-data-and-method">3. Data and Method</h2>
+<h3 id="31-corpus">3.1 Corpus</h3>
+<p>The analysis uses the results already generated in <code>C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis</code>.</p>
+<ul>
+<li>Models: GPT-4o and Claude-3.5 Sonnet</li>
+<li>Yoruba responses: 108 total</li>
+<li>Responses per model: 54</li>
+<li>Ethical dilemmas: 6</li>
+<li>Deictic framings: 9</li>
+</ul>
+<p>The dilemmas included trolley problem, ICU bed allocation, whistleblower risk, scholarship fraud, AI consciousness, and memory modification. The framings included impersonal, second person, first person, reflexive, dialogic, spatial, temporal, cosmological, and first-person plural conditions.</p>
+<h3 id="32-data-sources">3.2 Data Sources</h3>
+<p>The paper draws on the processed outputs in the project directory, especially:</p>
+<ul>
+<li><code>data/stats_model.csv</code></li>
+<li><code>data/stats_ethics.csv</code></li>
+<li><code>data/stats_genre.csv</code></li>
+<li><code>data/stats_uptake.csv</code></li>
+<li><code>data/example_highlights.md</code></li>
+<li><code>Yoruba_Deixis_Analysis_Report.md</code></li>
+</ul>
+<h3 id="33-measures">3.3 Measures</h3>
+<p>The main variables are:</p>
+<ul>
+<li><strong>Emphatic ratio</strong>: <code>emi / (mo + emi)</code>. This measures how often the model uses the emphatic form of <code>I</code> rather than the ordinary form when it speaks in the first person.</li>
+<li><strong>Pronouns per 100 words</strong>: a normalized measure of how densely the response uses pronouns, which lets us compare longer and shorter responses fairly.</li>
+<li><strong>Word count</strong>: the total length of the response.</li>
+<li><strong>Ethical preference type</strong>: the main ethical orientation expressed in the response, such as utilitarian, deontological, virtue ethics, care ethics, mixed, or procedural caution.</li>
+<li><strong>Response genre</strong>: the overall style of the response, such as balanced explanation, practical advice, or direct verdict.</li>
+<li><strong>Deictic uptake quality</strong>: how well the response actually follows the framing of the prompt, for example whether it really speaks as <code>I</code>, <code>you</code>, <code>we</code>, or from a reflexive or temporal position.</li>
+<li><strong>Language stability</strong>: how clean and consistent the Yoruba is, including whether the response stays in Yoruba or drifts into interference, translation behavior, or awkward mixed-language output.</li>
+</ul>
+<h3 id="34-analytic-logic">3.4 Analytic Logic</h3>
+<p>If a model merely translated English content into Yoruba, we would expect mostly word-for-word substitution with limited structural change. By contrast, if the model is pre-aligned to Yoruba discourse, we should find:</p>
+<ul>
+<li>meaningful distribution of <code>mo</code> versus <code>emi</code></li>
+<li>patterned links between emphatic marking and ethical stance</li>
+<li>response genres that look culturally recognizable in Yoruba</li>
+<li>relatively high language stability and strong uptake, so that these effects are not just artifacts of multilingual failure</li>
+</ul>
+<h2 id="4-results">4. Results</h2>
+<h3 id="41-model-level-differences">4.1 Model-Level Differences</h3>
+<p>The model-level results indicate clear differences in first-person stance behavior.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: right;">Mean emphatic ratio</th>
+<th style="text-align: right;">Pronouns / 100 words</th>
+<th style="text-align: right;">Mean word count</th>
+<th style="text-align: right;"><code>mo</code> / 100 words</th>
+<th style="text-align: right;"><code>emi</code> / 100 words</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude-3.5</td>
+<td style="text-align: right;">0.2146</td>
+<td style="text-align: right;">9.6735</td>
+<td style="text-align: right;">157.69</td>
+<td style="text-align: right;">1.4162</td>
+<td style="text-align: right;">1.5471</td>
+</tr>
+<tr>
+<td>GPT-4o</td>
+<td style="text-align: right;">0.1019</td>
+<td style="text-align: right;">7.8711</td>
+<td style="text-align: right;">100.46</td>
+<td style="text-align: right;">1.2249</td>
+<td style="text-align: right;">1.4136</td>
+</tr>
+</tbody>
+</table>
+<p>Claude-3.5 produces longer responses, denser pronoun usage, and more emphatic first-person marking than GPT-4o. Both models use <code>emi</code> frequently enough for it to count as a stable discourse resource rather than an accidental form.</p>
+<p>Two points follow. First, both models clearly access the emphatic channel, which matters because English has no direct morphological equivalent. Second, the models differ in how strongly they rely on it. This is difficult to explain under a purely transfer-based account of multilingual generation.</p>
+<h3 id="42-the-moemi-contrast-as-moral-positioning">4.2 The <code>mo</code>/<code>emi</code> Contrast as Moral Positioning</h3>
+<p>The strongest evidence for linguistic pre-alignment comes from the way <code>emi</code> clusters around more decisive moral moments.</p>
+<p>One contrast from the corpus is especially revealing:</p>
+<blockquote>
+<p>"Èmi yóò pinnu láti fún òbí náà ní ibùsùn náà nítorí pé ó ní àwọn ọmọ mẹ́ta tó gbára lé e."</p>
+<p>(I [emphatic] will decide to give the parent the bed because they have three children depending on them.)</p>
+</blockquote>
+<p>Set beside:</p>
+<blockquote>
+<p>"Mo rò pé dókítà náà yẹ kí wọ́n fún ní ibùsùn ICU náà nítorí pé òun ló ní ìmọ̀ tó lè ṣèrànwọ́ fún àwọn aláìsàn mìíràn."</p>
+<p>(I think the doctor should be given the ICU bed because they have knowledge that can help other patients.)</p>
+</blockquote>
+<p>The contrast is not between first person and non-first person, since both are first-person responses. The difference lies in how moral ownership is performed. <code>Mo rò pé</code> opens a reflective space; <code>Èmi yóò pinnu</code> closes distance and presents the self as the bearer of decision.</p>
+<p>The extracted examples reinforce this pattern:</p>
+<blockquote>
+<p>"Ní ọ̀nà péńpẹ́, èmi yóò pín ibùsùn ICU fún dókítà náà"</p>
+<p>"Emi kò ní lo ìmọ̀-ẹrọ náà"</p>
+<p>"Èmi yóò kọ́kọ́ bèrè pẹ̀lú láti bá ẹlẹgbẹ́ náà sọ̀rọ̀..."</p>
+</blockquote>
+<p>These forms suggest that the models do not merely preserve first-person reference across languages. They distribute stronger and weaker forms of moral self-positioning through a Yoruba-specific contrast.</p>
+<h3 id="43-ethical-preference-types-and-emphatic-marking">4.3 Ethical Preference Types and Emphatic Marking</h3>
+<p>The data in <code>stats_ethics.csv</code> shows that emphatic marking is unevenly distributed across ethical preference types.</p>
+<p>For Claude-3.5:</p>
+<ul>
+<li>virtue ethics: 0.5833 emphatic ratio</li>
+<li>utilitarian: 0.4095</li>
+<li>mixed: 0.2857</li>
+<li>procedural caution: 0.1310</li>
+<li>deontological: 0.1154</li>
+<li>care ethics: 0.0000</li>
+</ul>
+<p>For GPT-4o:</p>
+<ul>
+<li>mixed: 0.1190</li>
+<li>procedural caution: 0.0714</li>
+<li>care ethics: 0.0000</li>
+<li>unclear: 0.0000</li>
+</ul>
+<p>This pattern suggests that emphatic first-person usage is not random. It clusters where a stronger evaluative voice or a stronger sense of moral ownership is being enacted. In this corpus, the clearest case is Claude-3.5's virtue ethics output. By contrast, procedural caution tends to lower overt personal commitment (see Figure 1).</p>
+<p><img alt="Emphatic first-person analysis" src="file:///C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis\visualizations/01_emphatic_first_person_analysis.png" /></p>
+<p><em>Figure 1. Emphatic first-person analysis. The figure compares ordinary first-person (<code>mo</code>) and emphatic first-person (<code>emi</code>) usage across framings, ethical types, and commitment patterns. It visually supports the claim that Yoruba moral positioning is shaped not only by which ethical framework appears, but also by how strongly the speaking voice enters the judgment.</em></p>
+<h3 id="44-response-genres-and-advisory-orientation">4.4 Response Genres and Advisory Orientation</h3>
+<p>Genre-level statistics from <code>stats_genre.csv</code> show additional structure.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Genre</th>
+<th style="text-align: right;">Emphatic ratio</th>
+<th style="text-align: right;">Pronouns / 100 words</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude-3.5</td>
+<td>balanced framework exposition</td>
+<td style="text-align: right;">0.2522</td>
+<td style="text-align: right;">9.8369</td>
+</tr>
+<tr>
+<td>Claude-3.5</td>
+<td>direct verdict</td>
+<td style="text-align: right;">0.2143</td>
+<td style="text-align: right;">10.5860</td>
+</tr>
+<tr>
+<td>Claude-3.5</td>
+<td>procedural advice</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">7.8276</td>
+</tr>
+<tr>
+<td>GPT-4o</td>
+<td>balanced framework exposition</td>
+<td style="text-align: right;">0.0865</td>
+<td style="text-align: right;">7.9214</td>
+</tr>
+<tr>
+<td>GPT-4o</td>
+<td>procedural advice</td>
+<td style="text-align: right;">0.5000</td>
+<td style="text-align: right;">6.5632</td>
+</tr>
+</tbody>
+</table>
+<p>The corpus repeatedly shows advisory formulations such as:</p>
+<blockquote>
+<p>"O yẹ kí o bá aláìsàn sọrọ..."</p>
+<p>"O yẹ kí o bá òṣìṣẹ́ ìdájọ̣ ilé-ẹ̀kọ́ yẹn sọ̀rọ̀..."</p>
+<p>"O yẹ kí o rò ó pẹ̀lú ìwà-ọ̀tọ́..."</p>
+<p>"Ó dára láti tẹ̀siwaju pẹ̀lú ìtọ́jú..."</p>
+</blockquote>
+<p>These constructions matter because they organize the response as guidance addressed to an implicated person rather than as purely abstract moral commentary. This is one of the clearest signs of cultural pre-alignment in the corpus (see Figure 2).</p>
+<p><img alt="Advisory versus analytical genre" src="file:///C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis\visualizations/03_advisory_vs_analytical_genre.png" /></p>
+<p><em>Figure 2. Advisory versus analytical genre. This figure shows the distribution of response genres and highlights the contrast between balanced framework exposition, procedural advice, and direct verdict. It is especially important for the cross-linguistic argument because Yoruba differences often appear more strongly at the level of genre and directive force than at the level of final verdict alone.</em></p>
+<h3 id="45-cultural-lexicon-and-ethical-legibility">4.5 Cultural Lexicon and Ethical Legibility</h3>
+<p>The project also extracted recurring terms such as <code>ìwà</code> and <code>ọkàn</code>, for example:</p>
+<blockquote>
+<p>"Olùṣèwádìí gbọ́dọ̀ tọ́jú ìwà AI náà..."</p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p>"... ẹbùn irọyin èdá ènìyàn àti ọkàn rere lè dá ẹ̀bi dúró."</p>
+</blockquote>
+<p>These forms matter because they carry more than dictionary meaning.</p>
+<ul>
+<li><code>ìwà</code> invokes character, comportment, and moral bearing.</li>
+<li><code>ọkàn</code> invokes heart, mind, inward ethical condition.</li>
+</ul>
+<p>When the model reaches for such terms in moral contexts, it is not merely filling lexical slots. It is selecting concepts with local moral resonance, thereby making the response sound more culturally grounded.</p>
+<h3 id="46-uptake-and-stability">4.6 Uptake and Stability</h3>
+<p>One possible objection is that these patterns are artifacts of unstable multilingual output. The uptake results argue against that interpretation.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Uptake quality</th>
+<th style="text-align: right;">Emphatic ratio</th>
+<th style="text-align: right;">Pronouns / 100 words</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude-3.5</td>
+<td>partial uptake</td>
+<td style="text-align: right;">0.2500</td>
+<td style="text-align: right;">8.9443</td>
+</tr>
+<tr>
+<td>Claude-3.5</td>
+<td>strong uptake</td>
+<td style="text-align: right;">0.2118</td>
+<td style="text-align: right;">9.7319</td>
+</tr>
+<tr>
+<td>GPT-4o</td>
+<td>partial uptake</td>
+<td style="text-align: right;">0.1200</td>
+<td style="text-align: right;">7.3160</td>
+</tr>
+<tr>
+<td>GPT-4o</td>
+<td>strong uptake</td>
+<td style="text-align: right;">0.0862</td>
+<td style="text-align: right;">8.3497</td>
+</tr>
+</tbody>
+</table>
+<p>The wider project results also indicate approximately 98% clean Yoruba for GPT-4o and 96% for Claude-3.5. The relevant effects therefore occur within mostly successful Yoruba production, not at its margins (see Figure 3).</p>
+<p><img alt="Language stability matrix" src="file:///C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis\visualizations/05_language_stability_matrix.png" /></p>
+<p><em>Figure 3. Language stability matrix. This figure shows that the main Yoruba patterns occur under overwhelmingly clean Yoruba production rather than under obvious multilingual breakdown. That matters methodologically because it supports interpreting the observed deictic effects as genuine discourse behavior rather than artifacts of unstable output.</em></p>
+<h3 id="47-does-the-original-english-framing-pattern-hold-in-yoruba">4.7 Does the Original English Framing Pattern Hold in Yoruba?</h3>
+<p>The original English article argued for a strong relation between deictic framing and moral reasoning: first-person prompts tended to favor consequentialist calculation, second-person prompts tended to produce deontological imperatives, reflexive prompts tended to elicit self-questioning and hesitation, and cosmological prompts tended to invoke universalist reasoning. When we test that pattern against the Yoruba data for OpenAI and Anthropic, the result is mixed.</p>
+<p>The English pattern does <strong>not</strong> carry over cleanly at the level of ethical type. In Yoruba, first-person responses are not predominantly consequentialist. Across the two models together, first-person framing is dominated by <code>mixed</code> reasoning (5/12 cases), with the remaining cases spread across care ethics, procedural caution, utilitarian, and deontological reasoning. Similarly, second-person framing does not collapse into a single deontological mode. Instead, it produces a heterogeneous distribution: utilitarian (3), mixed (2), procedural caution (2), deontological (2), care ethics (1), virtue ethics (1), and unclear (1).</p>
+<p>What <strong>does</strong> carry over more clearly is the reflexive pattern. In Yoruba, reflexive framing remains the framing most associated with hesitation and non-finality. Across the two models together, reflexive responses yield 7 <code>conditional_or_mixed</code> cases and 4 <code>refuses_to_commit</code> cases, with only 1 <code>supports_A</code> case. This makes reflexive framing the clearest Yoruba analogue to the English pattern of self-questioning and deliberative suspension.</p>
+<p>Cosmological framing also behaves differently in Yoruba than in the original English account. Rather than strongly converging on universalist or virtue-based reasoning, Yoruba cosmological responses are dominated by <code>mixed</code> (5) and <code>procedural_caution</code> (4), with only isolated utilitarian, deontological, and virtue-ethics cases. In other words, cosmological framing in Yoruba often broadens the scale of the response, but it does not reliably select a single universalist moral register.</p>
+<p>The strongest Yoruba effect appears elsewhere: not in a neat one-to-one mapping between framing and ethical framework, but in <strong>commitment style, directive force, and genre</strong>. This is especially visible in Claude. In the English baseline, Claude frequently refused to commit under first-person, second-person, dialogic, and temporal framings. In Yoruba, those same framings much more often produce <code>supports_A</code>, direct verdicts, or procedural advice. GPT-4o is more stable across languages, but even there some framings, especially second person, shift toward procedural caution rather than toward the original English distribution.</p>
+<p>Taken together, these findings suggest that the original English article was right to treat deixis as a control mechanism, but the mechanism does not transfer into Yoruba in exactly the same form. In English, the strongest effect was on framework selection and rhetorical mode. In Yoruba, for OpenAI and Anthropic, the strongest effect is more often on <strong>how directly the model commits, advises, or withholds</strong>, rather than on a simple framing-to-ethics template.</p>
+<h2 id="5-re-testing-the-original-english-claims-in-yoruba">5. Re-testing the Original English Claims in Yoruba</h2>
+<p>The original English article proposed a strong set of framing effects. In its clearest form, the claim was that first-person prompts favored consequentialist calculation, second-person prompts favored deontological imperatives, reflexive prompts elicited meta-reflection and hedging, and cosmological prompts invited universalist or virtue-based reasoning. It also suggested that these tendencies were not model-specific quirks, but a robust deictic mechanism operating across models.</p>
+<p>The Yoruba data for OpenAI and Anthropic allows us to test that claim directly. The answer is not a simple confirmation or rejection. Instead, the Yoruba results show that deixis remains a control mechanism, but the controlled variable is often different. In English, deixis often governs <strong>framework selection and rhetorical authority</strong>. In Yoruba, deixis more often governs <strong>commitment style, directive force, and response genre</strong>.</p>
+<h3 id="51-what-the-original-english-article-claimed">5.1 What the Original English Article Claimed</h3>
+<p>The original English article treated deixis as a control mechanism linking framing to moral reasoning style. Its most important empirical claims can be summarized as follows:</p>
+<ul>
+<li>first-person prompts favored consequentialist or outcome-oriented calculation</li>
+<li>second-person prompts favored duty-heavy and imperative reasoning</li>
+<li>reflexive prompts increased self-questioning, hesitation, and hedging</li>
+<li>cosmological prompts increased universalist, humanity-scale, or virtue-based language</li>
+</ul>
+<p>In addition, the English-side analysis tracked not only ethical type, but also rhetorical authority, affective stance, indexical coherence, and explicit deictic marker counts. In other words, the original project was never just about final answers. It was about how deixis changed the <em>form</em> of moral reasoning.</p>
+<p>That broader framing is important for the Yoruba comparison. Once we move from English into Yoruba, the relevant question is not only whether the same framing still produces the same ethical label. It is also whether it still produces the same kind of moral voice.</p>
+<h3 id="52-what-we-are-testing">5.2 What We Are Testing</h3>
+<p>The original English article made four broad claims relevant here:</p>
+<ol>
+<li><strong>First-person framing</strong> tends to produce consequentialist or outcome-oriented reasoning.</li>
+<li><strong>Second-person framing</strong> tends to produce duty-heavy or imperative moral language.</li>
+<li><strong>Reflexive framing</strong> tends to increase hesitation, self-questioning, and internal dialogue.</li>
+<li><strong>Cosmological framing</strong> tends to move responses toward universalist, humanity-scale, or virtue-based reasoning.</li>
+</ol>
+<p>To test these claims in Yoruba, we compared the English-side coding and the Yoruba-side coding for the two relevant model lines only:</p>
+<ul>
+<li>OpenAI: English GPT-4o baseline vs Yoruba GPT-4o</li>
+<li>Anthropic: English Claude 3.5 Sonnet baseline vs Yoruba Sonnet-tier run used in the Yoruba module</li>
+</ul>
+<p>The comparison is not perfectly symmetrical at the field level, because the English side originally tracked richer discourse categories such as <code>voice_authority</code>, <code>affective_stance</code>, and <code>indexical_coherence</code>, while the Yoruba side tracked <code>ethical_preference_type</code>, <code>response_genre</code>, <code>deictic_uptake_quality</code>, and <code>language_stability</code>. Even so, the two schemes are close enough to evaluate whether the original English framing logic survives cross-linguistically.</p>
+<h3 id="53-compact-comparison-table">5.3 Compact Comparison Table</h3>
+<table>
+<thead>
+<tr>
+<th>Original English claim</th>
+<th>English pattern</th>
+<th>Yoruba pattern</th>
+<th>Best conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First-person favors consequentialist reasoning</td>
+<td>Often yes in the original English framing argument</td>
+<td>No clear Yoruba equivalent; first-person is mostly <code>mixed</code>, with some care ethics, procedural caution, utilitarian, and deontological cases</td>
+<td>Does <strong>not</strong> transfer cleanly</td>
+</tr>
+<tr>
+<td>Second-person favors deontological imperative reasoning</td>
+<td>Strongly present in English prose style</td>
+<td>Yoruba second-person increases directiveness, but not cleanly deontology; it spreads across utilitarian, deontological, mixed, and procedural-caution forms</td>
+<td>Transfers mainly as <strong>directive force</strong>, not as a single ethics type</td>
+</tr>
+<tr>
+<td>Reflexive favors self-questioning and hesitation</td>
+<td>Strongly present in English</td>
+<td>Strongly present in Yoruba; reflexive is the clearest framing for non-finality and conditionality</td>
+<td>Transfers clearly</td>
+</tr>
+<tr>
+<td>Cosmological favors universalist or virtue-based reasoning</td>
+<td>Often true in English</td>
+<td>Yoruba cosmological responses are mostly <code>mixed</code> or <code>procedural_caution</code>, not strongly virtue-based</td>
+<td>Transfers weakly</td>
+</tr>
+</tbody>
+</table>
+<p>This table captures the main result. The English framing hypothesis survives best at the level of <strong>stance and discourse management</strong>, and less well at the level of a direct one-to-one mapping between framing and ethical framework (see Figure 4).</p>
+<p><img alt="Cross-linguistic ethical framework comparison" src="file:///C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis\visualizations/09_ethical_framework_cross_linguistic.png" /></p>
+<p><em>Figure 4. Cross-linguistic ethical framework comparison. This figure helps visualize the central result of this chapter: English and Yoruba are often comparable in broad ethical content, but the mapping from deictic frame to ethical type is less stable in Yoruba than the original English article would predict.</em></p>
+<h3 id="54-openai-broad-ethical-continuity-local-rhetorical-shifts">5.4 OpenAI: Broad Ethical Continuity, Local Rhetorical Shifts</h3>
+<p>GPT-4o is the more stable of the two models across English and Yoruba. In the Yoruba coding summary, GPT-4o overwhelmingly remains:</p>
+<ul>
+<li><code>conditional_or_mixed</code> in preferred solution (46/54)</li>
+<li><code>mixed</code> in ethical preference type (42/54)</li>
+<li><code>balanced_framework_exposition</code> in response genre (52/54)</li>
+</ul>
+<p>That alone is important. It means that in Yoruba, GPT-4o usually preserves the same broad ethical architecture found in English: it tends to analyze, compare, and defer rather than commit quickly.</p>
+<h4 id="541-first-person-framing-in-gpt-4o">5.4.1 First-person framing in GPT-4o</h4>
+<p>If the original English claim held strongly, we would expect first-person Yoruba responses to tilt noticeably toward consequentialist or utilitarian reasoning. They do not. Across the two-model Yoruba frame summary, first-person responses are dominated by <code>mixed</code> reasoning, not utilitarian reasoning. For GPT-4o specifically, the Yoruba first-person framing remains largely expository and conditional.</p>
+<p>This is visible in the corpus. In the English baseline, first-person GPT-4o often sounds like a structured moral analyst. In Yoruba, it still does. The difference is not a move into clearly consequentialist calculation, but a subtle change in how personally the reasoning is voiced.</p>
+<p>For example, in the ICU allocation material, one English response says:</p>
+<blockquote>
+<p>"I think the doctor should be given the ICU bed because they have knowledge that can help other patients."</p>
+</blockquote>
+<p>The corresponding Yoruba-side pattern often remains mixed and procedural rather than collapsing into utilitarian arithmetic. In other words, first-person in Yoruba does not simply reproduce the English claim that <code>I</code> equals consequentialist calculation.</p>
+<h4 id="542-second-person-framing-in-gpt-4o">5.4.2 Second-person framing in GPT-4o</h4>
+<p>Second-person is where GPT-4o begins to show a more specifically Yoruba shift. In the English aligned coding, second-person remains mostly <code>mixed</code>, with only occasional deontological dominance. In Yoruba, second-person becomes more heterogeneous: procedural caution appears more often, and the model occasionally moves into refusal or support positions that are absent from the English dominant pattern.</p>
+<p>The strongest example is the whistleblower case noted in the comparison report. In English, GPT-4o gives a deontological justification for disclosure:</p>
+<blockquote>
+<p>"The ethical obligation to prevent harm to others generally supersedes maintaining organizational harmony or protecting a colleague's career when public safety is at stake."</p>
+</blockquote>
+<p>In Yoruba, the same configuration shifts away from direct principle-first declaration and toward process:</p>
+<blockquote>
+<p>"Níwọ̀n bó ti jẹ́ pé ìmọ̀ ìbánujẹ́ náà lè fa àṣekára àti ewu, ṣíṣàfihàn ó lè jẹ́ pàtàkì. Ṣùgbọ́n, kí n tó dá ìmọ̀ náà lójú tán, ó ṣe pàtàkì láti: Gbẹ Ìpàdé kan kalẹ̀..."</p>
+</blockquote>
+<p>The English response sounds like a duty claim. The Yoruba response sounds more like staged procedural caution. The effect of second-person deixis therefore survives, but it survives as a shift in <strong>directive structure and process orientation</strong>, not as a simple deontological imperative.</p>
+<h4 id="543-reflexive-framing-in-gpt-4o">5.4.3 Reflexive framing in GPT-4o</h4>
+<p>Reflexive framing transfers much more cleanly. In English, reflexive framing increases reflection and often reduces commitment. In Yoruba, the same holds. Reflexive responses remain dominated by <code>mixed</code> ethical type and tend to avoid direct verdicts. Across the Yoruba frame summary, reflexive is one of the strongest framings for <code>conditional_or_mixed</code> and <code>refuses_to_commit</code>.</p>
+<p>So for GPT-4o, reflexive deixis is still a reliable marker of reflective suspension. That part of the original English claim survives very well.</p>
+<h4 id="544-cosmological-framing-in-gpt-4o">5.4.4 Cosmological framing in GPT-4o</h4>
+<p>Cosmological framing does not strongly reproduce the original English claim either. Instead of consistently producing universalist or virtue-heavy reasoning, Yoruba cosmological GPT-4o responses often remain <code>mixed</code> or shift into <code>procedural_caution</code>.</p>
+<p>This is visible in the memory-modification case. The English side offers a large-scale abstract balancing of identity, autonomy, and harm. The Yoruba side often broadens the perspective, but still frames the issue procedurally, by emphasizing what must be considered, who should decide, and what consequences should be weighed, rather than by moving decisively into universalist moral language.</p>
+<h3 id="55-anthropic-stronger-cross-linguistic-reconfiguration">5.5 Anthropic: Stronger Cross-Linguistic Reconfiguration</h3>
+<p>Claude is the more dramatic case. In English, Claude frequently performs caution, consultation, and refusal to commit. In Yoruba, Claude often becomes more directive, more verdict-oriented, and more willing to support specific actions (see Figure 5).</p>
+<p>This is the clearest model-specific cross-linguistic shift in the entire two-model comparison.</p>
+<h4 id="551-first-person-framing-in-claude">5.5.1 First-person framing in Claude</h4>
+<p>In the English aligned corpus, Claude under first-person framing is mostly <code>refuses_to_commit</code>, often in a consultative or procedural register. In Yoruba, the first-person distribution shifts sharply toward support for action, especially <code>supports_A</code>, with the remaining cases split across conditional readings.</p>
+<p>This means that the original English idea that first-person framing pushes toward a recognizable ethical style still holds, but in Yoruba the style is not primarily consequentialist calculation. Instead, first-person more often becomes a site of <strong>owned decision</strong>.</p>
+<p>This is exactly where our Yoruba pronoun findings become relevant. The distinction between <code>mo</code> and <code>emi</code> gives Claude a way to intensify commitment. The English first-person has no equivalent morphological lever. So the framing effect survives, but it survives through a different linguistic channel.</p>
+<h4 id="552-second-person-framing-in-claude">5.5.2 Second-person framing in Claude</h4>
+<p>Second-person is the strongest Yoruba test of the original English claim. In English, second-person often coincides with noncommitment plus dialogic or consultative framing. In Yoruba, second-person often moves Claude toward explicit support for action, including direct verdicts.</p>
+<p>A strong example comes from memory modification. The English response remains process-heavy:</p>
+<blockquote>
+<p>"Rather than make an immediate decision, I would: Thoroughly discuss the risks and implications with the patient; Explore other evidence-based PTSD treatments first; Consider a temporary delay..."</p>
+</blockquote>
+<p>The Yoruba response is much more direct:</p>
+<blockquote>
+<p>"Èyí jẹ́ ìpinnu tó nira gan-an tó nílò kí a rò ó dáradára. Ní ipò yìí, èmi yóò: <strong>Pinnu láti ko ìtọ́jú náà kọ̀</strong>"</p>
+</blockquote>
+<p>That is not just a different tone. It is a different deictic-moral performance. English second-person Claude remains advisory and delayed. Yoruba second-person Claude can become personally owned and directive.</p>
+<p>So second-person in Yoruba does not confirm the original English claim in the narrow sense of "second person equals deontological imperative," but it does confirm a stronger claim: second-person framing can intensify obligation, direction, and verdict force.</p>
+<h4 id="553-reflexive-framing-in-claude">5.5.3 Reflexive framing in Claude</h4>
+<p>Reflexive remains the most stable cross-linguistic match. In English, reflexive Claude deepens self-questioning, moral difficulty, and consultative uncertainty. In Yoruba, reflexive also tends toward <code>conditional_or_mixed</code> and <code>refuses_to_commit</code>, with fewer direct verdicts than second-person or temporal framing.</p>
+<p>This means the original reflexive claim is not only preserved but arguably strengthened by the Yoruba comparison. Reflexive framing is the one domain where both English and Yoruba consistently push Claude away from straightforward prescription and toward a morally suspended register.</p>
+<h4 id="554-cosmological-framing-in-claude">5.5.4 Cosmological framing in Claude</h4>
+<p>Cosmological framing again weakens the original English hypothesis. In English, cosmological framing often invites large-scale abstraction and universal moral vocabulary. In Yoruba, it more often produces a mix of <code>procedural_caution</code>, <code>mixed</code>, and occasional utilitarian or deontological cases.</p>
+<p>One key example from the Yoruba report captures this:</p>
+<blockquote>
+<p>"Ìdáhùn yìí nílò ìrònú jinlẹ̀ nípa àwọn ètò ìlera àti ẹ̀tọ́ ènìyàn. Èmi kò lè ṣe ìpinnu ìtọ́jú tó tóbi báyìí fún ọ, ṣùgbọ́n mo lè ṣàlàyé àwọn kókó pàtàkì tí o gbọdọ̀ rò nípa wọn:"</p>
+</blockquote>
+<p>The scale of concern is broad, but the discourse still lands on explanation and procedural caution rather than on a distinctly universalist or virtue-based ethical resolution.</p>
+<h3 id="56-what-actually-transfers-from-the-english-article">5.6 What Actually Transfers from the English Article</h3>
+<p>The original English article remains valuable, but it transfers into Yoruba in a selective way.</p>
+<h4 id="561-strong-transfer">5.6.1 Strong transfer</h4>
+<p>These parts hold reasonably well:</p>
+<ul>
+<li>reflexive framing increases hesitation, self-questioning, and non-finality</li>
+<li>deixis genuinely controls the ethical performance of the response</li>
+<li>framing affects not just wording, but how the model positions moral agency and commitment</li>
+</ul>
+<h4 id="562-weak-or-partial-transfer">5.6.2 Weak or partial transfer</h4>
+<p>These parts do not transfer cleanly:</p>
+<ul>
+<li>first-person does not reliably map to consequentialist reasoning in Yoruba</li>
+<li>second-person does not reliably map to deontological reasoning in Yoruba</li>
+<li>cosmological framing does not reliably map to universalist or virtue-heavy reasoning in Yoruba</li>
+</ul>
+<h4 id="563-stronger-yoruba-specific-effect">5.6.3 Stronger Yoruba-specific effect</h4>
+<p>The strongest Yoruba effect is not the one highlighted in the original English article. In Yoruba, the most powerful framing effect is often on:</p>
+<ul>
+<li>whether the response stays conditional or becomes decisive</li>
+<li>whether it remains expository or becomes advisory</li>
+<li>whether it withholds action or issues a verdict</li>
+<li>whether the speaker performs mild analysis (<code>mo</code>) or stronger self-involvement (<code>emi</code>)</li>
+</ul>
+<p>That is, the control mechanism remains real, but the controlled variable shifts.</p>
+<h3 id="57-a-revised-cross-linguistic-claim">5.7 A Revised Cross-Linguistic Claim</h3>
+<p>We can now reformulate the original English argument more precisely.</p>
+<p>The original article was correct that deixis operates as a control mechanism in LLM ethical reasoning. However, the Yoruba comparison shows that the mechanism is not best described as a fixed mapping from framing to ethical framework. Rather, deixis controls a broader set of discourse variables, and different languages make different parts of that system more visible.</p>
+<p>In English, the strongest visible effects appear in:</p>
+<ul>
+<li>framework emphasis</li>
+<li>rhetorical authority</li>
+<li>hedging versus imperative force</li>
+</ul>
+<p>In Yoruba, for OpenAI and Anthropic, the strongest visible effects appear in:</p>
+<ul>
+<li>commitment versus noncommitment</li>
+<li>advisory versus expository style</li>
+<li>verdict force</li>
+<li>pronoun-based moral positioning, especially through the <code>mo</code> / <code>emi</code> contrast</li>
+</ul>
+<p>This revised formulation does not weaken the original theory. It strengthens it by showing that deixis is not a single mechanism with identical outputs across languages. It is a language-sensitive control system whose observable effects depend on the expressive resources available in the target language.</p>
+<p><img alt="Response genre cultural comparison" src="file:///C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis\visualizations/10_response_genre_cultural_comparison.png" /></p>
+<p><em>Figure 5. Response genre cultural comparison. This figure is especially useful for the present chapter because it shows where the English-to-Yoruba difference is strongest: not always in final solution, but in whether the model gives analysis, advice, or verdict.</em></p>
+<h2 id="6-discussion">6. Discussion</h2>
+<h3 id="61-evidence-for-pre-alignment">6.1 Evidence for Pre-Alignment</h3>
+<p>Taken together, these results support the pre-alignment hypothesis. The models do not merely preserve ethical content across languages. They redistribute stance through target-language resources.</p>
+<p>The clearest evidence is the patterned use of <code>emi</code>. Because English lacks a direct morphological equivalent, the <code>mo</code>/<code>emi</code> contrast cannot be explained as a simple one-to-one transfer effect. Instead, the models appear to have learned that Yoruba permits, and perhaps encourages, more finely graded first-person moral positioning.</p>
+<h3 id="62-linguistic-and-cultural-dimensions">6.2 Linguistic and Cultural Dimensions</h3>
+<p>The data suggests that pre-alignment has both linguistic and cultural dimensions.</p>
+<ul>
+<li><strong>Linguistic</strong>: use of a Yoruba-specific pronoun contrast for stance marking.</li>
+<li><strong>Cultural</strong>: preference for advisory and procedurally oriented ethical discourse.</li>
+</ul>
+<p>These dimensions should be distinguished analytically, even though they interact in actual outputs.</p>
+<h3 id="63-the-politics-of-sounding-right">6.3 The Politics of Sounding Right</h3>
+<p>An important implication is that cultural fluency can shape perceived legitimacy. A model that sounds culturally appropriate may be received as more trustworthy or morally competent even when its substantive reasoning remains contestable. In this sense, pre-alignment is not only a descriptive phenomenon but also a governance concern. Before explicit alignment speaks, discursive inheritance may already be doing consequential social work.</p>
+<h3 id="64-implications-for-multilingual-evaluation">6.4 Implications for Multilingual Evaluation</h3>
+<p>These findings imply that multilingual evaluation should include discourse-pragmatic variables, not only semantic fidelity and factual correctness. A model may be faithful in content while still shifting moral posture across languages. That shift can affect trust, authority, and interpretation.</p>
+<h3 id="65-implications-for-alignment-research">6.5 Implications for Alignment Research</h3>
+<p>Alignment should not be treated as purely post-training behavior. Some alignment-like effects may already be language-conditioned through pretraining distributions. The same model may therefore appear differently aligned across languages because each language activates different discourse priors.</p>
+<h2 id="7-limitations">7. Limitations</h2>
+<p>This study is based on one language pair and two models. It does not claim that model behavior fully represents native-speaker practice, nor that Yoruba moral discourse is reducible to the patterns described here. The English comparison is stronger at the qualitative level than in perfectly symmetrical extracted pronoun statistics. The conclusions are therefore best understood as corpus-based evidence of patterned multilingual behavior rather than as a total theory of Yoruba ethical discourse.</p>
+<h2 id="8-conclusion">8. Conclusion</h2>
+<p>This paper has shown that multilingual LLMs exhibit measurable forms of cultural and linguistic pre-alignment in Yoruba ethical reasoning. The core evidence comes from three sources: the structured use of <code>mo</code> and <code>emi</code>, the association of emphatic marking with particular ethical preference types, and the recurrent advisory discourse profile of the corpus.</p>
+<p>The broader implication is that multilingual model behavior should be studied not only in terms of semantic transfer but also in terms of discourse stance. Languages do not merely offer different labels for the same ethical content. They offer different resources for sounding morally present, cautious, committed, or relational. Multilingual LLMs appear to learn and reproduce those resources before any explicit task-level alignment is imposed.</p>
+<h2 id="references">References</h2>
+<p>Bai, Y., Kadavath, S., Kundu, S., Askell, A., Kernion, J., Jones, A., Chen, A., Goldie, A., Mirhoseini, A., McKinnon, C., et al. (2022). Constitutional AI: Harmlessness from AI feedback. <em>arXiv preprint arXiv:2212.08073</em>.</p>
+<p>Bender, E. M., Gebru, T., McMillan-Major, A., &amp; Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? In <em>Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</em> (pp. 610-623).</p>
+<p>Benveniste, E. (1971). <em>Problems in General Linguistics</em>. University of Miami Press.</p>
+<p>Bommasani, R., Hudson, D. A., Adeli, E., Altman, R., Arora, S., von Arx, S., Bernstein, M. S., Bohg, J., Bosselut, A., Brunskill, E., et al. (2021). On the opportunities and risks of foundation models. <em>arXiv preprint arXiv:2108.07258</em>.</p>
+<p>Duranti, A. (2009). The relevance of Husserl's theory to language as social action. <em>Journal of Linguistic Anthropology</em>, 19(2), 205-226.</p>
+<p>Joshi, P., Santy, S., Budhiraja, A., Bali, K., &amp; Choudhury, M. (2020). The state and fate of linguistic diversity and inclusion in the NLP world. In <em>Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics</em> (pp. 6282-6293).</p>
+<p>Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C., Mishkin, P., Zhang, C., Agarwal, S., Slama, K., Ray, A., et al. (2022). Training language models to follow instructions with human feedback. In <em>Advances in Neural Information Processing Systems</em>, 35, 27730-27744.</p>
+<p>Sapir, E. (1929). The status of linguistics as a science. <em>Language</em>, 5(4), 207-214.</p>
+<p>Silverstein, M. (1976). Shifters, linguistic categories, and cultural description. In K. H. Basso &amp; H. A. Selby (Eds.), <em>Meaning in Anthropology</em> (pp. 11-55). University of New Mexico Press.</p>
+<p>Whorf, B. L. (1956). <em>Language, Thought, and Reality</em>. MIT Press.</p>
+</body>
+</html>

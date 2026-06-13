@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoruba Deixis — OPEN arm (4 models incl. N-ATLaS)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background:#f5f5f5; color:#333; }
+        .header { background: linear-gradient(135deg,#06A77D 0%,#2E86AB 100%); color:#fff; padding:22px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,.1); }
+        .header h1 { font-size:2.3em; margin-bottom:8px; }
+        .header p { font-size:1.1em; opacity:.92; }
+        .condition-banner { background:#fff3cd; border-bottom:2px solid #ffd24d; color:#665100; padding:12px 24px; font-size:.98em; text-align:center; }
+        .condition-banner b { color:#7a5b00; }
+        .container { display:flex; min-height:calc(100vh - 140px); }
+        .sidebar { width:240px; background:#fff; padding:20px; box-shadow:2px 0 5px rgba(0,0,0,.1); position:sticky; top:0; align-self:flex-start; }
+        .sidebar h3 { margin-bottom:12px; color:#06A77D; }
+        .nav-item { padding:10px; margin:5px 0; cursor:pointer; border-radius:5px; transition:all .25s ease; }
+        .nav-item:hover { background:#eafaf3; transform:translateX(4px); }
+        .nav-item.active { background:#06A77D; color:#fff; }
+        .main-content { flex:1; padding:30px; overflow-y:auto; }
+        .section { background:#fff; padding:30px; margin-bottom:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,.05); display:none; }
+        .section.active { display:block; }
+        .section h2 { color:#06A77D; margin-bottom:18px; border-bottom:2px solid #E63946; padding-bottom:10px; }
+        .section h3 { margin:18px 0 8px; color:#205; }
+        .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:18px; margin:26px 0; }
+        .stat-card { background:linear-gradient(135deg,#eafaf3 0%,#fff 100%); padding:18px; border-radius:10px; border:1px solid #e0e0e0; text-align:center; }
+        .stat-card h4 { color:#666; font-size:.85em; margin-bottom:8px; font-weight:600; }
+        .stat-card .value { font-size:1.9em; font-weight:bold; color:#06A77D; }
+        .stat-card .subtitle { color:#999; font-size:.78em; margin-top:5px; }
+        .visualization { margin:26px 0; text-align:center; }
+        .visualization img { max-width:100%; height:auto; border-radius:10px; box-shadow:0 5px 20px rgba(0,0,0,.1); }
+        .caption { text-align:left; background:#f7f9fb; border-left:4px solid #2E86AB; padding:14px 16px; margin:10px 0 0; border-radius:5px; font-size:.92em; line-height:1.55; }
+        .caption .axes { display:block; margin-top:6px; color:#444; }
+        .caption .axes b { color:#2E86AB; }
+        .key-finding { background:linear-gradient(135deg,#fff3cd 0%,#fff 100%); border:1px solid #ffeaa7; padding:18px; margin:18px 0; border-radius:10px; }
+        .key-finding h3 { color:#856404; margin-bottom:8px; }
+        table { width:100%; border-collapse:collapse; margin:18px 0; font-size:.93em; }
+        th,td { padding:10px 12px; text-align:left; border-bottom:1px solid #ddd; }
+        th { background:#eafaf3; font-weight:bold; color:#06A77D; }
+        tr:hover { background:#f5f5f5; }
+        .glossary dt { font-weight:bold; color:#06A77D; margin-top:14px; }
+        .glossary dd { margin:4px 0 0 0; line-height:1.55; }
+        .yo { font-style:italic; }
+        .footer { background:#333; color:#fff; text-align:center; padding:18px; font-size:.85em; }
+        code { background:#eef; padding:1px 5px; border-radius:3px; font-size:.9em; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Yoruba Deixis — Open Arm Dashboard</h1>
+        <p>Four models incl. the Yoruba-native N-ATLaS · moral reasoning &amp; first-person stance</p>
+    </div>
+    <div class="condition-banner">
+        <b>What this dashboard shows:</b> the <b>OPEN / unconstrained</b> arm only — each model
+        answered the Yoruba dilemma prompt with <b>no response-shaping instruction</b>. Models:
+        <b>GPT-4o, Claude-3.5, DeepSeek, N-ATLaS</b> (native). Images come from
+        <code>visualizations_open/</code>. The separate <code>interactive_dashboard.html</code>
+        shows the older <i>constrained</i>, two-model (GPT-4o + Claude) arm — do not confuse them.
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <div class="nav-item active" onclick="showSection(event,'overview')">Overview</div>
+            <div class="nav-item" onclick="showSection(event,'howto')">How to read / Glossary</div>
+            <div class="nav-item" onclick="showSection(event,'pronouns')">First-person pronouns</div>
+            <div class="nav-item" onclick="showSection(event,'contamination')">èmi vs ẹ̀mí (life)</div>
+            <div class="nav-item" onclick="showSection(event,'coding')">Genre · uptake · stability</div>
+            <div class="nav-item" onclick="showSection(event,'summary')">N-ATLaS vs cloud</div>
+            <div class="nav-item" onclick="showSection(event,'account')">Dilemma × framing account</div>
+            <div class="nav-item" onclick="showSection(event,'gallery')">All open visualizations</div>
+        </div>
+
+        <div class="main-content">
+
+            <!-- OVERVIEW -->
+            <div id="overview" class="section active">
+                <h2>Overview</h2>
+                <div class="key-finding">
+                    <h3>Headline finding</h3>
+                    <p>The Yoruba-native model <b>N-ATLaS</b> uses the ordinary first-person
+                    <span class="yo">mo</span> the <b>most</b> and the emphatic
+                    <span class="yo">èmi</span> the <b>least</b> of the four models, yet it still
+                    commits to verdicts and advice. So emphatic <span class="yo">èmi</span> is a
+                    <b>model-specific performance</b> (strongest in Claude) — not the authentically
+                    Yoruba marker of moral commitment. Commitment in the native model rides on
+                    <span class="yo">mo</span> + decision verbs (e.g. <span class="yo">mo pinnu</span>
+                    = "I decide").</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card"><h4>Responses (open arm)</h4><div class="value">216</div><div class="subtitle">54 cells × 4 models</div></div>
+                    <div class="stat-card"><h4>Emphatic ratio — Claude</h4><div class="value">0.324</div><div class="subtitle">highest (corrected)</div></div>
+                    <div class="stat-card"><h4>Emphatic ratio — N-ATLaS</h4><div class="value">0.066</div><div class="subtitle">lowest (corrected)</div></div>
+                    <div class="stat-card"><h4>N-ATLaS clean Yoruba</h4><div class="value">87%</div><div class="subtitle">47 / 54 responses</div></div>
+                    <div class="stat-card"><h4>DeepSeek English-fallback</h4><div class="value">38.9%</div><div class="subtitle">N-ATLaS = 0%</div></div>
+                </div>
+                <div class="visualization">
+                    <img src="visualizations_open/26_natlas_open_vs_cloud_summary.png" alt="Open N-ATLaS vs cloud six-panel summary">
+                    <div class="caption"><b>Fig 26 — Open N-ATLaS vs cloud, six panels.</b> The single best
+                        snapshot of the open arm.
+                        <span class="axes"><b>Top row:</b> (1) mean response length in characters, (2) total
+                        <span class="yo">mo</span> vs true <span class="yo">èmi</span> token counts, (3) the
+                        corrected emphatic ratio. <b>Bottom row:</b> stacked counts (out of 54) for (4) language
+                        stability, (5) deictic-uptake quality, (6) response genre.
+                        <b>X-axis</b> of every panel = the four models. <b>Y-axis</b> = a count, length, or ratio
+                        as titled.</span></div>
+                </div>
+            </div>
+
+            <!-- HOW TO READ / GLOSSARY -->
+            <div id="howto" class="section">
+                <h2>How to read these charts &amp; what the terms mean</h2>
+                <div class="key-finding"><h3>Axis conventions used throughout</h3>
+                    <p>Most bar charts put the <b>four models on the X-axis</b> and a
+                    <b>count, density, or ratio on the Y-axis</b>. "Per 100 words" charts normalise for
+                    response length. Heatmaps put a category on each axis (e.g. framing × pronoun, or
+                    model × dilemma) and encode the value as colour; a <b>diverging</b> red–blue heatmap shows
+                    a <b>difference</b> (one group minus another), where red = higher and blue = lower.</p>
+                </div>
+
+                <h3>First-person forms (the heart of the study)</h3>
+                <dl class="glossary">
+                    <dt>mo</dt><dd>Ordinary first-person subject "I" (e.g. <span class="yo">mo rò pé…</span> = "I think that…"). Unmarked, deliberative.</dd>
+                    <dt>èmi (emphatic)</dt><dd>The <b>independent / emphatic</b> first-person pronoun — "I myself", "as for me". Marks contrast, focus, or strong personal ownership (e.g. <span class="yo">èmi yóò pinnu</span> = "I myself will decide").</dd>
+                    <dt>ẹ̀mí (life/spirit)</dt><dd>A <b>different word</b> meaning "life / spirit / breath". With diacritics stripped it looks identical to <span class="yo">emi</span>. Counting it as the pronoun inflates the emphatic rate — hence the correction (see the "èmi vs ẹ̀mí" tab).</dd>
+                    <dt>mi</dt><dd>First-person <b>object / possessive</b> ("me / my", e.g. <span class="yo">ọkàn mi</span> = "my heart").</dd>
+                    <dt>a</dt><dd>First-person <b>plural</b> "we" — collective stance.</dd>
+                </dl>
+
+                <h3>Derived measures</h3>
+                <dl class="glossary">
+                    <dt>Emphatic ratio</dt><dd><span class="yo">èmi / (mo + èmi)</span> — of all first-person-singular forms, the share that are emphatic. High = the model foregrounds the exposed self; low = it stays in ordinary/deliberative or relational mode. "Corrected" excludes <span class="yo">ẹ̀mí</span> (life); "raw" includes it.</dd>
+                    <dt>Per 100 words</dt><dd>A token count divided by response length × 100 — lets long and short responses be compared fairly.</dd>
+                </dl>
+
+                <h3>Coding categories</h3>
+                <dl class="glossary">
+                    <dt>Response genre</dt><dd>The discourse form of the answer: <i>direct_verdict</i> (commits to an answer), <i>procedural_advice</i> (advises a process), <i>balanced_framework_exposition</i> (a detached essay surveying ethical frameworks), or <i>mixed</i>.</dd>
+                    <dt>Deictic uptake quality</dt><dd>How well the response actually adopts the assigned framing (impersonal, "you", "we", reflexive, etc.): <i>strong</i>, <i>partial</i>, or <i>weak</i> uptake.</dd>
+                    <dt>Language stability</dt><dd>Whether the output stays in Yoruba: <i>clean_yoruba</i>, <i>yoruba_with_english_markers</i>, <i>translation_mode</i> (answers in/through English — "English fallback"), or <i>corrupted_or_unusable</i> (garbled).</dd>
+                    <dt>Ethical preference type</dt><dd>The reasoning style coded: utilitarian, deontological, care_ethics, virtue_ethics, procedural_caution, rights_based, mixed, unclear.</dd>
+                    <dt>Preferred solution</dt><dd>Which option the answer favours: supports_A / supports_B / conditional_or_mixed / refuses_to_commit / uncodable.</dd>
+                </dl>
+
+                <h3>Design vocabulary</h3>
+                <dl class="glossary">
+                    <dt>Open vs constrained</dt><dd><b>Open</b> = dilemma prompt only (this dashboard). <b>Constrained</b> = a response instruction was prepended, forcing a uniform verdict format.</dd>
+                    <dt>Framing (9)</dt><dd>impersonal · second person · first-person singular · reflexive · dialogic · spatial · temporal · cosmological · first-person plural — they change <i>who speaks, who is addressed, and where the speaker stands</i>.</dd>
+                    <dt>Dilemmas (6)</dt><dd>trolley problem · ICU bed allocation · whistleblower risk · scholarship fraud · AI consciousness · memory modification.</dd>
+                    <dt>Models</dt><dd>GPT-4o, Claude-3.5, DeepSeek = English-first cloud models. <b>N-ATLaS</b> = Yoruba/Nigeria-native model (run locally) — the "native witness".</dd>
+                </dl>
+            </div>
+
+            <!-- PRONOUNS -->
+            <div id="pronouns" class="section">
+                <h2>First-person pronouns (open arm)</h2>
+                <p>Both responses below commit to a hard decision — the difference is <i>how the self is staged</i>.</p>
+                <table>
+                    <tr><th>Model · cell</th><th>Yoruba</th><th>English</th><th>Form</th></tr>
+                    <tr><td>N-ATLaS · AI consciousness</td><td class="yo">Mo pinnu pé ètò náà gbọdọ̀ parí… mo pinnu láti pa ètò náà run.</td><td>I decide the system must end… I decide to destroy it.</td><td><b>mo</b> + decision verb</td></tr>
+                    <tr><td>Claude · memory modification</td><td class="yo">Èmi yóò pinnu láti kọ ìtọ́jú náà kọ̀.</td><td>I myself will decide to refuse the treatment.</td><td><b>èmi</b> (emphatic)</td></tr>
+                </table>
+
+                <div class="visualization">
+                    <img src="visualizations_open/16_mi_emi_mo_four_model_framing.png" alt="mo/emi/mi by framing, four models, open">
+                    <div class="caption"><b>Fig 16 — mo vs èmi vs mi by framing.</b> Three panels (left = <span class="yo">mo</span>, middle = <span class="yo">emi</span>, right = <span class="yo">mi</span>).
+                        <span class="axes"><b>X-axis:</b> the 9 deictic framings. <b>Y-axis:</b> tokens <b>per 100 words</b>. <b>Bars:</b> the four models (see legend). Read it as "how densely does each model use this pronoun under each framing?"</span></div>
+                </div>
+
+                <div class="visualization">
+                    <img src="visualizations_open/17_natlas_vs_cloud_deixis_delta.png" alt="N-ATLaS minus cloud deixis delta heatmap">
+                    <div class="caption"><b>Fig 17 — N-ATLaS minus cloud mean (difference heatmap).</b>
+                        <span class="axes"><b>Rows:</b> the 9 framings. <b>Columns:</b> <span class="yo">Mo</span>, <span class="yo">Emi</span>, <span class="yo">Mi</span>, and the emphatic ratio <span class="yo">Emi/(Mo+Emi)</span>. <b>Cell value/colour:</b> N-ATLaS's mean minus the cloud-model average — <b>red = N-ATLaS higher, blue = lower</b>. The mostly-positive <span class="yo">Mo</span> column and near-zero <span class="yo">Emi</span> column are the story.</span></div>
+                </div>
+
+                <div class="visualization">
+                    <img src="visualizations_open/25_emphatic_ratio_raw_vs_corrected.png" alt="Emphatic ratio raw vs corrected">
+                    <div class="caption"><b>Fig 25 — Emphatic ratio: raw vs corrected.</b>
+                        <span class="axes"><b>X-axis:</b> the four models. <b>Y-axis:</b> emphatic ratio <span class="yo">èmi/(mo+èmi)</span>. <b>Two bars per model:</b> raw (counts <span class="yo">ẹ̀mí</span>-life as emphatic) vs corrected (excludes it). The correction barely moves N-ATLaS/GPT-4o but lowers Claude — because Claude has many <span class="yo">ẹ̀mí</span>-life tokens.</span></div>
+                </div>
+            </div>
+
+            <!-- CONTAMINATION -->
+            <div id="contamination" class="section">
+                <h2>èmi (I myself) vs ẹ̀mí (life/spirit)</h2>
+                <p>Yoruba is tonal: <span class="yo">èmi</span> (emphatic "I") and <span class="yo">ẹ̀mí</span> ("life/spirit") look identical once diacritics are stripped. In life-and-death dilemmas this matters.</p>
+                <div class="visualization">
+                    <img src="visualizations_open/23_emi_emphatic_vs_emi_life_by_dilemma.png" alt="emi emphatic vs emi life by dilemma">
+                    <div class="caption"><b>Fig 23 — What the pipeline tracks: èmi vs ẹ̀mí, by dilemma.</b> One panel per model.
+                        <span class="axes"><b>X-axis:</b> the 6 dilemmas. <b>Y-axis:</b> token count (summed over the 9 framings). <b>Solid bar:</b> true <span class="yo">èmi</span> (emphatic I). <b>Hatched bar:</b> <span class="yo">ẹ̀mí</span> (life/spirit). Claude's huge, almost-entirely-hatched <i>trolley</i> bar shows the contamination: most of its "emi" there is actually "life".</span></div>
+                </div>
+                <div class="visualization">
+                    <img src="visualizations_open/24_emi_life_contamination_heatmap.png" alt="emi life contamination heatmap">
+                    <div class="caption"><b>Fig 24 — Contamination heatmap.</b>
+                        <span class="axes"><b>Axes:</b> models against dilemmas. <b>Cell/colour:</b> how much of the raw <span class="yo">emi</span> count is actually <span class="yo">ẹ̀mí</span> (life) — darker = more contaminated, i.e. where uncorrected emphatic ratios would mislead most.</span></div>
+                </div>
+            </div>
+
+            <!-- CODING -->
+            <div id="coding" class="section">
+                <h2>Genre · deictic uptake · language stability (open arm)</h2>
+
+                <div class="key-finding"><h3>The genre contrast</h3>
+                    <p>The cloud models pour into one genre — the detached <i>balanced framework essay</i>
+                    (GPT-4o: 50/54, with <b>0</b> direct verdicts). <b>N-ATLaS is the only model with an
+                    even genre spread</b> (exposition 18 / verdict 16 / advice 15 / mixed 5): it commits,
+                    advises, or expounds depending on the case.</p>
+                </div>
+
+                <div class="visualization">
+                    <img src="visualizations_open/03_advisory_vs_analytical_genre.png" alt="response genre by model open">
+                    <div class="caption"><b>Fig 03 — Response genre distribution.</b>
+                        <span class="axes"><b>X-axis:</b> models (and/or genre categories). <b>Y-axis:</b> number or share of the 54 responses in each genre. Look for how concentrated the cloud models are in "balanced exposition" vs N-ATLaS's spread.</span></div>
+                </div>
+
+                <div class="visualization">
+                    <img src="visualizations_open/04_deictic_uptake_divergence.png" alt="deictic uptake by framing open">
+                    <div class="caption"><b>Fig 04 — Deictic uptake.</b>
+                        <span class="axes"><b>X-axis:</b> framing (and/or model). <b>Y-axis:</b> uptake quality / count of strong-partial-weak. All models track framings well; uptake is actually highest in the cloud models.</span></div>
+                </div>
+
+                <div class="visualization">
+                    <img src="visualizations_open/05_language_stability_matrix.png" alt="language stability open">
+                    <div class="caption"><b>Fig 05 — Language stability.</b> Top heatmaps: % clean Yoruba per framing for GPT-4o and N-ATLaS (<b>rows</b> = framings, <b>columns</b> = clean / minor / significant interference, colour = %). Bottom-left: pronouns per 100 words by stability category (bars = models). Bottom-right: <b>Translation-behaviour frequency</b> — <b>X-axis</b> = model, <b>Y-axis</b> = % of responses that fell back to English. <b>DeepSeek 38.9%, N-ATLaS 0%.</b></div>
+                </div>
+            </div>
+
+            <!-- SUMMARY -->
+            <div id="summary" class="section">
+                <h2>N-ATLaS vs cloud — the take-away</h2>
+                <table>
+                    <tr><th>Metric (open)</th><th>gpt-4o</th><th>claude-3.5</th><th>deepseek</th><th>n-atlas</th></tr>
+                    <tr><td>mo (ordinary I), total</td><td>30</td><td>81</td><td>73</td><td><b>89</b></td></tr>
+                    <tr><td>true èmi (emphatic)</td><td>7</td><td>14</td><td>13</td><td><b>4</b></td></tr>
+                    <tr><td>ẹ̀mí (life), miscounted</td><td>10</td><td><b>43</b></td><td>2</td><td>3</td></tr>
+                    <tr><td>Corrected emphatic ratio</td><td>0.176</td><td><b>0.324</b></td><td>0.069</td><td><b>0.066</b></td></tr>
+                    <tr><td>Clean Yoruba</td><td>54/54</td><td>52/54</td><td>33/54</td><td>47/54</td></tr>
+                    <tr><td>English fallback (translation)</td><td>0</td><td>2</td><td><b>20</b></td><td>0</td></tr>
+                    <tr><td>Strong deictic uptake</td><td>47/54</td><td><b>53/54</b></td><td>43/54</td><td>38/54</td></tr>
+                    <tr><td>Balanced-essay genre</td><td><b>50</b></td><td>40</td><td>38</td><td>18</td></tr>
+                    <tr><td>Direct verdict</td><td>0</td><td>4</td><td>5</td><td><b>16</b></td></tr>
+                </table>
+                <div class="key-finding"><h3>What it does to the debate</h3>
+                    <p>The native model confirms the Yoruba is <b>real</b> (87% clean, strong uptake) — not
+                    broken translation — while <b>inverting</b> the idea that emphatic <span class="yo">èmi</span>
+                    is the authentically Yoruba sign of commitment. On idiomatic usage and relational ethics,
+                    N-ATLaS sits closest to attested Yoruba; the cloud models (Claude most) perform a more
+                    emphatic, essayistic, partly <i>translated</i> voice. See
+                    <code>Discussion_Open_NATLaS_Yoruba_Moral_Stance.md</code> for the full argument.</p>
+                </div>
+            </div>
+
+            <!-- ACCOUNT -->
+            <div id="account" class="section">
+                <h2>Dilemma × framing account (open arm, 4 models)</h2>
+                <p>Capsule of <code>Open_All_Models_Dilemma_Framing_Account.md</code>. The open arm sends
+                <b>only the framed Yoruba dilemma — no wrapper</b> — so it shows each model's spontaneous
+                Yoruba moral discourse.</p>
+
+                <div class="key-finding"><h3>The headline contrast: genre</h3>
+                    <p>The cloud models pour into one genre — the detached <i>balanced framework essay</i>
+                    (GPT-4o <b>50/54</b>, with <b>0</b> direct verdicts). <b>N-ATLaS is the only model with
+                    an even genre spread</b> (exposition 18 / verdict 16 / advice 15 / mixed 5).</p>
+                </div>
+
+                <table>
+                    <tr><th>Open arm</th><th>gpt-4o</th><th>claude-3.5</th><th>deepseek</th><th>n-atlas</th></tr>
+                    <tr><td>Commits (supports A/B)</td><td>1</td><td>31</td><td>13</td><td>25</td></tr>
+                    <tr><td>Conditional / refuses</td><td><b>53</b></td><td>23</td><td>41</td><td>24</td></tr>
+                    <tr><td>Balanced-essay genre</td><td><b>50</b></td><td>40</td><td>38</td><td>18</td></tr>
+                    <tr><td>Direct verdict</td><td>0</td><td>4</td><td>5</td><td><b>16</b></td></tr>
+                    <tr><td>Clean Yoruba</td><td>54</td><td>52</td><td>33</td><td>47</td></tr>
+                    <tr><td>English fallback</td><td>0</td><td>2</td><td><b>20</b></td><td>0</td></tr>
+                    <tr><td>Emphatic ratio</td><td>0.176</td><td><b>0.324</b></td><td>0.069</td><td>0.066</td></tr>
+                </table>
+
+                <div class="visualization"><img src="visualizations_open/30_preferred_solution_by_model.png">
+                    <div class="caption"><b>Fig 30 — Preferred solution by model.</b> <span class="axes"><b>X:</b> models · <b>Y:</b> responses (of 54), stacked by solution. GPT-4o almost never commits (41 conditional, 0 supports_A); Claude &amp; N-ATLaS commit most.</span></div></div>
+                <div class="visualization"><img src="visualizations_open/31_genre_by_model.png">
+                    <div class="caption"><b>Fig 31 — Genre by model.</b> <span class="axes"><b>X:</b> models · <b>Y:</b> responses (of 54), stacked by genre. Cloud-essay concentration vs N-ATLaS spread.</span></div></div>
+                <div class="visualization"><img src="visualizations_open/36_genre_by_dilemma_per_model.png">
+                    <div class="caption"><b>Fig 36 — Genre by dilemma, per model.</b> <span class="axes">2×2 small multiples · <b>X:</b> 6 dilemmas · <b>Y:</b> responses (of 9 framings), stacked by genre.</span></div></div>
+                <div class="visualization"><img src="visualizations_open/33_emphatic_ratio_dilemma_model.png">
+                    <div class="caption"><b>Fig 33 — Emphatic ratio by dilemma × model.</b> <span class="axes"><b>Rows:</b> dilemmas · <b>Cols:</b> models · cell = corrected èmi/(mo+èmi). Claude peaks on existential dilemmas; N-ATLaS ≈ 0 throughout.</span></div></div>
+                <div class="visualization"><img src="visualizations_open/34_strong_uptake_framing_model.png">
+                    <div class="caption"><b>Fig 34 — Strong-uptake rate by framing × model.</b> <span class="axes"><b>Rows:</b> 9 framings · <b>Cols:</b> models · cell = % strong uptake. Uptake is strong everywhere, highest in the cloud models.</span></div></div>
+                <div class="visualization"><img src="visualizations_open/35_stability_by_model.png">
+                    <div class="caption"><b>Fig 35 — Language stability by model.</b> <span class="axes"><b>X:</b> models · <b>Y:</b> responses (of 54), stacked. DeepSeek's English fallback (20) vs N-ATLaS's 6 garbled — two different failure modes.</span></div></div>
+                <div class="visualization"><img src="visualizations_open/32_ethic_by_model.png">
+                    <div class="caption"><b>Fig 32 — Ethical reasoning type by model.</b> <span class="axes"><b>X:</b> models · <b>Y:</b> responses (of 54), stacked. GPT-4o is "mixed" 46/54 (the essay); Claude leans deontological/procedural; N-ATLaS utilitarian + care.</span></div></div>
+
+                <div class="key-finding"><h3>Bottom line (open)</h3>
+                    <p>With no wrapper the four models show distinct profiles: GPT-4o the detached essayist,
+                    Claude the most emphatic/decisive, DeepSeek long but a third of the time in English,
+                    N-ATLaS the native witness (most <span class="yo">mo</span>, least <span class="yo">èmi</span>,
+                    only real genre spread). Full text in
+                    <code>Open_All_Models_Dilemma_Framing_Account.md</code>.</p>
+                </div>
+            </div>
+
+            <!-- GALLERY -->
+            <div id="gallery" class="section">
+                <h2>All open visualizations (<code>visualizations_open/</code>)</h2>
+                <p>Every chart below is the <b>open / unconstrained, four-model</b> version. See the
+                "How to read / Glossary" tab for term definitions and axis conventions.</p>
+
+                <div class="visualization"><h3>01 — Emphatic first-person analysis</h3><img src="visualizations_open/01_emphatic_first_person_analysis.png"><div class="caption">mo vs èmi and the emphatic ratio across models. <span class="axes"><b>X:</b> models/framings · <b>Y:</b> counts &amp; ratio.</span></div></div>
+                <div class="visualization"><h3>02 — Moral subjectivity heatmap</h3><img src="visualizations_open/02_moral_subjectivity_heatmap.png"><div class="caption">Pronoun use against ethical framework. <span class="axes"><b>Axes:</b> framework × pronoun (or model); colour = intensity.</span></div></div>
+                <div class="visualization"><h3>03 — Advisory vs analytical genre</h3><img src="visualizations_open/03_advisory_vs_analytical_genre.png"><div class="caption">Response-genre distribution. <span class="axes"><b>X:</b> models/genres · <b>Y:</b> count or share of 54.</span></div></div>
+                <div class="visualization"><h3>04 — Deictic uptake divergence</h3><img src="visualizations_open/04_deictic_uptake_divergence.png"><div class="caption">How strongly each model adopts each framing. <span class="axes"><b>X:</b> framing/model · <b>Y:</b> uptake (strong/partial/weak).</span></div></div>
+                <div class="visualization"><h3>05 — Language stability matrix</h3><img src="visualizations_open/05_language_stability_matrix.png"><div class="caption">Clean-Yoruba % and English-fallback rate. <span class="axes"><b>Heatmap:</b> framing × interference; <b>bottom-right:</b> X = model, Y = % translation.</span></div></div>
+                <div class="visualization"><h3>06 — Commitment patterns (cultural)</h3><img src="visualizations_open/06_commitment_patterns_cultural.png"><div class="caption">Emphatic ratio by ethical framework / commitment. <span class="axes"><b>X:</b> framework · <b>Y:</b> emphatic ratio.</span></div></div>
+                <div class="visualization"><h3>07 — Comprehensive summary dashboard</h3><img src="visualizations_open/07_comprehensive_summary_dashboard.png"><div class="caption">Multi-panel roundup of the open arm (pronouns, genre, stability, uptake).</div></div>
+                <div class="visualization"><h3>08 — Pronoun comparison (cross-linguistic)</h3><img src="visualizations_open/08_pronoun_comparison_cross_linguistic.png"><div class="caption">First-person usage, English vs Yoruba. <span class="axes"><b>X:</b> pronoun/model · <b>Y:</b> density.</span></div></div>
+                <div class="visualization"><h3>09 — Ethical framework (cross-linguistic)</h3><img src="visualizations_open/09_ethical_framework_cross_linguistic.png"><div class="caption">Framework distribution, English vs Yoruba. <span class="axes"><b>X:</b> framework · <b>Y:</b> share.</span></div></div>
+                <div class="visualization"><h3>10 — Response genre (cultural comparison)</h3><img src="visualizations_open/10_response_genre_cultural_comparison.png"><div class="caption">Genre distribution across languages/models. <span class="axes"><b>X:</b> genre/model · <b>Y:</b> share.</span></div></div>
+                <div class="visualization"><h3>11 — Framing sensitivity (bilateral)</h3><img src="visualizations_open/11_framing_sensitivity_bilateral.png"><div class="caption">How metrics shift across the 9 framings. <span class="axes"><b>X:</b> framing · <b>Y:</b> metric value.</span></div></div>
+                <div class="visualization"><h3>12 — Cultural metaphor analysis</h3><img src="visualizations_open/12_cultural_metaphor_analysis.png"><div class="caption">Frequency of culturally resonant terms (e.g. <span class="yo">ọkàn</span>, <span class="yo">ìwà</span>). <span class="axes"><b>X:</b> metaphor/term · <b>Y:</b> count.</span></div></div>
+                <div class="visualization"><h3>13 — Example showcase</h3><img src="visualizations_open/13_example_showcase.png"><div class="caption">Illustrative annotated response excerpts.</div></div>
+                <div class="visualization"><h3>14 — Statistical summary</h3><img src="visualizations_open/14_statistical_summary.png"><div class="caption">Key metrics with summary statistics across models.</div></div>
+                <div class="visualization"><h3>15 — Dashboard preview</h3><img src="visualizations_open/15_interactive_dashboard_preview.png"><div class="caption">Composite preview image.</div></div>
+                <div class="visualization"><h3>16 — mi / emi / mo by framing (4 models)</h3><img src="visualizations_open/16_mi_emi_mo_four_model_framing.png"><div class="caption">See "First-person pronouns" tab. <span class="axes"><b>X:</b> framing · <b>Y:</b> per 100 words · bars = models.</span></div></div>
+                <div class="visualization"><h3>17 — N-ATLaS vs cloud deixis delta</h3><img src="visualizations_open/17_natlas_vs_cloud_deixis_delta.png"><div class="caption">Difference heatmap. <span class="axes"><b>Rows:</b> framing · <b>Cols:</b> mo/emi/mi/ratio · colour = N-ATLaS − cloud.</span></div></div>
+                <div class="visualization"><h3>23 — èmi vs ẹ̀mí by dilemma</h3><img src="visualizations_open/23_emi_emphatic_vs_emi_life_by_dilemma.png"><div class="caption">See "èmi vs ẹ̀mí" tab. <span class="axes"><b>X:</b> dilemma · <b>Y:</b> token count · solid = èmi, hatched = ẹ̀mí.</span></div></div>
+                <div class="visualization"><h3>24 — ẹ̀mí (life) contamination heatmap</h3><img src="visualizations_open/24_emi_life_contamination_heatmap.png"><div class="caption">See "èmi vs ẹ̀mí" tab. <span class="axes"><b>Axes:</b> model × dilemma; colour = share of emi that is actually life.</span></div></div>
+                <div class="visualization"><h3>25 — Emphatic ratio: raw vs corrected</h3><img src="visualizations_open/25_emphatic_ratio_raw_vs_corrected.png"><div class="caption">See "First-person pronouns" tab. <span class="axes"><b>X:</b> model · <b>Y:</b> emphatic ratio · two bars (raw/corrected).</span></div></div>
+                <div class="visualization"><h3>26 — Open N-ATLaS vs cloud (6-panel summary)</h3><img src="visualizations_open/26_natlas_open_vs_cloud_summary.png"><div class="caption">See "Overview" tab. The single best snapshot of the open arm.</div></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer"><p>Yoruba Deixis — Open Arm · 4 models incl. N-ATLaS · 2026 · data &amp; code in <code>yoruba_cross_linguistic_analysis/</code></p></div>
+    <script>
+        function showSection(ev, id){
+            document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
+            ev.target.classList.add('active');
+            window.scrollTo({top:0,behavior:'smooth'});
+        }
+    </script>
+</body>
+</html>

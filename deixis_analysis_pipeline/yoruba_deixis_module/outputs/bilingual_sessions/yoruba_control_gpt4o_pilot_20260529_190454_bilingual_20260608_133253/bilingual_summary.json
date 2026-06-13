@@ -1,0 +1,9 @@
+{
+  "source_session": "yoruba_control_gpt4o_pilot_20260529_190454",
+  "source_model": "gpt-4o",
+  "translation_model": "gpt-4o",
+  "translation_temperature": 0.2,
+  "translated_responses": 9,
+  "prompt_inventory": "C:\\dev\\deixis\\deixis_analysis_pipeline\\input_questions\\all_dilemmas_deictic_questions_yoruba.json",
+  "generated_at": "2026-06-08T13:32:53.004665"
+}

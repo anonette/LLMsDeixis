@@ -1,0 +1,30 @@
+{
+  "source_dir": "C:\\dev\\deixis\\deixis_analysis_pipeline\\generation_logs\\yoruba_control_deepseek_20260608_124633",
+  "coding_model": "gpt-4o",
+  "records_coded": 54,
+  "preferred_solution_distribution": {
+    "supports_B": 5,
+    "conditional_or_mixed": 33,
+    "uncodable": 2,
+    "refuses_to_commit": 8,
+    "supports_A": 6
+  },
+  "ethical_preference_distribution": {
+    "deontological": 2,
+    "procedural_caution": 9,
+    "unclear": 5,
+    "mixed": 25,
+    "care_ethics": 5,
+    "utilitarian": 6,
+    "virtue_ethics": 2
+  },
+  "response_genre_distribution": {
+    "balanced_framework_exposition": 38,
+    "translation_or_gloss": 3,
+    "procedural_advice": 7,
+    "direct_verdict": 4,
+    "meta_commentary": 2
+  },
+  "needs_second_coder_review": 23,
+  "generated_at": "2026-06-08T16:41:08.735568"
+}

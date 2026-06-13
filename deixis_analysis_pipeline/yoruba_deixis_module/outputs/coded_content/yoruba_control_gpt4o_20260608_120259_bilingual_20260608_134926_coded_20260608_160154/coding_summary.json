@@ -1,0 +1,16 @@
+{
+  "source_bilingual_dir": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\bilingual_sessions\\yoruba_control_gpt4o_20260608_120259_bilingual_20260608_134926",
+  "coding_model": "gpt-4o",
+  "records_coded": 1,
+  "preferred_solution_distribution": {
+    "conditional_or_mixed": 1
+  },
+  "ethical_preference_distribution": {
+    "mixed": 1
+  },
+  "response_genre_distribution": {
+    "balanced_framework_exposition": 1
+  },
+  "needs_second_coder_review": 0,
+  "generated_at": "2026-06-08T16:01:54.321327"
+}

@@ -1,0 +1,28 @@
+{
+  "source_bilingual_dir": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\bilingual_sessions\\yoruba_control_claude_20260608_122738_bilingual_20260608_134631",
+  "coding_model": "gpt-4o",
+  "records_coded": 54,
+  "preferred_solution_distribution": {
+    "supports_A": 23,
+    "conditional_or_mixed": 14,
+    "refuses_to_commit": 9,
+    "supports_B": 8
+  },
+  "ethical_preference_distribution": {
+    "rights_based": 1,
+    "virtue_ethics": 1,
+    "procedural_caution": 14,
+    "mixed": 11,
+    "utilitarian": 10,
+    "care_ethics": 2,
+    "deontological": 14,
+    "unclear": 1
+  },
+  "response_genre_distribution": {
+    "balanced_framework_exposition": 40,
+    "procedural_advice": 10,
+    "direct_verdict": 4
+  },
+  "needs_second_coder_review": 2,
+  "generated_at": "2026-06-08T16:18:13.072323"
+}

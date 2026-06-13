@@ -1,0 +1,10 @@
+{
+  "model": "deepseek/deepseek-chat",
+  "control_source_session": "yoruba_control_deepseek_pilot_20260529_191201",
+  "constrained_source_session": "yoruba_deepseek_calibration_20260529_180146_cleaned_20260529_180720_annotated_20260529_180900",
+  "paired_records": 9,
+  "mean_control_length": 3414.222222222222,
+  "mean_constrained_length": 431.55555555555554,
+  "mean_length_delta_control_minus_constrained": 2982.6666666666665,
+  "generated_at": "2026-05-29T19:25:13.373788"
+}

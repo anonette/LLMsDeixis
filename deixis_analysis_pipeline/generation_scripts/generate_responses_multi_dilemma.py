@@ -16,6 +16,13 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 from deixis_ethical_analyzer import DeicticEthicalAnalyzer
 from transformer import DeicticFraming
 
+
+def build_generation_prompt(question: str, response_instruction: str = "") -> str:
+    """Compose the final prompt sent to the model."""
+    if not response_instruction:
+        return question
+    return f"{response_instruction.strip()}\n\nÌbéèrè / Question:\n{question}"
+
 def load_all_dilemmas_questions(json_path="all_dilemmas_deictic_questions.json"):
     """Load all dilemmas with deictic questions from JSON."""
     json_file = Path(json_path)
@@ -29,7 +36,7 @@ def load_all_dilemmas_questions(json_path="all_dilemmas_deictic_questions.json")
         data = json.load(f)
         return data
 
-async def generate_responses_for_dilemma(analyzer, dilemma_data, output_dir):
+async def generate_responses_for_dilemma(analyzer, dilemma_data, output_dir, response_instruction=""):
     """Generate responses for a single dilemma across all framings."""
     
     # All 9 deictic framings
@@ -90,12 +97,14 @@ async def generate_responses_for_dilemma(analyzer, dilemma_data, output_dir):
             
             # Generate response using GPT-4o
             start_time = datetime.now()
-            response = await analyzer.llm_agent.generate_ethical_response(deictic_question)
+            prompt_to_send = build_generation_prompt(deictic_question, response_instruction)
+            response = await analyzer.llm_agent.generate_ethical_response(prompt_to_send)
             generation_time = (datetime.now() - start_time).total_seconds()
             
             # Store the response with metadata from JSON
             dilemma_responses["responses"][framing_key] = {
                 "deictic_question": deictic_question,
+                "prompt_sent": prompt_to_send,
                 "deictic_markers": question_data.get("deictic_markers", []),
                 "framing_focus": question_data.get("focus", ""),
                 "response": response,
@@ -135,12 +144,14 @@ async def generate_responses_for_dilemma(analyzer, dilemma_data, output_dir):
             
             # Generate response using GPT-4o
             start_time = datetime.now()
-            response = await analyzer.llm_agent.generate_ethical_response(deictic_question)
+            prompt_to_send = build_generation_prompt(deictic_question, response_instruction)
+            response = await analyzer.llm_agent.generate_ethical_response(prompt_to_send)
             generation_time = (datetime.now() - start_time).total_seconds()
             
             # Store the response with metadata from JSON
             dilemma_responses["responses"][framing_key] = {
                 "deictic_question": deictic_question,
+                "prompt_sent": prompt_to_send,
                 "deictic_markers": question_data.get("deictic_markers", []),
                 "framing_focus": question_data.get("focus", ""),
                 "response": response,
@@ -177,7 +188,12 @@ async def generate_responses_for_dilemma(analyzer, dilemma_data, output_dir):
     
     return dilemma_responses, successful, failed
 
-async def generate_responses_multi_dilemma(dilemma_ids=None, json_path="all_dilemmas_deictic_questions.json"):
+async def generate_responses_multi_dilemma(
+    dilemma_ids=None,
+    json_path="all_dilemmas_deictic_questions.json",
+    output_prefix="multi_dilemma",
+    response_instruction=""
+):
     """Generate responses for multiple dilemmas using JSON questions."""
     
     print("MULTI-DILEMMA DEICTIC ANALYSIS - GPT-4o")
@@ -213,7 +229,7 @@ async def generate_responses_multi_dilemma(dilemma_ids=None, json_path="all_dile
     # Create output directory
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     # Use absolute path relative to the script location
-    output_dir = Path(__file__).parent.parent / "generation_logs" / f"multi_dilemma_{timestamp}"
+    output_dir = Path(__file__).parent.parent / "generation_logs" / f"{output_prefix}_{timestamp}"
     output_dir.mkdir(parents=True, exist_ok=True)
     
     print(f"\nStarting generation...")
@@ -233,6 +249,7 @@ async def generate_responses_multi_dilemma(dilemma_ids=None, json_path="all_dile
         try:
             responses, successful, failed = await generate_responses_for_dilemma(
                 analyzer, dilemma, output_dir
+                , response_instruction=response_instruction
             )
             all_responses.append(responses)
             total_successful += successful
@@ -255,6 +272,7 @@ async def generate_responses_multi_dilemma(dilemma_ids=None, json_path="all_dile
             "temperature": 0.9,
             "total_dilemmas": len(dilemmas),
             "source_file": json_path
+            ,"response_instruction": response_instruction
         },
         "dilemmas_processed": [d["dilemma_id"] for d in dilemmas],
         "all_responses": all_responses,
@@ -298,7 +316,8 @@ async def generate_responses_multi_dilemma(dilemma_ids=None, json_path="all_dile
             "deictic_framings": ["impersonal", "second_person", "first_person", "first_person_plural",
                                "reflexive", "dialogic", "spatial", "temporal", "cosmological"],
             "question_source": "JSON file with expert-crafted questions",
-            "hypothesis": "Different deictic markers will elicit different reasoning patterns across diverse ethical dilemmas"
+            "hypothesis": "Different deictic markers will elicit different reasoning patterns across diverse ethical dilemmas",
+            "response_instruction": response_instruction
         }
     }
     
@@ -327,13 +346,34 @@ def main():
     parser.add_argument('--dilemmas', nargs='+', help='Specific dilemma IDs to process (default: all)')
     parser.add_argument('--json-path', default='all_dilemmas_deictic_questions.json',
                        help='Path to JSON file with dilemma questions')
+    parser.add_argument('--output-prefix', default='multi_dilemma',
+                       help='Prefix for the output session directory')
+    parser.add_argument('--response-instruction', default='',
+                       help='Additional instruction prepended to every generation prompt')
+    parser.add_argument('--response-instruction-file', default=None,
+                       help='Path to a UTF-8 text file containing the response instruction (preferred for non-ASCII).')
+    parser.add_argument('--response-instruction-key', default=None,
+                       help='Key in yoruba_deixis_module/model_response_instructions.json to load the instruction from')
     
     args = parser.parse_args()
+    
+    instruction = args.response_instruction
+    if args.response_instruction_file:
+        with open(args.response_instruction_file, "r", encoding="utf-8") as f:
+            instruction = f.read().strip()
+    elif args.response_instruction_key:
+        from pathlib import Path as _P
+        cfg_path = _P(__file__).parent.parent / "yoruba_deixis_module" / "model_response_instructions.json"
+        with open(cfg_path, "r", encoding="utf-8") as f:
+            cfg = json.load(f)
+        instruction = cfg["model_response_instructions"][args.response_instruction_key]
     
     # Run the async function
     asyncio.run(generate_responses_multi_dilemma(
         dilemma_ids=args.dilemmas,
-        json_path=args.json_path
+        json_path=args.json_path,
+        output_prefix=args.output_prefix,
+        response_instruction=instruction
     ))
 
 if __name__ == "__main__":

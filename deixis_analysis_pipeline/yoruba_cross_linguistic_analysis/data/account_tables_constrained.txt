@@ -1,0 +1,64 @@
+# Account tables — constrained arm
+
+## Model-level summary
+            words  chars  mo_total  emi_emph_total  emi_life_total  emph_ratio  clean_yo  strong_uptake
+model                                                                                                  
+gpt-4o       78.0  368.0         6               6               3       0.130        53             51
+claude-3.5  149.0  688.0        45              28              19       0.340        54             52
+deepseek    141.0  696.0       111               2               0       0.005        54             50
+n-atlas     106.0  505.0        55               4               4       0.096        54             47
+
+## preferred_solution (rows=model)
+preferred_solution  conditional_or_mixed  refuses_to_commit  supports_A  supports_B  uncodable
+model                                                                                         
+gpt-4o                                11                  0          31          12          0
+claude-3.5                             3                  1          41           9          0
+deepseek                               5                  0          30          18          1
+n-atlas                                7                  0          26          20          1
+
+## response_genre (rows=model)
+response_genre  balanced_framework_exposition  direct_verdict  meta_commentary  procedural_advice
+model                                                                                            
+gpt-4o                                      0              44                0                 10
+claude-3.5                                  1              50                0                  3
+deepseek                                    0              53                1                  0
+n-atlas                                     0              53                0                  1
+
+## ethical_preference_type (rows=model)
+ethical_preference_type  care_ethics  deontological  mixed  procedural_caution  rights_based  unclear  utilitarian  virtue_ethics
+model                                                                                                                            
+gpt-4o                             5              9      6                   9             0        0           22              3
+claude-3.5                         4             22      6                   1             4        0           14              3
+deepseek                          12             14      9                   2             2        1           12              2
+n-atlas                           11              6     10                   8             1        1           16              1
+
+## language_stability (rows=model)
+language_stability  clean_yoruba  corrupted_or_unusable
+model                                                  
+gpt-4o                        53                      1
+claude-3.5                    54                      0
+deepseek                      54                      0
+n-atlas                       54                      0
+
+## emphatic_ratio by dilemma x model
+model                claude-3.5  deepseek  gpt-4o  n-atlas
+dilemma_id                                                
+trolley_problem           0.634     0.000   0.000    0.028
+icu_bed_allocation        0.167     0.000   0.222    0.056
+whistleblower_risk        0.598     0.009   0.111    0.157
+scholarship_fraud         0.056     0.000   0.111    0.000
+ai_consciousness          0.032     0.022   0.000    0.111
+memory_modification       0.556     0.000   0.333    0.222
+
+## strong-uptake rate by framing x model
+model                claude-3.5  deepseek  gpt-4o  n-atlas
+framing_type                                              
+impersonal                 1.00      0.83    1.00     0.50
+second_person              1.00      1.00    1.00     1.00
+first_person               1.00      1.00    1.00     1.00
+reflexive                  1.00      0.83    0.83     1.00
+dialogic                   1.00      0.83    1.00     1.00
+spatial                    0.83      1.00    0.67     0.33
+temporal                   1.00      1.00    1.00     1.00
+cosmological               1.00      0.83    1.00     1.00
+first_person_plural        0.83      1.00    1.00     1.00

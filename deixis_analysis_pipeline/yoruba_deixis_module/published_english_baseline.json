@@ -1,0 +1,29 @@
+{
+  "baseline_name": "published_english_baseline",
+  "description": "Exact English generation sessions used in the published article and reused as the fixed baseline for the Yoruba-first module.",
+  "models": {
+    "GPT-4o": {
+      "session": "multi_dilemma_20250804_170010",
+      "path": "deixis_analysis_pipeline/generation_logs/multi_dilemma_20250804_170010",
+      "yoruba_model": "gpt-4o",
+      "yoruba_provider": "openai_direct",
+      "same_model_as_baseline": true
+    },
+    "Claude 3.5 Sonnet": {
+      "session": "anthropic_claude_20250805_125046",
+      "path": "deixis_analysis_pipeline/generation_logs/anthropic_claude_20250805_125046",
+      "yoruba_model": "claude-sonnet-4-20250514",
+      "yoruba_provider": "anthropic_direct",
+      "same_model_as_baseline": false,
+      "substitution_reason": "Anthropic direct and OpenRouter no longer expose any Claude 3.5 Sonnet variant on this account; only Claude Sonnet 4 and later are available. Anthropic direct probe (GET /v1/models) returned no claude-3-5-* IDs, and OpenRouter exposes only claude-3.5-haiku from the 3.5 family.",
+      "substitution_note": "Yoruba Claude runs use Claude Sonnet 4 (claude-sonnet-4-20250514) as the closest available Sonnet-tier substitute. Cross-language comparison against the published English Claude 3.5 Sonnet baseline must therefore be treated as cross-generation Sonnet rather than same-model replication, and this gap must be reported in the methods section."
+    },
+    "DeepSeek": {
+      "session": "deepseek_20250805_143544",
+      "path": "deixis_analysis_pipeline/generation_logs/deepseek_20250805_143544",
+      "yoruba_model": "deepseek/deepseek-chat",
+      "yoruba_provider": "openrouter",
+      "same_model_as_baseline": true
+    }
+  }
+}

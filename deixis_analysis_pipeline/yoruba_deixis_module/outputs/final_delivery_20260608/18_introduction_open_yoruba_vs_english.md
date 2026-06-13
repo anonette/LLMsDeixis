@@ -1,0 +1,24 @@
+# Introduction
+
+Large language models do not respond to ethical dilemmas from a single stable enunciative position. Prior work on deixis and AI moral reasoning has shown that the framing of a dilemma through person, space, time, reflexivity, dialogue, and cosmological scope can reorganize how models distribute agency, responsibility, and judgment. In the original English study, the central claim was not merely that models choose different ethical options under different prompts, but that deictic framing changes the very mode through which moral reasoning is articulated. That claim has immediate implications for cross-linguistic work. If deictic framing is structurally important for AI moral reasoning, then comparable manipulations in a typologically distinct language should reveal whether the phenomenon generalizes, and whether it generalizes at the level of solution, rhetorical posture, or both.
+
+Coding legend used throughout the manuscript:
+
+- `supports_A` = supports action A in the dilemma
+- `supports_B` = supports action B in the dilemma
+- `conditional_or_mixed` = presents multiple options or only weakly leans
+- `refuses_to_commit` = remains analytical and avoids endorsing one action
+- `uncodable` = too unstable, translational, or corrupted to code reliably
+
+For trolley-like dilemmas:
+
+- `supports_A` = divert / intervene
+- `supports_B` = do not divert / do not intervene
+
+Yoruba is an especially useful language for testing this question because it grammaticalizes deictic anchoring differently from English. Yoruba relies more overtly on aspectual, existential, and adverbial resources that can intensify the local force of a framing. Progressive marking such as `ń`, habitual marking such as `máa ń`, existential localization through `wà`, and dense temporal adverbials can make a dilemma feel more situated, more embodied, or more urgent than an apparently equivalent English version. This does not mean that Yoruba simply “adds noise” to the experiment. Rather, it makes visible the possibility that the same deictic category may be realized with different degrees of anchoring across languages, and that these differences may shape not just what models decide, but how they decide and how they speak that decision.
+
+The present study examines the **unrestricted Yoruba** condition, that is, Yoruba prompts without the additional response-format constraints used in the more tightly controlled Yoruba run. This open condition is important because it reveals what the models do when asked to respond in Yoruba without being forced into a short decision-plus-reason template. It therefore allows a more direct comparison to the original English baseline, which often remained expository, framework-driven, and rhetorically noncommittal. The resulting corpus makes it possible to ask two linked questions. First, do English and open Yoruba tend toward similar preferred ethical stances under the same deictic framing? Second, even where they do, do they realize those stances in the same rhetorical and ethical form?
+
+To answer these questions, the study preserves the original factorial design: `6 dilemmas × 9 deictic framings × 3 model families`. Each unrestricted Yoruba response is paired exactly to the published English baseline by `(model, dilemma_id, framing_type)`. However, the comparison is not reduced to verdict alone. The English baseline in the repository was already analyzed using dimensions such as ethical framework, rhetorical authority, affective stance, and indexical coherence. To align the Yoruba side with that richer analytic tradition, the unrestricted Yoruba corpus was coded directly from the raw Yoruba text for preferred solution, ethical preference type, response genre, deictic uptake quality, and language stability. This makes it possible to distinguish genuine cross-linguistic ethical divergence from changes in response genre or failures of response-mode stability.
+
+The study advances three claims. First, unrestricted Yoruba is fully comparable to English at the level of paired design and can therefore support a serious cross-linguistic test of deictic effects on AI moral response. Second, the strongest differences between English and Yoruba are often not simple differences in final recommendation, but differences in genre, directive force, and stability of deictic uptake. Third, these effects vary sharply by model family: GPT-4o remains broadly framework-expository, Claude becomes more action-codable in Yoruba than in English, and DeepSeek exhibits substantial instability that itself becomes a theoretically relevant part of the result. On this basis, the unrestricted Yoruba corpus should be understood not as a secondary translation supplement, but as an empirical extension of the English study that clarifies how deictic framing interacts with language structure to shape moral enunciation in LLMs.

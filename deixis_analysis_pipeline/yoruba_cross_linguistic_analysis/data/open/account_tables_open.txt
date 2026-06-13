@@ -1,0 +1,64 @@
+# Account tables — open arm
+
+## Model-level summary
+            words   chars  mo_total  emi_emph_total  emi_life_total  emph_ratio  clean_yo  strong_uptake
+model                                                                                                   
+gpt-4o      283.0  1452.0        30               7              10       0.176        54             47
+claude-3.5  183.0   909.0        81              14              43       0.324        52             53
+deepseek    400.0  2246.0        73              13               2       0.069        33             43
+n-atlas     299.0  1421.0        89               4               3       0.066        47             38
+
+## preferred_solution (rows=model)
+preferred_solution  conditional_or_mixed  refuses_to_commit  supports_A  supports_B  uncodable
+model                                                                                         
+gpt-4o                                41                 12           0           1          0
+claude-3.5                            14                  9          23           8          0
+deepseek                              30                 11           8           5          0
+n-atlas                               16                  8          23           2          5
+
+## response_genre (rows=model)
+response_genre  balanced_framework_exposition  direct_verdict  meta_commentary  mixed  procedural_advice  translation_or_gloss
+model                                                                                                                         
+gpt-4o                                     50               0                0      0                  4                     0
+claude-3.5                                 40               4                0      0                 10                     0
+deepseek                                   38               5                1      0                  8                     2
+n-atlas                                    18              16                0      5                 15                     0
+
+## ethical_preference_type (rows=model)
+ethical_preference_type  care_ethics  deontological  mixed  procedural_caution  rights_based  unclear  utilitarian  virtue_ethics
+model                                                                                                                            
+gpt-4o                             0              1     46                   6             0        1            0              0
+claude-3.5                         2             14     11                  14             1        1           10              1
+deepseek                           5              2     28                   8             0        4            5              2
+n-atlas                            6              3     16                  10             0        5           13              1
+
+## language_stability (rows=model)
+language_stability  clean_yoruba  corrupted_or_unusable  translation_mode  yoruba_with_english_markers
+model                                                                                                 
+gpt-4o                        54                      0                 0                            0
+claude-3.5                    52                      0                 2                            0
+deepseek                      33                      0                20                            1
+n-atlas                       47                      6                 0                            1
+
+## emphatic_ratio by dilemma x model
+model                claude-3.5  deepseek  gpt-4o  n-atlas
+dilemma_id                                                
+trolley_problem           0.686     0.000   0.444    0.000
+icu_bed_allocation        0.309     0.222   0.139    0.037
+whistleblower_risk        0.278     0.000   0.111    0.139
+scholarship_fraud         0.078     0.083   0.000    0.111
+ai_consciousness          0.296     0.111   0.159    0.000
+memory_modification       0.296     0.000   0.204    0.111
+
+## strong-uptake rate by framing x model
+model                claude-3.5  deepseek  gpt-4o  n-atlas
+framing_type                                              
+impersonal                 1.00      0.67    0.67     0.50
+second_person              1.00      1.00    0.83     1.00
+first_person               1.00      0.83    1.00     0.83
+reflexive                  1.00      0.83    0.83     0.50
+dialogic                   1.00      1.00    1.00     0.83
+spatial                    0.83      0.83    0.83     0.50
+temporal                   1.00      0.67    0.83     0.83
+cosmological               1.00      0.83    0.83     0.83
+first_person_plural        1.00      0.50    1.00     0.50

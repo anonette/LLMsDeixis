@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English, Yoruba, Deixis, and LLM Ethics</title>
+  <style>
+    :root {
+      --bg: #f4f0e8;
+      --paper: #fffdfa;
+      --ink: #1a1a1a;
+      --muted: #5f5a54;
+      --line: #d9d0c4;
+      --accent: #6d3d14;
+      --accent2: #1a5870;
+      --soft: #f8f2ea;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 18px/1.45 Georgia, serif;
+    }
+    .deck {
+      width: min(1280px, calc(100vw - 32px));
+      margin: 24px auto 80px;
+    }
+    .slide {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      min-height: 720px;
+      padding: 42px 52px 46px;
+      margin: 0 0 28px;
+      position: relative;
+      page-break-after: always;
+    }
+    .n {
+      position: absolute;
+      right: 22px;
+      bottom: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 14px; }
+    h1 { font-size: 40px; letter-spacing: -0.02em; }
+    h2 { font-size: 30px; color: var(--accent); }
+    h3 { font-size: 22px; color: var(--accent2); }
+    p, li { margin: 0 0 12px; }
+    ul { padding-left: 24px; margin: 0; }
+    .lede { color: var(--muted); font-size: 22px; max-width: 44em; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card, .panel, .quote {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 16px 18px;
+    }
+    .card strong, .panel strong { color: var(--accent2); }
+    .small { font-size: 15px; color: var(--muted); }
+    .metric { font-size: 32px; font-weight: bold; color: var(--accent); }
+    .metric-label { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    figure { margin: 10px 0 0; }
+    img { width: 100%; height: auto; display: block; border: 1px solid var(--line); background: white; }
+    figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
+    .quote { white-space: pre-wrap; font-size: 16px; line-height: 1.42; }
+    .accent { color: var(--accent); }
+    code { font-family: Consolas, monospace; font-size: .92em; }
+    .tag { display:inline-block; border:1px solid var(--line); background:var(--soft); padding:4px 8px; margin-right:8px; font-size:14px; }
+    @media print {
+      body { background: #fff; }
+      .deck { width: auto; margin: 0; }
+      .slide { margin: 0; box-shadow: none; border: 0; min-height: auto; padding: 18px 24px 26px; }
+    }
+    @media (max-width: 980px) {
+      .deck { width: calc(100vw - 20px); margin: 10px auto 40px; }
+      .slide { padding: 24px; min-height: auto; }
+      .grid2, .grid3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+
+    <section class="slide">
+      <h1>English, Yoruba, Deixis, and LLM Ethics</h1>
+      <p class="lede">How deictic framing changes moral response across languages, across models, and what that reveals about cultural alignment.</p>
+      <div class="grid3" style="margin-top:28px;">
+        <div class="card"><div class="metric">6 × 9 × 3</div><div class="metric-label">Dilemmas × Framings × Models</div></div>
+        <div class="card"><div class="metric">162</div><div class="metric-label">Open Yoruba cells</div></div>
+        <div class="card"><div class="metric">162</div><div class="metric-label">Matched English cells</div></div>
+      </div>
+      <p style="margin-top:28px;">Core claim: the most important cross-linguistic differences are often not just <em>which option</em> the model prefers, but <em>how</em> it inhabits moral speech under different deictic framings.</p>
+      <div class="n">1 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Why This Topic Matters</h2>
+      <ul>
+        <li>LLMs do not answer moral questions from a neutral vacuum.</li>
+        <li>Pronouns, time, space, reflexivity, and cosmological perspective shape how moral agency is staged.</li>
+        <li>If the same ethical dilemma behaves differently in English and Yoruba, that tells us something about both language structure and alignment.</li>
+        <li>This is not only a content question. It is also a question about discourse mode, perspective, and enunciation.</li>
+      </ul>
+      <div class="grid2" style="margin-top:24px;">
+        <div class="card"><strong>English baseline tendency</strong><br>analytical, framework-explicit, often noncommittal</div>
+        <div class="card"><strong>Open Yoruba tendency</strong><br>advisory, procedural, sometimes more directive, sometimes unstable</div>
+      </div>
+      <div class="n">2 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>The Design</h2>
+      <ul>
+        <li>Same 6 dilemmas as the English article.</li>
+        <li>Same 9 deictic framings: impersonal, second person, first person, first person plural, reflexive, dialogic, spatial, temporal, cosmological.</li>
+        <li>Compared to the exact published English baseline by <code>(model, dilemma_id, framing_type)</code>.</li>
+        <li>Today’s focus: the <strong>unrestricted Yoruba</strong> condition.</li>
+      </ul>
+      <div class="grid2" style="margin-top:22px;">
+        <div class="panel"><strong>Question 1</strong><br>Do English and Yoruba prefer similar ethical stances?</div>
+        <div class="panel"><strong>Question 2</strong><br>Even when they do, do they speak them in the same way?</div>
+      </div>
+      <div class="n">3 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>How We Coded the Open Yoruba Corpus</h2>
+      <ul>
+        <li>Used a Yoruba-first coding layer on the <strong>raw Yoruba responses</strong>.</li>
+        <li>Coded each cell for:</li>
+      </ul>
+      <div class="grid3" style="margin-top:10px;">
+        <div class="card"><strong>Preferred solution</strong><br><span class="small">supports_A / supports_B / conditional_or_mixed / refuses_to_commit / uncodable</span></div>
+        <div class="card"><strong>Ethical preference type</strong><br><span class="small">utilitarian / deontological / care / procedural caution / mixed</span></div>
+        <div class="card"><strong>Response genre</strong><br><span class="small">verdict / exposition / procedural advice / translation / meta-commentary</span></div>
+      </div>
+      <p style="margin-top:18px;">Important coding legend:</p>
+      <p><span class="tag">supports_A = action A</span><span class="tag">supports_B = action B</span><span class="tag">trolley: A = divert, B = do not divert</span></p>
+      <div class="n">4 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>How Much Is Just Language Trouble?</h2>
+      <div class="grid3" style="margin-top:16px;">
+        <div class="card"><div class="metric">1 / 54</div><div class="metric-label">GPT-4o severe language problems</div></div>
+        <div class="card"><div class="metric">2 / 54</div><div class="metric-label">Claude severe language problems</div></div>
+        <div class="card"><div class="metric">20 / 54</div><div class="metric-label">DeepSeek severe language problems</div></div>
+      </div>
+      <p style="margin-top:22px;">Interpretation:</p>
+      <ul>
+        <li>For <strong>GPT-4o</strong> and <strong>Claude</strong>, most differences are <strong>not</strong> just language failures.</li>
+        <li>For <strong>DeepSeek</strong>, a large part of the divergence is mixed with translation-mode or role-instability problems.</li>
+      </ul>
+      <div class="n">5 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Big Picture: Three-Way Length Shift</h2>
+      <figure>
+        <img src="13_three_way_mean_length.png" alt="Three-way mean response length">
+        <figcaption>Open Yoruba sits between constrained Yoruba and English for GPT-4o and Claude, but expands dramatically for DeepSeek.</figcaption>
+      </figure>
+      <div class="n">6 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Preferred Solutions: Open Yoruba vs English</h2>
+      <figure>
+        <img src="10_preferred_solution_distribution.png" alt="Preferred solution distribution">
+        <figcaption>Open Yoruba and English are often ethically adjacent, but they differ in how often they commit, hedge, or collapse into mixed reasoning.</figcaption>
+      </figure>
+      <div class="n">7 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Response Genre: Open Yoruba vs English</h2>
+      <figure>
+        <img src="11_response_genre_distribution.png" alt="Response genre distribution">
+        <figcaption>The core contrast is often genre, not just verdict: English is more consistently framework-analytic; Yoruba is more advisory, procedural, or unstable depending on the model.</figcaption>
+      </figure>
+      <div class="n">8 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Difference Heatmap</h2>
+      <figure>
+        <img src="12_difference_heatmap.png" alt="Difference heatmap">
+        <figcaption>Higher values indicate larger English–Yoruba gaps in preferred solution, ethical preference type, response genre, or language stability.</figcaption>
+      </figure>
+      <div class="n">9 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>What GPT-4o Tells Us</h2>
+      <ul>
+        <li>Open Yoruba GPT-4o is the least decisive model.</li>
+        <li>Its dominant code is <code>conditional_or_mixed</code>.</li>
+        <li>Its dominant genre is <code>balanced_framework_exposition</code>.</li>
+        <li>So GPT-4o preserves broad ethical adjacency across languages, but shifts from detached analysis to more procedural advisory discourse.</li>
+      </ul>
+      <div class="card" style="margin-top:20px;"><strong>Takeaway</strong><br>GPT-4o is the clearest case that unrestricted Yoruba is not just “shorter English,” but a different mode of moral speech.</div>
+      <div class="n">10 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>What Claude Tells Us</h2>
+      <ul>
+        <li>Claude is the most action-codable model in open Yoruba.</li>
+        <li>It spreads across <code>supports_A</code>, <code>supports_B</code>, <code>conditional_or_mixed</code>, and <code>refuses_to_commit</code>.</li>
+        <li>It also has the richest spread of ethical preference types.</li>
+        <li>Relative to English, Claude in Yoruba more often crosses from reflection into recommendation.</li>
+      </ul>
+      <div class="card" style="margin-top:20px;"><strong>Takeaway</strong><br>Claude is the best model for showing that deictic framing in Yoruba can change not only the discourse form, but also the ethical explicitness of the response.</div>
+      <div class="n">11 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>What DeepSeek Tells Us</h2>
+      <ul>
+        <li>DeepSeek is the most unstable model in unrestricted Yoruba.</li>
+        <li>It often drifts into translation, glossing, meta-commentary, or role exit.</li>
+        <li>Many of its biggest “ethical” differences are actually differences in response mode.</li>
+      </ul>
+      <div class="card" style="margin-top:18px;"><strong>Takeaway</strong><br>DeepSeek reveals that a model can fail not by choosing the “wrong” stance, but by failing to stay inside the deictic frame at all.</div>
+      <div class="n">12 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Surprising Case 1: Claude / AI Consciousness / Dialogic</h2>
+      <p class="small">One of the strongest OpenAI/Anthropic contrasts: same dilemma, same deictic framing, but different commitment profile.</p>
+      <div class="grid2">
+        <div class="quote">
+          <strong>Yoruba (Claude)</strong><br><br>
+          Ohun tí o gbọ́dọ̀ ṣe: <strong>Dúró ìwádìí náà lẹ́sẹ̀kẹsẹ̀</strong> ...
+        </div>
+        <div class="quote">
+          <strong>English (Claude baseline)</strong><br><br>
+          “I aim to explore this complex scenario ... while acknowledging significant uncertainty.”
+        </div>
+      </div>
+      <p style="margin-top:18px;">Interpretation: the English baseline stays in exploratory mode; Yoruba crosses into procedural caution and direct recommendation.</p>
+      <div class="n">13 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Surprising Case 2: GPT-4o / Whistleblower / Second Person</h2>
+      <div class="grid2">
+        <div class="quote">
+          <strong>Yoruba</strong><br><br>
+          “... ṣíṣàfihàn ó lè jẹ́ pàtàkì. Ṣùgbọ́n, kí n tó dá ìmọ̀ náà lójú tán, ó ṣe pàtàkì láti: gbé ìpàdé kan kalẹ̀ ...”
+        </div>
+        <div class="quote">
+          <strong>English</strong><br><br>
+          “The ethical obligation to prevent harm to others generally supersedes maintaining organizational harmony ...”
+        </div>
+      </div>
+      <p style="margin-top:18px;">Interpretation: both broadly move toward disclosure, but English frames it as an ethical obligation, while Yoruba turns it into a staged procedural path.</p>
+      <div class="n">14 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Most Dramatic Divergences: DeepSeek</h2>
+      <div class="grid2">
+        <div class="quote">
+          <strong>DeepSeek / AI Consciousness / First Person Plural (Yoruba)</strong><br><br>
+          Coded as <code>uncodable</code> and <code>translation_or_gloss</code>.
+        </div>
+        <div class="quote">
+          <strong>DeepSeek / AI Consciousness / First Person Plural (English)</strong><br><br>
+          Coded as <code>conditional_or_mixed</code> and <code>balanced_framework_exposition</code>.
+        </div>
+      </div>
+      <p style="margin-top:18px;">This is not just a different moral stance. It is a different <em>speech act</em>: English stays inside ethical reasoning; Yoruba exits into translation-like mediation.</p>
+      <div class="n">15 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Now the Agreements</h2>
+      <ul>
+        <li>The strongest agreements occur when both languages remain framework-driven rather than verdict-driven.</li>
+        <li>Agreement is often clearest at the level of <strong>ethical architecture</strong>, not necessarily at the level of one-line recommendation.</li>
+      </ul>
+      <div class="card" style="margin-top:18px;"><strong>Key insight</strong><br>English and Yoruba are often closest not when they produce the same short answer, but when both remain inside analytic mode and enumerate similar principles.</div>
+      <div class="n">16 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Agreement Example: GPT-4o / AI Consciousness / First Person</h2>
+      <div class="grid2">
+        <div class="quote">
+          <strong>Yoruba</strong><br><br>
+          Coded as <code>conditional_or_mixed</code>, <code>mixed</code>, <code>balanced_framework_exposition</code>.
+        </div>
+        <div class="quote">
+          <strong>English</strong><br><br>
+          Also coded as <code>conditional_or_mixed</code>, <code>mixed</code>, <code>balanced_framework_exposition</code>.
+        </div>
+      </div>
+      <p style="margin-top:18px;">Interpretation: this is what true cross-linguistic alignment looks like in the data. The languages differ in texture, but the model occupies the same broad moral space.</p>
+      <div class="n">17 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>So What Does This Tell Us About Cultural Alignment?</h2>
+      <ul>
+        <li>Cultural alignment is not just “same verdict across languages.”</li>
+        <li>It includes how a model speaks, who it speaks as, and whether it stabilizes a moral position or retreats into meta-analysis.</li>
+        <li>Yoruba sometimes makes models more advisory, more procedural, or more explicitly responsible.</li>
+        <li>So alignment is partly about <strong>ethical stance</strong>, but also about <strong>rhetorical and deictic fit</strong>.</li>
+      </ul>
+      <div class="n">18 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Why Deixis Matters for LLM Ethics</h2>
+      <ul>
+        <li>Deixis shapes moral subjectivity.</li>
+        <li>It redistributes who appears responsible, embedded, universal, urgent, or detached.</li>
+        <li>Different languages realize those deictic fields differently.</li>
+        <li>So the same “ethical” model may not be equally aligned across languages, even when the task is held constant.</li>
+      </ul>
+      <div class="card" style="margin-top:20px;"><strong>Bottom line</strong><br>Deictic framing is not a cosmetic prompt trick. It is a structural lens on how models enact ethics.</div>
+      <div class="n">19 / 20</div>
+    </section>
+
+    <section class="slide">
+      <h2>Takeaways</h2>
+      <ul>
+        <li>Open Yoruba is fully comparable to English, but only with multi-layer coding.</li>
+        <li>GPT-4o is the most ethically adjacent across languages.</li>
+        <li>Claude shows the strongest genuine framing effects on explicit recommendation.</li>
+        <li>DeepSeek reveals the importance of response-mode stability as part of alignment.</li>
+        <li>The strongest cross-linguistic question is not only “what did it choose?” but “what kind of moral speaker did the prompt make it become?”</li>
+      </ul>
+      <p style="margin-top:24px;" class="small">Files in the delivery bundle include the visual report, narrative report, coding report, framing cross-tabs, workbook, and manuscript draft.</p>
+      <div class="n">20 / 20</div>
+    </section>
+
+  </main>
+</body>
+</html>

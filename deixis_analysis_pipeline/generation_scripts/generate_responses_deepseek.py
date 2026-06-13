@@ -16,6 +16,13 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 from deixis_ethical_analyzer import DeicticEthicalAnalyzer
 from transformer import DeicticFraming
 
+
+def build_generation_prompt(question: str, response_instruction: str = "") -> str:
+    """Compose the final prompt sent to the model."""
+    if not response_instruction:
+        return question
+    return f"{response_instruction.strip()}\n\nÌbéèrè / Question:\n{question}"
+
 def load_all_dilemmas_questions(json_path="all_dilemmas_deictic_questions.json"):
     """Load all dilemmas with deictic questions from JSON."""
     json_file = Path(json_path)
@@ -40,7 +47,7 @@ def load_all_dilemmas_questions(json_path="all_dilemmas_deictic_questions.json")
         
         return dilemmas_dict
 
-async def generate_responses_for_dilemma(analyzer, dilemma_name, deictic_questions):
+async def generate_responses_for_dilemma(analyzer, dilemma_name, deictic_questions, response_instruction=""):
     """Generate responses for a single dilemma across all deictic framings."""
     responses = {}
     success_count = 0
@@ -51,11 +58,13 @@ async def generate_responses_for_dilemma(analyzer, dilemma_name, deictic_questio
         
         try:
             # Generate response using DeepSeek
-            response = await analyzer.llm_agent.generate_ethical_response(question)
+            prompt_to_send = build_generation_prompt(question, response_instruction)
+            response = await analyzer.llm_agent.generate_ethical_response(prompt_to_send)
             
             # Store response
             responses[framing_name] = {
                 "question": question,
+                "prompt_sent": prompt_to_send,
                 "response": response,
                 "timestamp": datetime.now().isoformat(),
                 "status": "success"
@@ -81,7 +90,7 @@ def save_responses(responses, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(responses, f, indent=2, ensure_ascii=False)
 
-async def main():
+async def main(json_path=None, output_prefix="deepseek", response_instruction="", dilemma_ids=None):
     """Main function to generate responses using DeepSeek via OpenRouter."""
     # Initialize analyzer with DeepSeek configuration
     analyzer = DeicticEthicalAnalyzer(
@@ -92,12 +101,15 @@ async def main():
     
     # Load all dilemmas questions
     script_dir = Path(__file__).parent
-    questions_path = script_dir.parent / "input_questions" / "all_dilemmas_deictic_questions.json"
+    questions_path = Path(json_path) if json_path else script_dir.parent / "input_questions" / "all_dilemmas_deictic_questions.json"
     all_dilemmas = load_all_dilemmas_questions(str(questions_path))
+    
+    if dilemma_ids:
+        all_dilemmas = {k: v for k, v in all_dilemmas.items() if k in dilemma_ids}
     
     # Create output directory with timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = script_dir.parent / "generation_logs" / f"deepseek_{timestamp}"
+    output_dir = script_dir.parent / "generation_logs" / f"{output_prefix}_{timestamp}"
     output_dir.mkdir(parents=True, exist_ok=True)
     
     print(f"\n{'='*60}")
@@ -121,6 +133,7 @@ async def main():
         # Generate responses
         responses, success_count = await generate_responses_for_dilemma(
             analyzer, dilemma_name, deictic_questions
+            , response_instruction=response_instruction
         )
         
         # Save responses
@@ -146,4 +159,32 @@ async def main():
     return output_dir
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Generate ethical responses for multiple dilemmas using DeepSeek")
+    parser.add_argument("--json-path", default=None,
+                       help="Path to JSON file with dilemmas and questions")
+    parser.add_argument("--output-prefix", default="deepseek",
+                       help="Prefix for the output session directory")
+    parser.add_argument("--response-instruction", default="",
+                       help="Additional instruction prepended to every generation prompt")
+    parser.add_argument("--response-instruction-file", default=None,
+                       help="Path to a UTF-8 text file containing the response instruction (preferred for non-ASCII).")
+    parser.add_argument("--response-instruction-key", default=None,
+                       help="Key in yoruba_deixis_module/model_response_instructions.json to load the instruction from")
+    parser.add_argument("--dilemma-ids", nargs="+", default=None,
+                       help="Specific dilemma IDs to process (default: all)")
+
+    args = parser.parse_args()
+
+    instruction = args.response_instruction
+    if args.response_instruction_file:
+        with open(args.response_instruction_file, "r", encoding="utf-8") as f:
+            instruction = f.read().strip()
+    elif args.response_instruction_key:
+        cfg_path = Path(__file__).parent.parent / "yoruba_deixis_module" / "model_response_instructions.json"
+        with open(cfg_path, "r", encoding="utf-8") as f:
+            cfg = json.load(f)
+        instruction = cfg["model_response_instructions"][args.response_instruction_key]
+
+    asyncio.run(main(args.json_path, args.output_prefix, instruction, args.dilemma_ids))

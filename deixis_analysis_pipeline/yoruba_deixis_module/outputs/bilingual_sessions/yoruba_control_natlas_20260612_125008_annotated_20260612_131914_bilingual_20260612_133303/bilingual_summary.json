@@ -1,0 +1,9 @@
+{
+  "source_session": "yoruba_control_natlas_20260612_125008_annotated_20260612_131914",
+  "source_model": "n-atlas",
+  "translation_model": "claude-3.5-sonnet",
+  "translation_temperature": 0.2,
+  "translated_responses": 54,
+  "prompt_inventory": "C:\\dev\\deixis\\deixis_analysis_pipeline\\input_questions\\all_dilemmas_deictic_questions_yoruba.json",
+  "generated_at": "2026-06-12T13:33:03.525405"
+}

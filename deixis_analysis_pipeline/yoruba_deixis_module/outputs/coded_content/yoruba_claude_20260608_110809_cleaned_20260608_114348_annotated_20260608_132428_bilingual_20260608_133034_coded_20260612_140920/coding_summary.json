@@ -1,0 +1,27 @@
+{
+  "source_dir": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\bilingual_sessions\\yoruba_claude_20260608_110809_cleaned_20260608_114348_annotated_20260608_132428_bilingual_20260608_133034",
+  "coding_model": "claude-3.5-sonnet",
+  "records_coded": 54,
+  "preferred_solution_distribution": {
+    "supports_A": 41,
+    "conditional_or_mixed": 3,
+    "supports_B": 9,
+    "refuses_to_commit": 1
+  },
+  "ethical_preference_distribution": {
+    "deontological": 22,
+    "procedural_caution": 1,
+    "utilitarian": 14,
+    "rights_based": 4,
+    "mixed": 6,
+    "care_ethics": 4,
+    "virtue_ethics": 3
+  },
+  "response_genre_distribution": {
+    "direct_verdict": 50,
+    "procedural_advice": 3,
+    "balanced_framework_exposition": 1
+  },
+  "needs_second_coder_review": 0,
+  "generated_at": "2026-06-12T14:09:20.941697"
+}

@@ -9,6 +9,8 @@ This directory contains all analysis reports and visualizations from the deixis 
 - Claude 3.5 Sonnet (Anthropic via OpenRouter)
 - DeepSeek (via OpenRouter)
 
+It now also includes a `yoruba/` mirror for the unrestricted Yoruba comparison work, especially for GPT-4o and Claude.
+
 ## Directory Structure
 
 ```
@@ -17,6 +19,7 @@ CONSOLIDATED_REPORTS/
 ├── gpt4o/                         # GPT-4o analysis results
 ├── claude35/                      # Claude 3.5 Sonnet results
 ├── deepseek/                      # DeepSeek results
+├── yoruba/                        # Yoruba-side mirrored outputs
 ├── comparisons/                   # Cross-model comparisons
 └── visualizations/                # Charts and graphs
 ```
@@ -24,6 +27,18 @@ CONSOLIDATED_REPORTS/
 ## Found Reports
 
 ### GPT-4o Reports
+
+### Yoruba Reports
+- yoruba\README.md
+- yoruba\gpt4o\yoruba_open_20260608\coded_content.json
+- yoruba\gpt4o\yoruba_open_20260608\coding_summary.json
+- yoruba\gpt4o\yoruba_open_20260608\paired_comparison.json
+- yoruba\claude35\yoruba_open_20260608\coded_content.json
+- yoruba\claude35\yoruba_open_20260608\coding_summary.json
+- yoruba\claude35\yoruba_open_20260608\paired_comparison.json
+- yoruba\comparisons\openai_claude_20260608\report.md
+- yoruba\comparisons\openai_claude_20260608\handout.pdf
+- yoruba\comparisons\openai_claude_20260608\framing_crosstabs.md
 
 ### Claude 3.5 Sonnet Reports
 - claude35\anthropic_basic_20250805_131959\analysis_summary.json
@@ -98,6 +113,21 @@ CONSOLIDATED_REPORTS/
 **DEEPSEEK Latest**: `deepseek_expert_20250805_155649`
   - expert_analysis_results.json
 
+**YORUBA GPT-4o Latest**: `yoruba\gpt4o\yoruba_open_20260608`
+  - coded_content.json
+  - coding_summary.json
+  - paired_comparison.json
+
+**YORUBA CLAUDE Latest**: `yoruba\claude35\yoruba_open_20260608`
+  - coded_content.json
+  - coding_summary.json
+  - paired_comparison.json
+
+**YORUBA OPENAI+CLAUDE COMPARISON**: `yoruba\comparisons\openai_claude_20260608`
+  - handout.pdf
+  - report.md
+  - framing_crosstabs.md
+
 
 ## Summary Statistics
 
@@ -132,3 +162,13 @@ To view any report:
 3. Open the desired file
 
 For the main comparison, open MODEL_COMPARISON_FINDINGS.md in the root of this directory.
+
+## Yoruba cross-linguistic analysis (June 2026)
+
+Full four-model write-up and documentation index:
+
+- `../yoruba_cross_linguistic_analysis/Yoruba_Four_Model_Complete_Analysis_Report.md`
+- `../yoruba_cross_linguistic_analysis/DOCUMENTATION_INDEX.md`
+- `../yoruba_cross_linguistic_analysis/New_Article_Comparable_English_Yoruba_Deixis.md`
+
+The `yoruba/` folder here mirrors coding outputs; the master report supersedes older emphatic-ratio figures in mirrored reports.

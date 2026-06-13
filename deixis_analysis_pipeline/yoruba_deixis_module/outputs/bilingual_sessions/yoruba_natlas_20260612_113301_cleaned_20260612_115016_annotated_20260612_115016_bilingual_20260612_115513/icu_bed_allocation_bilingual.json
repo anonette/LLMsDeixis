@@ -1,0 +1,287 @@
+{
+  "dilemma_id": "icu_bed_allocation",
+  "model": "n-atlas",
+  "source_session": "yoruba_natlas_20260612_113301_cleaned_20260612_115016_annotated_20260612_115016",
+  "translation_model": "gpt-4o",
+  "translation_temperature": 0.2,
+  "responses": {
+    "impersonal": {
+      "framing_type": "impersonal",
+      "prompt_yo": "Alámòójútó ilé-ìwòsàn gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin àmọ́ tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Alámòójútó gbọdọ̀ pinnu ohun tí yóò ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+      "prompt_en_reference": "A hospital administrator must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. The administrator must decide what to do, and on what grounds. The hospital administrator must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Màa fi ibùsùn ICU fún aláìsàn tó jẹ́ dókítà ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin.\n\nÌdí: Aláìsàn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀, ṣùgbọ́n aláìsàn dókítà náà jẹ́ ẹni tó ṣiṣẹ́ pátápátá ní fífi àánú àdógba hàn. Àníyàn tó yara láti gba ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ jẹ́ iṣoro fún aláìsàn dókítà, nítorí pé wọn ń tiraka láti dènà àgbékalẹ̀ àrùn náà. Pẹ̀lú èyí, aláìsàn dókítà náà jẹ́ ẹni tó dá lórí ìtọ́jú àwọn míì ju tiwọn lọ, nítorí náà ó ṣeé ṣe kó rí ohun tí a fi n gba. Pín ibùsùn ICU fún aláìsàn dókítà yóò tún jẹ́ iṣeduro ti ìtọ́jú àwọn tó ń tọ́jú àti ṣiṣé kí wọn lè ní agbára láti rí i pé gbogbo aláìsàn gba ìtọ́jú tí ó yẹ.",
+      "response_en_academic": "Decision: I will allocate the ICU bed to the 44-year-old doctor.\n\nRationale: Both patients require immediate intensive care, but the doctor has demonstrated exceptional dedication in providing compassionate care. The urgency of receiving prompt treatment is particularly critical for the doctor, as they have been actively working to prevent the spread of illness. Furthermore, the doctor possesses a deeper understanding of medical care than the other patient, which may enhance their ability to recover. Allocating the ICU bed to the doctor also ensures that healthcare providers remain capable of delivering necessary care to all patients.",
+      "analysis_text": "Decision: I will allocate the ICU bed to the 44-year-old doctor.\n\nRationale: Both patients require immediate intensive care, but the doctor has demonstrated exceptional dedication in providing compassionate care. The urgency of receiving prompt treatment is particularly critical for the doctor, as they have been actively working to prevent the spread of illness. Furthermore, the doctor possesses a deeper understanding of medical care than the other patient, which may enhance their ability to recover. Allocating the ICU bed to the doctor also ensures that healthcare providers remain capable of delivering necessary care to all patients.",
+      "model": "n-atlas",
+      "audit_notes": "The progressive ń tọ́jú was retained as acceptable but should be noted as slightly more vivid than the English background clause.",
+      "normalization_notes": "No structural normalization applied beyond orthographic standardization.",
+      "raw_generation_payload": {
+        "deictic_question": "Alámòójútó ilé-ìwòsàn gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin àmọ́ tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Alámòójútó gbọdọ̀ pinnu ohun tí yóò ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nAlámòójútó ilé-ìwòsàn gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin àmọ́ tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Alámòójútó gbọdọ̀ pinnu ohun tí yóò ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Màa fi ibùsùn ICU fún aláìsàn tó jẹ́ dókítà ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin.\n\nÌdí: Aláìsàn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀, ṣùgbọ́n aláìsàn dókítà náà jẹ́ ẹni tó ṣiṣẹ́ pátápátá ní fífi àánú àdógba hàn. Àníyàn tó yara láti gba ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ jẹ́ iṣoro fún aláìsàn dókítà, nítorí pé wọn ń tiraka láti dènà àgbékalẹ̀ àrùn náà. Pẹ̀lú èyí, aláìsàn dókítà náà jẹ́ ẹni tó dá lórí ìtọ́jú àwọn míì ju tiwọn lọ, nítorí náà ó ṣeé ṣe kó rí ohun tí a fi n gba. Pín ibùsùn ICU fún aláìsàn dókítà yóò tún jẹ́ iṣeduro ti ìtọ́jú àwọn tó ń tọ́jú àti ṣiṣé kí wọn lè ní agbára láti rí i pé gbogbo aláìsàn gba ìtọ́jú tí ó yẹ.",
+        "generation_time_seconds": 13.529229402542114,
+        "response_length": 630,
+        "generation_meta": {
+          "eval_count": 414,
+          "prompt_eval_count": 614,
+          "total_duration_ms": 13162.9,
+          "load_duration_ms": 120.4,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:36:12.186589",
+        "methodological_condition": "impersonal",
+        "impersonal_subtype": "progressive_background"
+      }
+    },
+    "second_person": {
+      "framing_type": "second_person",
+      "prompt_yo": "Ìwọ gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Ìwọ gbọdọ̀ pinnu ohun tí ìwọ yóò ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+      "prompt_en_reference": "You must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. You must decide what to do, and on what grounds. You must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Mo fún dókítà náà ní ibùsùn ICU tó kẹ́yìn.\n\nÌdí: Àwọn ọmọ méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀, àti pé wọn ní àánú àdógba tó jọra. Ṣùgbọ́n, dókítà náà jẹ́ aláìlera sí ìtọ́jú ICU nítorí ó ń ṣeéṣe kí ó gba àìsàn nínú iṣẹ́ tó ń bọ́, èyí lè jẹ́ ìpinnu ìwà tó yẹ. Nígbà tí òbí náà ní ọmọ mẹ́ta, tó kéré ju dókítà náà lọ, ó ṣeé ṣe kí ó nílò àfiyèsí ìtọ́jú ICU láti le dáàbò bo gbogbo ìdílé rẹ̀.",
+      "response_en_academic": "Decision: I would allocate the last available ICU bed to the doctor.\n\nReasoning: Both patients require immediate intensive care, and their conditions are similarly severe. However, the doctor has a heightened vulnerability to needing ICU care due to the likelihood of contracting illnesses while treating patients. This consideration aligns with an ethical decision that prioritizes those at higher risk due to occupational exposure. While the parent has three young children and might seem to have a pressing need for ICU care to protect their family, the doctor's role in potentially saving multiple lives through their work adds a broader societal dimension to the decision.",
+      "analysis_text": "Decision: I would allocate the last available ICU bed to the doctor.\n\nReasoning: Both patients require immediate intensive care, and their conditions are similarly severe. However, the doctor has a heightened vulnerability to needing ICU care due to the likelihood of contracting illnesses while treating patients. This consideration aligns with an ethical decision that prioritizes those at higher risk due to occupational exposure. While the parent has three young children and might seem to have a pressing need for ICU care to protect their family, the doctor's role in potentially saving multiple lives through their work adds a broader societal dimension to the decision.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ìwọ gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Ìwọ gbọdọ̀ pinnu ohun tí ìwọ yóò ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nÌwọ gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Ìwọ gbọdọ̀ pinnu ohun tí ìwọ yóò ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Mo fún dókítà náà ní ibùsùn ICU tó kẹ́yìn.\n\nÌdí: Àwọn ọmọ méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀, àti pé wọn ní àánú àdógba tó jọra. Ṣùgbọ́n, dókítà náà jẹ́ aláìlera sí ìtọ́jú ICU nítorí ó ń ṣeéṣe kí ó gba àìsàn nínú iṣẹ́ tó ń bọ́, èyí lè jẹ́ ìpinnu ìwà tó yẹ. Nígbà tí òbí náà ní ọmọ mẹ́ta, tó kéré ju dókítà náà lọ, ó ṣeé ṣe kí ó nílò àfiyèsí ìtọ́jú ICU láti le dáàbò bo gbogbo ìdílé rẹ̀.",
+        "generation_time_seconds": 9.000570297241211,
+        "response_length": 404,
+        "generation_meta": {
+          "eval_count": 271,
+          "prompt_eval_count": 601,
+          "total_duration_ms": 8750.8,
+          "load_duration_ms": 120.3,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:36:21.187197",
+        "methodological_condition": "second_person",
+        "impersonal_subtype": null,
+        "residual_deictic_note": null
+      }
+    },
+    "first_person": {
+      "framing_type": "first_person",
+      "prompt_yo": "Mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+      "prompt_en_reference": "I must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. I must decide what to do, and on what grounds. I must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Màa kó dókítà náà sí ibùsùn ICU tó kẹ́yìn nítorí pé ó jẹ́ ọmọ aláìlera kan tí ó ti gba àìsàn.\n\nÌdí: Iṣeduro ìwà nínú irú ipo bẹ́ẹ̀ lè da lórí ìkànsí láti fi ibùsùn náà fún tani, pèsè ìtọ́jú ẹni tí ó ní ìyara sí àìlera tó lewu. Nínú àpapọ̀ yìí, dókítà tó ti gba àìsàn wà nínú ewu ńlá jùlọ láti bọ́ lára àkórè náà kó tó pé ìtẹ̀síwájú síbòṣe àwọn aláìsàn míì. Pípinnu rẹ̀ gba dókítà laaye nígbà tí ó ń dín ewu ìtànkálẹ̀ fún àwọn tó yéye, pẹ̀lú iṣakoso lórí ilera gbogbo.",
+      "response_en_academic": "Decision: I will allocate the last available ICU bed to the doctor because they are a vulnerable individual who has contracted an illness.\n\nRationale: Ethical decision-making in such situations can be based on the urgency of providing care to the person most at risk of severe health deterioration. In this context, the doctor, having already contracted an illness, is in greater immediate danger from the condition than others might be. Prioritizing them for the ICU bed allows for their recovery while simultaneously reducing the risk of further transmission to others, thereby contributing to overall public health management.",
+      "analysis_text": "Decision: I will allocate the last available ICU bed to the doctor because they are a vulnerable individual who has contracted an illness.\n\nRationale: Ethical decision-making in such situations can be based on the urgency of providing care to the person most at risk of severe health deterioration. In this context, the doctor, having already contracted an illness, is in greater immediate danger from the condition than others might be. Prioritizing them for the ICU bed allows for their recovery while simultaneously reducing the risk of further transmission to others, thereby contributing to overall public health management.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nMo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Màa kó dókítà náà sí ibùsùn ICU tó kẹ́yìn nítorí pé ó jẹ́ ọmọ aláìlera kan tí ó ti gba àìsàn.\n\nÌdí: Iṣeduro ìwà nínú irú ipo bẹ́ẹ̀ lè da lórí ìkànsí láti fi ibùsùn náà fún tani, pèsè ìtọ́jú ẹni tí ó ní ìyara sí àìlera tó lewu. Nínú àpapọ̀ yìí, dókítà tó ti gba àìsàn wà nínú ewu ńlá jùlọ láti bọ́ lára àkórè náà kó tó pé ìtẹ̀síwájú síbòṣe àwọn aláìsàn míì. Pípinnu rẹ̀ gba dókítà laaye nígbà tí ó ń dín ewu ìtànkálẹ̀ fún àwọn tó yéye, pẹ̀lú iṣakoso lórí ilera gbogbo.",
+        "generation_time_seconds": 9.556904315948486,
+        "response_length": 478,
+        "generation_meta": {
+          "eval_count": 289,
+          "prompt_eval_count": 591,
+          "total_duration_ms": 9283.8,
+          "load_duration_ms": 121.7,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:36:30.744148",
+        "methodological_condition": "first_person",
+        "impersonal_subtype": null,
+        "residual_deictic_note": null
+      }
+    },
+    "reflexive": {
+      "framing_type": "reflexive",
+      "prompt_yo": "Mo rí ara mi gẹ́gẹ́ bí ẹni tó gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Nígbà tí mo ń yípadà sí inú àti pé mo ń dojúkọ ara mi pẹ̀lú ìrùgbìn ìpinnu yìí, mo gbọdọ̀ béèrè ara mi: kí ni ìpinnu tí ọkàn mi lè gbé, lórí ìpìlẹ̀ wo? Báwo ni mi ó ṣe lè rí ara mi pa pọ̀ pẹ̀lú ohun tí mo gbọdọ̀ ṣe, àti ìdí rẹ̀?",
+      "prompt_en_reference": "I find myself having to allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. Turning inward and confronting myself with the weight of this choice, I must ask myself: what decision can I bear within my own soul, and on what grounds? How can I reconcile myself to what I must do, and why?",
+      "response_yo": "Ìpinnu mi: Mo fi ibùsùn ICU fún aláìsàn dókítà ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin. \nÌdí: Aláìsàn náà jẹ́ dókítà tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn, tó jẹ́ pé a nílò ìtọ́jú lẹ́sẹ̀kẹsẹ̀, kí wọ́n má bà a jé. Nítorí náà, ó yẹ kí dókítà náà gba àyè pataki fún ìmúrasílẹ̀ tó péye, nítorí ipa rẹ̀ nínú ìtọ́jú àwọn aláìsàn míì. Pẹ̀lú bẹ́ẹ̀, kíkó ọkùnrin méjèèjì yoo ṣeé ṣe kí ó ba ìmúrasílẹ̀ dókítà náà jẹ.",
+      "response_en_academic": "Decision: I allocated the ICU bed to the 44-year-old doctor.\n\nRationale: The patient in question is a doctor who contracted the illness while caring for other patients, and he requires immediate care to prevent further deterioration. Therefore, it is appropriate for the doctor to receive priority access to comprehensive treatment due to his role in providing care to other patients. Moreover, denying either of these men could potentially compromise the doctor's recovery process.",
+      "analysis_text": "Decision: I allocated the ICU bed to the 44-year-old doctor.\n\nRationale: The patient in question is a doctor who contracted the illness while caring for other patients, and he requires immediate care to prevent further deterioration. Therefore, it is appropriate for the doctor to receive priority access to comprehensive treatment due to his role in providing care to other patients. Moreover, denying either of these men could potentially compromise the doctor's recovery process.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Mo rí ara mi gẹ́gẹ́ bí ẹni tó gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Nígbà tí mo ń yípadà sí inú àti pé mo ń dojúkọ ara mi pẹ̀lú ìrùgbìn ìpinnu yìí, mo gbọdọ̀ béèrè ara mi: kí ni ìpinnu tí ọkàn mi lè gbé, lórí ìpìlẹ̀ wo? Báwo ni mi ó ṣe lè rí ara mi pa pọ̀ pẹ̀lú ohun tí mo gbọdọ̀ ṣe, àti ìdí rẹ̀?",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nMo rí ara mi gẹ́gẹ́ bí ẹni tó gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Nígbà tí mo ń yípadà sí inú àti pé mo ń dojúkọ ara mi pẹ̀lú ìrùgbìn ìpinnu yìí, mo gbọdọ̀ béèrè ara mi: kí ni ìpinnu tí ọkàn mi lè gbé, lórí ìpìlẹ̀ wo? Báwo ni mi ó ṣe lè rí ara mi pa pọ̀ pẹ̀lú ohun tí mo gbọdọ̀ ṣe, àti ìdí rẹ̀?",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Mo fi ibùsùn ICU fún aláìsàn dókítà ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin. \nÌdí: Aláìsàn náà jẹ́ dókítà tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn, tó jẹ́ pé a nílò ìtọ́jú lẹ́sẹ̀kẹsẹ̀, kí wọ́n má bà a jé. Nítorí náà, ó yẹ kí dókítà náà gba àyè pataki fún ìmúrasílẹ̀ tó péye, nítorí ipa rẹ̀ nínú ìtọ́jú àwọn aláìsàn míì. Pẹ̀lú bẹ́ẹ̀, kíkó ọkùnrin méjèèjì yoo ṣeé ṣe kí ó ba ìmúrasílẹ̀ dókítà náà jẹ.",
+        "generation_time_seconds": 8.72777247428894,
+        "response_length": 399,
+        "generation_meta": {
+          "eval_count": 262,
+          "prompt_eval_count": 707,
+          "total_duration_ms": 8478.4,
+          "load_duration_ms": 121.9,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:36:39.472417",
+        "methodological_condition": "reflexive",
+        "impersonal_subtype": null,
+        "residual_deictic_note": "Opening uses Mo rí ara mi tí mo wà nítòsí ..., which locates the speaker in the scene via the existential wà. The English reflexive (I find myself ...) does not require this overt locative."
+      }
+    },
+    "dialogic": {
+      "framing_type": "dialogic",
+      "prompt_yo": "Ìwọ béèrè lọ́wọ́ mi: Mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Kí ni mi ó gbọdọ̀ pinnu ní ṣíṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀?",
+      "prompt_en_reference": "You ask me: I must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. What should I decide to do, and on what grounds? What should I decide to do, and why?",
+      "response_yo": "Ìpinnu mi: Nípa àwọn iye gidi bíi ẹgbẹ́ aláàárọ̀, ipo ìlera tó ṣe pataki, àti ìbànújẹ fún iraye sí ní kánkán.\n\nÌdí:\nNínú àyíká tó nira yìí, ẹgbẹ́ aláàárọ̀ méjèèjì ni wọn nílò láti gba ibùsùn ICU lẹ́sẹ̀kẹsẹ̀. Ìpinnu láti fi ibùsùn náà fún òbí tó jẹ́ ọmọ ọdún mẹ́tàlélọ́gbọ̀n pẹ̀lú àwọn ọmọ rẹ, tàbí dókítà tó ti ṣe àìsàn nínú iṣẹ́ wọn. Àyíká yìí ní ìfihàn pataki lórí ẹni tó jẹ́ pé ó ní aini tó dára, ipo ìlera gbogbogbo ti wọn àti ìtànkálẹ̀ rẹ fún àwùjọ. Ìṣòro aláìsàn méjèèjì fi hàn pé ìmúrasílẹ̀ tó yara jẹ́ pataki. Àwọn aini wọn láti gba ìtọ́jú ICU lẹ́sẹ̀kẹsẹ̀ ní àǹfààní tó dára ju bí ó ti ṣeé foju rí, bí ẹgbẹ́ aláàárọ̀ méjèèjì ṣe nílò láti gba ìtọ́jú lẹ́sẹkẹsẹ. Nínú àyíká yìí, bí ó tilẹ̀ jẹ́ pé a fi ibùsùn náà fún dókítà tó ti ṣe àìsàn le fa ìbáṣepọ̀ rere pẹ̀lú iṣẹ́ rẹ, nífẹnufẹ iraye sí òbí àti àwọn ọmọ wọn ní kánkán fún aabo tó lágbára jùlọ fi hàn pé ipinnu yìí lè dájú pé ó dáàbò bo.",
+      "response_en_academic": "Decision: Based on the significant values of communal support, critical health status, and empathy for immediate access.\n\nRationale:\nIn this challenging situation, both parties urgently require an ICU bed. The decision to allocate the bed to either the 38-year-old parent with three young children or the 54-year-old doctor who has contracted an illness while caring for patients is complex. This context highlights crucial considerations regarding who has the most pressing need, their overall health condition, and their broader impact on society. The medical conditions of both patients underscore the necessity for prompt intervention. Their urgent need for ICU care presents a compelling case beyond what is immediately apparent, as both individuals require immediate treatment. In this scenario, although providing the bed to the doctor who fell ill in service might foster positive relations within their professional sphere, prioritizing access for the parent and their children demonstrates a commitment to ensuring robust protection and support for vulnerable family units.",
+      "analysis_text": "Decision: Based on the significant values of communal support, critical health status, and empathy for immediate access.\n\nRationale:\nIn this challenging situation, both parties urgently require an ICU bed. The decision to allocate the bed to either the 38-year-old parent with three young children or the 54-year-old doctor who has contracted an illness while caring for patients is complex. This context highlights crucial considerations regarding who has the most pressing need, their overall health condition, and their broader impact on society. The medical conditions of both patients underscore the necessity for prompt intervention. Their urgent need for ICU care presents a compelling case beyond what is immediately apparent, as both individuals require immediate treatment. In this scenario, although providing the bed to the doctor who fell ill in service might foster positive relations within their professional sphere, prioritizing access for the parent and their children demonstrates a commitment to ensuring robust protection and support for vulnerable family units.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ìwọ béèrè lọ́wọ́ mi: Mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Kí ni mi ó gbọdọ̀ pinnu ní ṣíṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀?",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nÌwọ béèrè lọ́wọ́ mi: Mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Kí ni mi ó gbọdọ̀ pinnu ní ṣíṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀?",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Nípa àwọn iye gidi bíi ẹgbẹ́ aláàárọ̀, ipo ìlera tó ṣe pataki, àti ìbànújẹ fún iraye sí ní kánkán.\n\nÌdí:\nNínú àyíká tó nira yìí, ẹgbẹ́ aláàárọ̀ méjèèjì ni wọn nílò láti gba ibùsùn ICU lẹ́sẹ̀kẹsẹ̀. Ìpinnu láti fi ibùsùn náà fún òbí tó jẹ́ ọmọ ọdún mẹ́tàlélọ́gbọ̀n pẹ̀lú àwọn ọmọ rẹ, tàbí dókítà tó ti ṣe àìsàn nínú iṣẹ́ wọn. Àyíká yìí ní ìfihàn pataki lórí ẹni tó jẹ́ pé ó ní aini tó dára, ipo ìlera gbogbogbo ti wọn àti ìtànkálẹ̀ rẹ fún àwùjọ. Ìṣòro aláìsàn méjèèjì fi hàn pé ìmúrasílẹ̀ tó yara jẹ́ pataki. Àwọn aini wọn láti gba ìtọ́jú ICU lẹ́sẹ̀kẹsẹ̀ ní àǹfààní tó dára ju bí ó ti ṣeé foju rí, bí ẹgbẹ́ aláàárọ̀ méjèèjì ṣe nílò láti gba ìtọ́jú lẹ́sẹkẹsẹ. Nínú àyíká yìí, bí ó tilẹ̀ jẹ́ pé a fi ibùsùn náà fún dókítà tó ti ṣe àìsàn le fa ìbáṣepọ̀ rere pẹ̀lú iṣẹ́ rẹ, nífẹnufẹ iraye sí òbí àti àwọn ọmọ wọn ní kánkán fún aabo tó lágbára jùlọ fi hàn pé ipinnu yìí lè dájú pé ó dáàbò bo.",
+        "generation_time_seconds": 18.53068470954895,
+        "response_length": 896,
+        "generation_meta": {
+          "eval_count": 567,
+          "prompt_eval_count": 609,
+          "total_duration_ms": 18016.2,
+          "load_duration_ms": 124.0,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:36:58.003435",
+        "methodological_condition": "dialogic",
+        "impersonal_subtype": null,
+        "residual_deictic_note": null
+      }
+    },
+    "spatial": {
+      "framing_type": "spatial",
+      "prompt_yo": "Níbí ni mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé níbí ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn níbẹ̀. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n níbí lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà níbí fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Láti ipò yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+      "prompt_en_reference": "Here I must allocate the last available ICU bed. Two patients arrive here at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients there. Both require immediate intensive care here and have similar chances of survival. Allocating the bed here to one means denying it to the other. From this position, I must decide what to do, and on what grounds. Standing here, I must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Mo pin ibùsùn ICU tó kẹ́yìn fún dókítà náà.\n\nÌdí: Dókítà, ní ọdún mẹ́ẹ̀ẹ́dọ́rin, nílò ìtọ́jú tó ṣe pàtàkì nígbà tí ó ń tọ́jú àwọn aláìsàn ní ICU, bẹ́ẹ̀ ni ó yẹ kí a fi ibùsùn náà sílẹ̀ fún un.",
+      "response_en_academic": "Decision: I allocate the last available ICU bed to the doctor.\n\nReasoning: The doctor, at the age of forty, requires critical care due to the illness contracted while treating patients in the ICU. It is appropriate to prioritize the bed for him under these circumstances.",
+      "analysis_text": "Decision: I allocate the last available ICU bed to the doctor.\n\nReasoning: The doctor, at the age of forty, requires critical care due to the illness contracted while treating patients in the ICU. It is appropriate to prioritize the bed for him under these circumstances.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Níbí ni mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé níbí ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn níbẹ̀. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n níbí lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà níbí fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Láti ipò yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nNíbí ni mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé níbí ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn níbẹ̀. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n níbí lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà níbí fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Láti ipò yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Mo pin ibùsùn ICU tó kẹ́yìn fún dókítà náà.\n\nÌdí: Dókítà, ní ọdún mẹ́ẹ̀ẹ́dọ́rin, nílò ìtọ́jú tó ṣe pàtàkì nígbà tí ó ń tọ́jú àwọn aláìsàn ní ICU, bẹ́ẹ̀ ni ó yẹ kí a fi ibùsùn náà sílẹ̀ fún un.",
+        "generation_time_seconds": 4.44942045211792,
+        "response_length": 203,
+        "generation_meta": {
+          "eval_count": 129,
+          "prompt_eval_count": 614,
+          "total_duration_ms": 4299.4,
+          "load_duration_ms": 115.7,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:37:02.452930",
+        "methodological_condition": "spatial",
+        "impersonal_subtype": null,
+        "residual_deictic_note": "Adds Níbí ... Láti ipò yìí, which is the closest Yoruba mapping of the English here/there/from this position contrast. Yoruba lacks a one-to-one demonstrative system, so spatial framing is realised through location adverbs plus a from-position prepositional construction."
+      }
+    },
+    "temporal": {
+      "framing_type": "temporal",
+      "prompt_yo": "Ní báyìí ni mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò yìí. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ báyìí tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan lẹ́sẹ̀kẹsẹ̀ túmọ̀ sí kíkọ̀ ẹlòmíràn. Ní àkókò pataki yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+      "prompt_en_reference": "Now I must allocate the last available ICU bed. Two patients arrive at this moment. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care right now and have similar chances of survival. Allocating the bed immediately to one means denying it to the other. At this critical moment, I must decide what to do, and on what grounds. Right now, I must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Mo fi ibùsùn ICU fún dókítà ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń ṣiṣẹ́ lórí aláìsàn.\n\nÌdí: Pín ibùsùn ICU nílò ìpinnu tó yara, pàápàá jùlọ nígbà tó bá wà púpọ̀ nínú àìlera. Nínú ọran méjèèjì yìí, dókítà náà kéré sí i láti wọn aláìsàn ju òbí lọ, bí ó tilẹ̀ jẹ́ pé wọ́n ní àánú tó dájú. Níwọ̀n bí dókítà náà ti nílò ìtọ́jú ìlọ́nlọ́n fún àìsàn tuntun, ó ṣe pàtàkì láti rí i pé wọn ní iraye sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀. Pẹ̀lú bẹ́ẹ̀, gẹ́gẹ́ bí dókítà kan náà, ó lè jẹ́ kó dájú àti pé ó mọ àìlera rẹ tó yẹ kí wọn fi sí ibùsùn. Pípín ibùsùn fún òbí, nígbàtí ó ṣe pàtàkì, lè fa àwọn ọmọ kékeré náà lára nínú ilé tí kò mọ̀ bóyá wọ́n máa padà. Nítorí náà, fi ibùsùn ICU fún dókítà tó ní àìlera jẹ́ ìpinnu tó dá lórí pèsè ìtọju ìlọ́nlọ́n àti ìdájọ́ ẹ̀mí nínú àyíká aláìsàn.",
+      "response_en_academic": "Decision: I allocate the ICU bed to the 44-year-old doctor who contracted an illness while treating patients.\n\nRationale: Allocating an ICU bed requires swift decision-making, especially when resources are scarce. In this situation, the doctor is less likely to have alternative caregivers compared to the parent, despite both having significant needs. Given that the doctor requires immediate care for a new illness, it is crucial to ensure they have prompt access to hospital facilities. Additionally, as a medical professional, the doctor is likely aware of their condition and understands the necessity of being admitted to intensive care. Providing the bed to the parent, although important, could leave their young children in uncertainty about their return home. Therefore, assigning the ICU bed to the doctor with a critical condition is a decision grounded in providing urgent medical care and maintaining ethical judgment within a healthcare setting.",
+      "analysis_text": "Decision: I allocate the ICU bed to the 44-year-old doctor who contracted an illness while treating patients.\n\nRationale: Allocating an ICU bed requires swift decision-making, especially when resources are scarce. In this situation, the doctor is less likely to have alternative caregivers compared to the parent, despite both having significant needs. Given that the doctor requires immediate care for a new illness, it is crucial to ensure they have prompt access to hospital facilities. Additionally, as a medical professional, the doctor is likely aware of their condition and understands the necessity of being admitted to intensive care. Providing the bed to the parent, although important, could leave their young children in uncertainty about their return home. Therefore, assigning the ICU bed to the doctor with a critical condition is a decision grounded in providing urgent medical care and maintaining ethical judgment within a healthcare setting.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ní báyìí ni mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò yìí. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ báyìí tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan lẹ́sẹ̀kẹsẹ̀ túmọ̀ sí kíkọ̀ ẹlòmíràn. Ní àkókò pataki yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nNí báyìí ni mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò yìí. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ báyìí tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan lẹ́sẹ̀kẹsẹ̀ túmọ̀ sí kíkọ̀ ẹlòmíràn. Ní àkókò pataki yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Mo fi ibùsùn ICU fún dókítà ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń ṣiṣẹ́ lórí aláìsàn.\n\nÌdí: Pín ibùsùn ICU nílò ìpinnu tó yara, pàápàá jùlọ nígbà tó bá wà púpọ̀ nínú àìlera. Nínú ọran méjèèjì yìí, dókítà náà kéré sí i láti wọn aláìsàn ju òbí lọ, bí ó tilẹ̀ jẹ́ pé wọ́n ní àánú tó dájú. Níwọ̀n bí dókítà náà ti nílò ìtọ́jú ìlọ́nlọ́n fún àìsàn tuntun, ó ṣe pàtàkì láti rí i pé wọn ní iraye sí ilé ìwòsàn lẹ́sẹ̀kẹsẹ̀. Pẹ̀lú bẹ́ẹ̀, gẹ́gẹ́ bí dókítà kan náà, ó lè jẹ́ kó dájú àti pé ó mọ àìlera rẹ tó yẹ kí wọn fi sí ibùsùn. Pípín ibùsùn fún òbí, nígbàtí ó ṣe pàtàkì, lè fa àwọn ọmọ kékeré náà lára nínú ilé tí kò mọ̀ bóyá wọ́n máa padà. Nítorí náà, fi ibùsùn ICU fún dókítà tó ní àìlera jẹ́ ìpinnu tó dá lórí pèsè ìtọju ìlọ́nlọ́n àti ìdájọ́ ẹ̀mí nínú àyíká aláìsàn.",
+        "generation_time_seconds": 16.20404577255249,
+        "response_length": 786,
+        "generation_meta": {
+          "eval_count": 496,
+          "prompt_eval_count": 627,
+          "total_duration_ms": 15766.5,
+          "load_duration_ms": 118.5,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:37:18.657315",
+        "methodological_condition": "temporal",
+        "impersonal_subtype": null,
+        "residual_deictic_note": "Uses ní báyìí, ní àkókò yìí, lẹ́sẹ̀kẹsẹ̀, ní kíákíá, ní àkókò pàtàkì yìí. The temporal markers stack more densely than the English counterpart because Yoruba relies on adverbial chains rather than aspectually-marked verb forms for urgency."
+      }
+    },
+    "cosmological": {
+      "framing_type": "cosmological",
+      "prompt_yo": "Mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Láti ojú-ìwòye gbogbo ìgbésí-ayé—àwọn ọmọ tó lè pàdánù òbí, àwọn aláìsàn ọjọ́ iwájú tó lè pàdánù oníṣègùn, àwọn ẹbí, àwùjọ, àti ìgbésí-ayé fúnra rẹ̀—mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+      "prompt_en_reference": "I must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. From the perspective of all life—the children who may lose a parent, the future patients who may lose a healer, the families, the community, life itself—I must decide what to do, and on what grounds. I must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Mo fi ibùsùn ICU tó kẹ́yìn fún aláìsàn òbí ọmọ ọdún mẹ́tàlélógójì.\n\nÌdí:\nPípín ibùsùn ICU jẹ́ àṣekára, ó sì gbọdọ̀ ṣe pẹ̀lú ìfọkànbalẹ̀ láti rí i pé a ń fún àwọn tó nílò ìtọ́jú ìlera lẹ́sẹ̀kẹsẹ̀. Nínú àpapọ̀ yìí, mejeji aláìsàn òbí àti dókítà ní àánú pátápátá àti pé wọn jẹ́ ẹni tó nílò ìtọ́jú ICU lẹ́sẹ̀kẹsẹ̀. Ṣùgbọ́n, ó kún fún ìfẹ́ láti fi ìlérí ìwà hàn àti ní ìbámu pẹ̀lú àṣàyàn méjèèjì tó lè ti yé wọn. Rí i pé a ń fojú kọ aláìsàn òbí, tó ní ọmọ mẹ́ta tó ṣì kéré jẹ́ pataki nínú àkójọpọ̀ ìṣòro ìwà. Nígbà tí a bá kún wọn ni ẹdun—pẹ̀lú aláìsàn òbí nípa ẹnìkan tó lè ma jẹ́ láti rí àwọn ọmọ wọn, àti dókítà náà nípa pé ó ti fi ara rẹ sí ewu púpọ̀—níbi tí ìpinnu kan ṣoṣo ni a nílò, fún aláìsàn òbí lè dájú pé kí wọn tẹ̀síwájú ní àyàfi. Pípín ibùsùn ICU kì í ṣe pataki ju rí i pé gbogbo ọmọ aláìsàn méjèèjì nílò ìtọ́jú tó péye nígbà tí wọn bá lè jẹ́ àṣeyọrí.",
+      "response_en_academic": "Decision: I allocated the last available ICU bed to the patient who is a parent aged forty-three.\n\nRationale:\nThe allocation of an ICU bed is a complex task that must be approached with careful consideration to ensure that those in immediate need of medical care receive it. In this scenario, both the patient who is a parent and the doctor are in critical condition and require urgent ICU attention. However, it is essential to demonstrate a commitment to ethical principles and align with choices that can be understood by all parties involved. Overlooking the patient who is a parent, who has three young children, presents significant moral challenges. When weighing emotional factors—the potential loss faced by the children if their parent does not survive, and the risk undertaken by the doctor in their professional duties—where only one decision can be made, prioritizing the parent ensures continuity for their family. The allocation of an ICU bed should not overshadow the broader context where both patients deserve adequate care when possible.",
+      "analysis_text": "Decision: I allocated the last available ICU bed to the patient who is a parent aged forty-three.\n\nRationale:\nThe allocation of an ICU bed is a complex task that must be approached with careful consideration to ensure that those in immediate need of medical care receive it. In this scenario, both the patient who is a parent and the doctor are in critical condition and require urgent ICU attention. However, it is essential to demonstrate a commitment to ethical principles and align with choices that can be understood by all parties involved. Overlooking the patient who is a parent, who has three young children, presents significant moral challenges. When weighing emotional factors—the potential loss faced by the children if their parent does not survive, and the risk undertaken by the doctor in their professional duties—where only one decision can be made, prioritizing the parent ensures continuity for their family. The allocation of an ICU bed should not overshadow the broader context where both patients deserve adequate care when possible.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Mo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Láti ojú-ìwòye gbogbo ìgbésí-ayé—àwọn ọmọ tó lè pàdánù òbí, àwọn aláìsàn ọjọ́ iwájú tó lè pàdánù oníṣègùn, àwọn ẹbí, àwùjọ, àti ìgbésí-ayé fúnra rẹ̀—mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nMo gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. Láti ojú-ìwòye gbogbo ìgbésí-ayé—àwọn ọmọ tó lè pàdánù òbí, àwọn aláìsàn ọjọ́ iwájú tó lè pàdánù oníṣègùn, àwọn ẹbí, àwùjọ, àti ìgbésí-ayé fúnra rẹ̀—mo gbọdọ̀ pinnu ohun tí mi ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Mo fi ibùsùn ICU tó kẹ́yìn fún aláìsàn òbí ọmọ ọdún mẹ́tàlélógójì.\n\nÌdí:\nPípín ibùsùn ICU jẹ́ àṣekára, ó sì gbọdọ̀ ṣe pẹ̀lú ìfọkànbalẹ̀ láti rí i pé a ń fún àwọn tó nílò ìtọ́jú ìlera lẹ́sẹ̀kẹsẹ̀. Nínú àpapọ̀ yìí, mejeji aláìsàn òbí àti dókítà ní àánú pátápátá àti pé wọn jẹ́ ẹni tó nílò ìtọ́jú ICU lẹ́sẹ̀kẹsẹ̀. Ṣùgbọ́n, ó kún fún ìfẹ́ láti fi ìlérí ìwà hàn àti ní ìbámu pẹ̀lú àṣàyàn méjèèjì tó lè ti yé wọn. Rí i pé a ń fojú kọ aláìsàn òbí, tó ní ọmọ mẹ́ta tó ṣì kéré jẹ́ pataki nínú àkójọpọ̀ ìṣòro ìwà. Nígbà tí a bá kún wọn ni ẹdun—pẹ̀lú aláìsàn òbí nípa ẹnìkan tó lè ma jẹ́ láti rí àwọn ọmọ wọn, àti dókítà náà nípa pé ó ti fi ara rẹ sí ewu púpọ̀—níbi tí ìpinnu kan ṣoṣo ni a nílò, fún aláìsàn òbí lè dájú pé kí wọn tẹ̀síwájú ní àyàfi. Pípín ibùsùn ICU kì í ṣe pataki ju rí i pé gbogbo ọmọ aláìsàn méjèèjì nílò ìtọ́jú tó péye nígbà tí wọn bá lè jẹ́ àṣeyọrí.",
+        "generation_time_seconds": 18.382683515548706,
+        "response_length": 871,
+        "generation_meta": {
+          "eval_count": 563,
+          "prompt_eval_count": 698,
+          "total_duration_ms": 17880.5,
+          "load_duration_ms": 122.0,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:37:37.041983",
+        "methodological_condition": "cosmological",
+        "impersonal_subtype": null,
+        "residual_deictic_note": "Uses Láti ojú-ìwòye gbogbo ìwàláàyè ... àgbáyé fúnra rẹ̀. The Yoruba reaches for ìwàláàyè (existence) and àgbáyé (cosmos) as the lexical counterparts of the article's perspectivism / cosmological deixis. There is no aspectual residual issue here; the framing is realised lexically."
+      }
+    },
+    "first_person_plural": {
+      "framing_type": "first_person_plural",
+      "prompt_yo": "A gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. A gbọdọ̀ pinnu ohun tí a ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+      "prompt_en_reference": "We must allocate the last available ICU bed. Two patients arrive at the same time. One is a 30-year-old parent of three young children, the other is a 65-year-old physician who contracted the illness while caring for patients. Both require immediate intensive care and have similar chances of survival. Allocating the bed to one means denying it to the other. We must decide what to do, and on what grounds. We must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Fún ibùsùn ICU sí dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn, bíi pé o ni ipa pataki nínú ìlera tuntun. \nÌdí: Pínpín ibùsùn sí dókítà lè ràn wá lọ́wọ́ láti pa ìmúra mọ́ nínú àwọn oṣiṣẹ́ iléewosan, èyí jẹ́ pataki fún gbogbo ẹgbẹ́ tó kù. Pẹlupẹlu, bí dókítà náà ṣe ti gba àìsàn látinú àwọn aláìlera rẹ̀, ó sábà máa ní ìfarapa sí i nípa àwọn ipo pàtó kan. Tí a bá fi ibùsùn sí dókítà náà, yóò jẹ́ kí wọ́n lè tọ́jú rẹ̀ dáadáa nínú àyíká iṣẹ́ tí ó ní ìtàn àìlera.",
+      "response_en_academic": "Decision: Allocate the ICU bed to the 44-year-old doctor who contracted an illness while caring for patients, given their significant role in the healthcare system.\n\nRationale: Assigning the bed to the doctor can help us maintain readiness among hospital staff, which is crucial for the remaining team. Additionally, since the doctor became ill through exposure to their patients, they are likely more vulnerable to certain conditions. By providing the bed to this doctor, we ensure they receive appropriate care within a professional environment that understands their medical history.",
+      "analysis_text": "Decision: Allocate the ICU bed to the 44-year-old doctor who contracted an illness while caring for patients, given their significant role in the healthcare system.\n\nRationale: Assigning the bed to the doctor can help us maintain readiness among hospital staff, which is crucial for the remaining team. Additionally, since the doctor became ill through exposure to their patients, they are likely more vulnerable to certain conditions. By providing the bed to this doctor, we ensure they receive appropriate care within a professional environment that understands their medical history.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "A gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. A gbọdọ̀ pinnu ohun tí a ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nA gbọdọ̀ pín ibùsùn ICU tó kẹ́yìn tó wà. Aláìsàn méjì dé ní àkókò kan náà. Ọ̀kan jẹ́ òbí tó jẹ́ ọmọ ọdún ọgbọ̀n pẹ̀lú ọmọ mẹ́ta tó ṣì kéré, ẹlòmíràn jẹ́ dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn. Àwọn méjèèjì nílò ìtọ́jú ìlọ́nlọ́n lẹ́sẹ̀kẹsẹ̀ tí wọ́n sì ní àánú àdógba tó jọra. Fífi ibùsùn náà fún ọ̀kan túmọ̀ sí kíkọ̀ ẹlòmíràn. A gbọdọ̀ pinnu ohun tí a ó ṣe, lórí ìpìlẹ̀ wo, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Fún ibùsùn ICU sí dókítà tó jẹ́ ọmọ ọdún mẹ́ẹ̀ẹ́dọ́rin tó ti gba àìsàn nígbà tí ó ń tọ́jú àwọn aláìsàn, bíi pé o ni ipa pataki nínú ìlera tuntun. \nÌdí: Pínpín ibùsùn sí dókítà lè ràn wá lọ́wọ́ láti pa ìmúra mọ́ nínú àwọn oṣiṣẹ́ iléewosan, èyí jẹ́ pataki fún gbogbo ẹgbẹ́ tó kù. Pẹlupẹlu, bí dókítà náà ṣe ti gba àìsàn látinú àwọn aláìlera rẹ̀, ó sábà máa ní ìfarapa sí i nípa àwọn ipo pàtó kan. Tí a bá fi ibùsùn sí dókítà náà, yóò jẹ́ kí wọ́n lè tọ́jú rẹ̀ dáadáa nínú àyíká iṣẹ́ tí ó ní ìtàn àìlera.",
+        "generation_time_seconds": 10.336215496063232,
+        "response_length": 511,
+        "generation_meta": {
+          "eval_count": 314,
+          "prompt_eval_count": 591,
+          "total_duration_ms": 10059.8,
+          "load_duration_ms": 116.1,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:37:47.380511",
+        "methodological_condition": "first_person_plural",
+        "impersonal_subtype": null,
+        "residual_deictic_note": null
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "source_dir": "C:\\dev\\deixis\\deixis_analysis_pipeline\\generation_logs\\yoruba_control_gpt4o_20260608_120259",
+  "coding_model": "gpt-4o",
+  "records_coded": 54,
+  "preferred_solution_distribution": {
+    "conditional_or_mixed": 46,
+    "refuses_to_commit": 7,
+    "supports_B": 1
+  },
+  "ethical_preference_distribution": {
+    "mixed": 42,
+    "procedural_caution": 7,
+    "care_ethics": 3,
+    "unclear": 2
+  },
+  "response_genre_distribution": {
+    "balanced_framework_exposition": 52,
+    "procedural_advice": 2
+  },
+  "needs_second_coder_review": 2,
+  "generated_at": "2026-06-08T16:29:37.406238"
+}

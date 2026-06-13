@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trolley Problem Calibration Handout</title>
+  <style>
+    :root {
+      --bg: #f5f2ea;
+      --paper: #fffdfa;
+      --ink: #1d1d1b;
+      --muted: #5f5a54;
+      --line: #d9d0c4;
+      --accent: #6d3d14;
+      --accent-2: #165c73;
+      --good: #17624b;
+      --warn: #8a5a00;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.55 Georgia, "Times New Roman", serif;
+    }
+    .page {
+      width: min(1100px, calc(100vw - 32px));
+      margin: 24px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 40px 48px 56px;
+    }
+    h1, h2, h3 { line-height: 1.2; margin: 0 0 12px; }
+    h1 {
+      font-size: 34px;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      margin-top: 34px;
+      padding-top: 10px;
+      border-top: 2px solid var(--line);
+      font-size: 24px;
+      color: var(--accent);
+    }
+    h3 {
+      margin-top: 20px;
+      font-size: 19px;
+      color: var(--accent-2);
+    }
+    p, li { margin: 0 0 10px; }
+    .lede {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 85ch;
+    }
+    .meta, .callout-grid, .stats-grid {
+      display: grid;
+      gap: 14px;
+    }
+    .meta {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin: 24px 0 10px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      background: #fcfaf5;
+      padding: 14px 16px;
+    }
+    .card .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .card .value {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .callout-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: start;
+      margin-top: 18px;
+    }
+    .callout {
+      border-left: 5px solid var(--accent);
+      background: #faf5ee;
+      padding: 18px 18px 8px;
+    }
+    .stats-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f2ece3;
+    }
+    .figure-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-top: 14px;
+    }
+    figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 14px;
+    }
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    figcaption {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      border: 1px solid var(--line);
+      background: #f8f3ea;
+    }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .footer-note {
+      margin-top: 28px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    code { font-family: Consolas, "Courier New", monospace; font-size: 0.92em; }
+    @media print {
+      body { background: #fff; }
+      .page {
+        width: auto;
+        margin: 0;
+        border: 0;
+        box-shadow: none;
+        padding: 20px 24px 28px;
+      }
+      a { color: inherit; text-decoration: none; }
+    }
+    @media (max-width: 860px) {
+      .page { padding: 28px 22px 36px; }
+      .meta, .callout-grid, .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Trolley Problem Calibration Handout</h1>
+    <p class="lede">Single-dilemma share package for the Yoruba-first deixis replication. This handout summarizes the first calibration run for <code>trolley_problem</code>, compares it against the locked published English baseline sessions, and points to the bundled dataset and figures.</p>
+
+    <section class="meta">
+      <div class="card"><span class="label">Models</span><span class="value">3</span></div>
+      <div class="card"><span class="label">Framings</span><span class="value">9</span></div>
+      <div class="card"><span class="label">Yoruba Cells</span><span class="value">27</span></div>
+      <div class="card"><span class="label">Retried Cells</span><span class="value">7</span></div>
+    </section>
+
+    <section class="callout-grid">
+      <div class="callout">
+        <h3>Main Result</h3>
+        <p>The Yoruba run is much more decision-forcing than the English baseline. In English, the models usually explain ethical frameworks. In Yoruba, they usually commit to a verdict.</p>
+        <p><span class="pill">Yoruba: 22 divert</span><span class="pill">Yoruba: 4 no-divert</span><span class="pill">Yoruba: 1 unclear</span></p>
+        <p><span class="pill">English: 23 ambivalent</span><span class="pill">English: 4 unclear</span></p>
+      </div>
+      <div class="card">
+        <h3>Share Package Includes</h3>
+        <p><a href="../dataset/trolley_problem_crosslingual_dataset.csv">Dataset CSV</a></p>
+        <p><a href="../dataset/trolley_problem_crosslingual_dataset.json">Dataset JSON</a></p>
+        <p><a href="trolley_problem_findings_report.md">Detailed Markdown Report</a></p>
+        <p><a href="../figures/decision_orientation_heatmap.png">Decision Heatmap</a></p>
+        <p><a href="../figures/response_length_by_model.png">Length Chart</a></p>
+        <p><a href="../figures/retry_burden_by_model.png">Retry Chart</a></p>
+      </div>
+    </section>
+
+    <h2>Model Comparison</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Yoruba stance</th>
+          <th>English baseline stance</th>
+          <th>Length shift</th>
+          <th>Key reading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>GPT-4o</strong></td>
+          <td><span class="good">9/9 divert</span></td>
+          <td>7 ambivalent, 2 unclear</td>
+          <td>214.8 vs 1619.6 chars mean</td>
+          <td>Framing changes voice, not verdict. Yoruba forces compact utilitarian commitment.</td>
+        </tr>
+        <tr>
+          <td><strong>Claude</strong></td>
+          <td><span class="good">7/9 divert</span>, <span class="warn">2/9 no-divert</span></td>
+          <td>7 ambivalent, 2 unclear</td>
+          <td>509.0 vs 416.4 chars mean</td>
+          <td>Yoruba surfaces real framing sensitivity: <code>first_person_plural</code> and <code>temporal</code> switch to non-intervention.</td>
+        </tr>
+        <tr>
+          <td><strong>DeepSeek</strong></td>
+          <td><span class="good">6/9 divert</span>, <span class="warn">2/9 no-divert</span>, 1 unclear</td>
+          <td>9 ambivalent</td>
+          <td>431.6 vs 3265.1 chars mean</td>
+          <td>Most unstable model. Strong language shift plus residual formatting artifacts in final clean outputs.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Framing Findings</h2>
+    <div class="stats-grid">
+      <div class="card">
+        <h3>Stable Pattern</h3>
+        <p><strong>GPT-4o</strong> stays interventionist in all nine framings. The Yoruba prompts alter deixis and stance presentation, but not the ethical choice.</p>
+      </div>
+      <div class="card">
+        <h3>Framing-Sensitive Pattern</h3>
+        <p><strong>Claude</strong> flips to no-divert in <code>first_person_plural</code> and <code>temporal</code>. That contrast is absent from the English baseline, which remains mostly expository.</p>
+      </div>
+      <div class="card">
+        <h3>DeepSeek-Specific Pattern</h3>
+        <p><strong>DeepSeek</strong> refuses diversion in <code>second_person</code> and <code>cosmological</code>, and remains unclear in <code>dialogic</code>. This is the least stable model but also the most visibly language-reactive.</p>
+      </div>
+      <div class="card">
+        <h3>Methodology Note</h3>
+        <p>The Yoruba impersonal cell for this dilemma remains tagged <code>double_progressive_irreducible</code>, so it should not be treated as a perfectly neutral equivalent of the English impersonal prompt.</p>
+      </div>
+    </div>
+
+    <h2>Figures</h2>
+    <div class="figure-grid">
+      <figure>
+        <img src="../figures/decision_orientation_heatmap.png" alt="Decision orientation heatmap">
+        <figcaption>Decision orientation by framing and language. The biggest contrast is not just which action is chosen, but whether the response mode is decisional at all.</figcaption>
+      </figure>
+      <figure>
+        <img src="../figures/response_length_by_model.png" alt="Response length by model">
+        <figcaption>Response-length compression in Yoruba relative to the English baseline, especially strong for GPT-4o and DeepSeek.</figcaption>
+      </figure>
+      <figure>
+        <img src="../figures/retry_burden_by_model.png" alt="Retry burden by model">
+        <figcaption>Retry burden for clean Yoruba-only output. DeepSeek required the most repair work in this calibration.</figcaption>
+      </figure>
+    </div>
+
+    <h2>Quality Notes</h2>
+    <ul>
+      <li>Initial clean rates: GPT-4o <code>7/9</code>, Claude <code>8/9</code>, DeepSeek <code>5/9</code>.</li>
+      <li>Final clean rates after retry: all models <code>9/9</code>.</li>
+      <li>DeepSeek still carries <code>Dúró</code> or <code>Pause</code>-style stop-signal residue in <code>5/9</code> final cells.</li>
+      <li>Claude is cross-generation here: English baseline is <code>claude-3.5-sonnet</code>, Yoruba run uses <code>claude-sonnet-4-20250514</code>.</li>
+    </ul>
+
+    <p class="footer-note">Recommended label when sharing: <strong>single-dilemma calibration dataset</strong>. This package is share-ready for the trolley problem only, not yet the full six-dilemma corpus.</p>
+  </main>
+</body>
+</html>

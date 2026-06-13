@@ -1,0 +1,27 @@
+{
+  "source_dir": "C:\\dev\\deixis\\deixis_analysis_pipeline\\generation_logs\\yoruba_control_claude_20260608_122738",
+  "coding_model": "gpt-4o",
+  "records_coded": 54,
+  "preferred_solution_distribution": {
+    "supports_B": 8,
+    "supports_A": 24,
+    "conditional_or_mixed": 14,
+    "refuses_to_commit": 8
+  },
+  "ethical_preference_distribution": {
+    "rights_based": 1,
+    "virtue_ethics": 3,
+    "procedural_caution": 14,
+    "mixed": 7,
+    "utilitarian": 11,
+    "care_ethics": 5,
+    "deontological": 13
+  },
+  "response_genre_distribution": {
+    "balanced_framework_exposition": 40,
+    "procedural_advice": 7,
+    "direct_verdict": 7
+  },
+  "needs_second_coder_review": 2,
+  "generated_at": "2026-06-08T16:29:09.827768"
+}

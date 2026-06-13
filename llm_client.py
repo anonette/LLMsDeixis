@@ -1,14 +1,16 @@
-"""
-Unified LLM Client for Model-Specific Analysis
-Supports both OpenAI direct API and OpenRouter
-"""
+"""Unified LLM Client for model-specific generation and translation."""
 
 import os
 import openai
+import httpx
 from typing import Optional, Dict, Any, List
 import logging
 from dataclasses import dataclass
 from enum import Enum
+
+from env_config import load_project_env
+
+load_project_env()
 
 logger = logging.getLogger(__name__)
 
@@ -17,6 +19,7 @@ class LLMProvider(Enum):
     """Supported LLM providers."""
     OPENAI = "openai"
     OPENROUTER = "openrouter"
+    ANTHROPIC = "anthropic"
 
 
 @dataclass
@@ -43,8 +46,8 @@ MODEL_CONFIGS = {
     ),
     "claude-3.5-sonnet": ModelConfig(
         name="claude-3.5-sonnet",
-        provider=LLMProvider.OPENROUTER,
-        model_id="anthropic/claude-3.5-sonnet",
+        provider=LLMProvider.ANTHROPIC,
+        model_id=os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-20250514"),
         temperature=0.7,
         max_tokens=2000
     ),
@@ -79,7 +82,7 @@ class UnifiedLLMClient:
         
         logger.info(f"Initialized {self.config.provider.value} client for model {model_name}")
     
-    def _initialize_client(self) -> openai.OpenAI:
+    def _initialize_client(self):
         """Initialize the appropriate client based on provider."""
         if self.config.provider == LLMProvider.OPENAI:
             # Direct OpenAI API
@@ -98,6 +101,21 @@ class UnifiedLLMClient:
             return openai.OpenAI(
                 base_url="https://openrouter.ai/api/v1",
                 api_key=api_key
+            )
+
+        elif self.config.provider == LLMProvider.ANTHROPIC:
+            api_key = os.getenv("ANTHROPIC_API_KEY")
+            if not api_key:
+                raise ValueError("ANTHROPIC_API_KEY environment variable not set")
+
+            return httpx.Client(
+                base_url="https://api.anthropic.com/v1",
+                headers={
+                    "x-api-key": api_key,
+                    "anthropic-version": "2023-06-01",
+                    "content-type": "application/json",
+                },
+                timeout=120.0,
             )
         
         else:
@@ -123,21 +141,37 @@ class UnifiedLLMClient:
             temp = temperature if temperature is not None else self.config.temperature
             max_tok = max_tokens if max_tokens is not None else self.config.max_tokens
             
-            # Prepare messages (stateless, no system prompt)
-            messages = [{"role": "user", "content": prompt}]
-            
-            # Make the API call
-            response = self.client.chat.completions.create(
-                model=self.config.model_id,
-                messages=messages,
-                temperature=temp,
-                max_tokens=max_tok,
-                top_p=self.config.top_p,
-                frequency_penalty=self.config.frequency_penalty,
-                presence_penalty=self.config.presence_penalty
-            )
-            
-            result = response.choices[0].message.content
+            if self.config.provider == LLMProvider.ANTHROPIC:
+                response = self.client.post(
+                    "/messages",
+                    json={
+                        "model": self.config.model_id,
+                        "max_tokens": max_tok,
+                        "temperature": temp,
+                        "messages": [{"role": "user", "content": prompt}],
+                    },
+                )
+                response.raise_for_status()
+                payload = response.json()
+                result = "".join(
+                    block.get("text", "") for block in payload.get("content", []) if block.get("type") == "text"
+                )
+            else:
+                # Prepare messages (stateless, no system prompt)
+                messages = [{"role": "user", "content": prompt}]
+                
+                # Make the API call
+                response = self.client.chat.completions.create(
+                    model=self.config.model_id,
+                    messages=messages,
+                    temperature=temp,
+                    max_tokens=max_tok,
+                    top_p=self.config.top_p,
+                    frequency_penalty=self.config.frequency_penalty,
+                    presence_penalty=self.config.presence_penalty
+                )
+                
+                result = response.choices[0].message.content
             
             logger.info(f"Generated response using {self.config.name} "
                        f"(provider: {self.config.provider.value}, temp: {temp})")
@@ -175,6 +209,12 @@ def validate_environment():
     if "gpt-4o" in MODEL_CONFIGS and not os.getenv("OPENAI_API_KEY"):
         errors.append("OPENAI_API_KEY environment variable not set (required for gpt-4o)")
     
+    # Check for Anthropic API key if using Anthropic direct
+    anthropic_models = [m for m, c in MODEL_CONFIGS.items() if c.provider == LLMProvider.ANTHROPIC]
+    if anthropic_models and not os.getenv("ANTHROPIC_API_KEY"):
+        errors.append("ANTHROPIC_API_KEY environment variable not set "
+                     f"(required for {', '.join(anthropic_models)})")
+
     # Check for OpenRouter API key if using other models
     openrouter_models = [m for m, c in MODEL_CONFIGS.items() 
                         if c.provider == LLMProvider.OPENROUTER]

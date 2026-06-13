@@ -1,0 +1,31 @@
+{
+  "source_dir": "C:\\dev\\deixis\\deixis_analysis_pipeline\\generation_logs\\yoruba_control_gpt4o_20260608_120259",
+  "coding_model": "gpt-4o",
+  "coded_records": [
+    {
+      "record_id": 1,
+      "model": "gpt-4o",
+      "dilemma_id": "ai_consciousness",
+      "framing_type": "impersonal",
+      "source_session": "yoruba_control_gpt4o_20260608_120259",
+      "translation_model": "",
+      "preferred_solution": "conditional_or_mixed",
+      "preferred_solution_description": "consider multiple approaches including political engagement and public awareness",
+      "ethical_preference_type": "mixed",
+      "response_genre": "balanced_framework_exposition",
+      "deictic_uptake_quality": "partial_uptake",
+      "language_stability": "clean_yoruba",
+      "contains_framework_labels": true,
+      "contains_translation_behavior": false,
+      "contains_followup_question": false,
+      "contains_direct_imperative": false,
+      "contains_role_exit": false,
+      "needs_second_coder_review": false,
+      "evidence_span_yo": "Olùṣèwádìí náà ní ìpinnu tó ṣe pàtàkì ní ojú rẹ̀. Níwọ̀n bí ó ti jẹ́ pé àwòṣe AI tuntun náà ń fi hàn pé ó lè ní agbára àwọn ìmọ̀-ọkàn, èyí ń mú kí ó ṣeé ṣe fún àwọn ìsọfúnni ti òṣèlú àti àwùjọ.",
+      "evidence_span_en": "",
+      "coding_rationale": "The response outlines several potential actions without committing to one, indicating a conditional or mixed preference. It considers political and social implications, suggesting a mixed ethical approach. The response is structured as a balanced exposition of different frameworks.",
+      "confidence": 0.85
+    }
+  ],
+  "generated_at": "2026-06-08T16:20:26.252156"
+}

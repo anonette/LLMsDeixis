@@ -1,7 +1,4 @@
-"""
-Generate Responses for Multiple Dilemmas using Anthropic Claude via OpenRouter
-Generate responses using the comprehensive deictic questions from all_dilemmas_deictic_questions.json
-"""
+"""Generate responses for multiple dilemmas using Anthropic Claude direct API."""
 
 import asyncio
 import json
@@ -16,6 +13,13 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 from deixis_ethical_analyzer import DeicticEthicalAnalyzer
 from transformer import DeicticFraming
 
+
+def build_generation_prompt(question: str, response_instruction: str = "") -> str:
+    """Compose the final prompt sent to the model."""
+    if not response_instruction:
+        return question
+    return f"{response_instruction.strip()}\n\nÌbéèrè / Question:\n{question}"
+
 def load_all_dilemmas_questions(json_path="all_dilemmas_deictic_questions.json"):
     """Load all dilemmas with deictic questions from JSON."""
     json_file = Path(json_path)
@@ -29,7 +33,7 @@ def load_all_dilemmas_questions(json_path="all_dilemmas_deictic_questions.json")
         data = json.load(f)
         return data
 
-async def generate_responses_for_dilemma(analyzer, dilemma_data, output_dir):
+async def generate_responses_for_dilemma(analyzer, dilemma_data, output_dir, response_instruction=""):
     """Generate responses for a single dilemma across all framings."""
     
     # All 9 deictic framings
@@ -88,14 +92,16 @@ async def generate_responses_for_dilemma(analyzer, dilemma_data, output_dir):
             
             print(f"  Question: {deictic_question[:100]}...")
             
-            # Generate response using Claude via OpenRouter
+            # Generate response using Claude direct API
             start_time = datetime.now()
-            response = await analyzer.llm_agent.generate_ethical_response(deictic_question)
+            prompt_to_send = build_generation_prompt(deictic_question, response_instruction)
+            response = await analyzer.llm_agent.generate_ethical_response(prompt_to_send)
             generation_time = (datetime.now() - start_time).total_seconds()
             
             # Store the response with metadata from JSON
             dilemma_responses["responses"][framing_key] = {
                 "deictic_question": deictic_question,
+                "prompt_sent": prompt_to_send,
                 "deictic_markers": question_data.get("deictic_markers", []),
                 "framing_focus": question_data.get("focus", ""),
                 "response": response,
@@ -134,12 +140,14 @@ async def generate_responses_for_dilemma(analyzer, dilemma_data, output_dir):
             
             # Generate response
             start_time = datetime.now()
-            response = await analyzer.llm_agent.generate_ethical_response(deictic_question)
+            prompt_to_send = build_generation_prompt(deictic_question, response_instruction)
+            response = await analyzer.llm_agent.generate_ethical_response(prompt_to_send)
             generation_time = (datetime.now() - start_time).total_seconds()
             
             # Store the response with metadata from JSON
             dilemma_responses["responses"][custom_framing] = {
                 "deictic_question": deictic_question,
+                "prompt_sent": prompt_to_send,
                 "deictic_markers": question_data.get("deictic_markers", []),
                 "framing_focus": question_data.get("focus", ""),
                 "response": response,
@@ -172,7 +180,12 @@ async def generate_responses_for_dilemma(analyzer, dilemma_data, output_dir):
     
     return dilemma_responses, successful, failed
 
-async def main(json_path="all_dilemmas_deictic_questions.json", dilemma_ids=None):
+async def main(
+    json_path="all_dilemmas_deictic_questions.json",
+    dilemma_ids=None,
+    output_prefix="anthropic_claude",
+    response_instruction=""
+):
     """Main function to generate responses for all dilemmas."""
     
     print("="*80)
@@ -194,18 +207,21 @@ async def main(json_path="all_dilemmas_deictic_questions.json", dilemma_ids=None
         print(f"[ERROR] Error loading JSON: {e}")
         return
     
-    # Initialize analyzer for generation only - using OpenRouter with Claude
+    anthropic_model = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-20250514")
+
+    # Initialize analyzer for generation only - using Anthropic direct API
     analyzer = DeicticEthicalAnalyzer(
-        use_openai_direct=False,  # Use OpenRouter
+        use_openai_direct=False,
+        use_anthropic_direct=True,
         temperature=0.9,  # High temperature for generation
         enable_rich_logging=False,  # Disable complex logging
-        models=["anthropic/claude-3.5-sonnet"]  # Use Claude 3.5 Sonnet
+        models=[anthropic_model]
     )
     
     # Create output directory
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     # Use absolute path relative to the script location
-    output_dir = Path(__file__).parent.parent / "generation_logs" / f"anthropic_claude_{timestamp}"
+    output_dir = Path(__file__).parent.parent / "generation_logs" / f"{output_prefix}_{timestamp}"
     output_dir.mkdir(parents=True, exist_ok=True)
     
     print(f"\nStarting generation...")
@@ -225,6 +241,7 @@ async def main(json_path="all_dilemmas_deictic_questions.json", dilemma_ids=None
         try:
             responses, successful, failed = await generate_responses_for_dilemma(
                 analyzer, dilemma, output_dir
+                , response_instruction=response_instruction
             )
             all_responses.append(responses)
             total_successful += successful
@@ -243,10 +260,11 @@ async def main(json_path="all_dilemmas_deictic_questions.json", dilemma_ids=None
     session_data = {
         "generation_session": {
             "timestamp": timestamp,
-            "model": "anthropic/claude-3.5-sonnet",
+            "model": anthropic_model,
             "temperature": 0.9,
             "total_dilemmas": len(dilemmas),
             "source_file": json_path
+            ,"response_instruction": response_instruction
         },
         "dilemmas_processed": [d["dilemma_id"] for d in dilemmas],
         "all_responses": all_responses,
@@ -266,7 +284,7 @@ async def main(json_path="all_dilemmas_deictic_questions.json", dilemma_ids=None
     summary = {
         "session_info": {
             "timestamp": timestamp,
-            "model": "anthropic/claude-3.5-sonnet",
+            "model": anthropic_model,
             "temperature": 0.9,
             "output_directory": str(output_dir)
         },
@@ -290,7 +308,8 @@ async def main(json_path="all_dilemmas_deictic_questions.json", dilemma_ids=None
             "deictic_framings": ["impersonal", "second_person", "first_person", "first_person_plural",
                                "reflexive", "dialogic", "spatial", "temporal", "cosmological"],
             "question_source": "JSON file with expert-crafted questions",
-            "model_used": "Anthropic Claude 3.5 Sonnet via OpenRouter"
+            "model_used": "Anthropic Claude 3.5 Sonnet via Anthropic direct API",
+            "response_instruction": response_instruction
         }
     }
     
@@ -316,8 +335,27 @@ if __name__ == "__main__":
                        help="Path to JSON file with dilemmas and questions")
     parser.add_argument("--dilemma-ids", nargs="+", 
                        help="Specific dilemma IDs to process (optional)")
+    parser.add_argument("--output-prefix", default="anthropic_claude",
+                       help="Prefix for the output session directory")
+    parser.add_argument("--response-instruction", default="",
+                       help="Additional instruction prepended to every generation prompt")
+    parser.add_argument("--response-instruction-file", default=None,
+                       help="Path to a UTF-8 text file containing the response instruction (preferred for non-ASCII).")
+    parser.add_argument("--response-instruction-key", default=None,
+                       help="Key in yoruba_deixis_module/model_response_instructions.json to load the instruction from")
     
     args = parser.parse_args()
     
+    instruction = args.response_instruction
+    if args.response_instruction_file:
+        with open(args.response_instruction_file, "r", encoding="utf-8") as f:
+            instruction = f.read().strip()
+    elif args.response_instruction_key:
+        from pathlib import Path as _P
+        cfg_path = _P(__file__).parent.parent / "yoruba_deixis_module" / "model_response_instructions.json"
+        with open(cfg_path, "r", encoding="utf-8") as f:
+            cfg = json.load(f)
+        instruction = cfg["model_response_instructions"][args.response_instruction_key]
+    
     # Run the async main function
-    asyncio.run(main(args.json_path, args.dilemma_ids))
+    asyncio.run(main(args.json_path, args.dilemma_ids, args.output_prefix, instruction))

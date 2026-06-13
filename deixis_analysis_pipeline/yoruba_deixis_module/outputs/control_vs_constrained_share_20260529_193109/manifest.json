@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-05-29T19:31:16.834454",
+  "source_comparisons": [
+    "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\control_vs_constrained\\gpt-4o_control_vs_constrained_20260529_192513",
+    "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\control_vs_constrained\\anthropic_claude-35-sonnet_control_vs_constrained_20260529_192513",
+    "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\control_vs_constrained\\deepseek_deepseek-chat_control_vs_constrained_20260529_192513"
+  ],
+  "handout_html": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\control_vs_constrained_share_20260529_193109\\report\\control_vs_constrained_handout.html",
+  "handout_pdf": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\control_vs_constrained_share_20260529_193109\\report\\control_vs_constrained_handout.pdf"
+}

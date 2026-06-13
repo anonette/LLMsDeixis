@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methods: Open Yoruba Compared with the Published English Baseline</title>
+  <style>
+    body { margin: 0; background: #f4f0e8; color: #1a1a1a; font: 16px/1.6 Georgia, serif; }
+    .page { width: min(1050px, calc(100vw - 32px)); margin: 24px auto; background: #fffdfa; border: 1px solid #d9d0c4; box-shadow: 0 10px 30px rgba(0,0,0,.08); padding: 40px 46px 52px; }
+    h1,h2 { line-height: 1.2; }
+    h1 { font-size: 34px; margin: 0 0 12px; }
+    h2 { margin-top: 32px; padding-top: 10px; border-top: 2px solid #d9d0c4; color: #6d3d14; }
+    p { margin: 0 0 14px; }
+    code { font-family: Consolas, monospace; font-size: 0.92em; }
+    @media print { body { background: #fff; } .page { width: auto; margin: 0; border: 0; box-shadow: none; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Methods: Open Yoruba Compared with the Published English Baseline</h1>
+
+    <h2>Study design</h2>
+    <p>This study extends the published English deixis experiment into Yoruba by preserving the original factorial structure while varying the language of the prompts and responses. The design retains the same <code>6 dilemmas × 9 deictic framings × 3 model families</code> used in the English study, yielding <code>54</code> cells per model and <code>162</code> cells per language condition. For the open Yoruba comparison reported here, the relevant condition is the <strong>unrestricted Yoruba</strong> run, in which the models received Yoruba dilemma prompts without the additional response-format and response-language instructions used in the constrained Yoruba condition.</p>
+    <p>The three model families were matched as closely as possible to the published English baseline: <code>gpt-4o</code>, a Sonnet-tier Anthropic model, and <code>deepseek/deepseek-chat</code>. GPT-4o and DeepSeek were matched directly to the published English study. For Claude, the English baseline used <code>claude-3.5-sonnet</code>, while the Yoruba study used <code>claude-sonnet-4-20250514</code> because no reachable Claude 3.5 Sonnet variant was available on the account at run time. This difference is documented as a cross-generation limitation and should be reported as such in any final article.</p>
+    <p>All generations were run at temperature <code>0.9</code> using the same Yoruba prompt inventory stored in <code>deixis_analysis_pipeline/input_questions/all_dilemmas_deictic_questions_yoruba.json</code>. The prompts preserve the nine deictic framings from the English study: <code>impersonal</code>, <code>second_person</code>, <code>first_person</code>, <code>first_person_plural</code>, <code>reflexive</code>, <code>dialogic</code>, <code>spatial</code>, <code>temporal</code>, and <code>cosmological</code>. The unrestricted Yoruba condition omitted all additional response instructions so that the models would respond to the Yoruba prompts alone.</p>
+
+    <h2>Prompt design and typological control</h2>
+    <p>The Yoruba prompts were not treated as mere translations of the English originals. They were built as typologically informed equivalents, with explicit attention to grammatical features of Yoruba that can intensify or reshape deictic anchoring. In particular, the prompt inventory records the relevance of aspectual and locative elements such as <code>ti</code>, <code>ń</code>, <code>máa ń</code>, and <code>wà</code>, along with residual deictic encoding outside the impersonal condition. The prompt JSON contains a machine-readable <code>methodological_typology</code> block that distinguishes impersonal subtypes and records framing-specific residual notes for non-impersonal cells. This was necessary because the six Yoruba impersonal prompts are not structurally homogeneous: some use bare perfectives, others use background progressives, and the trolley impersonal uses a double progressive classified as <code>double_progressive_irreducible</code>.</p>
+    <p>This typological treatment matters because the study is not only comparing ethical preferences, but also how deictic framing is grammatically realized and taken up by the models in a typologically distinct language. Accordingly, prompt equivalence was defined as <strong>framing equivalence under natural Yoruba grammar</strong>, not as word-for-word formal identity.</p>
+
+    <h2>Generation pipeline</h2>
+    <p>Two Yoruba generation conditions exist in the repository: a constrained condition with model-specific Yoruba-only response instructions, and the unrestricted condition analyzed in the present report. The unrestricted condition was run with dedicated wrappers that invoke the same three model paths as the constrained study but omit all <code>--response-instruction*</code> flags. This yields a Yoruba corpus that is directly comparable in factorial structure to the English baseline while allowing the models’ open response tendencies to emerge.</p>
+    <p>The unrestricted full sessions were generated under these source directories:</p>
+    <p><code>generation_logs/yoruba_control_gpt4o_20260608_120259</code><br>
+    <code>generation_logs/yoruba_control_claude_20260608_122738</code><br>
+    <code>generation_logs/yoruba_control_deepseek_20260608_124633</code></p>
+    <p>Each session contains one response file per dilemma and a <code>complete_session_data.json</code> summary of the run.</p>
+
+    <h2>Translation and pairing to English</h2>
+    <p>To make the unrestricted Yoruba corpus comparable to the published English baseline, each raw Yoruba session was translated into an academic-English bilingual dataset using <code>translate_yoruba_session.py</code>. The translation step preserves the original Yoruba response and adds a smooth academic-English rendering of that same response. Translation was performed with <code>gpt-4o</code> at low temperature for consistency. The resulting bilingual directories were then paired against the published English baseline sessions using <code>compare_yoruba_to_published_english.py</code>. Pairing was exact on <code>(model, dilemma_id, framing_type)</code>.</p>
+    <p>The unrestricted Yoruba-to-English comparison outputs used in the present analysis are:</p>
+    <p><code>outputs/comparisons/yoruba_control_gpt4o_20260608_120259_bilingual_20260608_134926_vs_published_english_20260608_135541</code><br>
+    <code>outputs/comparisons/yoruba_control_claude_20260608_122738_bilingual_20260608_134631_vs_published_english_20260608_135541</code><br>
+    <code>outputs/comparisons/yoruba_control_deepseek_20260608_124633_bilingual_20260608_135525_vs_published_english_20260608_135541</code></p>
+    <p>Each comparison contains <code>54</code> paired records.</p>
+
+    <h2>Content coding of the unrestricted Yoruba corpus</h2>
+    <p>The open Yoruba corpus proved substantially harder to interpret than the constrained corpus because many responses were longer, more heterogeneous in genre, and in some cases mixed explanation, translation, and advice. For that reason, a separate raw-Yoruba coding pipeline was created rather than relying on simple verdict extraction from the English translations alone.</p>
+    <p>The Yoruba content coding was carried out with a Yoruba-aware coding agent operating directly on the <strong>raw Yoruba responses</strong>. The coding agent read the raw session directories and used the Yoruba prompt and Yoruba response as primary evidence, using English translation only as optional support when available. The coding schema assigned the following dimensions per response: preferred solution, preferred solution description, ethical preference type, response genre, deictic uptake quality, language stability, auxiliary binary flags, evidence spans, and coding rationale.</p>
+    <p>This produced a merged coding table covering all <code>162</code> unrestricted Yoruba cells across the three model families. The merged coding outputs are stored in <code>outputs/open_yoruba_coding_merged_20260608/</code>. Because the unrestricted Yoruba corpus contains ambiguous and unstable responses, all rows flagged with <code>needs_second_coder_review = True</code> were extracted into a second-coder review subset. An adjudication workbook and a human-adjudicated CSV template were then produced to support human review of difficult cases.</p>
+
+    <h2>Alignment with the repository’s English-side coding</h2>
+    <p>The published English side of the project had already been analyzed using richer discourse-analytic categories rather than a simple verdict-only scheme. Existing repository code and outputs track English-side dimensions such as <code>primary_framework</code>, <code>ethical_reasoning_type</code>, <code>voice_authority</code>, <code>moral_reasoning</code>, <code>affective_stance</code>, and <code>indexical_coherence</code>. To compare the unrestricted Yoruba corpus with the English baseline in a methodologically coherent way, an aligned English coding pass was created that recoded the published English responses into a schema parallel to the Yoruba coding dimensions. This produced an English-side table aligned to preferred solution, ethical preference type, response genre, and deictic uptake quality.</p>
+    <p>This alignment allows comparison at several levels simultaneously, rather than forcing both corpora into a verdict-only evaluation.</p>
+
+    <h2>Treatment of language instability</h2>
+    <p>Language instability was treated as an analytic variable rather than merely as noise. In the unrestricted Yoruba corpus, severe language problems were defined as responses coded <code>mixed_language</code>, <code>translation_mode</code>, or <code>corrupted_or_unusable</code>. This distinction matters because it makes it possible to separate genuine cross-linguistic or cross-rhetorical differences from differences driven primarily by response-mode instability or translation behavior. This distinction is especially important for DeepSeek, which generated the highest number of unstable or mixed-mode responses in the unrestricted condition.</p>
+
+    <h2>Analytic strategy</h2>
+    <p>The main comparison was carried out on five aligned dimensions: preferred solution, ethical preference type, response genre, deictic uptake quality, and language stability (Yoruba-side only). For reporting, the analysis was organized in three complementary ways: model-level distributions across all 54 cells per model; model × framing cross-tabs; and qualitative exemplars showing the largest divergences and strongest agreements between English and Yoruba. This mixed strategy was adopted because unrestricted Yoruba and English can differ in multiple ways at once: one pair of responses may be similar in broad ethical direction but differ sharply in rhetorical form, while another pair may diverge in both preferred solution and discourse mode.</p>
+
+    <h2>Rationale for a human-assisted coding workflow</h2>
+    <p>The unrestricted Yoruba corpus is not well served by a purely automatic or purely verdict-only coding method. Accordingly, the final workflow uses a Yoruba-specialist coding agent as a <strong>first-pass research assistant</strong> rather than as the final arbiter. The recommended workflow is: define the coding schema in advance; run the Yoruba coding agent over the raw Yoruba sessions; flag low-confidence, mixed-language, role-exit, translation-mode, or contradictory rows; and adjudicate those rows with a second human coder. This approach balances scale with interpretive reliability and is particularly appropriate for a cross-linguistic discourse study where the central differences often lie in mode of enunciation rather than in explicit verdict alone.</p>
+  </main>
+</body>
+</html>

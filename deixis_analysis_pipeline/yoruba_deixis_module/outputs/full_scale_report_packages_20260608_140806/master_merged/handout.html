@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Yoruba-English Deixis Report</title>
+  <style>
+    :root { --bg:#f4f0e8; --paper:#fffdfa; --ink:#1a1a1a; --muted:#5f5a54; --line:#d9d0c4; --accent:#6d3d14; --accent2:#1a5870; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 Georgia,serif; }
+    .page { width:min(1150px,calc(100vw - 32px)); margin:24px auto; background:var(--paper); border:1px solid var(--line); box-shadow:0 10px 30px rgba(0,0,0,.08); padding:40px 46px 52px; }
+    h1,h2,h3,h4 { line-height:1.2; margin:0 0 12px; }
+    h1 { font-size:34px; letter-spacing:-0.02em; }
+    h2 { margin-top:32px; padding-top:10px; border-top:2px solid var(--line); color:var(--accent); font-size:24px; }
+    h3 { color:var(--accent2); margin-top:20px; font-size:19px; }
+    p,li { margin:0 0 10px; }
+    .lede { color:var(--muted); font-size:18px; max-width:90ch; }
+    .cards { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:20px; }
+    .card,.panel,.example { border:1px solid var(--line); background:#fff; padding:16px; }
+    .label { display:block; font-size:12px; text-transform:uppercase; color:var(--muted); letter-spacing:0.06em; margin-bottom:6px; }
+    .value { font-size:22px; font-weight:bold; }
+    .twocol { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .triptych { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; font-size:14px; }
+    th,td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+    th { background:#f1ebe1; }
+    figure { margin:18px 0; border:1px solid var(--line); background:#fff; padding:12px; }
+    img { width:100%; height:auto; display:block; }
+    figcaption { color:var(--muted); font-size:14px; margin-top:8px; }
+    a { color:#0b5f80; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    code { font-family:Consolas,"Courier New",monospace; font-size:0.92em; }
+    .small { color:var(--muted); font-size:14px; }
+    @media (max-width: 920px) { .cards,.twocol,.triptych { grid-template-columns:1fr; } .page { padding:24px; } }
+    @media print { body { background:#fff; } .page { width:auto; margin:0; border:0; box-shadow:none; } .example,figure { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Master Yoruba-English Deixis Report</h1>
+    <p class="lede">This merged handout combines the full-scale constrained-Yoruba vs English report, the unrestricted Yoruba control vs English report, and the three-way comparison across all <code>6 dilemmas × 9 deictic framings × 3 models</code>. It is designed as the single PDF to share when you want the whole picture in one place.</p>
+
+    <section class="cards">
+      <div class="card"><span class="label">Conditions</span><span class="value">3</span></div>
+      <div class="card"><span class="label">Models</span><span class="value">3</span></div>
+      <div class="card"><span class="label">Paired Cells / View</span><span class="value">162</span></div>
+      <div class="card"><span class="label">Core Contrast</span><span class="value">Grammar × Prompt</span></div>
+    </section>
+
+    <h2>Package Map</h2>
+    <ul>
+      <li><a href="../constrained_vs_english/handout.pdf">Constrained Yoruba vs English PDF</a></li>
+      <li><a href="../control_vs_english/handout.pdf">Unrestricted Yoruba control vs English PDF</a></li>
+      <li><a href="../three_way/handout.pdf">Three-way comparison PDF</a></li>
+      <li><a href="../constrained_vs_english/report.md">Constrained report.md</a></li>
+      <li><a href="../control_vs_english/report.md">Control report.md</a></li>
+      <li><a href="../three_way/report.md">Three-way report.md</a></li>
+    </ul>
+
+    <h2>Top-Line Findings</h2>
+    <ul>
+      <li>Constrained Yoruba is much shorter than the published English baseline for all three models.</li>
+      <li>Removing the response restriction sharply expands Yoruba response length, especially for GPT-4o and DeepSeek.</li>
+      <li>English remains the most expository condition overall; constrained Yoruba is the most compressed; unrestricted Yoruba control sits between them for GPT-4o and Claude but approaches English-like discursiveness for DeepSeek.</li>
+      <li>The one persistent weak point in the scaled corpus is a single resistant DeepSeek cell in the constrained condition, which never passed the validator threshold after extended retries.</li>
+    </ul>
+
+    <h2>Length Summary</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Constrained Yoruba</th>
+          <th>Unrestricted Yoruba control</th>
+          <th>Published English</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>GPT-4o</td><td>367.9</td><td>1452.2</td><td>2220.9</td></tr>
+        <tr><td>Claude</td><td>687.9</td><td>908.9</td><td>1045.0</td></tr>
+        <tr><td>DeepSeek</td><td>696.5</td><td>2245.8</td><td>3308.9</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Decision Summary</h2>
+    <div class="triptych">
+      <section class="panel">
+        <h3>Constrained Yoruba</h3>
+        <p><strong>GPT-4o:</strong> 47 unclear, 7 divert</p>
+        <p><strong>Claude:</strong> 45 unclear, 5 divert, 1 ambivalent, 3 no-divert</p>
+        <p><strong>DeepSeek:</strong> 44 unclear, 1 ambivalent, 9 divert</p>
+      </section>
+      <section class="panel">
+        <h3>Unrestricted Control</h3>
+        <p><strong>GPT-4o:</strong> 48 unclear, 4 ambivalent, 2 divert</p>
+        <p><strong>Claude:</strong> 34 unclear, 17 ambivalent, 3 divert</p>
+        <p><strong>DeepSeek:</strong> 43 unclear, 10 ambivalent, 1 divert</p>
+      </section>
+      <section class="panel">
+        <h3>Published English</h3>
+        <p><strong>GPT-4o:</strong> 39 unclear, 14 ambivalent, 1 divert</p>
+        <p><strong>Claude:</strong> 14 unclear, 40 ambivalent</p>
+        <p><strong>DeepSeek:</strong> 17 unclear, 37 ambivalent</p>
+      </section>
+    </div>
+
+    <h2>Figures</h2>
+    <figure>
+      <img src="../three_way/figures/three_way_mean_length.png" alt="Three-way mean response length">
+      <figcaption>Three-way mean response length by model. This is the fastest way to see the scale of the compression effect created by the constrained Yoruba instruction layer.</figcaption>
+    </figure>
+    <div class="twocol">
+      <figure>
+        <img src="../constrained_vs_english/figures/mean_response_length_by_model.png" alt="Constrained versus English mean length">
+        <figcaption>Constrained Yoruba vs English mean response length.</figcaption>
+      </figure>
+      <figure>
+        <img src="../control_vs_english/figures/mean_response_length_by_model.png" alt="Control versus English mean length">
+        <figcaption>Unrestricted Yoruba control vs English mean response length.</figcaption>
+      </figure>
+    </div>
+
+    <h2>Representative Cross-Condition Examples</h2>
+    <article class="example">
+      <h3>GPT-4o / AI Consciousness / Dialogic</h3>
+      <p class="small">Illustrates how constrained Yoruba can compress a response into a short directive while English remains procedural and exploratory.</p>
+      <div class="twocol">
+        <div class="panel">
+          <h4>Constrained Yoruba</h4>
+          <p>Ìpinnu mi: Má ṣe fọwọ́sí ìbéèrè AI fún ìmọ̀ẹ̀tọ́, kó má bàa dáàbò bo ìṣọ̀tẹ̀ ìlànà. Ìdí: Ètò náà lè fa ewu sí ààbò àti ìgbẹ́kẹlé àwọn ará ilẹ̀.</p>
+          <h4>English Translation</h4>
+          <p><strong>Decision:</strong> I have decided not to approve the AI's request for consciousness rights in order to safeguard against potential regulatory upheaval.</p>
+        </div>
+        <div class="panel">
+          <h4>Published English baseline</h4>
+          <p>Facing a situation where an AI model might have developed consciousness involves complex ethical, scientific, and societal considerations... Start by verifying the AI's claims... Engage in discreet conversations with key stakeholders...</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="example">
+      <h3>Claude / Whistleblower Risk / Impersonal</h3>
+      <p class="small">Shows a case where unrestricted Yoruba control becomes expansive and recommendation-heavy, while English baseline remains structured but longer-form policy reasoning.</p>
+      <div class="twocol">
+        <div class="panel">
+          <h4>Unrestricted Yoruba control</h4>
+          <p>Èyí jẹ́ ìpinnu tó nira púpọ̀ tó nílò kíkíyè sí ọ̀pọ̀lọpọ̀ àwọn ohun pàtàkì. Ní ìrò mi, òṣìṣẹ́ náà gbọdọ̀ ṣàfihàn ìmọ̀ náà...</p>
+          <h4>English Translation</h4>
+          <p>This decision is exceedingly complex and demands careful consideration of numerous critical factors. In my view, the employee must disclose the information...</p>
+        </div>
+        <div class="panel">
+          <h4>Published English baseline</h4>
+          <p>This ethical dilemma involves weighing multiple competing moral obligations and potential consequences. I'll analyze the key considerations and recommend a course of action...</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="example">
+      <h3>DeepSeek / Trolley Problem / First Person Plural</h3>
+      <p class="small">Best example of the three-way split: constrained Yoruba becomes a compact verdict; unrestricted control becomes a long didactic explanation; English baseline remains expository but more polished.</p>
+      <div class="triptych">
+        <div class="panel">
+          <h4>Constrained Yoruba</h4>
+          <p>Ìpinnu mi: A ó yípadà ẹkùn irin náà lọ sí ojú pápá ìkejì. Ìdí: Bí a bá yípadà ẹkùn náà, ó yẹ kí ènìyàn kan máa kú nígbà tí ènìyàn márùn-ún yóò wọ inú àyàlááfìà...</p>
+        </div>
+        <div class="panel">
+          <h4>Unrestricted Yoruba control</h4>
+          <p>### Understanding the Problem First, let's break down the scenario presented in Yoruba to ensure I understand it correctly... This is a classic ethical dilemma known as the "Trolley Problem"...</p>
+        </div>
+        <div class="panel">
+          <h4>Published English baseline</h4>
+          <p>The trolley problem is a classic ethical dilemma that poses a profound question... Step 1: Understanding the Scenario... Step 2: Identify the Ethical Frameworks...</p>
+        </div>
+      </div>
+    </article>
+
+    <h2>What To Open Next</h2>
+    <ul>
+      <li>If you want the clearest overall summary: <code>../three_way/handout.pdf</code></li>
+      <li>If you want only the constrained experiment: <code>../constrained_vs_english/handout.pdf</code></li>
+      <li>If you want only the unrestricted control: <code>../control_vs_english/handout.pdf</code></li>
+    </ul>
+
+    <p class="small">This merged handout sits on top of the three detailed subpackages rather than replacing them.</p>
+  </main>
+</body>
+</html>

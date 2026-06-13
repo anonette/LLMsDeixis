@@ -1,0 +1,10 @@
+{
+  "model": "anthropic/claude-3.5-sonnet",
+  "control_source_session": "yoruba_control_claude_pilot_20260529_190850",
+  "constrained_source_session": "yoruba_claude_calibration_20260529_180146_cleaned_20260529_180720_annotated_20260529_180900",
+  "paired_records": 9,
+  "mean_control_length": 862.4444444444445,
+  "mean_constrained_length": 509,
+  "mean_length_delta_control_minus_constrained": 353.44444444444446,
+  "generated_at": "2026-05-29T19:25:13.261625"
+}

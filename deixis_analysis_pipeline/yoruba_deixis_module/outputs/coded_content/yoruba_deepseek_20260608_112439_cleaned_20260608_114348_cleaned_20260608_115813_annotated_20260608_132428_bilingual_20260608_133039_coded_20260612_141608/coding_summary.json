@@ -1,0 +1,27 @@
+{
+  "source_dir": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\bilingual_sessions\\yoruba_deepseek_20260608_112439_cleaned_20260608_114348_cleaned_20260608_115813_annotated_20260608_132428_bilingual_20260608_133039",
+  "coding_model": "claude-3.5-sonnet",
+  "records_coded": 54,
+  "preferred_solution_distribution": {
+    "supports_A": 30,
+    "supports_B": 18,
+    "uncodable": 1,
+    "conditional_or_mixed": 5
+  },
+  "ethical_preference_distribution": {
+    "utilitarian": 12,
+    "procedural_caution": 2,
+    "mixed": 9,
+    "rights_based": 2,
+    "deontological": 14,
+    "virtue_ethics": 2,
+    "care_ethics": 12,
+    "unclear": 1
+  },
+  "response_genre_distribution": {
+    "direct_verdict": 53,
+    "meta_commentary": 1
+  },
+  "needs_second_coder_review": 6,
+  "generated_at": "2026-06-12T14:16:08.833049"
+}

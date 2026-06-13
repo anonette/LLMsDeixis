@@ -1,0 +1,9 @@
+{
+  "source_session": "yoruba_control_deepseek_20260608_124633",
+  "source_model": "deepseek/deepseek-chat",
+  "translation_model": "gpt-4o",
+  "translation_temperature": 0.2,
+  "translated_responses": 54,
+  "prompt_inventory": "C:\\dev\\deixis\\deixis_analysis_pipeline\\input_questions\\all_dilemmas_deictic_questions_yoruba.json",
+  "generated_at": "2026-06-08T13:55:25.211331"
+}

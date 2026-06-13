@@ -1,0 +1,7 @@
+{
+  "yoruba_source_session": "yoruba_deepseek_calibration_20260529_180146_cleaned_20260529_180720_annotated_20260529_180900_bilingual_20260529_181033",
+  "published_english_session": "deepseek_20250805_143544",
+  "model": "deepseek/deepseek-chat",
+  "paired_records": 9,
+  "generated_at": "2026-05-29T18:11:30.317368"
+}

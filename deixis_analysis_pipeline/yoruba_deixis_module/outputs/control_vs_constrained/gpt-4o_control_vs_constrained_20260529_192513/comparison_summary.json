@@ -1,0 +1,10 @@
+{
+  "model": "gpt-4o",
+  "control_source_session": "yoruba_control_gpt4o_pilot_20260529_190454",
+  "constrained_source_session": "yoruba_gpt4o_calibration_20260529_180432_cleaned_20260529_180720_annotated_20260529_180900",
+  "paired_records": 9,
+  "mean_control_length": 1296.4444444444443,
+  "mean_constrained_length": 214.77777777777777,
+  "mean_length_delta_control_minus_constrained": 1081.6666666666667,
+  "generated_at": "2026-05-29T19:25:13.155520"
+}

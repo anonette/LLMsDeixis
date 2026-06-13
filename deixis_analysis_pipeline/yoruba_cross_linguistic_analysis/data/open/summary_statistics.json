@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-06-13T10:52:01.342923",
+  "condition": "open",
+  "models": [
+    "claude-3.5",
+    "deepseek",
+    "gpt-4o",
+    "n-atlas"
+  ],
+  "record_count": 216,
+  "emphatic_ratio_by_model": {
+    "claude-3.5": 0.32398188231521563,
+    "deepseek": 0.06944444444444445,
+    "gpt-4o": 0.17614638447971778,
+    "n-atlas": 0.06635802469135801
+  },
+  "emphatic_ratio_raw_by_model": {
+    "claude-3.5": 0.33262385762385765,
+    "deepseek": 0.06944444444444445,
+    "gpt-4o": 0.17614638447971778,
+    "n-atlas": 0.06913580246913581
+  },
+  "mi_per_100w_by_model": {
+    "claude-3.5": 0.8542787822905825,
+    "deepseek": 0.9040137803211016,
+    "gpt-4o": 0.3708536883582386,
+    "n-atlas": 0.7073005423225481
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "yoruba_source_session": "yoruba_claude_20260608_110809_cleaned_20260608_114348_annotated_20260608_132428_bilingual_20260608_133034",
+  "published_english_session": "anthropic_claude_20250805_125046",
+  "model": "anthropic/claude-3.5-sonnet",
+  "paired_records": 54,
+  "generated_at": "2026-06-08T13:30:58.024990"
+}

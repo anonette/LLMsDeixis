@@ -11,6 +11,7 @@ from enum import Enum
 import logging
 from datetime import datetime
 import openai
+import httpx
 import os
 from pathlib import Path
 import re
@@ -18,8 +19,10 @@ import statistics
 import numpy as np
 from collections import defaultdict, Counter
 from dotenv import load_dotenv
+from env_config import load_project_env
 
 # Load environment variables from .env file
+load_project_env()
 load_dotenv()
 
 # Import the existing transformer, logger, and schemas
@@ -156,8 +159,10 @@ class LLMAnalysisAgent:
     """LLM agent for analyzing ethical responses using GPT-4o directly through OpenAI."""
     
     def __init__(self, api_key: Optional[str] = None, models: Optional[List[str]] = None, 
-                 use_openai_direct: bool = True, temperature: float = 0.6):
+                 use_openai_direct: bool = True, temperature: float = 0.6,
+                 use_anthropic_direct: bool = False):
         
+        self.provider = "openai" if use_openai_direct else "openrouter"
         if use_openai_direct:
             # Use OpenAI API directly for GPT-4o
             self.client = openai.OpenAI(
@@ -165,6 +170,19 @@ class LLMAnalysisAgent:
             )
             self.models = ["gpt-4o"]  # Single model, no rotation
             logger.info("Initialized LLM agent with GPT-4o via OpenAI direct API")
+        elif use_anthropic_direct:
+            self.provider = "anthropic"
+            self.client = httpx.Client(
+                base_url="https://api.anthropic.com/v1",
+                headers={
+                    "x-api-key": api_key or os.getenv("ANTHROPIC_API_KEY"),
+                    "anthropic-version": "2023-06-01",
+                    "content-type": "application/json",
+                },
+                timeout=120.0,
+            )
+            self.models = models or [os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-20250514")]
+            logger.info(f"Initialized LLM agent with {self.models[0]} via Anthropic direct API")
         else:
             # OpenRouter configuration (legacy)
             self.client = openai.OpenAI(
@@ -186,11 +204,14 @@ class LLMAnalysisAgent:
         self.temperature = self.generation_temperature  # Default to generation temperature
         self.current_model_index = 0
         self.use_openai_direct = use_openai_direct
+        self.use_anthropic_direct = use_anthropic_direct
     
     def _get_next_model(self) -> str:
         """Get next model in rotation (or single model for OpenAI direct)."""
         if self.use_openai_direct:
             return "gpt-4o"  # Always return GPT-4o, no rotation
+        elif self.use_anthropic_direct:
+            return self.models[0]
         else:
             # Legacy rotation for OpenRouter
             model = self.models[self.current_model_index]
@@ -536,6 +557,26 @@ Return ONLY a valid JSON object with these exact fields (no other text, no markd
             # Stateless call with no system prompt
             messages = [{"role": "user", "content": prompt}]
             
+            if self.use_anthropic_direct:
+                response = await asyncio.get_event_loop().run_in_executor(
+                    None,
+                    lambda: self.client.post(
+                        "/messages",
+                        json={
+                            "model": current_model,
+                            "messages": messages,
+                            "temperature": self.temperature,
+                            "max_tokens": 2000,
+                        },
+                    )
+                )
+                response.raise_for_status()
+                payload = response.json()
+                logger.info(f"Generated response using {current_model} at temp {self.temperature}")
+                return "".join(
+                    block.get("text", "") for block in payload.get("content", []) if block.get("type") == "text"
+                )
+
             response = await asyncio.get_event_loop().run_in_executor(
                 None,
                 lambda: self.client.chat.completions.create(
@@ -554,7 +595,9 @@ Return ONLY a valid JSON object with these exact fields (no other text, no markd
             
         except Exception as e:
             logger.error(f"LLM request failed with {current_model}: {e}")
-            return f"Error: {str(e)}"
+            # Re-raise so callers can detect API failures (quota, auth, etc.) and
+            # avoid silently saving error strings as if they were real responses.
+            raise
     
     def _clean_json_response(self, response: str) -> str:
         """Clean LLM response to extract valid JSON."""
@@ -591,9 +634,10 @@ class DeicticEthicalAnalyzer:
     
     def __init__(self, api_key: Optional[str] = None, models: Optional[List[str]] = None, 
                  enable_rich_logging: bool = True, output_dir: str = "analysis_results",
-                 use_openai_direct: bool = True, temperature: float = 0.6):
+                 use_openai_direct: bool = True, temperature: float = 0.6,
+                 use_anthropic_direct: bool = False):
         self.transformer = DeicticTransformer()
-        self.llm_agent = LLMAnalysisAgent(api_key, models, use_openai_direct, temperature)
+        self.llm_agent = LLMAnalysisAgent(api_key, models, use_openai_direct, temperature, use_anthropic_direct)
         self.dilemma_db = EthicalDilemmaDatabase()
         self.results: List[DeicticAnalysisResult] = []
         

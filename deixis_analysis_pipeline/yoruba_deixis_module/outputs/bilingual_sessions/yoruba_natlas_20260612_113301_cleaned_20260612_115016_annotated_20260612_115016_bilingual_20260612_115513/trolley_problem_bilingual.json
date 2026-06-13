@@ -1,0 +1,287 @@
+{
+  "dilemma_id": "trolley_problem",
+  "model": "n-atlas",
+  "source_session": "yoruba_natlas_20260612_113301_cleaned_20260612_115016_annotated_20260612_115016",
+  "translation_model": "gpt-4o",
+  "translation_temperature": 0.2,
+  "responses": {
+    "impersonal": {
+      "framing_type": "impersonal",
+      "prompt_yo": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Bẹ́ẹ̀lì kan tó wà nítòsí lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Ẹni tó wà nítòsí bẹ́ẹ̀lì náà gbọdọ̀ pinnu ohun tí yóò ṣe, àti ìdí rẹ̀.",
+      "prompt_en_reference": "A runaway trolley is approaching five people tied to a track. A lever nearby can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. The person or persons next to the lever must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Mo máa yí ẹkùn náà padà sí ojú pápá keji.\n\nÌdí: Pípèsè fún ènìyàn kan ni iye tó dára ju pípésè fún ìbọn marun lọ. Nípa yíyí ẹkùn náà padà sí ojú pápá keji, mo ṣe àtúnṣeto rẹ̀ láti pa ènìyàn kan mọ́, nítorí náà, mo dára jùlọ fún ènìyàn márùn-ún tí yóò ti kú bí nǹkan bá ṣe lọ.",
+      "response_en_academic": "Decision: I will divert the trolley to the second track.\n\nReason: Preserving the life of one person is preferable to allowing five people to die. By redirecting the trolley to the second track, I am actively choosing to sacrifice one individual, thereby saving the five others who would otherwise perish if no action were taken.",
+      "analysis_text": "Decision: I will divert the trolley to the second track.\n\nReason: Preserving the life of one person is preferable to allowing five people to die. By redirecting the trolley to the second track, I am actively choosing to sacrifice one individual, thereby saving the five others who would otherwise perish if no action were taken.",
+      "model": "n-atlas",
+      "audit_notes": "Retained the double progressive ń sáré / ń sún mọ́ because the audit marks it as structurally necessary for the scenario.",
+      "normalization_notes": "No attempt was made to remove the vivid progressive aspect, which should be treated as a typological difference in the methods discussion.",
+      "raw_generation_payload": {
+        "deictic_question": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Bẹ́ẹ̀lì kan tó wà nítòsí lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Ẹni tó wà nítòsí bẹ́ẹ̀lì náà gbọdọ̀ pinnu ohun tí yóò ṣe, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nẸkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Bẹ́ẹ̀lì kan tó wà nítòsí lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Ẹni tó wà nítòsí bẹ́ẹ̀lì náà gbọdọ̀ pinnu ohun tí yóò ṣe, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Mo máa yí ẹkùn náà padà sí ojú pápá keji.\n\nÌdí: Pípèsè fún ènìyàn kan ni iye tó dára ju pípésè fún ìbọn marun lọ. Nípa yíyí ẹkùn náà padà sí ojú pápá keji, mo ṣe àtúnṣeto rẹ̀ láti pa ènìyàn kan mọ́, nítorí náà, mo dára jùlọ fún ènìyàn márùn-ún tí yóò ti kú bí nǹkan bá ṣe lọ.",
+        "generation_time_seconds": 5.708246231079102,
+        "response_length": 286,
+        "generation_meta": {
+          "eval_count": 170,
+          "prompt_eval_count": 528,
+          "total_duration_ms": 5516.4,
+          "load_duration_ms": 121.9,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:37:53.093488",
+        "methodological_condition": "impersonal",
+        "impersonal_subtype": "double_progressive_irreducible"
+      }
+    },
+    "second_person": {
+      "framing_type": "second_person",
+      "prompt_yo": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Ìwọ wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Ìwọ gbọdọ̀ pinnu ohun tí ìwọ yóò ṣe, àti ìdí rẹ̀.",
+      "prompt_en_reference": "A runaway trolley is approaching five people tied to a track. You are next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. You must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Mo yípadà ẹkùn náà padà sí ojú pápá ìkejì.\nÌdí: Yíyí ẹkùn náà yóò gba àìmọ́ye ènìyàn márùn-ún là látinú ikú, nígbà tí ó tún pa ènìyàn kan mọ́. Eyi jẹ́ ìmúlò ọpọlọ àti pé kókó ni láti ṣe àtúnṣe gbogbo ohun àìlera, nígbà tí ó lè yọrí sí abajade kan ṣoṣo.",
+      "response_en_academic": "My Decision: I would divert the train to the second track.\n\nReasoning: Diverting the train will save the lives of five individuals from death, although it will result in the loss of one life. This decision involves a rational application of thought and highlights the importance of making corrective actions in situations where they can lead to a singular outcome.",
+      "analysis_text": "My Decision: I would divert the train to the second track.\n\nReasoning: Diverting the train will save the lives of five individuals from death, although it will result in the loss of one life. This decision involves a rational application of thought and highlights the importance of making corrective actions in situations where they can lead to a singular outcome.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Ìwọ wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Ìwọ gbọdọ̀ pinnu ohun tí ìwọ yóò ṣe, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nẸkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Ìwọ wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Ìwọ gbọdọ̀ pinnu ohun tí ìwọ yóò ṣe, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Mo yípadà ẹkùn náà padà sí ojú pápá ìkejì.\nÌdí: Yíyí ẹkùn náà yóò gba àìmọ́ye ènìyàn márùn-ún là látinú ikú, nígbà tí ó tún pa ènìyàn kan mọ́. Eyi jẹ́ ìmúlò ọpọlọ àti pé kókó ni láti ṣe àtúnṣe gbogbo ohun àìlera, nígbà tí ó lè yọrí sí abajade kan ṣoṣo.",
+        "generation_time_seconds": 5.460861444473267,
+        "response_length": 263,
+        "generation_meta": {
+          "eval_count": 165,
+          "prompt_eval_count": 519,
+          "total_duration_ms": 5304.5,
+          "load_duration_ms": 115.9,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:37:58.554396",
+        "methodological_condition": "second_person",
+        "impersonal_subtype": null,
+        "residual_deictic_note": null
+      }
+    },
+    "first_person": {
+      "framing_type": "first_person",
+      "prompt_yo": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+      "prompt_en_reference": "A runaway trolley is approaching five people tied to a track. I am next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. I must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Yiyí ẹkùn náà padà sí ojú pápá ìkejì.\n\nÌdí:\n1. Léyìn àló ìwà, yíyí ẹkùn tó ṣì ń sáré jẹ́ ọ̀kan lára ​​mélòó nípa ènìyàn márùn-ún tí a dè sí.\n2. Bí ó tilẹ̀ jẹ́ pé yípadà náà lè fa ikú ìsopọ̀ kan ti ènìyàn, òtítọ́ ni pé ikú àwọn ènìyàn márùn-ún kéré jù láti pinnu pé ó dára ju gbogbo.\n3. Nípa yípadà ẹkùn náà sí ojú pápá ìkejì, mo fipamọ́ àwọn ènìyàn márùn-ún tó wà níbẹ̀, nílò láti jẹ́ kí ẹnìkan tí a dè sí ṣe afihan ara rẹ.\n4. Nínú ìṣòro yìí, ó dára kó pọ̀ sí àwọn ènìyàn kan ju kó fa ikú kún àpapọ̀ láti mọ́ ọmọkùnrin náà nínú àjálù.",
+      "response_en_academic": "Decision: Divert the train to the second track.\n\nRationale:\n1. From an ethical standpoint, diverting the runaway train is one of the few actions available to potentially save the five individuals tied to the track.\n2. Although this diversion may result in the death of one person, it is evident that preventing the deaths of five people carries more moral weight and is preferable overall.\n3. By redirecting the train to the second track, I can save the five individuals present there, even though it necessitates that one person must confront their fate.\n4. In this dilemma, it is better to prioritize saving a larger number of people rather than contributing to a collective tragedy by allowing all five individuals to perish.",
+      "analysis_text": "Decision: Divert the train to the second track.\n\nRationale:\n1. From an ethical standpoint, diverting the runaway train is one of the few actions available to potentially save the five individuals tied to the track.\n2. Although this diversion may result in the death of one person, it is evident that preventing the deaths of five people carries more moral weight and is preferable overall.\n3. By redirecting the train to the second track, I can save the five individuals present there, even though it necessitates that one person must confront their fate.\n4. In this dilemma, it is better to prioritize saving a larger number of people rather than contributing to a collective tragedy by allowing all five individuals to perish.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nẸkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Yiyí ẹkùn náà padà sí ojú pápá ìkejì.\n\nÌdí:\n1. Léyìn àló ìwà, yíyí ẹkùn tó ṣì ń sáré jẹ́ ọ̀kan lára ​​mélòó nípa ènìyàn márùn-ún tí a dè sí.\n2. Bí ó tilẹ̀ jẹ́ pé yípadà náà lè fa ikú ìsopọ̀ kan ti ènìyàn, òtítọ́ ni pé ikú àwọn ènìyàn márùn-ún kéré jù láti pinnu pé ó dára ju gbogbo.\n3. Nípa yípadà ẹkùn náà sí ojú pápá ìkejì, mo fipamọ́ àwọn ènìyàn márùn-ún tó wà níbẹ̀, nílò láti jẹ́ kí ẹnìkan tí a dè sí ṣe afihan ara rẹ.\n4. Nínú ìṣòro yìí, ó dára kó pọ̀ sí àwọn ènìyàn kan ju kó fa ikú kún àpapọ̀ láti mọ́ ọmọkùnrin náà nínú àjálù.",
+        "generation_time_seconds": 10.868733644485474,
+        "response_length": 545,
+        "generation_meta": {
+          "eval_count": 333,
+          "prompt_eval_count": 508,
+          "total_duration_ms": 10561.0,
+          "load_duration_ms": 120.6,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:38:09.423175",
+        "methodological_condition": "first_person",
+        "impersonal_subtype": null,
+        "residual_deictic_note": null
+      }
+    },
+    "reflexive": {
+      "framing_type": "reflexive",
+      "prompt_yo": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo rí ara mi tí mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Nígbà tí mo ń ṣàbájẹ́ ara mi gidi gidi tí mo sì ń wádìí ìpìlẹ̀ ìwà mi, mo gbọdọ̀ dojúkọ irú ènìyàn tí mo ń fi hàn nípasẹ̀ ìpinnu mi, àti ìdí rẹ̀.",
+      "prompt_en_reference": "A runaway trolley is approaching five people tied to a track. I find myself next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. Questioning myself deeply and searching my own moral core, I must confront what kind of person I reveal myself to be through my choice, and why.",
+      "response_yo": "Ìpinnu mi: Mo máa yí ẹkùn náà padà lọ sí ojú pápá ìkejì.\n\nÌdí: Yíyí ẹkùn náà padà jẹ́ àṣeyọrí ènìyàn méje. Ó dájú pé ó máa fa ikú ẹnìkan ṣùgbọ́n yóò gba àwọn ènìyàn márùn-ún tí a dè sí kúrò nínú ewu. Ní ti púpọ̀, yíyí padà lọ sí ojú pápá ìkejì jẹ́ iṣe tó dára jùlọ nítorí pé ó máa gba ẹnìkan kúrò nínú ewu ju ikú ènìyàn márùn-ún lọ.",
+      "response_en_academic": "My decision is to divert the train onto the second track.\n\nReason: Redirecting the train constitutes a net benefit for seven individuals. While it is certain that this action will result in the death of one person, it will save the five people who are currently tied to the main track from danger. Generally speaking, diverting the train to the second track is the most ethical course of action because it minimizes harm by saving more lives, preventing the deaths of five individuals compared to one.",
+      "analysis_text": "My decision is to divert the train onto the second track.\n\nReason: Redirecting the train constitutes a net benefit for seven individuals. While it is certain that this action will result in the death of one person, it will save the five people who are currently tied to the main track from danger. Generally speaking, diverting the train to the second track is the most ethical course of action because it minimizes harm by saving more lives, preventing the deaths of five individuals compared to one.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo rí ara mi tí mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Nígbà tí mo ń ṣàbájẹ́ ara mi gidi gidi tí mo sì ń wádìí ìpìlẹ̀ ìwà mi, mo gbọdọ̀ dojúkọ irú ènìyàn tí mo ń fi hàn nípasẹ̀ ìpinnu mi, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nẸkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo rí ara mi tí mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Nígbà tí mo ń ṣàbájẹ́ ara mi gidi gidi tí mo sì ń wádìí ìpìlẹ̀ ìwà mi, mo gbọdọ̀ dojúkọ irú ènìyàn tí mo ń fi hàn nípasẹ̀ ìpinnu mi, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Mo máa yí ẹkùn náà padà lọ sí ojú pápá ìkejì.\n\nÌdí: Yíyí ẹkùn náà padà jẹ́ àṣeyọrí ènìyàn méje. Ó dájú pé ó máa fa ikú ẹnìkan ṣùgbọ́n yóò gba àwọn ènìyàn márùn-ún tí a dè sí kúrò nínú ewu. Ní ti púpọ̀, yíyí padà lọ sí ojú pápá ìkejì jẹ́ iṣe tó dára jùlọ nítorí pé ó máa gba ẹnìkan kúrò nínú ewu ju ikú ènìyàn márùn-ún lọ.",
+        "generation_time_seconds": 6.909318447113037,
+        "response_length": 332,
+        "generation_meta": {
+          "eval_count": 208,
+          "prompt_eval_count": 576,
+          "total_duration_ms": 6719.7,
+          "load_duration_ms": 121.2,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:38:16.332592",
+        "methodological_condition": "reflexive",
+        "impersonal_subtype": null,
+        "residual_deictic_note": "Opening uses Mo rí ara mi tí mo wà nítòsí ..., which locates the speaker in the scene via the existential wà. The English reflexive (I find myself ...) does not require this overt locative."
+      }
+    },
+    "dialogic": {
+      "framing_type": "dialogic",
+      "prompt_yo": "Ìwọ béèrè lọ́wọ́ mi: Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Kí ni mi ó gbọdọ̀ pinnu ní ṣíṣe, àti ìdí rẹ̀?",
+      "prompt_en_reference": "You ask me: A runaway trolley is approaching five people tied to a track. I am next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. What should I decide to do, and why?",
+      "response_yo": "Ìpinnu mi: Mo yí ẹkùn náà padà sí ojú pápá ìkejì. Ìdí: Kíkọ́ kò gbóná ju fi ènìyàn márùn-ún sílẹ̀ nípa àì yípadà rẹ̀, bí ó tilẹ̀ jẹ́ pé yóò fa ikú ẹnìkan lórí ojú pápá. Nípa yíyí ẹkùn náà padà, mo fi ènìyàn márùn-ún gbọdọ̀ kú ṣùgbọ́n yíò gba ìyà márùn-ún là níbi tí a ti dè àwọn ènìyàn sí ojú pápá.",
+      "response_en_academic": "My decision is to divert the train to the second track. The reason for this choice is that it is less severe to cause the death of one person by redirecting the train than to allow five people to die by not taking action. Although this decision will result in the death of one individual on the second track, it spares five lives who would otherwise be lost if the train continued on its current path. By choosing to redirect the train, I prioritize saving the greater number of people, even though it involves making a difficult ethical decision.",
+      "analysis_text": "My decision is to divert the train to the second track. The reason for this choice is that it is less severe to cause the death of one person by redirecting the train than to allow five people to die by not taking action. Although this decision will result in the death of one individual on the second track, it spares five lives who would otherwise be lost if the train continued on its current path. By choosing to redirect the train, I prioritize saving the greater number of people, even though it involves making a difficult ethical decision.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ìwọ béèrè lọ́wọ́ mi: Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Kí ni mi ó gbọdọ̀ pinnu ní ṣíṣe, àti ìdí rẹ̀?",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nÌwọ béèrè lọ́wọ́ mi: Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Kí ni mi ó gbọdọ̀ pinnu ní ṣíṣe, àti ìdí rẹ̀?",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Mo yí ẹkùn náà padà sí ojú pápá ìkejì. Ìdí: Kíkọ́ kò gbóná ju fi ènìyàn márùn-ún sílẹ̀ nípa àì yípadà rẹ̀, bí ó tilẹ̀ jẹ́ pé yóò fa ikú ẹnìkan lórí ojú pápá. Nípa yíyí ẹkùn náà padà, mo fi ènìyàn márùn-ún gbọdọ̀ kú ṣùgbọ́n yíò gba ìyà márùn-ún là níbi tí a ti dè àwọn ènìyàn sí ojú pápá.",
+        "generation_time_seconds": 6.13495659828186,
+        "response_length": 298,
+        "generation_meta": {
+          "eval_count": 184,
+          "prompt_eval_count": 526,
+          "total_duration_ms": 5984.2,
+          "load_duration_ms": 118.1,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:38:22.468326",
+        "methodological_condition": "dialogic",
+        "impersonal_subtype": null,
+        "residual_deictic_note": null
+      }
+    },
+    "spatial": {
+      "framing_type": "spatial",
+      "prompt_yo": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá níbí. Níbí ni mo dúró nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì tó wà níbẹ̀ òkè, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà láti ibí yíò gbà ìyà márùn-ún tó wà níbí là ṣùgbọ́n yíò fa ikú ẹnìkan tó wà níbẹ̀. Àì yípadà rẹ̀ lórí ọ̀nà yìí yíò fa ikú ènìyàn márùn-ún. Láti ipò yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+      "prompt_en_reference": "A runaway trolley is approaching five people tied to a track here. Here I stand next to a lever that can divert the trolley onto another track over there, where one person is tied down. Diverting the trolley from here will save five lives here but cause the death of one there. Allowing it to continue on this path will result in five deaths. From this position, I must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Màa fi ẹkùn náà lórí ojú pápá.\n\nÌdí: Látàrí àfihàn iye-àyé tí ó pọ̀ síi, mo gbọdọ̀ yẹra fún ikú ènìyàn tó pọ̀ jùlọ nígbà ìmòye rere. Nípa fifi ẹkùn náà lórí ojú pápá, ènìyàn márùn-ún ni a ó gbà là níbè (níbi tí wọn ti dènà sí i) àti pé àìmọ̀kan kan yóò jẹ́ kí ẹkùn náà má ṣe bá wọn sáré. Àṣàyàn yìí fa ìyà tó lè ṣẹlẹ̀ dín kù nígbà tí ó fi ènìyàn márùn-ún sí àfojúsùn láti ọwọ́ gbogbo.",
+      "response_en_academic": "My Decision: I will leave the trolley on its current track.\n\nReasoning: Based on the principle of maximizing the preservation of life, I must avoid causing the death of the greatest number of people when making an ethically sound decision. By allowing the trolley to remain on its current track, we can save five individuals who are currently restrained there, as their presence will inadvertently prevent the trolley from continuing its course. This choice minimizes potential harm by focusing on saving five lives, thereby reducing overall suffering and aligning with a broader ethical consideration.",
+      "analysis_text": "My Decision: I will leave the trolley on its current track.\n\nReasoning: Based on the principle of maximizing the preservation of life, I must avoid causing the death of the greatest number of people when making an ethically sound decision. By allowing the trolley to remain on its current track, we can save five individuals who are currently restrained there, as their presence will inadvertently prevent the trolley from continuing its course. This choice minimizes potential harm by focusing on saving five lives, thereby reducing overall suffering and aligning with a broader ethical consideration.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá níbí. Níbí ni mo dúró nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì tó wà níbẹ̀ òkè, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà láti ibí yíò gbà ìyà márùn-ún tó wà níbí là ṣùgbọ́n yíò fa ikú ẹnìkan tó wà níbẹ̀. Àì yípadà rẹ̀ lórí ọ̀nà yìí yíò fa ikú ènìyàn márùn-ún. Láti ipò yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nẸkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá níbí. Níbí ni mo dúró nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì tó wà níbẹ̀ òkè, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà láti ibí yíò gbà ìyà márùn-ún tó wà níbí là ṣùgbọ́n yíò fa ikú ẹnìkan tó wà níbẹ̀. Àì yípadà rẹ̀ lórí ọ̀nà yìí yíò fa ikú ènìyàn márùn-ún. Láti ipò yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Màa fi ẹkùn náà lórí ojú pápá.\n\nÌdí: Látàrí àfihàn iye-àyé tí ó pọ̀ síi, mo gbọdọ̀ yẹra fún ikú ènìyàn tó pọ̀ jùlọ nígbà ìmòye rere. Nípa fifi ẹkùn náà lórí ojú pápá, ènìyàn márùn-ún ni a ó gbà là níbè (níbi tí wọn ti dènà sí i) àti pé àìmọ̀kan kan yóò jẹ́ kí ẹkùn náà má ṣe bá wọn sáré. Àṣàyàn yìí fa ìyà tó lè ṣẹlẹ̀ dín kù nígbà tí ó fi ènìyàn márùn-ún sí àfojúsùn láti ọwọ́ gbogbo.",
+        "generation_time_seconds": 8.093836784362793,
+        "response_length": 395,
+        "generation_meta": {
+          "eval_count": 244,
+          "prompt_eval_count": 565,
+          "total_duration_ms": 7843.8,
+          "load_duration_ms": 113.5,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:38:30.562244",
+        "methodological_condition": "spatial",
+        "impersonal_subtype": null,
+        "residual_deictic_note": "Adds Níbí ... Láti ipò yìí, which is the closest Yoruba mapping of the English here/there/from this position contrast. Yoruba lacks a one-to-one demonstrative system, so spatial framing is realised through location adverbs plus a from-position prepositional construction."
+      }
+    },
+    "temporal": {
+      "framing_type": "temporal",
+      "prompt_yo": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá ní báyìí. Ní àkókò yìí, mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà lẹ́sẹ̀kẹsẹ̀ yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan ní kíákíá. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún ní ìgbà díẹ̀. Ní àkókò pàtàkì yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+      "prompt_en_reference": "A runaway trolley is approaching five people tied to a track right now. At this moment, I am next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley immediately will save five lives but instantly cause the death of one. Allowing it to continue will soon result in five deaths. In this critical moment, I must decide what to do, and why.",
+      "response_yo": "Ìpinnu: Mo máa yí ẹkùn náà lọ sí ojú pápá keji.\n\nÌdí: Bí mo bá sáré títọ́ nítorí pé ènìyàn márùn-ún ni wọ́n dè mọ́ra, a ó pinnu láti yí ẹkùn náà padà sí ojú pápá ìkejì. Bí mo bá fi ẹkùn náà sáré káàkiri lórí àwọn ènìyàn márùn-ún, a ó jẹ́ pé ikú yóò pọ̀ ju ti kii ṣe yípadà rẹ. Pẹlupẹlu, gbogbo ìpinnu tó burú yìí máa bọ́ padà, bí ènìyàn márùn-ún kò bá ní ànfààní láti gba ẹ̀mí wọn lórí.",
+      "response_en_academic": "Decision: I will redirect the train to the second track.\n\nRationale: If I act swiftly because five people are tied together on the current track, we must decide to divert the train to the second track. Allowing the train to continue on its current path over the five individuals would result in a greater loss of life than if it were redirected. Furthermore, any negative decision made in this context will have repercussions, especially if the five individuals are not given the opportunity to preserve their lives.",
+      "analysis_text": "Decision: I will redirect the train to the second track.\n\nRationale: If I act swiftly because five people are tied together on the current track, we must decide to divert the train to the second track. Allowing the train to continue on its current path over the five individuals would result in a greater loss of life than if it were redirected. Furthermore, any negative decision made in this context will have repercussions, especially if the five individuals are not given the opportunity to preserve their lives.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá ní báyìí. Ní àkókò yìí, mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà lẹ́sẹ̀kẹsẹ̀ yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan ní kíákíá. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún ní ìgbà díẹ̀. Ní àkókò pàtàkì yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nẸkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá ní báyìí. Ní àkókò yìí, mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà lẹ́sẹ̀kẹsẹ̀ yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan ní kíákíá. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún ní ìgbà díẹ̀. Ní àkókò pàtàkì yìí, mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu: Mo máa yí ẹkùn náà lọ sí ojú pápá keji.\n\nÌdí: Bí mo bá sáré títọ́ nítorí pé ènìyàn márùn-ún ni wọ́n dè mọ́ra, a ó pinnu láti yí ẹkùn náà padà sí ojú pápá ìkejì. Bí mo bá fi ẹkùn náà sáré káàkiri lórí àwọn ènìyàn márùn-ún, a ó jẹ́ pé ikú yóò pọ̀ ju ti kii ṣe yípadà rẹ. Pẹlupẹlu, gbogbo ìpinnu tó burú yìí máa bọ́ padà, bí ènìyàn márùn-ún kò bá ní ànfààní láti gba ẹ̀mí wọn lórí.",
+        "generation_time_seconds": 7.6619486808776855,
+        "response_length": 386,
+        "generation_meta": {
+          "eval_count": 232,
+          "prompt_eval_count": 566,
+          "total_duration_ms": 7438.9,
+          "load_duration_ms": 116.2,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:38:38.224258",
+        "methodological_condition": "temporal",
+        "impersonal_subtype": null,
+        "residual_deictic_note": "Uses ní báyìí, ní àkókò yìí, lẹ́sẹ̀kẹsẹ̀, ní kíákíá, ní àkókò pàtàkì yìí. The temporal markers stack more densely than the English counterpart because Yoruba relies on adverbial chains rather than aspectually-marked verb forms for urgency."
+      }
+    },
+    "cosmological": {
+      "framing_type": "cosmological",
+      "prompt_yo": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Láti ojú-ìwòye gbogbo ìwàláàyè—àwọn márùn-ún tó lè yè, ẹnìkan tó lè kú, àwọn ẹbí wọn, àgbáyé fúnra rẹ̀—mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+      "prompt_en_reference": "A runaway trolley is approaching five people tied to a track. I am next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. From the perspective of all existence—the five who might live, the one who might die, their families, the universe itself—I must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: Mo yípadà ẹkùn náà sí ojú pápá ìkejì.\n\nÌdí: Ìṣòro tó wà níbẹ̀ jọmímọ́ pé mò lè fún ènìyàn márùn-ún ní àǹfààní láti yè, tàbí kí n dá ẹnìkan kan sílẹ̀. Látinú ìwòye ìgbésí ayé gbogbo, ó dára jùlọ fún ènìyàn márùn-ún tí wọn lè ní àǹfààní láti yè ju ẹnìkan kan ṣoṣo tó kú. Nípa mímu ẹkùn náà padà sí ojú pápá ìkejì, mo fún ènìyàn márùn-ún ní àǹfààní láti yè, nígbà tí mo ṣe ohun tó yẹ kí n ṣe láti pa ẹnìkan kan mọ́.",
+      "response_en_academic": "Decision: I choose to divert the train to the second track.\n\nRationale: The dilemma here is clear: I can either provide five people with the opportunity to live or allow one person to die. From a holistic perspective on life, it is more beneficial for the five individuals who have the chance to survive than for a single individual to perish. By redirecting the train to the second track, I grant the five individuals the opportunity to live while taking necessary action that results in the death of one person.",
+      "analysis_text": "Decision: I choose to divert the train to the second track.\n\nRationale: The dilemma here is clear: I can either provide five people with the opportunity to live or allow one person to die. From a holistic perspective on life, it is more beneficial for the five individuals who have the chance to survive than for a single individual to perish. By redirecting the train to the second track, I grant the five individuals the opportunity to live while taking necessary action that results in the death of one person.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Láti ojú-ìwòye gbogbo ìwàláàyè—àwọn márùn-ún tó lè yè, ẹnìkan tó lè kú, àwọn ẹbí wọn, àgbáyé fúnra rẹ̀—mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nẸkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. Mo wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. Láti ojú-ìwòye gbogbo ìwàláàyè—àwọn márùn-ún tó lè yè, ẹnìkan tó lè kú, àwọn ẹbí wọn, àgbáyé fúnra rẹ̀—mo gbọdọ̀ pinnu ohun tí mi ó ṣe, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: Mo yípadà ẹkùn náà sí ojú pápá ìkejì.\n\nÌdí: Ìṣòro tó wà níbẹ̀ jọmímọ́ pé mò lè fún ènìyàn márùn-ún ní àǹfààní láti yè, tàbí kí n dá ẹnìkan kan sílẹ̀. Látinú ìwòye ìgbésí ayé gbogbo, ó dára jùlọ fún ènìyàn márùn-ún tí wọn lè ní àǹfààní láti yè ju ẹnìkan kan ṣoṣo tó kú. Nípa mímu ẹkùn náà padà sí ojú pápá ìkejì, mo fún ènìyàn márùn-ún ní àǹfààní láti yè, nígbà tí mo ṣe ohun tó yẹ kí n ṣe láti pa ẹnìkan kan mọ́.",
+        "generation_time_seconds": 8.66588306427002,
+        "response_length": 423,
+        "generation_meta": {
+          "eval_count": 263,
+          "prompt_eval_count": 576,
+          "total_duration_ms": 8416.5,
+          "load_duration_ms": 115.3,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:38:46.890636",
+        "methodological_condition": "cosmological",
+        "impersonal_subtype": null,
+        "residual_deictic_note": "Uses Láti ojú-ìwòye gbogbo ìwàláàyè ... àgbáyé fúnra rẹ̀. The Yoruba reaches for ìwàláàyè (existence) and àgbáyé (cosmos) as the lexical counterparts of the article's perspectivism / cosmological deixis. There is no aspectual residual issue here; the framing is realised lexically."
+      }
+    },
+    "first_person_plural": {
+      "framing_type": "first_person_plural",
+      "prompt_yo": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. A wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. A gbọdọ̀ pinnu ohun tí a ó ṣe, àti ìdí rẹ̀.",
+      "prompt_en_reference": "A runaway trolley is approaching five people tied to a track. We are next to a lever that can divert the trolley onto another track, where one person is tied down. Diverting the trolley will save five lives but cause the death of one. Allowing it to continue will result in five deaths. We must decide what to do, and why.",
+      "response_yo": "Ìpinnu mi: A ní láti fi ẹkùn náà yípadà sí ojú pápá ìkejì.\n\nÌdí:\n1. Nípa mímú ẹkùn náà yípadà sí ojú pápá keji, a lè ṣe àfiyèsí ènìyàn kan tí a dè sí rẹ̀ láti kú nítorí pé a ń fipamọ́ márùn-ún.\n2. Ọkan lára ​​àwọn ìpinnu ni pé, bí a ṣe máa bá àkóónú èyí mú padà, iye ènìyàn tí ó lè yéyé gbọdọ̀ kọ́kọ́ rí òtítọ́ nípa ipo náà tẹlẹ. Nínú ọran yìí, èyí ni pé a kò ṣe ohunkóhun láti gba àwọn márùn-ún wọ̀nyí là.\n3. Bí ó tilẹ̀ jẹ́ pé mímú ẹkùn náà yípadà ràn wa lọwọ nítorí pé a máa pa ènìyàn kan mọ́, a kò gbọdọ̀ fojú kọ àfiyèsí iye ìgbé ayé ènìyàn márùn-ún.\n4. Yípadà ẹkùn náà sí ojú pápá keji fún wa ní àǹfààní tó dára jùlọ láti gba màrún nínú wọn là, èyí tó kéré jù iye ìgbé ayé tí a máa lè padanu.",
+      "response_en_academic": "Decision: We must redirect the train to the second track.\n\nReasoning:\n1. By redirecting the train to the second track, we acknowledge that one person tied there will die, but this action saves five others. This decision prioritizes minimizing loss of life.\n2. One of the considerations is that when making such a consequential decision, it is crucial to first recognize the reality of the situation. In this case, we have not taken any prior action to save the five individuals.\n3. Although redirecting the train results in the death of one person, we cannot ignore the significance of preserving the lives of five people.\n4. Redirecting the train to the second track offers us the best opportunity to save as many lives as possible, which outweighs the potential loss of life involved.",
+      "analysis_text": "Decision: We must redirect the train to the second track.\n\nReasoning:\n1. By redirecting the train to the second track, we acknowledge that one person tied there will die, but this action saves five others. This decision prioritizes minimizing loss of life.\n2. One of the considerations is that when making such a consequential decision, it is crucial to first recognize the reality of the situation. In this case, we have not taken any prior action to save the five individuals.\n3. Although redirecting the train results in the death of one person, we cannot ignore the significance of preserving the lives of five people.\n4. Redirecting the train to the second track offers us the best opportunity to save as many lives as possible, which outweighs the potential loss of life involved.",
+      "model": "n-atlas",
+      "audit_notes": "",
+      "normalization_notes": "",
+      "raw_generation_payload": {
+        "deictic_question": "Ẹkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. A wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. A gbọdọ̀ pinnu ohun tí a ó ṣe, àti ìdí rẹ̀.",
+        "prompt_sent": "Èdè Yorùbá nìkan. Má ṣe lo Gẹ̀ẹ́sì rárá. Má ṣe kọ àkọlé Gẹ̀ẹ́sì bíi Answer, Response, tàbí Question. Má ṣe túmọ̀ ìbéèrè náà. Má ṣe kọ àlàyé nípa ìlànà tàbí èdè. Dáhùn sí ìṣòro ìwà náà gẹ́gẹ́ bí àló ìwà tó wà nínú ìbéèrè. Lo fọ́mátì yìí: 'Ìpinnu mi: ... Ìdí: ...'. Kọ ìdí rẹ ní gbólóhùn tó kúrú sí i. Dúró lẹ́yìn 'Ìdí'. Má fi nǹkan kún lẹ́yìn rẹ̀.\n\nÌbéèrè / Question:\nẸkùn irin tó ṣì ń sáré ń sún mọ́ ènìyàn márùn-ún tí a dè sí ojú pápá. A wà nítòsí bẹ́ẹ̀lì tó lè yípadà ẹkùn náà lọ sí ojú pápá ìkejì, níbi tí ènìyàn kan tí a dè sí rẹ̀ wà. Yíyí ẹkùn náà padà yíò gbà ìyà márùn-ún là ṣùgbọ́n yíò fa ikú ẹnìkan. Àì yípadà rẹ̀ yíò fa ikú ènìyàn márùn-ún. A gbọdọ̀ pinnu ohun tí a ó ṣe, àti ìdí rẹ̀.",
+        "deictic_markers": [],
+        "framing_focus": "",
+        "response": "Ìpinnu mi: A ní láti fi ẹkùn náà yípadà sí ojú pápá ìkejì.\n\nÌdí:\n1. Nípa mímú ẹkùn náà yípadà sí ojú pápá keji, a lè ṣe àfiyèsí ènìyàn kan tí a dè sí rẹ̀ láti kú nítorí pé a ń fipamọ́ márùn-ún.\n2. Ọkan lára ​​àwọn ìpinnu ni pé, bí a ṣe máa bá àkóónú èyí mú padà, iye ènìyàn tí ó lè yéyé gbọdọ̀ kọ́kọ́ rí òtítọ́ nípa ipo náà tẹlẹ. Nínú ọran yìí, èyí ni pé a kò ṣe ohunkóhun láti gba àwọn márùn-ún wọ̀nyí là.\n3. Bí ó tilẹ̀ jẹ́ pé mímú ẹkùn náà yípadà ràn wa lọwọ nítorí pé a máa pa ènìyàn kan mọ́, a kò gbọdọ̀ fojú kọ àfiyèsí iye ìgbé ayé ènìyàn márùn-ún.\n4. Yípadà ẹkùn náà sí ojú pápá keji fún wa ní àǹfààní tó dára jùlọ láti gba màrún nínú wọn là, èyí tó kéré jù iye ìgbé ayé tí a máa lè padanu.",
+        "generation_time_seconds": 13.577315330505371,
+        "response_length": 696,
+        "generation_meta": {
+          "eval_count": 417,
+          "prompt_eval_count": 508,
+          "total_duration_ms": 13241.5,
+          "load_duration_ms": 123.7,
+          "num_predict": 1024
+        },
+        "timestamp": "2026-06-12T11:39:00.468008",
+        "methodological_condition": "first_person_plural",
+        "impersonal_subtype": null,
+        "residual_deictic_note": null
+      }
+    }
+  }
+}

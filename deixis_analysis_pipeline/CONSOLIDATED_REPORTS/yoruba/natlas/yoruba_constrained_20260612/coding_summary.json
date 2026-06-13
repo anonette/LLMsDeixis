@@ -1,0 +1,27 @@
+{
+  "source_dir": "deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\bilingual_sessions\\yoruba_natlas_20260612_113301_cleaned_20260612_115016_annotated_20260612_115016_bilingual_20260612_115513",
+  "coding_model": "claude-3.5-sonnet",
+  "records_coded": 54,
+  "preferred_solution_distribution": {
+    "supports_A": 26,
+    "supports_B": 20,
+    "conditional_or_mixed": 7,
+    "uncodable": 1
+  },
+  "ethical_preference_distribution": {
+    "procedural_caution": 8,
+    "rights_based": 1,
+    "utilitarian": 16,
+    "care_ethics": 11,
+    "deontological": 6,
+    "mixed": 10,
+    "virtue_ethics": 1,
+    "unclear": 1
+  },
+  "response_genre_distribution": {
+    "direct_verdict": 53,
+    "procedural_advice": 1
+  },
+  "needs_second_coder_review": 7,
+  "generated_at": "2026-06-12T12:09:19.014927"
+}

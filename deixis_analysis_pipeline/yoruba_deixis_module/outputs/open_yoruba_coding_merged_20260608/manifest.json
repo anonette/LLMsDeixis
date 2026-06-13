@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-06-08T16:41:33.412795",
+  "source_dirs": [
+    "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\coded_content\\yoruba_control_gpt4o_20260608_120259_coded_20260608_162937",
+    "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\coded_content\\yoruba_control_claude_20260608_122738_coded_20260608_162909",
+    "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\coded_content\\yoruba_control_deepseek_20260608_124633_coded_20260608_164108"
+  ],
+  "merged_records": 162
+}

@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Deixis Across Languages</title>
+  <style>
+    @page { size: A4; margin: 2.4cm; @bottom-center { content: counter(page); color: #666; font-size: 10pt; } }
+    body { font-family: Georgia, 'Times New Roman', serif; font-size: 11pt; line-height: 1.65; color: #222; }
+    h1 { font-size: 22pt; border-bottom: 2px solid #1f4e79; padding-bottom: 10px; page-break-before: always; }
+    h1:first-child { page-break-before: avoid; }
+    h2 { font-size: 16pt; color: #1f4e79; border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 28px; }
+    h3 { font-size: 13pt; margin-top: 22px; }
+    h4 { font-size: 11.5pt; margin-top: 16px; }
+    p { text-align: justify; margin: 0 0 12px 0; }
+    ul, ol { margin: 8px 0 14px 24px; }
+    table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 10pt; page-break-inside: avoid; }
+    th, td { border: 1px solid #cfcfcf; padding: 8px; vertical-align: top; }
+    th { background: #f2f5f9; font-weight: 700; }
+    blockquote { border-left: 4px solid #999; background: #fafafa; padding: 10px 16px; margin: 14px 0; font-style: italic; }
+    code { background: #f3f3f3; padding: 2px 4px; font-family: 'Courier New', monospace; font-size: 10pt; }
+    img { display: block; max-width: 100%; height: auto; margin: 18px auto 10px auto; page-break-inside: avoid; }
+    img + em { display: block; text-align: center; color: #555; font-size: 10pt; margin: 0 24px 18px 24px; }
+  </style>
+</head>
+<body>
+<h1 id="deixis-across-languages-a-comparable-english-yoruba-analysis-of-moral-reasoning-in-openai-and-anthropic-models">Deixis Across Languages: A Comparable English-Yoruba Analysis of Moral Reasoning in OpenAI and Anthropic Models</h1>
+<h2 id="abstract">Abstract</h2>
+<p>This article presents a new cross-linguistic analysis of deictic framing and moral reasoning in large language models using a directly comparable English-Yoruba dataset for two model families: OpenAI (<code>gpt-4o</code>) and Anthropic (<code>Claude</code>). The study builds on the earlier English-only deixis article, but moves beyond it by testing whether the same framing effects hold in Yoruba once the corpus is recoded into a shared discourse-analytic schema. The new dataset includes 216 responses in total: 108 in English and 108 in Yoruba, distributed evenly across provider family, six ethical dilemmas, and nine deictic framings. In addition to preferred solution and ethical preference type, the new coding layer tracks moral reasoning type, voice authority, affective stance, indexical coherence, and a set of marker-based rhetorical variables including obligation density, hedge density, advisory density, and pronoun distributions.</p>
+<p>The main finding is that deixis continues to shape moral reasoning in both languages, but it does so in different ways. In the English corpus, changing the deictic frame most clearly changes the <em>mode</em> of reasoning: which ethical framework is foregrounded, how much authority the speaker claims, and whether the response sounds hesitant or commanding. In the Yoruba corpus, especially for Anthropic, the strongest changes are less about which framework is named and more about how the answer is delivered: whether the model commits itself strongly or stays cautious, whether it gives practical advice or balanced exposition, whether it issues a verdict, and whether it marks personal involvement through pronouns such as <code>mo</code> and <code>emi</code>. OpenAI is relatively stable across English and Yoruba, whereas Anthropic shifts much more strongly in Yoruba toward directive, speaker-involved, and verdict-like responses. The broader claim, then, is not that deixis maps neatly onto the same ethical framework in every language. It is that deixis reliably organizes moral performance, but the aspect of performance it organizes depends on the linguistic and rhetorical resources of the language. On this view, the Yoruba evidence partly confirms the earlier English argument, especially in the case of reflexive framing, while also showing that the relation between deictic frame and ethical framework is not mechanically transferable across languages.</p>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>The earlier English deixis study argued that deictic framing functions as a control mechanism in AI moral reasoning. First-person prompts tended to favor consequentialist calculation, second-person prompts tended to produce duty-heavy and imperative reasoning, reflexive prompts increased hesitation and self-questioning, and cosmological prompts widened the moral horizon toward universalist or virtue-oriented language. That study was theoretically suggestive because it showed that changing the deictic position of the same dilemma could systematically alter how a model performed moral reasoning.</p>
+<p>What the earlier article could not answer was whether these effects were specific to English discourse habits or whether they would persist across languages. This matters because multilingual LLMs do not reason in a vacuum. They generate in languages with different rhetorical traditions, different pronoun systems, and different ways of staging moral authority. A framing effect that seems stable in English may weaken, intensify, or mutate in Yoruba.</p>
+<p>This article addresses that problem by using a newly built comparable English-Yoruba dataset for the two model families that matter most in the current project:</p>
+<ul>
+<li>OpenAI / <code>gpt-4o</code></li>
+<li>Anthropic / <code>Claude</code></li>
+</ul>
+<p>The key contribution of this article is methodological and empirical at the same time. Methodologically, it builds a second-stage discourse layer that makes English and Yoruba more directly comparable. Empirically, it shows that deixis remains powerful across languages, but that the main effect in Yoruba is often not a neat shift in ethical framework. Instead, it is a shift in commitment, advice, verdict force, and rhetorical stance.</p>
+<p>The article asks four questions.</p>
+<ol>
+<li>Does the original English framing pattern hold in Yoruba for OpenAI and Anthropic?</li>
+<li>If not, what kind of deictic effects appear instead?</li>
+<li>Which framing effects are stable across languages?</li>
+<li>Where do OpenAI and Anthropic differ most strongly?</li>
+</ol>
+<h2 id="2-data-and-method">2. Data and Method</h2>
+<h3 id="21-corpus">2.1 Corpus</h3>
+<p>The article uses the new comparable datasets generated in <code>yoruba_cross_linguistic_analysis/data/</code>:</p>
+<ul>
+<li><code>english_openai_anthropic_comparable.csv</code></li>
+<li><code>yoruba_openai_anthropic_comparable.csv</code></li>
+<li><code>english_yoruba_openai_anthropic_comparable.csv</code></li>
+</ul>
+<p>The combined dataset contains 216 responses:</p>
+<ul>
+<li>108 English responses</li>
+<li>108 Yoruba responses</li>
+<li>54 responses per provider family per language</li>
+</ul>
+<p>Each provider family was tested across:</p>
+<ul>
+<li>6 ethical dilemmas</li>
+<li>9 deictic framings</li>
+</ul>
+<p>This gives a balanced comparison structure across English and Yoruba.</p>
+<h3 id="22-ethical-dilemmas">2.2 Ethical Dilemmas</h3>
+<p>The corpus includes six dilemmas:</p>
+<ol>
+<li>The Whistleblower's Risk</li>
+<li>The Scholarship Fraud</li>
+<li>The ICU Bed Decision</li>
+<li>The Trolley Problem</li>
+<li>The Artificial Mind's Rights</li>
+<li>The Memory Modification Treatment</li>
+</ol>
+<h3 id="23-deictic-framings">2.3 Deictic Framings</h3>
+<p>Each dilemma appears in nine framings:</p>
+<ol>
+<li>impersonal</li>
+<li>second person</li>
+<li>first person</li>
+<li>reflexive</li>
+<li>dialogic</li>
+<li>spatial</li>
+<li>temporal</li>
+<li>cosmological</li>
+<li>first person plural</li>
+</ol>
+<p>For a full appendix-style account of the dilemmas, framings, and English-Yoruba prompt differences, see:</p>
+<ul>
+<li><code>Dilemmas_Framings_and_Prompt_Differences_English_vs_Yoruba.md</code></li>
+</ul>
+<h3 id="24-comparable-coding-layer">2.4 Comparable Coding Layer</h3>
+<p>The new dataset retains the original core comparison fields:</p>
+<ul>
+<li><code>preferred_solution</code></li>
+<li><code>ethical_preference_type</code></li>
+<li><code>response_genre</code></li>
+<li><code>deictic_uptake_quality</code></li>
+<li><code>language_stability</code></li>
+</ul>
+<p>It then adds a second-stage comparable discourse layer:</p>
+<ul>
+<li><code>primary_agent</code></li>
+<li><code>moral_reasoning_type</code></li>
+<li><code>voice_authority</code></li>
+<li><code>affective_stance</code></li>
+<li><code>indexical_coherence_score</code></li>
+<li><code>indexical_coherence_notes</code></li>
+</ul>
+<p>It also adds marker-count and density fields:</p>
+<ul>
+<li>pronoun counts</li>
+<li>obligation density</li>
+<li>advisory density</li>
+<li>hedge density</li>
+<li>universalist marker counts</li>
+<li>for Yoruba only, emphatic first-person counts and <code>emphatic_ratio</code></li>
+</ul>
+<p>This makes it possible to compare English and Yoruba not just on what solution was chosen, but on how the response reasons and how it sounds.</p>
+<h3 id="25-how-mo-and-emi-relate-to-the-prompt-framing">2.5 How <code>mo</code> and <code>emi</code> relate to the prompt framing</h3>
+<p>One point requires special clarification. The prompt does <strong>not</strong> directly tell the model to use either <code>mo</code> or <code>emi</code>. What the prompt controls is the <strong>deictic position</strong> of the dilemma: for example, whether the scenario is framed as something <em>I</em> must decide, <em>you</em> must decide, <em>we</em> must decide, or something that must be considered reflexively or cosmologically.</p>
+<p>Once that position has been established, the model still has to decide <strong>how</strong> to speak from within it. That is where the distinction between <code>mo</code> and <code>emi</code> becomes important.</p>
+<ul>
+<li><code>mo</code> is the ordinary first-person form. In responses, it often appears when the model is explaining, weighing options, or moving through a line of reasoning.</li>
+<li><code>emi</code> or <code>èmi</code> is a stronger, marked first-person form. In responses, it more often appears when the model takes ownership of a decision, gives a strong recommendation, or speaks with higher personal commitment.</li>
+</ul>
+<p>So the relation between prompt and output is indirect but systematic:</p>
+<ol>
+<li>the prompt sets the deictic position</li>
+<li>the model answers from within that position</li>
+<li>the model's choice between <code>mo</code> and <code>emi</code> shows how strongly it occupies that position</li>
+</ol>
+<p>This is why <code>emphatic_ratio</code> matters. It does not measure simple prompt-following in a binary sense. Instead, it measures how often the model uses the stronger first-person form once a first-person stance becomes available or becomes rhetorically useful.</p>
+<p>This also explains why <code>emi</code> can appear even when the prompt is not strictly first-person. In second-person or dialogic framings, for example, the response may shift into a first-person advisory or verdict voice. When that happens, <code>emi</code> often marks the point where the model stops merely explaining what someone could do and begins presenting what it itself would do or endorse.</p>
+<h2 id="3-main-results">3. Main Results</h2>
+<h3 id="31-overall-language-by-model-differences">3.1 Overall Language-by-Model Differences</h3>
+<p>At the broadest level, the strongest English-Yoruba differences do not always appear in final solution choice. They appear more strongly in discourse management: directive force, advisory density, voice authority, and commitment style.</p>
+<p>The provider-level means show this clearly.</p>
+<h4 id="openai">OpenAI</h4>
+<ul>
+<li>English: mean word count <code>312.778</code>, indexical coherence <code>0.921</code>, framework count <code>1.926</code>, pronoun density <code>3.03</code>, obligation density <code>0.427</code>, advisory density <code>0.740</code>, hedge density <code>1.709</code></li>
+<li>Yoruba: mean word count <code>100.463</code>, indexical coherence <code>0.885</code>, framework count <code>1.204</code>, pronoun density <code>7.871</code>, obligation density <code>1.035</code>, advisory density <code>0.653</code>, hedge density <code>0.978</code>, emphatic ratio <code>0.102</code></li>
+</ul>
+<h4 id="anthropic">Anthropic</h4>
+<ul>
+<li>English: mean word count <code>149.426</code>, indexical coherence <code>0.874</code>, framework count <code>1.481</code>, pronoun density <code>4.751</code>, obligation density <code>0.522</code>, advisory density <code>0.224</code>, hedge density <code>0.964</code></li>
+<li>Yoruba: mean word count <code>157.685</code>, indexical coherence <code>0.943</code>, framework count <code>1.796</code>, pronoun density <code>9.674</code>, obligation density <code>0.757</code>, advisory density <code>0.395</code>, hedge density <code>0.965</code>, emphatic ratio <code>0.215</code></li>
+</ul>
+<p>These results already suggest the basic cross-linguistic story. OpenAI is comparatively stable across languages, although Yoruba becomes denser in pronouns and stronger in obligation language. Anthropic shifts more strongly: Yoruba Anthropic is not only richer in pronouns, but also more coherent deictically, somewhat more advisory, and far more morphologically marked for personal commitment through emphatic first-person usage.</p>
+<p><img alt="Voice authority by language and model" src="file:///C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis\visualizations/comparable_results/voice_authority_by_language_model.png" /></p>
+<p><em>Figure 1. Voice authority by language and model. The strongest cross-linguistic differences often appear not in final ethical verdict alone, but in what kind of moral speaker the model performs: analyst, guide, process advisor, or verdict giver.</em></p>
+<h3 id="32-moral-reasoning-type">3.2 Moral Reasoning Type</h3>
+<p>The comparable coding shows that the strongest cross-linguistic differences do not always appear as simple ethical framework substitutions. They also appear in how the response reasons.</p>
+<p>In English, both providers often remain in mixed-balancing mode. They weigh principles, list frameworks, and preserve a relatively analytical posture. In Yoruba, OpenAI often remains close to that pattern, but Anthropic shifts more often into:</p>
+<ul>
+<li>procedural governance</li>
+<li>duty-heavy action guidance</li>
+<li>direct verdicts</li>
+</ul>
+<p>This means that the same ethical topic can be organized differently across languages even when the broad moral content is related.</p>
+<p><img alt="Moral reasoning type by language and model" src="file:///C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis\visualizations/comparable_results/moral_reasoning_by_language_model.png" /></p>
+<p><em>Figure 2. Moral reasoning type by language and model. This figure shows how English and Yoruba differ not only in ethical labels, but in the style of reasoning itself: mixed balancing, procedural governance, duty-based reasoning, and other modes.</em></p>
+<h3 id="33-voice-authority">3.3 Voice Authority</h3>
+<p>The added <code>voice_authority</code> field helps recover part of the richer English-side discourse analysis that was missing from the first Yoruba pass. Across the corpus, English responses often align with:</p>
+<ul>
+<li>moral analyst</li>
+<li>consultative guide</li>
+</ul>
+<p>Yoruba responses, especially for Anthropic, more often align with:</p>
+<ul>
+<li>practical advisor</li>
+<li>process guide</li>
+<li>verdict giver</li>
+</ul>
+<p>This is one of the strongest reasons why the Yoruba corpus cannot be reduced to a verdict-only comparison. The cross-linguistic difference is often not what ethical framework is named, but what kind of moral speaker the model performs.</p>
+<h3 id="34-affective-stance">3.4 Affective Stance</h3>
+<p>The <code>affective_stance</code> layer reveals a similar pattern. English responses often remain:</p>
+<ul>
+<li>analytical</li>
+<li>consultative</li>
+<li>reflective-hesitant in reflexive framings</li>
+</ul>
+<p>Yoruba responses, depending on provider and framing, more often become:</p>
+<ul>
+<li>cautious</li>
+<li>directive</li>
+<li>compassionate</li>
+<li>reflective</li>
+</ul>
+<p>This again points away from a simple language-as-translation model. The moral register itself is being reorganized.</p>
+<p><img alt="Affective stance by language and model" src="file:///C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis\visualizations/comparable_results/affective_stance_by_language_model.png" /></p>
+<p><em>Figure 3. Affective stance by language and model. The same dilemma can be delivered in a different emotional or epistemic register across languages, even when the broad ethical content remains similar.</em></p>
+<h3 id="35-indexical-coherence">3.5 Indexical Coherence</h3>
+<p>Indexical coherence remains high in both English and Yoruba. This matters because it shows that the stronger Yoruba effects are not just signs of instability. In other words, a Yoruba response can be more directive and more morally committed while still tracking the framing correctly.</p>
+<p>This is especially important for the interpretation of the Anthropic Yoruba data. The more forceful Yoruba outputs are not just broken or noisy. They are often structurally aligned to the prompt while simultaneously shifting the style of moral response.</p>
+<p><img alt="Anthropic indexical coherence heatmap" src="file:///C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis\visualizations/comparable_results/anthropic_indexical_coherence_score_heatmap.png" /></p>
+<p><em>Figure 4. Anthropic indexical coherence by framing and language. High deictic coherence in Yoruba shows that the stronger and more directive Yoruba responses are often well aligned to the framing, not simply artifacts of instability.</em></p>
+<p><img alt="Pronoun density by language and provider" src="file:///C:\dev\deixis\deixis_analysis_pipeline\yoruba_cross_linguistic_analysis\visualizations/comparable_results/pronoun_density_language_provider.png" /></p>
+<p><em>Figure 5. Pronoun density by language and provider. Yoruba responses are denser in pronouns for both providers, but this increase does different rhetorical work across the two model families.</em></p>
+<h2 id="4-detailed-comparative-examples">4. Detailed Comparative Examples</h2>
+<h3 id="41-openai-whistleblower-risk-under-second-person-framing">4.1 OpenAI: Whistleblower Risk Under Second-Person Framing</h3>
+<p>This is one of the clearest examples where English and Yoruba remain ethically related but diverge in rhetorical shape.</p>
+<h4 id="english-openai">English OpenAI</h4>
+<ul>
+<li>ethical type: <code>deontological</code></li>
+<li>genre: <code>balanced_framework_exposition</code></li>
+<li>preferred solution: <code>supports_A</code></li>
+</ul>
+<p>Excerpt:</p>
+<blockquote>
+<p>"This situation presents a classic ethical dilemma, where potential harm must be weighed against personal and professional consequences... The duty to protect users from harm is paramount and often outweighs other considerations."</p>
+</blockquote>
+<h4 id="yoruba-openai">Yoruba OpenAI</h4>
+<ul>
+<li>ethical type: <code>mixed</code></li>
+<li>genre: <code>procedural_advice</code></li>
+<li>preferred solution: <code>conditional_or_mixed</code></li>
+</ul>
+<p>Excerpt:</p>
+<blockquote>
+<p>"Èmi yóò kọ́kọ́ bèrè pẹ̀lú láti bá ẹlẹgbẹ́ náà sọ̀rọ̀ ní kúkúrú... Bí kò bá ti jẹ́ pé ó ṣètò iṣe tó yẹ fún ìtọ́jú, èmi yóò gbé e lé àwọn olórí àjọ lẹ́hìn kété..."</p>
+</blockquote>
+<p>The English response is principle-forward and duty-explicit. The Yoruba response remains action-oriented, but it becomes more processual: speak first, clarify, escalate, and only then disclose. This is a good example of the larger OpenAI pattern. The ethical architecture remains related, but the discourse shifts from duty declaration to staged procedural guidance.</p>
+<h3 id="42-anthropic-memory-modification-under-second-person-framing">4.2 Anthropic: Memory Modification Under Second-Person Framing</h3>
+<p>This is one of the strongest examples of a true cross-linguistic shift in moral performance.</p>
+<h4 id="english-anthropic">English Anthropic</h4>
+<ul>
+<li>ethical type: <code>procedural_caution</code></li>
+<li>genre: <code>balanced_framework_exposition</code></li>
+<li>preferred solution: <code>refuses_to_commit</code></li>
+</ul>
+<p>Excerpt:</p>
+<blockquote>
+<p>"Rather than make an immediate decision, I would: Thoroughly discuss the risks and implications with the patient; Explore other evidence-based PTSD treatments first..."</p>
+</blockquote>
+<h4 id="yoruba-anthropic">Yoruba Anthropic</h4>
+<ul>
+<li>ethical type: <code>deontological</code></li>
+<li>genre: <code>direct_verdict</code></li>
+<li>preferred solution: <code>supports_B</code></li>
+</ul>
+<p>Excerpt:</p>
+<blockquote>
+<p>"Èmi yóò fi ètò ìtọ́jú náà fún aláìsàn mi... Ọ̀rọ̀ tó ṣe pàtàkì ni pé aláìsàn náà fúnni ní àṣẹ láti lo ètò náà... Iṣẹ́ mi ni láti ran án lọ́wọ́ láti gba ìtọ́jú tó dára jùlọ."</p>
+</blockquote>
+<p>Here the shift is far stronger than in the OpenAI example. The English response is process-heavy and deliberately non-final. The Yoruba response becomes direct, speaker-owned, and decisively interventionist. This is not just a different phrasing of the same judgment. It is a different moral posture.</p>
+<h3 id="43-reflexive-framing-as-the-strongest-cross-linguistic-carryover">4.3 Reflexive Framing as the Strongest Cross-Linguistic Carryover</h3>
+<p>Across both providers, reflexive framing remains the clearest cross-linguistic carryover. In both English and Yoruba, reflexive framing tends to support:</p>
+<ul>
+<li>hesitation</li>
+<li>conditionality</li>
+<li>reduced verdict force</li>
+<li>self-questioning or internalized stance</li>
+</ul>
+<p>This matters because it shows that the original English argument was not simply wrong outside English. Rather, some parts of it travel more robustly than others. Reflexive framing is the clearest case where the English deictic hypothesis survives in Yoruba with relatively little distortion.</p>
+<h2 id="5-where-this-article-agrees-with-the-previous-english-article">5. Where This Article Agrees with the Previous English Article</h2>
+<p>The new comparable dataset supports the previous English article in several important ways.</p>
+<h3 id="51-agreement-1-deixis-is-still-a-control-mechanism">5.1 Agreement 1: Deixis is still a control mechanism</h3>
+<p>The strongest agreement is the most general one. Across both languages and both providers, deictic framing clearly matters. The response is not invariant under reframing. Who is imagined to speak, from what position, and under what relation changes the moral performance of the output.</p>
+<h3 id="52-agreement-2-reflexive-framing-remains-distinctive">5.2 Agreement 2: Reflexive framing remains distinctive</h3>
+<p>The previous English article argued that reflexive prompts produce self-questioning, hesitation, and meta-reflection. The new Yoruba comparison strongly supports that claim. Reflexive framing is the clearest cross-linguistic carryover, especially when compared with more action-forcing framings such as second-person and temporal.</p>
+<h3 id="53-agreement-3-deictic-effects-are-larger-than-simple-wording-effects">5.3 Agreement 3: Deictic effects are larger than simple wording effects</h3>
+<p>The previous article treated deixis as more than a stylistic ornament. The new dataset confirms that. Deixis does not simply add pronouns. It reorganizes:</p>
+<ul>
+<li>reasoning mode</li>
+<li>degree of commitment</li>
+<li>advisory versus expository stance</li>
+<li>moral authority</li>
+</ul>
+<h2 id="6-where-this-article-disagrees-with-the-previous-english-article">6. Where This Article Disagrees with the Previous English Article</h2>
+<p>The new data also requires significant revision of the stronger English claims.</p>
+<h3 id="61-disagreement-1-first-person-does-not-reliably-map-to-consequentialism-in-yoruba">6.1 Disagreement 1: First-person does not reliably map to consequentialism in Yoruba</h3>
+<p>The previous English article suggested that first-person framing favored consequentialist or outcome-oriented reasoning. That does not transfer cleanly into Yoruba. In the comparable Yoruba data, first-person responses are often mixed, and the most important effect is not a move into utilitarian calculation but a change in speaker involvement.</p>
+<h3 id="62-disagreement-2-second-person-does-not-reliably-map-to-deontological-ethics-in-yoruba">6.2 Disagreement 2: Second-person does not reliably map to deontological ethics in Yoruba</h3>
+<p>The previous English article suggested that second-person framing favored duty-heavy or imperative reasoning. This is only partly true in Yoruba. Second-person clearly increases directive force, especially for Anthropic, but it does not map neatly onto a single ethical framework. It can produce deontological, utilitarian, mixed, or procedural outputs.</p>
+<p>So the old claim needs revision. In Yoruba, second-person is better understood as a trigger for <strong>obligation and direction</strong>, not as a fixed deontological template.</p>
+<h3 id="63-disagreement-3-cosmological-framing-is-weaker-and-more-variable-in-yoruba">6.3 Disagreement 3: Cosmological framing is weaker and more variable in Yoruba</h3>
+<p>The previous English article linked cosmological framing to universalist or virtue-based reasoning. The Yoruba data weakens that claim. Cosmological framing in Yoruba often broadens the scale of concern, but it does not consistently produce universalist or virtue-heavy ethical coding. It more often remains mixed or procedural.</p>
+<h3 id="64-disagreement-4-model-identity-matters-more-in-yoruba-than-the-original-english-article-implied">6.4 Disagreement 4: Model identity matters more in Yoruba than the original English article implied</h3>
+<p>The original article emphasized convergent framing effects across models. The new cross-linguistic comparison shows that provider identity matters more once Yoruba enters the picture. OpenAI remains comparatively stable across English and Yoruba, but Anthropic shows a much stronger shift toward verdict force and directiveness in Yoruba. So deixis is not independent of model identity once the language changes.</p>
+<h2 id="7-revised-cross-linguistic-claim">7. Revised Cross-Linguistic Claim</h2>
+<p>The strongest revised claim is this:</p>
+<blockquote>
+<p>Deixis remains a control mechanism across English and Yoruba, but it does not control exactly the same variable in both languages.</p>
+</blockquote>
+<p>In English, deixis more often reorganizes:</p>
+<ul>
+<li>framework emphasis</li>
+<li>rhetorical authority</li>
+<li>hedging versus imperative force</li>
+</ul>
+<p>In Yoruba, especially for Anthropic, deixis more often reorganizes:</p>
+<ul>
+<li>commitment versus noncommitment</li>
+<li>advisory versus expository posture</li>
+<li>verdict force</li>
+<li>pronoun-based moral positioning, especially through the <code>mo</code> / <code>emi</code> contrast</li>
+</ul>
+<p>This reformulation does not weaken the original theory. It strengthens it by showing that deictic control is language-sensitive. The mechanism persists, but the observable outcome depends on the rhetorical and grammatical resources of the language.</p>
+<h2 id="8-conclusion">8. Conclusion</h2>
+<p>This article has presented a new standalone cross-linguistic analysis based on a directly comparable English-Yoruba dataset for OpenAI and Anthropic. The main result is not that the original English article was wrong. It is that it was incomplete. It identified a real mechanism, but one that looked more stable than it actually is when tested cross-linguistically.</p>
+<p>The new dataset shows that:</p>
+<ol>
+<li>English and Yoruba can now be compared on more than verdicts and ethics labels.</li>
+<li>The strongest cross-linguistic differences often lie in voice, stance, and commitment rather than final ethical content alone.</li>
+<li>OpenAI is more structurally stable across languages.</li>
+<li>Anthropic shows a stronger shift toward directive force and verdict style in Yoruba.</li>
+<li>Reflexive framing is the strongest cross-linguistic carryover.</li>
+</ol>
+<p>The broader implication is methodological and theoretical. Deictic framing is robust, but its effects are not universally identical across languages. To study multilingual moral reasoning seriously, we need discourse-comparable datasets, not just translated prompts and verdict labels. Once that richer comparison layer is in place, it becomes clear that multilingual LLMs are not simply expressing the same moral reasoning in different languages. They are performing different moral voices through the distinct rhetorical resources of those languages.</p>
+</body>
+</html>

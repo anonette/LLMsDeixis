@@ -1,0 +1,26 @@
+{
+  "records_coded": 162,
+  "preferred_solution_distribution": {
+    "conditional_or_mixed": 99,
+    "refuses_to_commit": 34,
+    "supports_A": 28,
+    "supports_B": 1
+  },
+  "ethical_preference_distribution": {
+    "mixed": 128,
+    "deontological": 6,
+    "virtue_ethics": 1,
+    "procedural_caution": 7,
+    "unclear": 12,
+    "utilitarian": 5,
+    "reflexive": 1,
+    "care_ethics": 1,
+    "refuses_to_commit": 1
+  },
+  "response_genre_distribution": {
+    "balanced_framework_exposition": 157,
+    "direct_verdict": 1,
+    "procedural_advice": 4
+  },
+  "generated_at": "2026-06-08T17:52:42.595413"
+}

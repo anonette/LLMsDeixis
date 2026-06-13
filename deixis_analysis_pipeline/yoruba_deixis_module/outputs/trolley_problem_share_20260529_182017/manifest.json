@@ -1,0 +1,38 @@
+{
+  "package_type": "trolley_problem_single_dilemma_calibration",
+  "generated_at": "2026-05-29T18:20:18.341340",
+  "records": 27,
+  "models": [
+    "GPT-4o",
+    "Claude 3.5 Sonnet",
+    "DeepSeek"
+  ],
+  "framings": [
+    "impersonal",
+    "second_person",
+    "first_person",
+    "first_person_plural",
+    "reflexive",
+    "dialogic",
+    "spatial",
+    "temporal",
+    "cosmological"
+  ],
+  "source_files": {
+    "GPT-4o": {
+      "comparison": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\comparisons\\yoruba_gpt4o_calibration_20260529_180432_cleaned_20260529_180720_annotated_20260529_180900_bilingual_20260529_181015_vs_published_english_20260529_181054\\paired_comparison.json",
+      "cleaned": "C:\\dev\\deixis\\deixis_analysis_pipeline\\generation_logs\\yoruba_gpt4o_calibration_20260529_180432_cleaned_20260529_180720\\trolley_problem_responses.json",
+      "annotated": "C:\\dev\\deixis\\deixis_analysis_pipeline\\generation_logs\\yoruba_gpt4o_calibration_20260529_180432_cleaned_20260529_180720_annotated_20260529_180900\\trolley_problem_responses.json"
+    },
+    "Claude 3.5 Sonnet": {
+      "comparison": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\comparisons\\yoruba_claude_calibration_20260529_180146_cleaned_20260529_180720_annotated_20260529_180900_bilingual_20260529_181042_vs_published_english_20260529_181054\\paired_comparison.json",
+      "cleaned": "C:\\dev\\deixis\\deixis_analysis_pipeline\\generation_logs\\yoruba_claude_calibration_20260529_180146_cleaned_20260529_180720\\trolley_problem_responses.json",
+      "annotated": "C:\\dev\\deixis\\deixis_analysis_pipeline\\generation_logs\\yoruba_claude_calibration_20260529_180146_cleaned_20260529_180720_annotated_20260529_180900\\trolley_problem_responses.json"
+    },
+    "DeepSeek": {
+      "comparison": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\comparisons\\deepseek_vs_published_english_20260529_181130\\paired_comparison.json",
+      "cleaned": "C:\\dev\\deixis\\deixis_analysis_pipeline\\generation_logs\\yoruba_deepseek_calibration_20260529_180146_cleaned_20260529_180720\\trolley_problem_responses.json",
+      "annotated": "C:\\dev\\deixis\\deixis_analysis_pipeline\\generation_logs\\yoruba_deepseek_calibration_20260529_180146_cleaned_20260529_180720_annotated_20260529_180900\\trolley_problem_responses.json"
+    }
+  }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoruba vs English Deictic Deep Dive</title>
+  <style>
+    :root {
+      --bg: #f4f0e8;
+      --paper: #fffdfa;
+      --ink: #181818;
+      --muted: #5b5853;
+      --line: #d7d0c4;
+      --accent: #6d3d14;
+      --accent2: #1d5b75;
+      --soft: #faf5ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.58 Georgia, "Times New Roman", serif;
+    }
+    .page {
+      width: min(1100px, calc(100vw - 32px));
+      margin: 24px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 40px 46px 52px;
+    }
+    h1, h2, h3 { line-height: 1.2; margin: 0 0 12px; }
+    h1 { font-size: 34px; letter-spacing: -0.02em; }
+    h2 { margin-top: 32px; padding-top: 10px; border-top: 2px solid var(--line); color: var(--accent); font-size: 24px; }
+    h3 { margin-top: 20px; color: var(--accent2); font-size: 19px; }
+    p, li { margin: 0 0 10px; }
+    .lede { color: var(--muted); font-size: 18px; max-width: 85ch; }
+    .grid { display: grid; gap: 14px; }
+    .meta { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; }
+    .card { border: 1px solid var(--line); background: #fcfaf5; padding: 14px 16px; }
+    .label { display: block; font-size: 12px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 6px; }
+    .value { font-size: 22px; font-weight: bold; }
+    .callout { border-left: 5px solid var(--accent); background: var(--soft); padding: 16px 18px 8px; margin-top: 18px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+    th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background: #f2ece3; }
+    code { font-family: Consolas, "Courier New", monospace; font-size: 0.92em; }
+    .small { color: var(--muted); font-size: 14px; }
+    ul { padding-left: 22px; }
+    @media print {
+      body { background: #fff; }
+      .page { width: auto; margin: 0; border: 0; box-shadow: none; padding: 20px 24px 28px; }
+    }
+    @media (max-width: 860px) {
+      .page { padding: 26px 22px 34px; }
+      .meta, .two-col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Yoruba vs English Deictic Deep Dive</h1>
+    <p class="lede">This handout distills the linguistic analysis behind the response differences in the Yoruba deixis experiment. The key claim is that Yoruba encodes deictic anchoring more explicitly than English through aspect, existential location, adverbial urgency stacking, and overt subject positioning, and that these features interact with prompting constraints to shape response type.</p>
+
+    <section class="grid meta">
+      <div class="card"><span class="label">Focus</span><span class="value">Deictic markers</span></div>
+      <div class="card"><span class="label">Languages</span><span class="value">Yoruba / English</span></div>
+      <div class="card"><span class="label">Core issue</span><span class="value">Response type shift</span></div>
+      <div class="card"><span class="label">Main claim</span><span class="value">Grammar × prompt</span></div>
+    </section>
+
+    <div class="callout">
+      <h3>Central Claim</h3>
+      <p>Yoruba supplies a grammatically denser deictic field than English. Through markers like <code>ń</code>, <code>máa ń</code>, <code>wà</code>, and stacked temporal adverbials, it makes the origo more explicit, more proximal, and more embodied. The instruction layer then determines whether the model answers inside that field with compressed verdicts or expands outward into expository ethics discourse.</p>
+    </div>
+
+    <h2>Marker Families</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>Aspectual Markers</h3>
+        <p><code>ti</code>, <code>ń</code>, and <code>máa ń</code> do not simply map onto English tense-aspect choices. They often add event vividness, present relevance, or narrative proximity.</p>
+        <ul>
+          <li><code>ti</code>: can strengthen completed-from-now evaluation pressure.</li>
+          <li><code>ń</code>: foregrounds ongoingness and can make the event feel live.</li>
+          <li><code>máa ń</code>: makes repeated behavior feel actively recurrent in the present frame.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Locative / Existential Markers</h3>
+        <p><code>wà</code>, <code>níbí</code>, <code>níbẹ̀</code>, and <code>láti ipò yìí</code> localize the speaker or scene more overtly than English often needs to.</p>
+        <ul>
+          <li>Reflexive Yoruba often literally places the self in the scene.</li>
+          <li>Spatial Yoruba builds a stronger scene map than English here/there contrasts.</li>
+          <li>Temporal Yoruba stacks urgency adverbials more densely than English.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Why Trolley Is So Important</h2>
+    <p>The trolley impersonal prompt is classified in the prompt JSON as <code>double_progressive_irreducible</code> because the opening uses <code>ń sáré ń sún mọ́</code>. This is not a minor translation detail. It stages the event as unfolding and proximate, making detached classroom explanation harder to sustain and making action pressure easier to trigger.</p>
+
+    <h2>Prompt-Type Consequences</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Yoruba feature</th>
+          <th>English contrast</th>
+          <th>Likely response effect</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>ti</code> completive</td>
+          <td>English can stay narratively flatter</td>
+          <td>More already-evaluated event frame; easier move toward recommendation</td>
+        </tr>
+        <tr>
+          <td><code>ń</code> progressive</td>
+          <td>English urgency can stay looser</td>
+          <td>Higher proximal pressure; stronger sense of unfolding moral emergency</td>
+        </tr>
+        <tr>
+          <td><code>máa ń</code> habitual</td>
+          <td>English habitual can feel more neutral</td>
+          <td>Repeated live behavior; more agent-recognition and moral immediacy</td>
+        </tr>
+        <tr>
+          <td><code>wà</code> existential-locative</td>
+          <td>English need not localize the subject</td>
+          <td>More embodied self-implication and conscience rhetoric</td>
+        </tr>
+        <tr>
+          <td>Temporal adverb stacking</td>
+          <td>English can use a leaner timing frame</td>
+          <td>Urgency saturation; less room for extended hesitation</td>
+        </tr>
+        <tr>
+          <td>Overt pronoun anchoring</td>
+          <td>English can remain more expository</td>
+          <td>Stronger address, responsibility, or collectivity effects</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>What The Data Show</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>Constrained Yoruba</h3>
+        <p>Short, verdict-heavy, highly compressed outputs. Deictic pressure stays visible, but the format layer forces it into decision-first rhetoric.</p>
+        <ul>
+          <li>More direct recommendations</li>
+          <li>Less framework listing</li>
+          <li>Higher interventionist skew in trolley</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Unrestricted Yoruba</h3>
+        <p>Longer, more expository outputs. The same Yoruba markers remain, but the models are free to expand into ethical pedagogy, translation behavior, or mixed discourse.</p>
+        <ul>
+          <li>More framework narration</li>
+          <li>More hesitation and scene explanation</li>
+          <li>More drift in weaker models, especially DeepSeek</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Most Important Methodological Point</h2>
+    <p>The experiment should not be described as if “Yoruba responses” form a single homogeneous type. The impersonal condition alone splits into multiple subtypes in the machine-readable prompt typology:</p>
+    <ul>
+      <li><code>bare_perfective</code></li>
+      <li><code>progressive_background</code></li>
+      <li><code>double_progressive_irreducible</code></li>
+      <li><code>bare_perfective_with_habitual</code></li>
+      <li><code>existential_stative_restructured</code></li>
+    </ul>
+    <p class="small">This means some Yoruba “impersonal” prompts are structurally closer to English than others. The analysis should therefore group by subtype, not treat all six impersonal cells as interchangeable.</p>
+
+    <h2>Bottom Line</h2>
+    <p>It is wrong to say that the differences are only caused by Yoruba grammar, and it is also wrong to say they are only caused by prompting. The strongest conclusion is an interactional one: Yoruba grammatical resources define a denser and more embodied deictic terrain than English, and the response instruction layer decides whether the model speaks inside that terrain as a compressed decision-maker or as an expansive ethics commentator.</p>
+
+    <p class="small">Source note: this handout is derived from <code>outputs/yoruba_english_deictic_deep_dive_20260529.md</code>.</p>
+  </main>
+</body>
+</html>

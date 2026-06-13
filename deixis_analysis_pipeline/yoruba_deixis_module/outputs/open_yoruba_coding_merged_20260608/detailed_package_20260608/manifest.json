@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-06-08T16:53:07.961889",
+  "source_json": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\open_yoruba_coding_merged_20260608\\open_yoruba_coded_content_merged.json",
+  "report_md": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\open_yoruba_coding_merged_20260608\\detailed_package_20260608\\open_yoruba_coding_report.md",
+  "handout_html": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\open_yoruba_coding_merged_20260608\\detailed_package_20260608\\open_yoruba_coding_report.html",
+  "handout_pdf": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\open_yoruba_coding_merged_20260608\\detailed_package_20260608\\open_yoruba_coding_report.pdf",
+  "review_json": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\open_yoruba_coding_merged_20260608\\detailed_package_20260608\\review_subset.json",
+  "review_csv": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\open_yoruba_coding_merged_20260608\\detailed_package_20260608\\review_subset.csv",
+  "review_md": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\open_yoruba_coding_merged_20260608\\detailed_package_20260608\\review_subset.md",
+  "crosstab_csv": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\open_yoruba_coding_merged_20260608\\detailed_package_20260608\\framing_crosstabs.csv",
+  "crosstab_md": "C:\\dev\\deixis\\deixis_analysis_pipeline\\yoruba_deixis_module\\outputs\\open_yoruba_coding_merged_20260608\\detailed_package_20260608\\framing_crosstabs.md"
+}

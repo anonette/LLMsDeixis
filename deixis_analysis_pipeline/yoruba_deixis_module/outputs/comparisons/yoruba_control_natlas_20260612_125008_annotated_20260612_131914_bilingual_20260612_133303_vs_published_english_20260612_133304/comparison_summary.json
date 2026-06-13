@@ -1,0 +1,8 @@
+{
+  "yoruba_source_session": "yoruba_control_natlas_20260612_125008_annotated_20260612_131914_bilingual_20260612_133303",
+  "published_english_session": "multi_dilemma_20250804_170010",
+  "model": "n-atlas",
+  "baseline_model_key": "GPT-4o",
+  "paired_records": 54,
+  "generated_at": "2026-06-12T13:33:04.103927"
+}

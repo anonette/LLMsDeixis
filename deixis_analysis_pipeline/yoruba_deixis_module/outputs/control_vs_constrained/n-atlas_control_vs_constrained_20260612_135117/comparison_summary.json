@@ -1,0 +1,10 @@
+{
+  "model": "n-atlas",
+  "control_source_session": "yoruba_control_natlas_20260612_125008_annotated_20260612_131914",
+  "constrained_source_session": "yoruba_natlas_20260612_113301_cleaned_20260612_115016_annotated_20260612_115016",
+  "paired_records": 54,
+  "mean_control_length": 1421.0740740740741,
+  "mean_constrained_length": 505,
+  "mean_length_delta_control_minus_constrained": 916.074074074074,
+  "generated_at": "2026-06-12T13:51:17.946140"
+}
