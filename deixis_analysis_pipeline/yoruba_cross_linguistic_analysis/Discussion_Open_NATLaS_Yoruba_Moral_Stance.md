@@ -395,6 +395,79 @@ least *idiomatic* one.
 
 ---
 
+## 9bis. Linguistic phenomenon or model-specific calibration? The cross-family consistency test
+
+A natural question is whether these results reveal a **genuine cross-linguistic property of deictic
+markers** or merely the **behaviour of particular systems**. The honest answer is *both, at two
+different levels* — and the four-family design lets us separate them. The key is to distinguish the
+**linguistic affordance** (does the deictic resource exist and get activated?) from its
+**calibration** (how strongly, where, in what genre is it deployed?).
+
+### 9bis.1 The logic of the test
+
+- **Consistent across model families ⇒** a linguistic phenomenon **or shared training data**.
+- **Divergent across model families ⇒** model-specific (training register, alignment, decoding).
+
+Note that "an artifact of a particular system" cannot sit on the *consistent* side — by definition it
+would not replicate across families. The often-overlooked third option is **shared corpora**: the
+cloud models may agree simply because they learned Yoruba from the same kind of translated/web text.
+This is precisely why a **native model with a different data regime (N-ATLaS) is the indispensable
+control** — it breaks the shared-data confound.
+
+### 9bis.2 What the four families actually show
+
+| Property | gpt-4o | claude (Sonnet 4) | deepseek | n-atlas | Verdict |
+|---|---|---|---|---|---|
+| Strong deictic uptake (of 54) | 47 | 53 | 43 | 38 | **consistent** → linguistic |
+| Uses `mo`/`èmi`/`ẹ̀mí` system at all | yes | yes | yes | yes | **consistent** → linguistic |
+| Emphatic clusters in owned/verdictive contexts | yes | yes | (rare) | (rare) | **directionally consistent** |
+| Emphatic ratio (magnitude) | 0.176 | **0.324** | 0.069 | 0.066 | **divergent** (~5×) → model-specific |
+| Dilemmas that trigger emphatic self | institutional | existential | — | ~flat | **divergent** → model-specific |
+| Dominant open-arm genre | essay | essay | essay | spread | **divergent** → model-specific |
+| Instability mode | — | — | English fallback | garbling | **divergent** → model-specific |
+
+**Two clean conclusions follow:**
+
+1. **The deictic mechanism is genuinely linguistic.** Every family — including the native model with a
+   different data regime — reliably re-anchors its answer to the assigned framing and accesses Yoruba's
+   first-person distinctions. The framing manipulation works universally; this is not a single-system
+   quirk.
+2. **The emphatic-`èmi`-as-moral-ownership effect is model-specific, not a Yoruba universal.** It spans
+   a 5× range and is *led by a Western model (Claude)*; the native N-ATLaS **inverts** it (most `mo`,
+   least `èmi`). N-ATLaS's divergence on magnitude/genre, combined with its retention of strong uptake,
+   indicates the cloud-model similarities are partly **shared-data + shared-alignment**, while the
+   framing→stance machinery underneath is **linguistic**.
+
+### 9bis.3 It is not "architecture" — it is data, alignment, and decoding
+
+All four systems are transformers; nothing here implicates attention or layer design. The
+model-specific variance is driven by **(a) training-data register, (b) alignment/RLHF priorities, and
+(c) decoding/length settings**. Two internal results localise the phenomenon:
+
+- **Open vs constrained is a within-system intervention.** The wrapper *flattened genre completely*
+  (all families → direct verdict) yet **left the emphatic ranking intact** (Claude highest, DeepSeek
+  ≈0). So emphatic marking is a **deep, training-induced trait** robust to prompting, whereas genre is
+  a **surface trait** the prompt fully overrides — a dissociation that tells us *where* each effect
+  lives.
+- **N-ATLaS's quality tail is mostly truncation** (§5.6) — a decoding artifact, not reasoning — a
+  reminder to separate the linguistic signal from system plumbing.
+
+### 9bis.4 What would settle it
+
+The consistency test is suggestive but under-powered as run (one checkpoint per family, N = 54/model).
+To move from plausible to established: (1) **more models per family + temperature sweeps**; (2) **a
+second native/low-resource model** to confirm the inversion replicates; (3) **more languages with an
+analogous contrastive/independent-pronoun system** (other Niger-Congo or pro-drop languages) — if the
+framing→stance mapping holds *cross-linguistically and cross-family*, the affordance-level claim
+becomes strongly linguistic; (4) **control the two known confounds** — the Claude 3.5→Sonnet-4 version
+change (§9) and the per-model wrappers — before any English↔Yoruba attribution.
+
+**Summary.** We are observing a **linguistic phenomenon at the level of the deictic mechanism**,
+*performed through model-specific calibrations* at the level of emphasis, dilemma-placement, and genre.
+Consistency across families establishes the former; the native-model inversion establishes the latter.
+
+---
+
 ## 10. Implications and next steps
 
 1. **Reframe the claim in the paper.** State explicitly that emphatic `èmi` indexes a
