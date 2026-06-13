@@ -62,8 +62,9 @@ In English **~10–11 of 12** responses per framing are "mixed/unclear", so ther
 differentiation by frame (\*the reflexive→mixed 0.83 is a *hedging floor*, not a reflexive effect —
 everything is mixed in English). The framing→ethic mapping (impersonal→duty, second-person→utilitarian,
 cosmological→procedural) appears **only in Yoruba**, and even there on thin counts (3–4 of 12 per cell).
-So this finding is **language-specific and suggestive, not a cross-language universal.** Pooled panel D
-was carried by the Yoruba half.
+So this finding is **language-specific and suggestive, not a cross-language universal** — and it does
+**not reach statistical significance** even in Yoruba (χ² framing×ethic p = 0.72; see Statistical
+robustness below). Treat it as a hypothesis, not a result. Pooled panel D was carried by the Yoruba half.
 
 ### 5. Decisiveness is framing-driven — **directionally universal, but Claude-driven in magnitude**
 Commit rate by framing × language × model (N = 6/cell):
@@ -165,6 +166,61 @@ shows the same framing→idiom steering — it just rides on top of a much highe
 (§2–3).
 
 ---
+
+## Statistical robustness
+
+Per-cell counts are small, so here are confidence intervals and tests for the headline claims
+(`scripts/deixis_robustness.py`). The pattern is clear: **the language effects are statistically
+solid; the framing→ethic effect (#4) is not — it is descriptive only.**
+
+**Headline proportions (Wilson 95% CI):**
+
+| Quantity | Estimate | 95% CI |
+|---|---|---|
+| Decision flips EN↔YO (all 108 matched cells) | 45% | [36%, 55%] |
+| Decision flips EN↔YO (whistleblower) | 61% | [39%, 80%] |
+| Refuse-to-commit, English | 30% | [22%, 39%] |
+| Refuse-to-commit, Yoruba | 14% | [9%, 22%] |
+
+**Language contrasts (two-proportion z-test) — all significant:**
+
+| Contrast | English | Yoruba | z | p |
+|---|---|---|---|---|
+| refuse-to-commit | 30% | 14% | −2.80 | **0.005** |
+| commit (decisive) | 18% | 31% | +2.23 | **0.026** |
+| differentiated (non-"mixed") ethic | 17% | 53% | +5.57 | **<0.001** |
+
+So findings **#2 (Yoruba commits more)** and **#3 (Yoruba uses a more differentiated ethical register)**
+are robust — the latter very strongly (p < 0.001).
+
+**Framing → ethic association (χ², differentiated-vs-mixed, within each language):**
+
+| Language | χ² | dof | p |
+|---|---|---|---|
+| English | 4.8 | 8 | 0.78 (n.s.) |
+| Yoruba | 5.3 | 8 | 0.72 (n.s.) |
+
+**This is the important caveat: finding #4 does *not* reach significance in either language.** With
+N = 12 per framing the test is badly underpowered (expected cell counts < 5), so the framing→ethic
+mapping (impersonal→duty, second-person→utilitarian, …) is a **descriptive pattern, not an established
+effect.** It should be reported as a hypothesis to test with more data, not a result.
+
+**#5 decisiveness — reflexive vs second-person (Fisher exact, N = 12 each):**
+
+| Language | reflexive commit | 2nd-person commit | Fisher p |
+|---|---|---|---|
+| English | 0/12 | 4/12 | 0.093 (marginal) |
+| Yoruba | 1/12 | 7/12 | **0.027** |
+
+The reflexive↓ / second-person↑ contrast is **significant in Yoruba** and marginal/directional in
+English — consistent with the per-cell direction holding across both languages while the magnitude is
+Claude-driven.
+
+**What survives, in one line:** the **language effects** (decision flips; Yoruba commits more; Yoruba's
+differentiated ethics) are statistically supported; the **second-person/reflexive decisiveness
+contrast** is supported in Yoruba; the **framing→ethic idiom mapping (#4) is underpowered and
+descriptive only.** All of this is on two models with N ≤ 12 per cell — directions, not final effect
+sizes.
 
 ## Caveats
 
