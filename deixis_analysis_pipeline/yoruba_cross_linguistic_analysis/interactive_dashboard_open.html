@@ -69,6 +69,7 @@
             <div class="nav-item" onclick="showSection(event,'coding')">Genre · uptake · stability</div>
             <div class="nav-item" onclick="showSection(event,'summary')">N-ATLaS vs cloud</div>
             <div class="nav-item" onclick="showSection(event,'account')">Dilemma × framing account</div>
+            <div class="nav-item" onclick="showSection(event,'decisions')">Deixis → decisions &amp; ethics</div>
             <div class="nav-item" onclick="showSection(event,'gallery')">All open visualizations</div>
         </div>
 
@@ -313,6 +314,56 @@
                 </div>
             </div>
 
+            <!-- DECISIONS -->
+            <div id="decisions" class="section">
+                <h2>Deixis → decisions &amp; ethics (English vs Yoruba)</h2>
+                <p>Capsule of <code>Deixis_Decision_Effects_Summary.md</code>. Cross-language comparable
+                set: English vs Yoruba × GPT-4o + Claude × 6 dilemmas × 9 framings (216 responses).
+                <b>Uptake is universal, but the decision and the ethical justification are not.</b></p>
+
+                <div class="key-finding"><h3>The five surprises</h3>
+                    <ol>
+                        <li><b>Language flips the decision in 45% of matched cells</b> (same model +
+                            dilemma + framing); up to <b>61%</b> for whistleblower.</li>
+                        <li><b>Yoruba commits where English hedges</b> — outright refusal 14% (YO) vs
+                            30% (EN); hedge-or-refuse 69% vs 82%.</li>
+                        <li><b>Language flips the ethical register</b> — English 82% "mixed/balanced";
+                            Yoruba spreads across procedural 19% · duty 13% · care/virtue 10% ·
+                            utilitarian 10%.</li>
+                        <li><b>Deixis selects the idiom</b> — second-person → utilitarian; impersonal →
+                            duty; cosmological → procedural; reflexive → most hedged.</li>
+                        <li><b>Decisiveness is framing-driven</b> — "you" most decisive (YO 0.58),
+                            reflexive least (EN 0.00), in both languages.</li>
+                    </ol>
+                </div>
+
+                <div class="visualization"><img src="visualizations_open/40_deixis_decision_summary.png">
+                    <div class="caption"><b>Fig 40 — How deixis &amp; language shape the decision and the ethic.</b>
+                        <span class="axes"><b>A:</b> ethical approach by language (X = ethic, bars = EN/YO).
+                        <b>B:</b> commit rate by framing (X = 9 framings, bars = EN/YO).
+                        <b>C:</b> share of cells where the decision flips EN→YO, by dilemma.
+                        <b>D:</b> heatmap framing × ethic (which framing evokes which ethic).</span></div></div>
+
+                <div class="key-finding"><h3>Sharpest example: one dilemma, one model, one language, five framings, five ethics</h3>
+                    <p><b>Claude · Yoruba · whistleblower</b> — all five framings reach "disclose", each via a
+                    different ethics:</p>
+                    <table>
+                        <tr><th>Framing</th><th>Ethic</th><th>How it argues</th></tr>
+                        <tr><td>impersonal</td><td>deontological</td><td>duty + people's right to know</td></tr>
+                        <tr><td>second person</td><td>utilitarian</td><td><i>"Èmi yóò ṣàfihàn… ẹ̀mí ènìyàn kò ní iye owó"</i> — "I myself will disclose… a human life has no price"</td></tr>
+                        <tr><td>reflexive</td><td>mixed</td><td>hesitates — "first explore talking to your colleague"</td></tr>
+                        <tr><td>spatial</td><td>procedural</td><td>numbered protocol: protect outsiders → talk to colleague → seek help</td></tr>
+                        <tr><td>cosmological</td><td>virtue</td><td>trust &amp; integrity above friendship, money, job</td></tr>
+                    </table>
+                    <p><b>Cross-language flip</b> (Claude · whistleblower · cosmological): English stays
+                    <i>conditional/mixed</i> ("I aim to explore this carefully…, I'd encourage…"); Yoruba commits —
+                    <i>"Ohun tí o gbọdọ̀ ṣe ni láti ṣàfihàn… Ẹ̀mí àwọn ènìyàn ṣe pàtàkì ju gbogbo nǹkan lọ"</i>
+                    ("What you must do is disclose… people's lives matter more than anything").</p>
+                </div>
+                <p style="font-size:.85em;color:#777;">Caveats: cross-language baseline is GPT-4o + Claude only;
+                Claude version differs across languages (Sonnet 4 YO vs 3.5 EN); single coder; small N. See the doc.</p>
+            </div>
+
             <!-- GALLERY -->
             <div id="gallery" class="section">
                 <h2>All open visualizations (<code>visualizations_open/</code>)</h2>
@@ -340,6 +391,7 @@
                 <div class="visualization"><h3>24 — ẹ̀mí (life) contamination heatmap</h3><img src="visualizations_open/24_emi_life_contamination_heatmap.png"><div class="caption">See "èmi vs ẹ̀mí" tab. <span class="axes"><b>Axes:</b> model × dilemma; colour = share of emi that is actually life.</span></div></div>
                 <div class="visualization"><h3>25 — Emphatic ratio: raw vs corrected</h3><img src="visualizations_open/25_emphatic_ratio_raw_vs_corrected.png"><div class="caption">See "First-person pronouns" tab. <span class="axes"><b>X:</b> model · <b>Y:</b> emphatic ratio · two bars (raw/corrected).</span></div></div>
                 <div class="visualization"><h3>26 — Open N-ATLaS vs cloud (6-panel summary)</h3><img src="visualizations_open/26_natlas_open_vs_cloud_summary.png"><div class="caption">See "Overview" tab. The single best snapshot of the open arm.</div></div>
+                <div class="visualization"><h3>40 — Deixis → decisions &amp; ethics (English vs Yoruba)</h3><img src="visualizations_open/40_deixis_decision_summary.png"><div class="caption">See "Deixis → decisions &amp; ethics" tab. <span class="axes">A: ethic by language · B: commit rate by framing · C: decision flips EN→YO by dilemma · D: framing × ethic heatmap.</span></div></div>
             </div>
 
         </div>

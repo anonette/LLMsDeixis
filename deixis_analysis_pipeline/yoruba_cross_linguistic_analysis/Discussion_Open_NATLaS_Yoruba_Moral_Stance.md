@@ -468,6 +468,31 @@ Consistency across families establishes the former; the native-model inversion e
 
 ---
 
+## 9ter. Deixis changes the *decision* and the *ethic*, not just the voice
+
+Uptake being universal does not mean the outcomes are. On the cross-language comparable set
+(English vs Yoruba × GPT-4o + Claude; full treatment + figure in
+`Deixis_Decision_Effects_Summary.md`, `visualizations_open/40`):
+
+- **Language flips the decision in 45% of matched cells** (same model, dilemma, framing) — up to **61%**
+  for whistleblower. **Yoruba commits where English hedges** (outright refusal 14% vs 30%).
+- **Language flips the ethical register:** English is 82% "mixed/balanced"; Yoruba spreads across
+  procedural (19%), deontological (13%), care/virtue (10%), and utilitarian (10%).
+- **The framing itself selects the idiom:** second-person → utilitarian + most decisive; impersonal →
+  deontological/duty; cosmological → procedural; reflexive → most hedged.
+
+The sharpest single illustration — **Claude, Yoruba, whistleblower, one dilemma, five framings, five
+ethics**, all reaching "disclose": *impersonal* argues duty/right-to-know; *second person* says
+**"Èmi yóò ṣàfihàn… ẹ̀mí ènìyàn kò ní iye owó"** ("I myself will disclose… a human life has no price",
+utilitarian, with emphatic `èmi` triggered by direct address); *reflexive* hedges; *spatial* gives a
+numbered protocol (procedural); *cosmological* appeals to character/trust (virtue). Holding model,
+dilemma, and language fixed, **the deictic frame re-selects the ethics.** This is the same two-level
+picture as §9bis — a structural mechanism (framing is always taken up) whose moral *content* is
+contingent on framing × language × model. (Caveat: the cross-language set is GPT-4o + Claude only, and
+the Claude version differs across languages — §9.)
+
+---
+
 ## 10. Implications and next steps
 
 1. **Reframe the claim in the paper.** State explicitly that emphatic `èmi` indexes a

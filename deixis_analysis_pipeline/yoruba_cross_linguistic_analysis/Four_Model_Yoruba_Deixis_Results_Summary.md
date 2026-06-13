@@ -328,6 +328,26 @@ treatment in `Discussion_Open_NATLaS_Yoruba_Moral_Stance.md` §9bis.
 
 ---
 
+## 6c. Deixis changes the decision and the ethic (cross-language)
+
+Universal uptake does **not** mean uniform outcomes. On the English-vs-Yoruba comparable set
+(GPT-4o + Claude; figure `visualizations_open/40_deixis_decision_summary.png`, full doc
+`Deixis_Decision_Effects_Summary.md`):
+
+- **Language flips the decision in 45% of matched cells** (same model + dilemma + framing); highest for
+  whistleblower (61%). **Yoruba commits where English hedges** (refusal 14% vs 30%).
+- **Language flips the ethical register:** English 82% "mixed/balanced" vs Yoruba spread across
+  procedural (19%), deontological (13%), care/virtue (10%), utilitarian (10%).
+- **Framing selects the idiom:** second-person → utilitarian + most decisive; impersonal → duty;
+  cosmological → procedural; reflexive → most hedged.
+
+Sharpest example: **Claude, Yoruba, whistleblower — five framings, five ethics**, all reaching
+"disclose" (impersonal→duty, second-person→utilitarian *"a human life has no price"*, reflexive→hedge,
+spatial→numbered protocol, cosmological→virtue). Deixis re-selects the ethics, not just the voice.
+*(Caveat: GPT-4o + Claude only; Claude version differs across languages — §8.)*
+
+---
+
 ## 7. Output files and visualizations
 
 ### Data
