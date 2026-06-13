@@ -27,6 +27,13 @@ verdict rate below is therefore largely an **instruction artifact**, not a spont
 - **Corpus:** 4 models × 6 dilemmas × 9 framings = **216 responses** (54 per model).
 - **Figures:** `visualizations/30`–`36` (this account) plus `01`–`17`, `22` (deixis & ethics heatmap).
 
+> **Claude version caveat.** Rows labelled `claude-3.5` are, for the Yoruba data, **Claude Sonnet 4**
+> (`claude-sonnet-4-20250514`) — the English baseline used Claude 3.5 Sonnet, which was no longer
+> available, so the Yoruba phase substituted the newer Sonnet 4 (see `published_english_baseline.json`).
+> GPT-4o and DeepSeek are the same model in both phases. Cross-model Yoruba comparisons (this document)
+> and N-ATLaS findings are unaffected; only *Claude English↔Yoruba* comparisons confound language with
+> version. See the methods appendix §A9bis for the full discussion.
+
 ---
 
 ## 1. Model-level summary (constrained)

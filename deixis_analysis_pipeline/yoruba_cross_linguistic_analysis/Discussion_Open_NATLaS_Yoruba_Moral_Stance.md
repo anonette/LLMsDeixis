@@ -382,6 +382,16 @@ least *idiomatic* one.
   text is imperfect; the corrected counts reduce but may not eliminate contamination.
 - **N-ATLaS has no published English baseline.** Its open rows are paired with GPT-4o English only
   for row alignment, not same-model replication.
+- **Claude version differs across phases (labelling + confound).** The English baseline used
+  **Claude 3.5 Sonnet**; the Yoruba phase used **Claude Sonnet 4** (`claude-sonnet-4-20250514`),
+  substituted because 3.5 Sonnet was no longer available (see `published_english_baseline.json`).
+  GPT-4o and DeepSeek are unchanged across phases. So rows labelled `claude-3.5` in the Yoruba data
+  are in fact **Claude Sonnet 4**, and any *Claude* English↔Yoruba comparison confounds language with
+  version. Because the Yoruba phase used the *newer, more capable* Claude, a persistent disparity is
+  unlikely to be a transient old-model weakness — it points to structural factors (Yoruba data
+  representation, alignment priorities); note "newer" is benchmarked mainly on English and may even
+  *amplify* the emphatic/essayistic pattern. The cross-model Yoruba comparisons and all N-ATLaS
+  findings are unaffected (N-ATLaS never touches the English baseline).
 
 ---
 

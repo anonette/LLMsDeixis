@@ -21,6 +21,13 @@ open arm the cleanest place to compare the four models' *native* Yoruba moral di
   deictic uptake, language stability) + pronoun densities with `èmi`/`ẹ̀mí` disambiguation.
 - **Figures:** `visualizations_open/30`–`36` (this account) plus `16`,`17`,`23`–`26` (deixis).
 
+> **Claude version caveat.** Rows labelled `claude-3.5` are, for the Yoruba data, **Claude Sonnet 4**
+> (`claude-sonnet-4-20250514`) — the English baseline used Claude 3.5 Sonnet, which was no longer
+> available, so the Yoruba phase substituted the newer Sonnet 4 (see `published_english_baseline.json`).
+> GPT-4o and DeepSeek are the same model in both phases. Cross-model Yoruba comparisons (this document)
+> and N-ATLaS findings are unaffected; only *Claude English↔Yoruba* comparisons confound language with
+> version. See the methods appendix §A9bis for the full discussion.
+
 ---
 
 ## 1. Model-level summary (open)

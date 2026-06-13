@@ -431,6 +431,37 @@ This does not invalidate the comparison, but it does mean the methods section sh
 - the deictic framings were matched
 - the Yoruba wrappers were similar in function but not perfectly identical in wording
 
+## A9bis. Model-Versioning Caveat (Claude English vs Yoruba)
+
+A second confound, independent of the prompt wrapper, affects **Claude only**. Per
+`published_english_baseline.json`:
+
+| Model | English baseline | Yoruba phase | Same model? |
+|---|---|---|---|
+| GPT-4o | gpt-4o | gpt-4o | yes |
+| **Claude** | **Claude 3.5 Sonnet** (`anthropic_claude_20250805_125046`) | **Claude Sonnet 4** (`claude-sonnet-4-20250514`) | **no** |
+| DeepSeek | deepseek-chat | deepseek-chat | yes |
+
+The substitution is documented in the baseline file: Claude 3.5 Sonnet was no longer exposed on the
+account, so the Yoruba Claude runs used **Claude Sonnet 4** as the closest available model. The
+implications:
+
+1. **Labelling.** Every row, table, and figure in this project labelled `claude-3.5` refers, **for the
+   Yoruba data, to Claude Sonnet 4** — a labelling artifact carried over from the English baseline, not
+   the 3.5 model. (The label is retained only for continuity with the published English baseline.)
+2. **Version confounds language for Claude.** Any *Claude English ↔ Yoruba* comparison mixes a language
+   change with a model-version change, so Claude's cross-language differences cannot be attributed to
+   language alone. GPT-4o and DeepSeek are clean on this axis (same model both phases).
+3. **Direction of the confound.** The Yoruba phase used the **newer, more capable** Claude. Persistent
+   English/Yoruba disparities are therefore unlikely to be a transient weakness of an *older* model;
+   they point instead to structural factors — Yoruba training-data representation, linguistic coverage,
+   and English-centric alignment/design priorities. Two qualifiers: "newer/better" is benchmarked mainly
+   on English and does not guarantee better *Yoruba* fidelity; and newer Anthropic models tend to be more
+   verbose/elaborate, which may *amplify* (not reduce) the emphatic/essayistic pattern.
+4. **What is unaffected.** The **cross-model Yoruba comparisons** (all four models are the intended Yoruba
+   models) and the **N-ATLaS findings** (which never touch the English baseline) do not depend on this
+   substitution and stand regardless.
+
 ## A10. Best Short Summary for the Paper
 
 If you want a concise paragraph to reuse in the manuscript, this is the cleanest version:
