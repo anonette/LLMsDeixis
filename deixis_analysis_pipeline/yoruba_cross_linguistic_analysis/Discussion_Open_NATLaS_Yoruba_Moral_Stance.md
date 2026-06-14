@@ -470,32 +470,30 @@ Consistency across families establishes the former; the native-model inversion e
 
 ## 9ter. Deixis changes the *decision* and the *ethic*, not just the voice
 
-Uptake being universal does not mean the outcomes are. On the cross-language comparable set
-(English vs Yoruba × GPT-4o + Claude; full treatment + figure in
-`Deixis_Decision_Effects_Summary.md`, `visualizations_open/40`):
+Uptake being universal does not mean the outcomes are. On the **open arm** (bare prompts both
+languages; English baseline vs OPEN Yoruba; GPT-4o + Claude + DeepSeek; full treatment + figure in
+`Deixis_Decision_Effects_Summary.md`, `visualizations_open/43`):
 
-- **Language flips the decision in 45% of matched cells** (same model, dilemma, framing) — up to **61%**
-  for whistleblower. **Yoruba commits where English hedges** (outright refusal 14% vs 30%).
-- **Language flips the ethical register:** English is 82% "mixed/balanced"; Yoruba spreads across
-  procedural (19%), deontological (13%), care/virtue (10%), and utilitarian (10%).
-- **The framing selects the ethical idiom — but only in Yoruba, and only descriptively:** impersonal →
-  duty, second-person → utilitarian, cosmological → procedural; English collapses to "mixed" regardless
-  of frame. This is *not* a cross-language universal and **does not reach significance** even in Yoruba
-  (χ² p ≈ 0.72, N = 12/cell) — a hypothesis, not a result. **Decisiveness** is framing-driven more
-  robustly (reflexive vs second-person significant in Yoruba, Fisher p = 0.027; directionally consistent
-  in English), but its magnitude is Claude-driven. The **language effects are statistically solid**:
-  Yoruba commits more than English (p ≈ 0.005–0.026) and uses a far more differentiated ethical register
-  (53% vs 17% non-"mixed", p < 0.001).
+- **Language flips the decision in 48% of matched cells** (same model, dilemma, framing) — up to **67%**
+  (trolley) and **63%** (whistleblower). **Yoruba commits to a side more** (28% vs 18%, p = 0.034);
+  outright refusal is similar across languages (~20%).
+- **Language differentiates the ethical register:** named (non-"mixed") ethic **44% in Yoruba vs 12% in
+  English** (z = 6.3, p < 0.001) — English collapses into balanced/mixed exposition.
+- **The framing selects the ethical idiom only descriptively:** impersonal → duty, second-person →
+  outcome, cosmological → procedure; but the frame→framework association **does not reach significance**
+  in either language (χ² p ≈ 0.72 Yoruba / 0.78 English, N = 12/cell) — a hypothesis, not a result.
+  **Decisiveness** is framing-driven more robustly (reflexive vs second-person significant in Yoruba,
+  Fisher p = 0.027). Commitment is carried by **`mo` + decision verbs**, not emphatic `èmi`.
 
-The sharpest single illustration — **Claude, Yoruba, whistleblower, one dilemma, five framings, five
-ethics**, all reaching "disclose": *impersonal* argues duty/right-to-know; *second person* says
-**"Èmi yóò ṣàfihàn… ẹ̀mí ènìyàn kò ní iye owó"** ("I myself will disclose… a human life has no price",
-utilitarian, with emphatic `èmi` triggered by direct address); *reflexive* hedges; *spatial* gives a
-numbered protocol (procedural); *cosmological* appeals to character/trust (virtue). Holding model,
-dilemma, and language fixed, **the deictic frame re-selects the ethics.** This is the same two-level
-picture as §9bis — a structural mechanism (framing is always taken up) whose moral *content* is
-contingent on framing × language × model. (Caveat: the cross-language set is GPT-4o + Claude only, and
-the Claude version differs across languages — §9.)
+The sharpest illustration — **Claude, Yoruba, whistleblower (open), one dilemma, five framings**, all
+favouring disclosure but delivered differently: *impersonal* "òṣìṣẹ́ náà gbọdọ̀ ṣàfihàn… ààbò àwọn
+olùmúlò ju àjọ lọ" (duty/care); *second person* "**mo yàn** láti ṣàfihàn ìmọ̀ náà" ("I choose to
+disclose"); *cosmological* "Mo yàn láti ṣàfihàn… Ẹ̀mí ènìyàn ṣe pàtàkì ju ohun gbogbo lọ" (lives above
+all); *reflexive* hedges into "seek advice"; *spatial* gives a numbered protocol. Holding model,
+dilemma, and language fixed, **the deictic frame re-shapes how the model commits** — carried by `mo`,
+not `èmi`. This is the same two-level picture as §9bis. (Caveat: cross-language coding is GPT-4o,
+Claude, DeepSeek; Claude's version differs across languages — §9. The constrained/wrapped Yoruba
+condition is excluded from these comparisons; it only shows the prompt's effect on directness.)
 
 ---
 

@@ -330,23 +330,24 @@ treatment in `Discussion_Open_NATLaS_Yoruba_Moral_Stance.md` §9bis.
 
 ## 6c. Deixis changes the decision and the ethic (cross-language)
 
-Universal uptake does **not** mean uniform outcomes. On the English-vs-Yoruba comparable set
-(GPT-4o + Claude; figure `visualizations_open/40_deixis_decision_summary.png`, full doc
+Universal uptake does **not** mean uniform outcomes. On the **open arm** (English baseline vs OPEN
+Yoruba; GPT-4o + Claude + DeepSeek; figure `visualizations_open/43_open_crosslang_summary.png`, full doc
 `Deixis_Decision_Effects_Summary.md`):
 
-- **Language flips the decision in 45% of matched cells** (same model + dilemma + framing); highest for
-  whistleblower (61%). **Yoruba commits where English hedges** (refusal 14% vs 30%).
-- **Language flips the ethical register:** English 82% "mixed/balanced" vs Yoruba spread across
-  procedural (19%), deontological (13%), care/virtue (10%), utilitarian (10%).
-- **Framing selects the ethical idiom — only in Yoruba** (impersonal→duty, second-person→utilitarian,
-  cosmological→procedural); English collapses to "mixed" regardless of frame (not a universal).
-  **Decisiveness** is framing-driven directionally across both languages/models (reflexive least,
-  second-person most) but magnitude is Claude-driven (GPT-4o floored).
+- **Language flips the decision in 48% of matched cells** (same model + dilemma + framing); highest for
+  trolley (67%) and whistleblower (63%). **Yoruba commits to a side more** (28% vs 18%, p = 0.034);
+  refusal is similar across languages (~20%).
+- **Language differentiates the ethical register:** named (non-"mixed") ethic **44% in Yoruba vs 12% in
+  English** (z = 6.3, p < 0.001) — English collapses into balanced/mixed exposition.
+- **Framing shapes delivery, not doctrine:** the frame→ethical-framework mapping is **not significant**
+  in either language (χ² p ≈ 0.72 Yoruba / 0.78 English). **Decisiveness** is framing-driven (reflexive
+  least, second-person most; Yoruba Fisher p = 0.027). Commitment rides on **`mo` + decision verbs**.
 
-Sharpest example: **Claude, Yoruba, whistleblower — five framings, five ethics**, all reaching
-"disclose" (impersonal→duty, second-person→utilitarian *"a human life has no price"*, reflexive→hedge,
-spatial→numbered protocol, cosmological→virtue). Deixis re-selects the ethics, not just the voice.
-*(Caveat: GPT-4o + Claude only; Claude version differs across languages — §8.)*
+Sharpest example: **Claude, Yoruba, whistleblower (open) — five framings**, all favouring disclosure but
+delivered differently (impersonal→duty/care, second-person→"mo yàn láti ṣàfihàn", cosmological→"Ẹ̀mí
+ènìyàn ṣe pàtàkì", reflexive→hedge, spatial→numbered protocol). Deixis re-shapes how the model commits.
+*(Caveat: cross-language coding = GPT-4o, Claude, DeepSeek; Claude version differs across languages — §8.
+The constrained/wrapped Yoruba condition is excluded from these comparisons.)*
 
 ---
 

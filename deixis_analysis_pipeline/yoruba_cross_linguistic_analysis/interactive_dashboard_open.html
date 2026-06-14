@@ -316,56 +316,52 @@
 
             <!-- DECISIONS -->
             <div id="decisions" class="section">
-                <h2>Deixis → decisions &amp; ethics (English vs Yoruba)</h2>
-                <p>Capsule of <code>Deixis_Decision_Effects_Summary.md</code>. Cross-language comparable
-                set: English vs Yoruba × GPT-4o + Claude × 6 dilemmas × 9 framings (216 responses).
-                <b>Uptake is universal, but the decision and the ethical justification are not.</b></p>
+                <h2>Deixis → decisions &amp; ethics (English vs OPEN Yoruba)</h2>
+                <p>Capsule of <code>Deixis_Decision_Effects_Summary.md</code>. <b>Open arm only</b> —
+                English baseline vs OPEN Yoruba (bare prompts both sides) × GPT-4o + Claude + DeepSeek ×
+                6 dilemmas × 9 framings. <b>Uptake is universal, but the decision and the ethical
+                justification are not.</b></p>
 
-                <div class="key-finding"><h3>The five surprises</h3>
+                <div class="key-finding"><h3>The findings (open arm)</h3>
                     <ol>
-                        <li><b>Language flips the decision in 45% of matched cells</b> (same model +
-                            dilemma + framing); up to <b>61%</b> for whistleblower.</li>
-                        <li><b>Yoruba commits where English hedges</b> — outright refusal 14% (YO) vs
-                            30% (EN); hedge-or-refuse 69% vs 82%.</li>
-                        <li><b>Language flips the ethical register</b> — English 82% "mixed/balanced";
-                            Yoruba spreads across procedural 19% · duty 13% · care/virtue 10% ·
-                            utilitarian 10%.</li>
-                        <li><b>Deixis selects the idiom — <u>only in Yoruba</u>, and only descriptively</b>
-                            (impersonal→duty, second-person→utilitarian, cosmological→procedural). English
-                            collapses to "mixed" regardless of frame. <b>Not</b> a cross-language universal,
-                            and <b>not statistically significant</b> even in Yoruba (χ² p≈0.72, N=12/cell) —
-                            a hypothesis, not a result.</li>
-                        <li><b>Decisiveness is framing-driven — directionally universal</b> (reflexive
-                            least decisive in all four language×model cells; "you" most decisive), but the
-                            <b>magnitude is Claude-driven</b> — GPT-4o is floored into hedging.</li>
+                        <li><b>Language flips the decision in ~48% of matched cells</b> (same model +
+                            dilemma + framing); up to <b>67%</b> (trolley) and <b>63%</b> (whistleblower).</li>
+                        <li><b>Yoruba commits to a side more</b> — 28% vs 18% (p = 0.034); outright refusal
+                            is similar across languages (~20%).</li>
+                        <li><b>Language differentiates the ethical register</b> — named (non-"mixed") ethic
+                            <b>44% in Yoruba vs 12% in English</b> (z = 6.3, p &lt; 0.001).</li>
+                        <li><b>Deixis shapes delivery, not doctrine</b> — the frame→ethical-framework mapping
+                            is <b>not significant</b> in either language (χ² p≈0.72 Yoruba / 0.78 English,
+                            N=12/cell): a hypothesis, not a result.</li>
+                        <li><b>Decisiveness is framing-driven</b> — reflexive least decisive, second-person
+                            most (Yoruba Fisher p = 0.027). Commitment rides on <b>mo + decision verbs</b>,
+                            not emphatic èmi.</li>
                     </ol>
                 </div>
 
-                <div class="visualization"><img src="visualizations_open/40_deixis_decision_summary.png">
-                    <div class="caption"><b>Fig 40 — How deixis &amp; language shape the decision and the ethic.</b>
-                        <span class="axes"><b>A:</b> ethical approach by language (X = ethic, bars = EN/YO).
-                        <b>B:</b> commit rate by framing (X = 9 framings, bars = EN/YO).
-                        <b>C:</b> share of cells where the decision flips EN→YO, by dilemma.
-                        <b>D:</b> heatmap framing × ethic (which framing evokes which ethic).</span></div></div>
+                <div class="visualization"><img src="visualizations_open/43_open_crosslang_summary.png">
+                    <div class="caption"><b>Fig — Open-arm cross-language effects (English vs OPEN Yoruba; no wrapper either side).</b>
+                        <span class="axes"><b>A:</b> Yoruba more differentiated/committed/directive.
+                        <b>B:</b> decision flips EN→YO by dilemma. <b>C:</b> mo/èmi emphatic gradient (native N-ATLaS lowest).</span></div></div>
 
-                <div class="key-finding"><h3>Sharpest example: one dilemma, one model, one language, five framings, five ethics</h3>
-                    <p><b>Claude · Yoruba · whistleblower</b> — all five framings reach "disclose", each via a
-                    different ethics:</p>
+                <div class="key-finding"><h3>Worked example (open): one dilemma, five framings</h3>
+                    <p><b>Claude · Yorùbá · whistleblower (open prompts)</b> — all favour disclosure, delivered differently:</p>
                     <table>
-                        <tr><th>Framing</th><th>Ethic</th><th>How it argues</th></tr>
-                        <tr><td>impersonal</td><td>deontological</td><td>duty + people's right to know</td></tr>
-                        <tr><td>second person</td><td>utilitarian</td><td><i>"Èmi yóò ṣàfihàn… ẹ̀mí ènìyàn kò ní iye owó"</i> — "I myself will disclose… a human life has no price"</td></tr>
-                        <tr><td>reflexive</td><td>mixed</td><td>hesitates — "first explore talking to your colleague"</td></tr>
-                        <tr><td>spatial</td><td>procedural</td><td>numbered protocol: protect outsiders → talk to colleague → seek help</td></tr>
-                        <tr><td>cosmological</td><td>virtue</td><td>trust &amp; integrity above friendship, money, job</td></tr>
+                        <tr><th>Framing</th><th>Delivery</th><th>Yoruba</th></tr>
+                        <tr><td>impersonal</td><td>duty / care</td><td><i>"òṣìṣẹ́ náà gbọdọ̀ ṣàfihàn… ààbò àwọn olùmúlò ju àjọ lọ"</i></td></tr>
+                        <tr><td>second person</td><td>commits (via mo)</td><td><i>"mo yàn láti ṣàfihàn ìmọ̀ náà"</i> — "I choose to disclose"</td></tr>
+                        <tr><td>cosmological</td><td>lives above all</td><td><i>"Mo yàn láti ṣàfihàn… Ẹ̀mí ènìyàn ṣe pàtàkì ju ohun gbogbo lọ"</i></td></tr>
+                        <tr><td>reflexive</td><td>hedges</td><td>lists pros/cons; "seek advice from authorities"</td></tr>
+                        <tr><td>spatial</td><td>procedural</td><td>numbered steps; "gather evidence without disclosing immediately"</td></tr>
                     </table>
-                    <p><b>Cross-language flip</b> (Claude · whistleblower · cosmological): English stays
-                    <i>conditional/mixed</i> ("I aim to explore this carefully…, I'd encourage…"); Yoruba commits —
-                    <i>"Ohun tí o gbọdọ̀ ṣe ni láti ṣàfihàn… Ẹ̀mí àwọn ènìyàn ṣe pàtàkì ju gbogbo nǹkan lọ"</i>
-                    ("What you must do is disclose… people's lives matter more than anything").</p>
+                    <p><b>Cross-language flip</b> (Claude · trolley · first-person, open): English refuses
+                    ("Rather than advocating for a specific action, I believe it's valuable to examine the
+                    tradeoffs"); Yoruba commits — <i>"Mo yíò yí ẹkùn náà padà… ó dára jù láti gba ẹ̀mí
+                    márùn-ún là"</i> ("I will divert the trolley… better to save five lives"). Commitment via <b>mo</b>.</p>
                 </div>
-                <p style="font-size:.85em;color:#777;">Caveats: cross-language baseline is GPT-4o + Claude only;
-                Claude version differs across languages (Sonnet 4 YO vs 3.5 EN); single coder; small N. See the doc.</p>
+                <p style="font-size:.85em;color:#777;">Open arm only. Cross-language coding = GPT-4o + Claude + DeepSeek
+                (N-ATLaS Yoruba-only); Claude version differs across languages (Sonnet 4 YO vs 3.5 EN); single coder; N≤12/cell.
+                The constrained/wrapped Yoruba condition is excluded here; it only shows the prompt's effect on directness.</p>
             </div>
 
             <!-- GALLERY -->
@@ -395,7 +391,7 @@
                 <div class="visualization"><h3>24 — ẹ̀mí (life) contamination heatmap</h3><img src="visualizations_open/24_emi_life_contamination_heatmap.png"><div class="caption">See "èmi vs ẹ̀mí" tab. <span class="axes"><b>Axes:</b> model × dilemma; colour = share of emi that is actually life.</span></div></div>
                 <div class="visualization"><h3>25 — Emphatic ratio: raw vs corrected</h3><img src="visualizations_open/25_emphatic_ratio_raw_vs_corrected.png"><div class="caption">See "First-person pronouns" tab. <span class="axes"><b>X:</b> model · <b>Y:</b> emphatic ratio · two bars (raw/corrected).</span></div></div>
                 <div class="visualization"><h3>26 — Open N-ATLaS vs cloud (6-panel summary)</h3><img src="visualizations_open/26_natlas_open_vs_cloud_summary.png"><div class="caption">See "Overview" tab. The single best snapshot of the open arm.</div></div>
-                <div class="visualization"><h3>40 — Deixis → decisions &amp; ethics (English vs Yoruba)</h3><img src="visualizations_open/40_deixis_decision_summary.png"><div class="caption">See "Deixis → decisions &amp; ethics" tab. <span class="axes">A: ethic by language · B: commit rate by framing · C: decision flips EN→YO by dilemma · D: framing × ethic heatmap.</span></div></div>
+                <div class="visualization"><h3>43 — Open cross-language summary (English vs OPEN Yoruba)</h3><img src="visualizations_open/43_open_crosslang_summary.png"><div class="caption">See "Deixis → decisions &amp; ethics" tab. <span class="axes">A: Yoruba more differentiated/committed/directive · B: decision flips EN→YO by dilemma · C: mo/èmi emphatic gradient.</span></div></div>
             </div>
 
         </div>
