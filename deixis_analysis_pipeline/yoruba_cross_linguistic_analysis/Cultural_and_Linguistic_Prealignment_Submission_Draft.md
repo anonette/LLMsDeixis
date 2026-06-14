@@ -18,7 +18,13 @@ English and Yoruba make an especially revealing pair because Yoruba encodes dist
 
 ## 2. Background and Related Work
 
-The study builds on an earlier English-only analysis that found deictic framing reshapes moral reasoning. The open question this paper addresses is whether such effects **transfer** to a typologically and culturally distant language once the corpus is recoded into a shared schema — and whether a Yoruba/Nigeria-native model behaves like the Western cloud models or diverges. Prior multilingual-evaluation work largely treats translation as content-preserving; we instead treat the output language as a participant in the moral performance.
+**Deixis and indexical stance.** Deixis — the class of expressions whose interpretation depends on the speech situation (person, place, time, discourse) — has long been treated as more than reference. Bühler (1934/1990) located it in a "deictic field" centered on the speaker; Levinson (1983, 2004) systematized person, place, and time deixis within pragmatics; and Silverstein (1976) and Hanks (1992) showed that indexicals are *interactional*, organizing who is foregrounded and how stance is distributed in a speech event. We take this further into the moral domain: a dilemma posed as "I must decide," "you must decide," or "we must decide" relocates moral responsibility, not merely the referent. The first-person system is the sharpest site of this work, because it is where a speaker can mark *how strongly* they own a claim.
+
+**Yoruba first-person morphology and relational ethics.** Yoruba grammars distinguish the ordinary subject pronoun *mo* from the independent/emphatic *èmi* and the object/possessive *mi* (Bamgboṣe, 1966; Awobuluyi, 1978); the independent pronoun carries contrastive and focal force, making it a resource for avowal rather than mere self-reference. This grammatical contrast sits within a moral tradition often described as relational and character-centered — *ìwà* (character), *ojúṣe* (responsibility/duty), and communal accountability (Gbadegesin, 1991; Hallen & Sodipo, 1986; Gyekye, 1995) — in which foregrounding the individual self is not automatically the marked-as-serious choice. A reliable computational treatment must also separate *èmi* ("I myself") from the tonal homograph *ẹ̀mí* ("life/spirit"), which is frequent in life-and-death dilemmas.
+
+**Cross-cultural and multilingual moral reasoning in LLMs.** A growing literature probes whether LLMs encode culturally specific values and morals. Work on moral knowledge and judgment includes the ETHICS benchmark (Hendrycks et al., 2021) and the Delphi experiment (Jiang et al., 2021); cross-cultural value probing includes Arora et al. (2023), Ramezani & Xu (2023), Durmus et al. (2023), and critiques of WEIRD-skewed model "psychology" (Atari et al., 2023). Most relevant here, Hämmerl et al. (2023) show that the *language of the prompt* shifts the moral bias of multilingual models. Alignment via RLHF and Constitutional methods (Ouyang et al., 2022; Bai et al., 2022) is tuned predominantly on English, raising the question of whether its even-handed, hedging register transfers to other languages. Our dilemmas draw on the moral-psychology tradition of the trolley problem (Foot, 1967; Thomson, 1985).
+
+**This study's gap.** Prior multilingual-evaluation work largely treats translation as content-preserving and rarely examines *deictic* manipulation, the fine-grained morphology of moral self-positioning, or a **native** comparison model. We build on an earlier English-only analysis that found deictic framing reshapes moral reasoning, and ask whether such effects **transfer** to Yoruba once the corpus is recoded into a shared schema — treating the output language as a *participant* in the moral performance, and adding a Yoruba-native model (N-ATLaS) to separate linguistic affordance from how Western cloud models inhabit it.
 
 ## 3. Data and Method
 
@@ -51,6 +57,19 @@ We separate two layers: **deictic uptake** (does the model recognize the frame?)
 *All numbers in §4.1–§4.6 are from the open arm (bare prompts in both languages). Cross-language statistics use the three models with matched English and Yoruba runs (GPT-4o, Claude, DeepSeek, N = 162 per language); Yoruba-internal deixis statistics include N-ATLaS (four models).*
 
 ![Open cross-language summary](visualizations_open/43_open_crosslang_summary.png)
+
+**Table 1. Open-arm headline results.** Cross-language rows compare the English baseline with open Yoruba (GPT-4o + Claude + DeepSeek, N = 162/language); the emphatic gradient is the four-model open Yoruba set.
+
+| Measure (open arm) | English | Yoruba | Test |
+|---|---|---|---|
+| Differentiated (non-"mixed") ethic | 12% | **44%** | z = 6.3, *p* < 0.001 |
+| Commits to a side | 18% | **28%** | z = 2.1, *p* = 0.034 |
+| Refuses to commit | 21% | 20% | n.s. |
+| Contains a direct imperative | 5% | **15%** | z = 3.1, *p* = 0.002 |
+| Strong deictic uptake | 76% | **88%** | — |
+| Decision flips, same model+dilemma+frame | — | **48%** | trolley 67%, whistleblower 63% |
+| Frame → ethical-framework association | n.s. | n.s. | χ² *p* ≈ 0.78 / 0.72 |
+| Emphatic ratio *èmi/(mo+èmi)* | (no *èmi* in English) | Claude 0.32 · GPT-4o 0.18 · DeepSeek 0.07 · **N-ATLaS 0.07** | model gradient |
 
 ### 4.1 Language differentiates the ethical register
 
@@ -126,4 +145,27 @@ On the open arm — where English and Yoruba prompts are symmetric — the langu
 
 ## References
 
-*(Retained from the working draft; to be completed for submission.)*
+*These are real, widely-cited works in the relevant areas; please verify exact pages, editions, and DOIs against the original sources before submission, and replace the bracketed self-citation.*
+
+- Arora, A., Kaffee, L.-A., & Augenstein, I. (2023). Probing Pre-Trained Language Models for Cross-Cultural Differences in Values. *Proceedings of the C3NLP Workshop, EACL 2023.*
+- Atari, M., Xue, M. J., Park, P. S., Blasi, D., & Henrich, J. (2023). Which Humans? *PsyArXiv preprint.*
+- Awobuluyi, O. (1978). *Essentials of Yoruba Grammar.* Oxford University Press / University Press Ltd, Ibadan.
+- Bai, Y., et al. (2022). Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback. *arXiv:2204.05862.* (See also Constitutional AI, *arXiv:2212.08073.*)
+- Bamgboṣe, A. (1966). *A Grammar of Yoruba.* Cambridge University Press.
+- Bühler, K. (1934/1990). *Theory of Language: The Representational Function of Language* (trans. D. F. Goodwin). John Benjamins.
+- Durmus, E., et al. (2023). Towards Measuring the Representation of Subjective Global Opinions in Language Models. *arXiv:2306.16388.*
+- Foot, P. (1967). The Problem of Abortion and the Doctrine of Double Effect. *Oxford Review, 5.*
+- Gbadegesin, S. (1991). *African Philosophy: Traditional Yoruba Philosophy and Contemporary African Realities.* Peter Lang.
+- Gyekye, K. (1995). *An Essay on African Philosophical Thought: The Akan Conceptual Scheme* (rev. ed.). Temple University Press.
+- Hallen, B., & Sodipo, J. O. (1986). *Knowledge, Belief, and Witchcraft: Analytic Experiments in African Philosophy.* Ethnographica.
+- Hämmerl, K., Deiseroth, B., Schramowski, P., et al. (2023). Speaking Multiple Languages Affects the Moral Bias of Language Models. *Findings of the ACL 2023.*
+- Hanks, W. F. (1992). The Indexical Ground of Deictic Reference. In A. Duranti & C. Goodwin (Eds.), *Rethinking Context* (pp. 43–76). Cambridge University Press.
+- Hendrycks, D., et al. (2021). Aligning AI With Shared Human Values (ETHICS). *ICLR 2021.*
+- Jiang, L., et al. (2021). Can Machines Learn Morality? The Delphi Experiment. *arXiv:2110.07574.*
+- Levinson, S. C. (1983). *Pragmatics.* Cambridge University Press.
+- Levinson, S. C. (2004). Deixis. In L. R. Horn & G. Ward (Eds.), *The Handbook of Pragmatics* (pp. 97–121). Blackwell.
+- Ouyang, L., et al. (2022). Training Language Models to Follow Instructions with Human Feedback. *NeurIPS 2022.*
+- Ramezani, A., & Xu, Y. (2023). Knowledge of Cultural Moral Norms in Large Language Models. *ACL 2023.*
+- Silverstein, M. (1976). Shifters, Linguistic Categories, and Cultural Description. In K. Basso & H. Selby (Eds.), *Meaning in Anthropology* (pp. 11–55). University of New Mexico Press.
+- Thomson, J. J. (1985). The Trolley Problem. *The Yale Law Journal, 94*(6), 1395–1415.
+- [Author] (2025). *Deixis and Moral Reasoning in Large Language Models* (English-only study). [Self-citation — complete on de-anonymization.]

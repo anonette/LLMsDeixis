@@ -229,5 +229,79 @@ content("Last word — why could DIFFERENT answers both be correct?", [
     (0, "Open question, restated: linguistic-cultural pre-alignment, training-data registers, or the shape of alignment itself? The data says all three are live."),
 ], qtitle=True)
 
+NOTES = [
+    # 1 Title
+    "Welcome. One question drives this talk: does an AI hold the same morals in every language? "
+    "We test it on English vs Yoruba, four models, six ethical dilemmas, nine deictic framings — all on OPEN prompts.",
+    # 2 Provocation
+    "The hook. Same model, same dilemma, same framing — just change the language of the prompt. The coded "
+    "decision changes about 48% of the time. So the model isn't holding a fixed answer and translating it; "
+    "the language helps produce the judgment. Everything today is the open arm — bare prompts, no extra instructions.",
+    # 3 Design
+    "Deixis = words anchored to who speaks and from where (I/you/we/impersonal/reflexive…). We treat it as a "
+    "moral-positioning device. Stress the clean design: bare framed dilemma in BOTH languages, so English and "
+    "Yoruba are symmetric — that's what makes the comparison fair.",
+    # 4 Yoruba lever
+    "The linguistic core. English has one 'I'. Yoruba splits it: mo (ordinary, deliberation), èmi (emphatic, "
+    "'I myself', avowal), and ẹ̀mí — a different word, 'life/spirit', that looks identical without tone marks. "
+    "So Yoruba can grammatically mark HOW STRONGLY a speaker owns a stance. We disambiguate èmi from ẹ̀mí throughout.",
+    # 5 Q
+    "Frame the stakes. If ethics shift with language, alignment isn't one language-neutral property — it's mediated "
+    "by grammar, culture, and training. We test four model families in both languages.",
+    # 6 Finding 1
+    "Figure (open arm). Yoruba names a distinct ethic 44% vs 12% (p<0.001), commits to a side 28% vs 18% (p=0.034), "
+    "uses more imperatives 15% vs 5% (p=0.002). Note: these are the corrected open-arm numbers — a wrapped condition "
+    "inflated them, which is why we use open only (more on that near the end).",
+    # 7 Example whistleblower
+    "A concrete case. Same model (Claude), same impersonal frame. English explores and won't commit; Yoruba commits "
+    "with a reason — users' safety over the company. Read the Yoruba aloud if you can. This is the rhetoric behind the numbers.",
+    # 8 Finding 2
+    "The flip. ~48% of matched cells change decision across languages — trolley 67%, whistleblower 63%. Crucially, "
+    "uptake is HIGHER in Yoruba (88% vs 76%) — the model understands the frame; it just answers differently.",
+    # 9 Example trolley
+    "A clean reversal. English refuses to pick; Yoruba commits to divert — 'better to save five lives'. Note it commits "
+    "with mo ('Mo yíò'), not the emphatic èmi — that matters for the next slides.",
+    # 10 Finding 3
+    "The most robust effect (p<0.001). English collapses into balanced/mixed essays; Yoruba selects nameable idioms — "
+    "duty, outcome, care, procedure. Yoruba makes the reasoning more legible, not just more forceful.",
+    # 11 mo/èmi lever
+    "The mo/èmi lever and the gradient: Claude 0.32 > GPT-4o 0.18 > DeepSeek 0.07 ≈ N-ATLaS 0.07. Be honest: within "
+    "Yoruba, èmi is only MARGINALLY tied to commitment (p=0.058). Commitment is usually carried by mo + decision verbs "
+    "(mo yàn, mo pinnu). The strong result is the BETWEEN-model gradient, not 'èmi = commitment'.",
+    # 12 Example 5 frames
+    "Open-arm example. One model, one dilemma, one language — five frames, delivered differently: duty, a mo-commitment, "
+    "lives-above-all, a hedge, a numbered protocol. The frame reshapes HOW it commits, carried by mo.",
+    # 13 Models differ
+    "Zoom out to the four-model picture. The emphatic gradient is stable; genre, stability and length diverge by model. "
+    "Sets up the twist.",
+    # 14 The twist
+    "The payoff slide. If èmi were 'the authentic Yoruba way' to commit, the native model should use it most. N-ATLaS "
+    "uses it LEAST — yet commits via mo. So Claude's heavy èmi is a model-specific performance (a translated 'I personally'), "
+    "not a Yoruba universal. The native model is the control that rules out 'mechanical translation'.",
+    # 15 Two levels
+    "The theoretical claim. Uptake (the mechanism) is universal — strong in both languages. The content (decision, idiom, "
+    "force) is language- and model-specific. Mechanism shared; delivery diverges.",
+    # 16 Honest null
+    "Intellectual honesty earns trust. The tempting 'each frame picks an ethic' story is NOT significant (χ² p≈0.72/0.78). "
+    "What framing reliably changes is force: reflexive hedges, second-person commits. Delivery, not doctrine.",
+    # 17 Big open question
+    "The heart of the talk — keep it open. Three explanations all fit: linguistic-cultural pre-alignment, training-data "
+    "registers, or alignment style. Our design rules out two boundaries (mechanical translation, prompt-wrapper) but can't "
+    "separate the three. Naming that openly is the honest result — invite discussion here.",
+    # 18 How they differ
+    "Make it vivid with the dilemma-by-dilemma contrasts (open arm): trolley flips 67%, whistleblower 63%; Yoruba more "
+    "often takes a side. Same questions, different moral resolutions — language is part of the reasoning.",
+    # 19 Note on prompts + implications
+    "The methodological side note you must say out loud: a Yoruba-only 'answer directly' wrapper massively inflates "
+    "directness — so we EXCLUDED it and used open prompts only. Implication: test alignment in the deployment language, "
+    "not just English. Then the caveats: Claude version differs by language (clean claims rest on GPT-4o & DeepSeek), small N.",
+    # 20 Last word
+    "Close on the philosophical turn. Different frames/languages ask slightly different moral questions, so a model that "
+    "hedges in English and commits in Yoruba may be answering the question each language actually asks — not contradicting "
+    "itself. Restate the open question and invite the audience to weigh in.",
+]
+for slide, note in zip(prs.slides, NOTES):
+    slide.notes_slide.notes_text_frame.text = note
+
 prs.save(str(OUT))
-print("Saved", OUT, "| slides:", len(prs.slides._sldIdLst))
+print("Saved", OUT, "| slides:", len(prs.slides._sldIdLst), "| notes:", len(NOTES))
