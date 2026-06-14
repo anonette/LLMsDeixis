@@ -36,10 +36,12 @@ LLMs use it, and how.
 
 4. **The macro context (open, cross-language).** The mo/`èmi` lever sits inside a broader open-arm
    language effect: Yoruba responses are far more **ethically differentiated** (44% name a distinct
-   idiom vs 12% in English, *z* = 6.3, *p* < 0.001), **commit to a side** more often (28% vs 18%,
-   *p* = 0.034), and use more **direct imperatives** (15% vs 5%, *p* = 0.002); the coded decision
-   **flips ~48%** of the time across languages. Frame **uptake** is strong in both languages and
-   slightly higher in Yoruba (88% vs 76%), so the divergence is in delivery, not comprehension.
+   idiom vs 12% in English; cluster-robust *p* < 0.001), and the coded decision **flips ~48%** across
+   languages (cluster-bootstrap 95% CI [36%, 59%]). Yoruba also leans more committed (28% vs 18%) and
+   imperative (15% vs 5%), but these are **directional** — commitment is n.s. once clustered by dilemma
+   (*p* ≈ 0.29) and the imperative effect survives dilemma- but not model-clustering. Frame **uptake**
+   is strong in both languages and slightly higher in Yoruba (88% vs 76%), so the divergence is in
+   delivery, not comprehension.
 
 ## Interpretation
 

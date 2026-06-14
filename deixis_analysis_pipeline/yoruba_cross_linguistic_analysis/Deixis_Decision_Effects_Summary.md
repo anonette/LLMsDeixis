@@ -27,8 +27,10 @@ gets decided and how it is morally framed.**
    vs English 12%** (*z* = 6.3, *p* < 0.001). English collapses into balanced/mixed exposition; Yoruba
    selects duty, outcome, care, or procedure.
 
-3. **Yoruba commits more; imperatives rise.** Commits to a side: **28% vs 18%** (*p* = 0.034). Direct
-   imperatives: **15% vs 5%** (*p* = 0.002). Outright refusal is similar across languages (~20%).
+3. **Yoruba leans more committed and imperative (directional).** Commits to a side 28% vs 18%; direct
+   imperatives 15% vs 5%. But under clustering these weaken: **commit is n.s.** (cluster by dilemma
+   *p* ≈ 0.29) and the imperative effect survives dilemma- but not (3-)model-clustering. Outright
+   refusal is similar across languages (~20%).
 
 4. **Deixis shapes delivery, not doctrine.** The frame→ethical-framework mapping is **not significant**
    in either language (χ² *p* ≈ 0.72 Yoruba / 0.78 English; N = 12/cell). What framing reliably changes

@@ -128,8 +128,8 @@ content("So: is moral alignment language-neutral?", [
     (-1, "We test this with four model families, in both English and Yoruba, on symmetric (open) prompts.", RED),
 ], qtitle=True)
 
-image_slide("Finding 1 — Yoruba is more committed & differentiated", "43_open_crosslang_summary.png",
-            "Open arm. Yoruba names a distinct ethic 44% vs 12% (p<0.001), commits to a side 28% vs 18% (p=0.034), uses more imperatives 15% vs 5% (p=0.002). Decision flips ~48%.")
+image_slide("Finding 1 — Yoruba reorganizes the moral voice", "43_open_crosslang_summary.png",
+            "Open arm. Yoruba names a distinct ethic 44% vs 12% (cluster-robust p<0.001); decision flips ~48% (CI 36-59%). Also leans more committed (28% vs 18%) and imperative (15% vs 5%) — directional only.")
 
 example_slide("Example — Whistleblower (open prompt)",
               "Claude · impersonal framing · \"should the employee disclose falsified safety data?\"",
@@ -249,7 +249,7 @@ NOTES = [
     "Frame the stakes. If ethics shift with language, alignment isn't one language-neutral property — it's mediated "
     "by grammar, culture, and training. We test four model families in both languages.",
     # 6 Finding 1
-    "Figure (open arm). Yoruba names a distinct ethic 44% vs 12% (p<0.001), commits to a side 28% vs 18% (p=0.034), "
+    "Figure (open arm). Yoruba names a distinct ethic 44% vs 12% (cluster-robust p<0.001) and the decision flips ~48% (CI 36-59%); it also leans more committed (28% vs 18%) and imperative (15% vs 5%), but those are directional (commit n.s. once clustered). "
     "uses more imperatives 15% vs 5% (p=0.002). Note: these are the corrected open-arm numbers — a wrapped condition "
     "inflated them, which is why we use open only (more on that near the end).",
     # 7 Example whistleblower

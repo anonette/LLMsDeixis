@@ -335,7 +335,8 @@ Yoruba; GPT-4o + Claude + DeepSeek; figure `visualizations_open/43_open_crosslan
 `Deixis_Decision_Effects_Summary.md`):
 
 - **Language flips the decision in 48% of matched cells** (same model + dilemma + framing); highest for
-  trolley (67%) and whistleblower (63%). **Yoruba commits to a side more** (28% vs 18%, p = 0.034);
+  trolley (67%) and whistleblower (63%); cluster-bootstrap 95% CI [36%, 59%]. Yoruba leans more
+  committed (28% vs 18%) but this is **directional only** (n.s. once clustered by dilemma, p ≈ 0.29);
   refusal is similar across languages (~20%).
 - **Language differentiates the ethical register:** named (non-"mixed") ethic **44% in Yoruba vs 12% in
   English** (z = 6.3, p < 0.001) — English collapses into balanced/mixed exposition.
